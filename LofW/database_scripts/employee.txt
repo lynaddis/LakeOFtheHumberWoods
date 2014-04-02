@@ -1,0 +1,19 @@
+CREATE TABLE [dbo].[employee] (
+    [Id]            INT           IDENTITY (1, 1) NOT NULL,
+    [firstname]     VARCHAR (50)  NOT NULL,
+    [lastname]      VARCHAR (50)  NOT NULL,
+    [email]         VARCHAR (50)  NOT NULL,
+    [primary_phone] INT           NOT NULL,
+    [other_phone]   INT           NULL,
+    [address]       VARCHAR (MAX) NOT NULL,
+    [postal_code]   VARCHAR (50)  NULL,
+    [state]         VARCHAR (50)  NOT NULL,
+    [country]       VARCHAR (50)  NOT NULL,
+    [edu_date_from] DATE          NOT NULL,
+    [edu_date_to]   NCHAR (10)    NOT NULL,
+    [level]         VARCHAR (50)  NOT NULL,
+    [edu_institute] VARCHAR (100) NOT NULL,
+    [work_exp]      VARCHAR (MAX) NULL,
+    [upload_resume] VARCHAR (MAX) NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
