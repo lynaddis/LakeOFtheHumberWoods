@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DeetaBase" Class="submClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DeetaBase.db.12042275.hostedresource.com;Initial Catalog=DeetaBase;Persist Security Info=True;User ID=DeetaBase" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DeetaBaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.recommendations" Member="recommendations">
+    <Type Name="recommendation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="ill_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="region" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="recomend" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Entry" Member="Entries">
+    <Type Name="Entry">
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AppAvail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.illnessAdmin" Member="illnessAdmins">
+    <Type Name="illnessAdmin">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InfectionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="entryDate" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="symptoms" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="preventatives" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="treatments" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="recomend" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.submissions" Member="submissions">
+    <Type Name="submission">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="reason" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VolExp" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ifYes" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="noHours" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="personRequest" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="interest" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="allergies" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="deptRefuse" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="deptRequest" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
