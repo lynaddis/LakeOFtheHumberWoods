@@ -17,3 +17,14 @@ CREATE TABLE [dbo].[employee] (
     [upload_resume] VARCHAR (MAX) NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
+CREATE TABLE [dbo].[jobPosting] (
+    [Id]           INT           IDENTITY (1, 1) NOT NULL,
+    [title]        VARCHAR (100) NOT NULL,
+    [description]  VARCHAR (MAX) NOT NULL,
+    [closing_date] DATETIME      NOT NULL,
+    [department]   VARCHAR (50)  NOT NULL,
+    [status]       VARCHAR (50)  NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
