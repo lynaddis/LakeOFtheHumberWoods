@@ -1,0 +1,47 @@
+CREATE TABLE [dbo].[submissions](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FullName] [varchar](80) NULL,
+	[age] [int] NULL,
+	[gender] [varchar](2) NULL,
+	[email] [varchar](60) NULL,
+	[phone] [char](11) NULL,
+	[reason] [varchar](max) NULL,
+	[VolExp] [varchar](3) NULL,
+	[ifYes] [varchar](200) NULL,
+	[noHours] [numeric](18, 0) NULL,
+	[personRequest] [varchar](80) NULL,
+	[interest] [varchar](100) NULL,
+	[allergies] [varchar](100) NOT NULL,
+	[deptRefuse] [varchar](100) NULL,
+	[deptRequest] [varchar](100) NULL,
+ CONSTRAINT [submissions_PrimaryKey] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[illnessAdmin](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[InfectionName] [varchar](50) NULL,
+	[Location] [varchar](100) NULL,
+	[entryDate] [varchar](11) NULL,
+	[Description] [varchar](max) NULL,
+	[symptoms] [varchar](200) NULL,
+	[preventatives] [varchar](200) NULL,
+	[treatments] [varchar](200) NULL,
+	[recomend] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+CREATE TABLE [dbo].[Entry](
+	[EntryDate] [datetime] NOT NULL,
+	[AppAvail] [varchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[EntryDate] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]

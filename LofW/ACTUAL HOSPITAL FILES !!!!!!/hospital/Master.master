@@ -1,0 +1,178 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="Master" EnableTheming="true" Debug="true" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Master Page Heading</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="container">
+        <asp:ContentPlaceHolder id="cph_header" runat="server">
+        
+        </asp:ContentPlaceHolder>
+     <div class="login">
+<%-- 
+<asp:Login ID="log_form" runat="server" DestinationPageUrl="~/Admin/homeadmin.aspx" />--%>
+        </div>
+      
+
+           <div class="menu"> 
+                <ul>
+                    <li>
+                        Home
+                    </li>
+                     <li>
+                     About
+                      </li>
+                    <li>
+                      We Care
+                     </li>
+                    <li>
+                     Ways To Help
+                    </li>
+                    <ul>
+                        <li>
+                            <a href="volunteer.aspx">
+                            Volunteer
+                                </a>
+                        </li>
+                        <li>
+                            Donations
+                        </li>
+                    </ul>
+                    <li>
+                    Community
+                    </li>
+                    <li>Contact Us</li>
+               
+
+                </ul>
+          
+        <%--<asp:SiteMapDataSource ID="sds_main" runat="server" /> --%>
+
+           <%--  <asp:menu id="mnu_main" orientation="Horizontal" CssClass="menu" runat="server">--%>
+ <%--DataSourceID="sds_main"--%>
+
+  <%--
+  <staticHoverStyle CssClass="hover"/>
+  
+             
+  <items>
+        <asp:menuitem text="Home" tooltip="Home" />
+      <asp:MenuItem Text="About" ToolTip="About" >
+       <asp:menuitem text="Vid About Hosptial"/>
+          <asp:menuitem text="Illness Outbreaks" />
+        <asp:menuitem text="Administration" />
+           <asp:menuitem text="Employment" />
+           <asp:menuitem text="News Updates" />
+           <asp:menuitem text="Board Members" />
+            </asp:MenuItem>
+
+            <asp:MenuItem Text="We Care" ToolTip="Care" >
+           <asp:menuitem text="Patient Care"/>
+        <asp:menuitem text="Cardiac Care" />
+                 <asp:menuitem text="Visiting Specialists Calendar" />
+                 <asp:menuitem text="Pay Bills Online" />
+                 <asp:menuitem text="Operational Services" />
+                 <asp:menuitem text="Lab Results" />
+      </asp:MenuItem>
+      <asp:MenuItem Text="Ways To Help" ToolTip="How You Can Help" >
+           <asp:menuitem text="Donations"/>
+        <asp:menuitem text="Volunteer"></asp:menuitem>
+      </asp:MenuItem>
+    
+            <asp:MenuItem Text="Community" ToolTip="Community Programs" >
+           <asp:menuitem text="Partnerships"/>
+        <asp:menuitem text="Event Request Forms" />
+      </asp:MenuItem>
+    
+    
+    <asp:menuitem text="Contact Us" tooltip="Contact Us">
+        <asp:menuitem text="Visiting Hours"  />
+        <asp:menuitem text="Suggestion Forms" />
+         <asp:menuitem text="Wait Times" />
+         <asp:menuitem text="Current Beds Available" />
+         <asp:menuitem text="Maps & Directions" />
+      </asp:menuitem>
+     
+
+ 
+  </items>
+</asp:menu>--%>
+    </div>
+        </div>
+        <div class="banner">
+            <div id="textDesc">
+            <asp:ContentPlaceHolder ID="cph_banner" runat="server">
+                
+            </asp:ContentPlaceHolder>
+                </div>
+            <div id="IMGslide">
+                
+            </div>
+
+        </div>
+        <div class="contentBody">
+            <asp:ContentPlaceHolder ID="cph_main" runat="server">
+
+            </asp:ContentPlaceHolder>
+            
+        </div>
+        <div class="sidebar">
+        <div class="infectBox">
+
+            <asp:ContentPlaceHolder Id="cph_IB" runat="server">
+                Infection Alert!
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+            <div class="donate">
+
+            <asp:ContentPlaceHolder Id="cph_donate" runat="server">
+                GIVE US MONEY
+            </asp:ContentPlaceHolder>
+
+        </div>
+            </div>
+                <div class="bottomBar">
+        <div class="calendar">
+
+            <asp:ContentPlaceHolder Id="cph_cal" runat="server">
+                Calendar!
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+            <div class="Maps">
+
+            <asp:ContentPlaceHolder Id="cph_map" runat="server">
+                MAPS
+            </asp:ContentPlaceHolder>
+
+        </div>
+              <div class="Other">
+
+            <asp:ContentPlaceHolder Id="cph_other" runat="server">
+               Other
+            </asp:ContentPlaceHolder>
+
+        </div>
+            </div>
+
+
+         <div class="footer">  </div>
+         <%--  <asp:TreeView ID="trv_main" runat="server" DataSourceID="sds_main" ShowLines="true" />
+            <asp:SiteMapDataSource ID="sds_tree" runat="server"  ShowStartingNode="true"/>--%>
+      
+  
+
+        
+      
+    </form>
+</body>
+</html>

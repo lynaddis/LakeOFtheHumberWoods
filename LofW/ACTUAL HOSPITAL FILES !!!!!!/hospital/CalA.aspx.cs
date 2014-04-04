@@ -10,6 +10,7 @@ using System.Web.Configuration;
 
 public partial class CalA : System.Web.UI.Page
 {
+
     DataSet dsCalendar = new DataSet();
     private string _connString;
 
@@ -91,7 +92,7 @@ public partial class CalA : System.Web.UI.Page
                 {
                     e.Cell.BackColor = System.Drawing.Color.Coral;
                   //  e.Day.IsSelectable = true;
-
+/*
                     Label lbl_edate = new Label();
                     lbl_edate.Text = " <br>" + dr["EntryDate"];
                     e.Cell.Controls.Add(lbl_edate);
@@ -100,7 +101,7 @@ public partial class CalA : System.Web.UI.Page
                     lbl_app.Text = (Convert.ToString(dr["AppAvail"]));
                     lbl_app.ID = "lbl_app" + appAvail;
                     e.Cell.Controls.Add(lbl_app);
-
+                    */
                    
                    /* void day_change(object sender, EventArgs e)
 

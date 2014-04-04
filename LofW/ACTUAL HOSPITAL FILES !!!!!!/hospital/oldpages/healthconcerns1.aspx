@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="healthconcerns.aspx.cs" Inherits="HealthConcerns" Debug="true" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="healthconcerns1.aspx.cs" Inherits="HealthConcerns" Debug="true" %>
 
 <!DOCTYPE html>
 
@@ -33,7 +33,7 @@
     <form id="form1" runat="server">
     <div>
 
-        <asp:Login ID="log_form" runat="server" DestinationPageUrl="~/Admin/adminHealthConcerns.aspx" />
+        <asp:Login ID="log_form" runat="server" DestinationPageUrl="~/Admin/homeadmin.aspx" />
 
         <a href="javascript:void(0);" class="titleText toggler">Kenora</a>
 

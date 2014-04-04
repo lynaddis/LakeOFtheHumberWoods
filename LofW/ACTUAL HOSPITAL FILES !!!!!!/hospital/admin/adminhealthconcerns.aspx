@@ -1,21 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="adminHealthConcerns.aspx.cs" Inherits="_adminHealthConcerns" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="adminhealthconcerns.aspx.cs" Inherits="adminhealthconcerns" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-
-      <asp:Label ID="lbl_message" runat="server" />
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
+     <asp:Label ID="lbl_message" runat="server" />
         <br />
         <br />
     
          
                     <%--Creating Insert textboxes --%>
+    <asp:HiddenField ID="hdf_Id" runat="server" Value='<%#Eval("Id") %>' />
+
                      <asp:Label ID="lbl_illname" runat="server" Text="Illness Name: " />
                     <asp:TextBox ID="txt_infnameI" runat="server" /> 
                      <asp:RequiredFieldValidator ID="rfv_infnameI" runat="server" ControlToValidate="txt_infnameI" SetFocusOnError="true" ErrorMessage="Required" Display="Dynamic" />
@@ -66,8 +65,42 @@
              </asp:DataList>
 
         <a href="adminrecommendations.aspx">Review Submitted Reccomendations</a>
-                <a href="adminVol.aspx">Volunteer submitted forms</a>
-    </div>
-    </form>
-</body>
-</html>
+                <a href="adminvolunteer.aspx">Volunteer submitted forms</a>
+
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cph_IB" Runat="Server">
+
+        <asp:repeater ID="rpt_rec" runat="server" OnItemCommand="subDel">
+        <ItemTemplate>
+               <br />
+
+            <asp:HiddenField ID="hdf_Id" runat="server" Value='<%#Eval ("Id") %>' />
+            
+           <asp:label ID="lt_name" runat="server" Text='<%#Eval ("name") %>' />
+            <br />
+             <asp:label ID="lt_illname" runat="server" Text='<%#Eval ("ill_name") %>' />
+            <br />
+            <asp:label ID="lt_region" runat="server" Text='<%#Eval ("region") %>' />
+            <br />
+            <asp:label ID="lt_rec" runat="server" Text='<%#Eval ("recomend") %>' />
+            <br />
+               <br />
+           <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return confirm('Confirm Delete?');" />
+                <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" />
+            
+               <br />   <br />   <br />
+        </ItemTemplate>
+
+    </asp:repeater>
+
+                  
+</asp:Content>
+<asp:Content ID="Content6" ContentPlaceHolderID="cph_donate" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content7" ContentPlaceHolderID="cph_cal" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content8" ContentPlaceHolderID="cph_map" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content9" ContentPlaceHolderID="cph_other" Runat="Server">
+</asp:Content>
+
