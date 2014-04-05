@@ -1,0 +1,116 @@
+﻿.container {
+
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid;  Keep this here to check if container is cooperating*/
+    min-height:1000px;
+
+}
+
+.banner {
+
+    width: 960px;
+    height: 210px;
+    border: 1px solid;
+
+}
+
+#textDesc {
+
+    float:left;
+    width:480px;
+    height:210px;
+     background-color:#f7bd41;
+}
+
+#IMGslide {
+    float:left;
+    width:480px;
+    height:210px;
+    background-color:ButtonFace;
+}
+
+.contentBody {
+
+    width: 62   0px;
+    color: blue;
+    float: left;
+    margin-top: 20px;
+    border: 1px solid;
+}
+
+.sidebar {
+
+    width:300px;
+    float:right;
+    margin-top: 30px;
+    border: 1px solid;
+}
+
+.infectBox {
+
+    width: 300px;
+    height: 200px;
+    background-color: #8fdcd6;
+    margin-bottom: 20px;
+    float: left;
+
+}
+
+.donate {
+
+    width: 300px;
+    height: 150px;
+    background-color: #00b0a2;
+    float: left;
+
+}
+.calendar {
+
+    width: 300px;
+    height: 200px;
+    background-color: #f7bd41;
+    margin-bottom: 20px;
+    float: left;
+    margin-left: 5px;
+
+}
+
+.bottomBar {
+
+    height: 200px;
+    width: 960px;
+    float:left;
+    margin-top: 40px;
+    border: 1px solid;
+}
+
+.Maps {
+
+    width: 300px;
+    height: 200px;
+    background-color: #7be576;
+    margin-bottom: 20px;
+    float: left;
+    margin-left:25px;
+
+}
+.Other {
+
+    width: 300px;
+    height: 200px;
+    background-color: #c0f5bd;
+    margin-bottom: 20px;
+    float: left;
+    margin-left:25px;
+
+}
+
+.footer {
+    background-color: #a0bfed;
+    width: 960px;
+    float: left;
+    margin-top: 20px;
+    min-height:100px;
+}
