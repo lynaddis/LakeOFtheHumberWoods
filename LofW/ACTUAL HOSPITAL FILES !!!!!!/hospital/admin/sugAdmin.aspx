@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="sugAdmin.aspx.cs"  MasterPageFile="~/Master.master"  Inherits="admin_sugAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="sugAdmin.aspx.cs"   Inherits="admin_sugAdmin" %>
 
 <!DOCTYPE html>
 
