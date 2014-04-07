@@ -5,19 +5,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class admin_sugAdmin : System.Web.UI.Page
+public partial class newsadmin : System.Web.UI.Page
 {
+
     linqClassA objLinq = new linqClassA();  //new instance of the class
     private void _subRebind()
     {
-        txt_suggestionI.Text = string.Empty;
-        txt_firstI.Text = string.Empty;
-        txt_lastI.Text = string.Empty;
-        txt_phoneI.Text = string.Empty;
-        txt_hours.Text = string.Empty;
-        txt_emailI.Text = string.Empty;
-        txt_commentI.Text = string.Empty;
-        dlt_all.DataSource = objLinq.getSuggestion();
+        txt_filterI.Text = string.Empty;
+        txt_filterafterI.Text = string.Empty;
+        txt_departmentI.Text = string.Empty;
+        txt_dateI.Text = string.Empty;
+        dlt_all.DataSource = objLinq.getNew();
         dlt_all.DataBind();
         // Binds the data from the database and allows it to be manipulated through the textboxes
     }
@@ -34,8 +32,10 @@ public partial class admin_sugAdmin : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Insert":
-
-                _strMessage(objLinq.commitInsert(txt_suggestionI.Text, txt_firstI.Text, txt_lastI.Text, txt_phoneI.Text, txt_hours.Text, txt_emailI.Text, txt_commentI.Text), "insert"); 
+                string PublishBefore = (Convert.ToDateTime(txt_filterI.Text)).ToShortDateString();
+                string PublishAfter = (Convert.ToDateTime(txt_filterafterI.Text)).ToShortDateString();
+                string Date = (Convert.ToDateTime(txt_dateI.Text)).ToShortDateString();
+                _strMessage(objLinq.commitInsert(PublishBefore, PublishAfter,txt_departmentI.Text, Date), "insert");
                 _subRebind();
                 break;
             case "Cancel":
@@ -49,13 +49,13 @@ public partial class admin_sugAdmin : System.Web.UI.Page
     {
         if (flag)
         {
-            lbl_message.Text = "Suggestion " + str + "was successful";
+            lbl_message.Text = "News " + str + "" + "was successful";
 
         }
 
         else
         {
-            lbl_message.Text = "Sorry, unable to  " + str + "suggestion";
+            lbl_message.Text = "Sorry, unable to  " + str + "News";
 
         }
     }
@@ -65,16 +65,13 @@ public partial class admin_sugAdmin : System.Web.UI.Page
         switch (e.CommandName) // allows  Updates or deletes data using the textboxes  from the interface which is bounded to the database
         {
             case "Update":
-                TextBox txtType = (TextBox)e.Item.FindControl("txt_suggestionE");
-                TextBox txtFirst = (TextBox)e.Item.FindControl("txt_firstE");
-                TextBox txtLast = (TextBox)e.Item.FindControl("txt_lastE");
-                TextBox txtPhone = (TextBox)e.Item.FindControl("txt_phoneE");
-                TextBox txtHours = (TextBox)e.Item.FindControl("txt_hoursE");
-                TextBox txtEmail = (TextBox)e.Item.FindControl("txt_emailE");
-                TextBox txtComment = (TextBox)e.Item.FindControl("txt_commentE");
+                TextBox txtFirst = (TextBox)e.Item.FindControl("txt_filterE");
+                TextBox txtAfter = (TextBox)e.Item.FindControl("txt_filterafterE");
+                TextBox txtDep = (TextBox)e.Item.FindControl("txt_departmentE");
+                TextBox txtDate = (TextBox)e.Item.FindControl("txt_dateE");
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
-                int sugID = int.Parse(hdfID.Value.ToString());
-                _strMessage(objLinq.commitUpdate(sugID, txtType.Text, txtFirst.Text, txtLast.Text, txtPhone.Text, txtHours.Text, txtEmail.Text, txtComment.Text), "update");
+                int newsID = int.Parse(hdfID.Value.ToString());
+                _strMessage(objLinq.commitUpdate(newsID, txtFirst.Text, txtAfter.Text, txtDep.Text, txtDate.Text), "update");
                 _subRebind();
                 break;
             case "Delete":

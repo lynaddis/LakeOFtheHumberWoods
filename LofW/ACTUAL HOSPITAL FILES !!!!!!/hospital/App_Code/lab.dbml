@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="lynaddis" Class="labDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=lynaddis.db.12079962.hostedresource.com;Initial Catalog=lynaddis;User ID=lynaddis" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="lynaddisConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.lab" Member="labs">
+    <Type Name="lab">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patientID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="patientCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DateofBirth" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="age" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="testType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="testCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="resultType1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="resultType2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="resultdescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="abnormal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="referenceRange" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="units" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="lynaddis" Class="NewsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=lynaddis.db.12079962.hostedresource.com;Initial Catalog=lynaddis;User ID=lynaddis" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="lynaddisConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.News" Member="News">
+    <Type Name="New">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PublishBefore" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PublishAfter" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
