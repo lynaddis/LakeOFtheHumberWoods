@@ -1,11 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="newsupdates.aspx.cs"  MasterPageFile="~/Master.master" Inherits="newsupdates" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
-</asp:Content>
+
+
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
             <p>Here you can View Our News Events & Activities for the hospital</p>
@@ -37,14 +33,4 @@
             </asp:ListView>
         </asp:Panel>
    </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="cph_IB" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="cph_donate" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="cph_cal" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content8" ContentPlaceHolderID="cph_map" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content9" ContentPlaceHolderID="cph_other" Runat="Server">
-</asp:Content>
 
