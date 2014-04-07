@@ -4,8 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
-</asp:Content>
+
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
     <script src="js/jquery.js"></script>
@@ -31,9 +30,10 @@
     
 
   
-    <div>
-
-       <a href="javascript:void(0);" class="titleText toggler">Kenora</a>
+    <div id="listed_concern">
+        <h2>Health Concerns</h2>
+        <p>Select different regions to view currently trending health concerns</p>
+       <a href="javascript:void(0);" class="titleText toggler">+    Kenora</a>
 
 
         <div class="Kenora" style="display: none;">
@@ -75,7 +75,7 @@
 
         <br />
 
-        <a href="javascript:void(0);" class="titleText toggler">+ Ontario</a>
+        <a href="javascript:void(0);" class="titleText toggler">+   Ontario</a>
         <div class="Ontario" style="display:none">
          <asp:DataList ID="dtl_Ont" runat="server"  >
         <ItemTemplate>
@@ -109,11 +109,11 @@
         </ItemTemplate>
 
  
-    </asp:DataList>
-</div>
+    </asp:DataList></div>
+
         <br />
         <br />
-        <a href="javascript:void(0);" class="titleText toggler">+ Canada</a>
+        <a href="javascript:void(0);" class="titleText toggler">+   Canada</a>
         <div class="Canada" style="display:none">
         <asp:ListView ID="ltv_Can" runat="server" >
         <ItemTemplate>
@@ -150,6 +150,10 @@
     </asp:ListView>
             </div>
 
+            </div>
+
+        <div id="recommend">
+
         <h4>Do you have a recommendation for any listed illnessess? Let us know!</h4>
         
         <asp:Label ID="lbl_nameI" runat="server" Text="Your Name: " />
@@ -170,16 +174,6 @@
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" />
            <asp:Label ID="lbl_message" runat="server" />
     </div>
-
-</asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="cph_IB" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="cph_donate" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="cph_cal" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content8" ContentPlaceHolderID="cph_map" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content9" ContentPlaceHolderID="cph_other" Runat="Server">
+        
 </asp:Content>
 

@@ -15,49 +15,18 @@
         
         </asp:ContentPlaceHolder>
      <div class="login">
-<%-- 
-<asp:Login ID="log_form" runat="server" DestinationPageUrl="~/Admin/homeadmin.aspx" />--%>
+ 
+<asp:Login ID="log_form" runat="server" DestinationPageUrl="~/Admin/homeadmin.aspx" />
         </div>
       
 
-           <div class="menu"> 
-                <ul>
-                    <li>
-                        Home
-                    </li>
-                     <li>
-                     About
-                      </li>
-                    <li>
-                      We Care
-                     </li>
-                    <li>
-                     Ways To Help
-                    </li>
-                    <ul>
-                        <li>
-                            <a href="volunteer.aspx">
-                            Volunteer
-                                </a>
-                        </li>
-                        <li>
-                            Donations
-                        </li>
-                    </ul>
-                    <li>
-                    Community
-                    </li>
-                    <li>Contact Us</li>
-               
-
-                </ul>
-          
+                  
         <%--<asp:SiteMapDataSource ID="sds_main" runat="server" /> --%>
-
-           <%--  <asp:menu id="mnu_main" orientation="Horizontal" CssClass="menu" runat="server">--%>
+        <div id="menu">
+          <asp:menu id="mnu_main" orientation="Horizontal" CssClass="menu" runat="server">
  <%--DataSourceID="sds_main"--%>
 
-  <%--
+  
   <staticHoverStyle CssClass="hover"/>
   
              
@@ -102,69 +71,19 @@
 
  
   </items>
-</asp:menu>--%>
+</asp:menu>
     </div>
-        </div>
+       <asp:ContentPlaceHolder ID="cph_main" runat="server">
         <div class="banner">
             <div id="textDesc">
             <asp:ContentPlaceHolder ID="cph_banner" runat="server">
                 
             </asp:ContentPlaceHolder>
                 </div>
-            <div id="IMGslide">
-                
-            </div>
-
-        </div>
-        <div class="contentBody">
-            <asp:ContentPlaceHolder ID="cph_main" runat="server">
-
-            </asp:ContentPlaceHolder>
             
-        </div>
-        <div class="sidebar">
-        <div class="infectBox">
-
-            <asp:ContentPlaceHolder Id="cph_IB" runat="server">
-                Infection Alert!
-            </asp:ContentPlaceHolder>
-
-        </div>
-
-            <div class="donate">
-
-            <asp:ContentPlaceHolder Id="cph_donate" runat="server">
-                GIVE US MONEY
-            </asp:ContentPlaceHolder>
-
-        </div>
-            </div>
-                <div class="bottomBar">
-        <div class="calendar">
-
-            <asp:ContentPlaceHolder Id="cph_cal" runat="server">
-                Calendar!
-            </asp:ContentPlaceHolder>
-
-        </div>
-
-            <div class="Maps">
-
-            <asp:ContentPlaceHolder Id="cph_map" runat="server">
-                MAPS
-            </asp:ContentPlaceHolder>
-
-        </div>
-              <div class="Other">
-
-            <asp:ContentPlaceHolder Id="cph_other" runat="server">
-               Other
-            </asp:ContentPlaceHolder>
-
-        </div>
             </div>
 
-
+           </asp:ContentPlaceHolder>
          <div class="footer">  </div>
          <%--  <asp:TreeView ID="trv_main" runat="server" DataSourceID="sds_main" ShowLines="true" />
             <asp:SiteMapDataSource ID="sds_tree" runat="server"  ShowStartingNode="true"/>--%>

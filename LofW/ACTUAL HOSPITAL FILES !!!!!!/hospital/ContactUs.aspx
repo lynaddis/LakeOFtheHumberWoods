@@ -64,14 +64,3 @@
         </table>
     <asp:ValidationSummary ID="vds_all" runat="server" HeaderText="Please fill in the required fields !" DisplayMode="BulletList" ShowSummary="true" />
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="cph_IB" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="cph_donate" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="cph_cal" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content8" ContentPlaceHolderID="cph_map" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content9" ContentPlaceHolderID="cph_other" Runat="Server">
-</asp:Content>
-
