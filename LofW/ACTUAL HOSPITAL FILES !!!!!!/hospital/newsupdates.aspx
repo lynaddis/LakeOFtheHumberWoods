@@ -1,15 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="newsupdates.aspx.cs" Inherits="newsupdates" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="newsupdates.aspx.cs"  MasterPageFile="~/Master.master" Inherits="newsupdates" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-            <p>Here you can View Our News Events and Activities for the hospital</p>
+            <p>Here you can View Our News Events & Activities for the hospital</p>
             <asp:Button ID="ButtonEditP1" runat="server" Text="Find News" CommandName="ViewNews" OnClick="ButtonEditP1_Click" />
     
        
@@ -37,7 +36,15 @@
                
             </asp:ListView>
         </asp:Panel>
-    </div>
-    </form>
-</body>
-</html>
+   </asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cph_IB" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content6" ContentPlaceHolderID="cph_donate" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content7" ContentPlaceHolderID="cph_cal" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content8" ContentPlaceHolderID="cph_map" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content9" ContentPlaceHolderID="cph_other" Runat="Server">
+</asp:Content>
+
