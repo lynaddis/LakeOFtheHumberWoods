@@ -12,31 +12,31 @@ public class accessDropDownFill
    
     public IQueryable<tblCountry> getCountryNames()
     {
-        dropDownFillDataContext objCountry = new dropDownFillDataContext();
+        hospitalDataContext objCountry = new hospitalDataContext();
         var allcountry = from x in objCountry.tblCountries select x;
         return allcountry;
     }
     public IQueryable<tblProvince> getProvinceByCountryId(int id)
     {
-        dropDownFillDataContext objProvince = new dropDownFillDataContext();
+        hospitalDataContext objProvince = new hospitalDataContext();
         var provinceById = from x in objProvince.tblProvinces where x.provinceCountryId == id select x;
         return provinceById;
     }
     public IQueryable<tblCity> getCityById(int id)
     {
-        dropDownFillDataContext objCity = new dropDownFillDataContext();
+        hospitalDataContext objCity = new hospitalDataContext();
         var cityById = from x in objCity.tblCities where x.cityProvinceId == id select x;
         return cityById;
     }
     public ISingleResult<donorInformation> getDonorInformation()
     {
-        dropDownFillDataContext objDonor = new dropDownFillDataContext();
+        hospitalDataContext objDonor = new hospitalDataContext();
         var donorInfo = objDonor.spGetDonorInformation();
         return donorInfo;
     }
     public ISingleResult<donorInformation> getDonorInformationById(int id)
     {
-        dropDownFillDataContext objDonor = new dropDownFillDataContext();
+        hospitalDataContext objDonor = new hospitalDataContext();
         var donorById = objDonor.spGetDonorInformationById(id);
         return donorById;
     }
@@ -44,7 +44,7 @@ public class accessDropDownFill
         string company,string zip,string pobox,string country,string province,string city,
             string email,string Hphone,string Wphone,string emailSend)
     {
-        dropDownFillDataContext objupd = new dropDownFillDataContext();
+        hospitalDataContext objupd = new hospitalDataContext();
         int donorById = objupd.spUpdateDonorInformation(id,amount,title,fname,middle,lname,type,
         company,zip,pobox,country,province,city,
             email,Hphone,Wphone,emailSend);
@@ -54,7 +54,7 @@ public class accessDropDownFill
        string company, string zip, string pobox, string country, string province, string city,
            string email, string Hphone, string Wphone, string emailSend)
     {
-        dropDownFillDataContext objins = new dropDownFillDataContext();
+        hospitalDataContext objins = new hospitalDataContext();
         int donorById = objins.spInsertDonorInformation(amount, title, fname, middle, lname, type,
         company, zip, pobox, country, province, city,
             email, Hphone, Wphone, emailSend);
@@ -64,20 +64,20 @@ public class accessDropDownFill
 
     public int updateBedRooms(int count,int bedid)
     {
-        dropDownFillDataContext objbed = new dropDownFillDataContext();
+        hospitalDataContext objbed = new hospitalDataContext();
       int bedupd=  objbed.spUpdateBedRooms(count, bedid);
       return bedupd;
     }
     public ISingleResult<tblBedRoom> getBedRoomsData()
     {
-        dropDownFillDataContext objgetBed = new dropDownFillDataContext();
+        hospitalDataContext objgetBed = new hospitalDataContext();
         //var query=from x in objgetBed.tblBedRooms select(objgetBed.tblRoomTypes);
         var opp= objgetBed.spGetBedRoomAndRoomType();
         return opp;
     }
     public bool updateBedRoomsAvalability(int id,int num)
     { 
-    dropDownFillDataContext objfill=new dropDownFillDataContext();
+    hospitalDataContext objfill=new hospitalDataContext();
     var update = objfill.tblBedRooms.Single(x => x.bedId == id);
     update.bedAvailable = num;
     objfill.SubmitChanges();
@@ -88,7 +88,7 @@ public class accessDropDownFill
 
     public bool insertTicket(string tNo)
     {
-        dropDownFillDataContext objticket = new dropDownFillDataContext();
+        hospitalDataContext objticket = new hospitalDataContext();
         using (objticket)
         {
             tblTicket objnewTicket = new tblTicket();
@@ -101,7 +101,7 @@ public class accessDropDownFill
 
     public IQueryable<tblTicket> GetParkingTicket(string ticket)
     {
-        dropDownFillDataContext objget = new dropDownFillDataContext();
+        hospitalDataContext objget = new hospitalDataContext();
         var result = from x in objget.tblTickets where x.ticketNo == ticket select x;
         
             return result;
@@ -110,7 +110,7 @@ public class accessDropDownFill
     }
     public bool deleteParkingTicket(int id)
     {
-        dropDownFillDataContext objdel = new dropDownFillDataContext();
+        hospitalDataContext objdel = new hospitalDataContext();
         var delTicket = objdel.tblTickets.Single(x => x.ticketId == id);
         objdel.tblTickets.DeleteOnSubmit(delTicket);
         objdel.SubmitChanges();

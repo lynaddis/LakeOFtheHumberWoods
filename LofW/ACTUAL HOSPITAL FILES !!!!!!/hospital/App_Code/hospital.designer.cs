@@ -22,7 +22,7 @@ using System.Reflection;
 
 
 [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="DeetaBase")]
-public partial class submClassDataContext : System.Data.Linq.DataContext
+public partial class hospitalDataContext : System.Data.Linq.DataContext
 {
 	
 	private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -83,33 +83,36 @@ public partial class submClassDataContext : System.Data.Linq.DataContext
   partial void Insertsuggestion(suggestion instance);
   partial void Updatesuggestion(suggestion instance);
   partial void Deletesuggestion(suggestion instance);
+  partial void InserttblTicket(tblTicket instance);
+  partial void UpdatetblTicket(tblTicket instance);
+  partial void DeletetblTicket(tblTicket instance);
   #endregion
 	
-	public submClassDataContext() : 
+	public hospitalDataContext() : 
 			base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DeetaBaseConnectionString"].ConnectionString, mappingSource)
 	{
 		OnCreated();
 	}
 	
-	public submClassDataContext(string connection) : 
+	public hospitalDataContext(string connection) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
 	}
 	
-	public submClassDataContext(System.Data.IDbConnection connection) : 
+	public hospitalDataContext(System.Data.IDbConnection connection) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
 	}
 	
-	public submClassDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+	public hospitalDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
 	}
 	
-	public submClassDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+	public hospitalDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 			base(connection, mappingSource)
 	{
 		OnCreated();
@@ -313,6 +316,137 @@ public partial class submClassDataContext : System.Data.Linq.DataContext
 		{
 			return this.GetTable<tblRoomType>();
 		}
+	}
+	
+	public System.Data.Linq.Table<tblCity1> tblCity1s
+	{
+		get
+		{
+			return this.GetTable<tblCity1>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tblCountry1> tblCountry1s
+	{
+		get
+		{
+			return this.GetTable<tblCountry1>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tblProvince1> tblProvince1s
+	{
+		get
+		{
+			return this.GetTable<tblProvince1>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tblRoomType1> tblRoomType1s
+	{
+		get
+		{
+			return this.GetTable<tblRoomType1>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tblTicket> tblTickets
+	{
+		get
+		{
+			return this.GetTable<tblTicket>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tblBedRoom1> tblBedRoom1s
+	{
+		get
+		{
+			return this.GetTable<tblBedRoom1>();
+		}
+	}
+	
+	public System.Data.Linq.Table<donorInformation1> donorInformation1s
+	{
+		get
+		{
+			return this.GetTable<donorInformation1>();
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spUpdateDonorInformation")]
+	public int spUpdateDonorInformation(
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> amount, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string title, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string firstname, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string middle, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string lastname, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string company, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string zipcode, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string pobox, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string country, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string province, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string city, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string email, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string phonehome, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string phonework, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string emailsend)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, amount, title, firstname, middle, lastname, type, company, zipcode, pobox, country, province, city, email, phonehome, phonework, emailsend);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spUpdateBedRooms")]
+	public int spUpdateBedRooms([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> bedcount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> bedid)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bedcount, bedid);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spInsertDonorInformation")]
+	public int spInsertDonorInformation(
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> amount, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string title, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string firstname, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string middle, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string lastname, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string type, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string company, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string zipcode, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string pobox, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string country, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string province, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string city, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string email, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string phonehome, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string phonework, 
+				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string emailsend)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), amount, title, firstname, middle, lastname, type, company, zipcode, pobox, country, province, city, email, phonehome, phonework, emailsend);
+		return ((int)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetDonorInformationById")]
+	public ISingleResult<spGetDonorInformationByIdResult> spGetDonorInformationById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+		return ((ISingleResult<spGetDonorInformationByIdResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetDonorInformation")]
+	public ISingleResult<spGetDonorInformationResult> spGetDonorInformation()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<spGetDonorInformationResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetBedRoomAndRoomType")]
+	public ISingleResult<spGetBedRoomAndRoomTypeResult> spGetBedRoomAndRoomType()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<spGetBedRoomAndRoomTypeResult>)(result.ReturnValue));
 	}
 }
 
@@ -5207,6 +5341,1520 @@ public partial class tblRoomType
 			if ((this._roomTotleBed != value))
 			{
 				this._roomTotleBed = value;
+			}
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblCity")]
+public partial class tblCity1
+{
+	
+	private int _cityId;
+	
+	private string _cityName;
+	
+	private int _cityProvinceId;
+	
+	public tblCity1()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cityId", DbType="Int NOT NULL")]
+	public int cityId
+	{
+		get
+		{
+			return this._cityId;
+		}
+		set
+		{
+			if ((this._cityId != value))
+			{
+				this._cityId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cityName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string cityName
+	{
+		get
+		{
+			return this._cityName;
+		}
+		set
+		{
+			if ((this._cityName != value))
+			{
+				this._cityName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cityProvinceId", DbType="Int NOT NULL")]
+	public int cityProvinceId
+	{
+		get
+		{
+			return this._cityProvinceId;
+		}
+		set
+		{
+			if ((this._cityProvinceId != value))
+			{
+				this._cityProvinceId = value;
+			}
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblCountry")]
+public partial class tblCountry1
+{
+	
+	private int _countryId;
+	
+	private string _countryName;
+	
+	public tblCountry1()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_countryId", DbType="Int NOT NULL")]
+	public int countryId
+	{
+		get
+		{
+			return this._countryId;
+		}
+		set
+		{
+			if ((this._countryId != value))
+			{
+				this._countryId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_countryName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string countryName
+	{
+		get
+		{
+			return this._countryName;
+		}
+		set
+		{
+			if ((this._countryName != value))
+			{
+				this._countryName = value;
+			}
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblProvince")]
+public partial class tblProvince1
+{
+	
+	private int _provinceId;
+	
+	private string _provikceName;
+	
+	private int _provinceCountryId;
+	
+	public tblProvince1()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_provinceId", DbType="Int NOT NULL")]
+	public int provinceId
+	{
+		get
+		{
+			return this._provinceId;
+		}
+		set
+		{
+			if ((this._provinceId != value))
+			{
+				this._provinceId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_provikceName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string provikceName
+	{
+		get
+		{
+			return this._provikceName;
+		}
+		set
+		{
+			if ((this._provikceName != value))
+			{
+				this._provikceName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_provinceCountryId", DbType="Int NOT NULL")]
+	public int provinceCountryId
+	{
+		get
+		{
+			return this._provinceCountryId;
+		}
+		set
+		{
+			if ((this._provinceCountryId != value))
+			{
+				this._provinceCountryId = value;
+			}
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblRoomType")]
+public partial class tblRoomType1
+{
+	
+	private int _roomId;
+	
+	private string _roomType;
+	
+	private int _roomTotleBed;
+	
+	public tblRoomType1()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_roomId", DbType="Int NOT NULL")]
+	public int roomId
+	{
+		get
+		{
+			return this._roomId;
+		}
+		set
+		{
+			if ((this._roomId != value))
+			{
+				this._roomId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_roomType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string roomType
+	{
+		get
+		{
+			return this._roomType;
+		}
+		set
+		{
+			if ((this._roomType != value))
+			{
+				this._roomType = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_roomTotleBed", DbType="Int NOT NULL")]
+	public int roomTotleBed
+	{
+		get
+		{
+			return this._roomTotleBed;
+		}
+		set
+		{
+			if ((this._roomTotleBed != value))
+			{
+				this._roomTotleBed = value;
+			}
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblTickets")]
+public partial class tblTicket : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _ticketId;
+	
+	private string _ticketNo;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnticketIdChanging(int value);
+    partial void OnticketIdChanged();
+    partial void OnticketNoChanging(string value);
+    partial void OnticketNoChanged();
+    #endregion
+	
+	public tblTicket()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ticketId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int ticketId
+	{
+		get
+		{
+			return this._ticketId;
+		}
+		set
+		{
+			if ((this._ticketId != value))
+			{
+				this.OnticketIdChanging(value);
+				this.SendPropertyChanging();
+				this._ticketId = value;
+				this.SendPropertyChanged("ticketId");
+				this.OnticketIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ticketNo", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string ticketNo
+	{
+		get
+		{
+			return this._ticketNo;
+		}
+		set
+		{
+			if ((this._ticketNo != value))
+			{
+				this.OnticketNoChanging(value);
+				this.SendPropertyChanging();
+				this._ticketNo = value;
+				this.SendPropertyChanged("ticketNo");
+				this.OnticketNoChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblBedRooms")]
+public partial class tblBedRoom1
+{
+	
+	private int _bedId;
+	
+	private int _bedCount;
+	
+	private int _bedAvailable;
+	
+	private int _bedRoomId;
+	
+	private System.Nullable<int> _roomNo;
+	
+	public tblBedRoom1()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bedId", DbType="Int NOT NULL")]
+	public int bedId
+	{
+		get
+		{
+			return this._bedId;
+		}
+		set
+		{
+			if ((this._bedId != value))
+			{
+				this._bedId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bedCount", DbType="Int NOT NULL")]
+	public int bedCount
+	{
+		get
+		{
+			return this._bedCount;
+		}
+		set
+		{
+			if ((this._bedCount != value))
+			{
+				this._bedCount = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bedAvailable", DbType="Int NOT NULL")]
+	public int bedAvailable
+	{
+		get
+		{
+			return this._bedAvailable;
+		}
+		set
+		{
+			if ((this._bedAvailable != value))
+			{
+				this._bedAvailable = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bedRoomId", DbType="Int NOT NULL")]
+	public int bedRoomId
+	{
+		get
+		{
+			return this._bedRoomId;
+		}
+		set
+		{
+			if ((this._bedRoomId != value))
+			{
+				this._bedRoomId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_roomNo", DbType="Int")]
+	public System.Nullable<int> roomNo
+	{
+		get
+		{
+			return this._roomNo;
+		}
+		set
+		{
+			if ((this._roomNo != value))
+			{
+				this._roomNo = value;
+			}
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.donorInformation")]
+public partial class donorInformation1
+{
+	
+	private int _donorId;
+	
+	private int _donorAmount;
+	
+	private string _donorTitle;
+	
+	private string _donorFirstName;
+	
+	private string _donorMiddleName;
+	
+	private string _donorLastName;
+	
+	private string _DonorType;
+	
+	private string _DonorCompany;
+	
+	private string _donorZipCode;
+	
+	private string _donorPoBox;
+	
+	private string _donorCountry;
+	
+	private string _donorProvince;
+	
+	private string _donorCity;
+	
+	private string _donorEmail;
+	
+	private string _donorPhoneHome;
+	
+	private string _donorPhoneWork;
+	
+	private string _donorEmailSend;
+	
+	public donorInformation1()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorId", DbType="Int NOT NULL")]
+	public int donorId
+	{
+		get
+		{
+			return this._donorId;
+		}
+		set
+		{
+			if ((this._donorId != value))
+			{
+				this._donorId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorAmount", DbType="Int NOT NULL")]
+	public int donorAmount
+	{
+		get
+		{
+			return this._donorAmount;
+		}
+		set
+		{
+			if ((this._donorAmount != value))
+			{
+				this._donorAmount = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorTitle", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorTitle
+	{
+		get
+		{
+			return this._donorTitle;
+		}
+		set
+		{
+			if ((this._donorTitle != value))
+			{
+				this._donorTitle = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorFirstName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorFirstName
+	{
+		get
+		{
+			return this._donorFirstName;
+		}
+		set
+		{
+			if ((this._donorFirstName != value))
+			{
+				this._donorFirstName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorMiddleName", DbType="NVarChar(50)")]
+	public string donorMiddleName
+	{
+		get
+		{
+			return this._donorMiddleName;
+		}
+		set
+		{
+			if ((this._donorMiddleName != value))
+			{
+				this._donorMiddleName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorLastName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorLastName
+	{
+		get
+		{
+			return this._donorLastName;
+		}
+		set
+		{
+			if ((this._donorLastName != value))
+			{
+				this._donorLastName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorType", DbType="NVarChar(50)")]
+	public string DonorType
+	{
+		get
+		{
+			return this._DonorType;
+		}
+		set
+		{
+			if ((this._DonorType != value))
+			{
+				this._DonorType = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorCompany", DbType="NVarChar(50)")]
+	public string DonorCompany
+	{
+		get
+		{
+			return this._DonorCompany;
+		}
+		set
+		{
+			if ((this._DonorCompany != value))
+			{
+				this._DonorCompany = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorZipCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorZipCode
+	{
+		get
+		{
+			return this._donorZipCode;
+		}
+		set
+		{
+			if ((this._donorZipCode != value))
+			{
+				this._donorZipCode = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPoBox", DbType="NVarChar(50)")]
+	public string donorPoBox
+	{
+		get
+		{
+			return this._donorPoBox;
+		}
+		set
+		{
+			if ((this._donorPoBox != value))
+			{
+				this._donorPoBox = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCountry", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorCountry
+	{
+		get
+		{
+			return this._donorCountry;
+		}
+		set
+		{
+			if ((this._donorCountry != value))
+			{
+				this._donorCountry = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorProvince", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorProvince
+	{
+		get
+		{
+			return this._donorProvince;
+		}
+		set
+		{
+			if ((this._donorProvince != value))
+			{
+				this._donorProvince = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCity", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorCity
+	{
+		get
+		{
+			return this._donorCity;
+		}
+		set
+		{
+			if ((this._donorCity != value))
+			{
+				this._donorCity = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmail", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorEmail
+	{
+		get
+		{
+			return this._donorEmail;
+		}
+		set
+		{
+			if ((this._donorEmail != value))
+			{
+				this._donorEmail = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneHome", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+	public string donorPhoneHome
+	{
+		get
+		{
+			return this._donorPhoneHome;
+		}
+		set
+		{
+			if ((this._donorPhoneHome != value))
+			{
+				this._donorPhoneHome = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneWork", DbType="NVarChar(20)")]
+	public string donorPhoneWork
+	{
+		get
+		{
+			return this._donorPhoneWork;
+		}
+		set
+		{
+			if ((this._donorPhoneWork != value))
+			{
+				this._donorPhoneWork = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmailSend", DbType="NChar(10)")]
+	public string donorEmailSend
+	{
+		get
+		{
+			return this._donorEmailSend;
+		}
+		set
+		{
+			if ((this._donorEmailSend != value))
+			{
+				this._donorEmailSend = value;
+			}
+		}
+	}
+}
+
+public partial class spGetDonorInformationByIdResult
+{
+	
+	private int _donorId;
+	
+	private int _donorAmount;
+	
+	private string _donorTitle;
+	
+	private string _donorFirstName;
+	
+	private string _donorMiddleName;
+	
+	private string _donorLastName;
+	
+	private string _DonorType;
+	
+	private string _DonorCompany;
+	
+	private string _donorZipCode;
+	
+	private string _donorPoBox;
+	
+	private string _donorCountry;
+	
+	private string _donorProvince;
+	
+	private string _donorCity;
+	
+	private string _donorEmail;
+	
+	private string _donorPhoneHome;
+	
+	private string _donorPhoneWork;
+	
+	private string _donorEmailSend;
+	
+	public spGetDonorInformationByIdResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorId", DbType="Int NOT NULL")]
+	public int donorId
+	{
+		get
+		{
+			return this._donorId;
+		}
+		set
+		{
+			if ((this._donorId != value))
+			{
+				this._donorId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorAmount", DbType="Int NOT NULL")]
+	public int donorAmount
+	{
+		get
+		{
+			return this._donorAmount;
+		}
+		set
+		{
+			if ((this._donorAmount != value))
+			{
+				this._donorAmount = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorTitle", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorTitle
+	{
+		get
+		{
+			return this._donorTitle;
+		}
+		set
+		{
+			if ((this._donorTitle != value))
+			{
+				this._donorTitle = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorFirstName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorFirstName
+	{
+		get
+		{
+			return this._donorFirstName;
+		}
+		set
+		{
+			if ((this._donorFirstName != value))
+			{
+				this._donorFirstName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorMiddleName", DbType="NVarChar(50)")]
+	public string donorMiddleName
+	{
+		get
+		{
+			return this._donorMiddleName;
+		}
+		set
+		{
+			if ((this._donorMiddleName != value))
+			{
+				this._donorMiddleName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorLastName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorLastName
+	{
+		get
+		{
+			return this._donorLastName;
+		}
+		set
+		{
+			if ((this._donorLastName != value))
+			{
+				this._donorLastName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorType", DbType="NVarChar(50)")]
+	public string DonorType
+	{
+		get
+		{
+			return this._DonorType;
+		}
+		set
+		{
+			if ((this._DonorType != value))
+			{
+				this._DonorType = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorCompany", DbType="NVarChar(50)")]
+	public string DonorCompany
+	{
+		get
+		{
+			return this._DonorCompany;
+		}
+		set
+		{
+			if ((this._DonorCompany != value))
+			{
+				this._DonorCompany = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorZipCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorZipCode
+	{
+		get
+		{
+			return this._donorZipCode;
+		}
+		set
+		{
+			if ((this._donorZipCode != value))
+			{
+				this._donorZipCode = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPoBox", DbType="NVarChar(50)")]
+	public string donorPoBox
+	{
+		get
+		{
+			return this._donorPoBox;
+		}
+		set
+		{
+			if ((this._donorPoBox != value))
+			{
+				this._donorPoBox = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCountry", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorCountry
+	{
+		get
+		{
+			return this._donorCountry;
+		}
+		set
+		{
+			if ((this._donorCountry != value))
+			{
+				this._donorCountry = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorProvince", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorProvince
+	{
+		get
+		{
+			return this._donorProvince;
+		}
+		set
+		{
+			if ((this._donorProvince != value))
+			{
+				this._donorProvince = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCity", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorCity
+	{
+		get
+		{
+			return this._donorCity;
+		}
+		set
+		{
+			if ((this._donorCity != value))
+			{
+				this._donorCity = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmail", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorEmail
+	{
+		get
+		{
+			return this._donorEmail;
+		}
+		set
+		{
+			if ((this._donorEmail != value))
+			{
+				this._donorEmail = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneHome", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+	public string donorPhoneHome
+	{
+		get
+		{
+			return this._donorPhoneHome;
+		}
+		set
+		{
+			if ((this._donorPhoneHome != value))
+			{
+				this._donorPhoneHome = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneWork", DbType="NVarChar(20)")]
+	public string donorPhoneWork
+	{
+		get
+		{
+			return this._donorPhoneWork;
+		}
+		set
+		{
+			if ((this._donorPhoneWork != value))
+			{
+				this._donorPhoneWork = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmailSend", DbType="NChar(10)")]
+	public string donorEmailSend
+	{
+		get
+		{
+			return this._donorEmailSend;
+		}
+		set
+		{
+			if ((this._donorEmailSend != value))
+			{
+				this._donorEmailSend = value;
+			}
+		}
+	}
+}
+
+public partial class spGetDonorInformationResult
+{
+	
+	private int _donorId;
+	
+	private int _donorAmount;
+	
+	private string _donorTitle;
+	
+	private string _donorFirstName;
+	
+	private string _donorMiddleName;
+	
+	private string _donorLastName;
+	
+	private string _DonorType;
+	
+	private string _DonorCompany;
+	
+	private string _donorZipCode;
+	
+	private string _donorPoBox;
+	
+	private string _donorCountry;
+	
+	private string _donorProvince;
+	
+	private string _donorCity;
+	
+	private string _donorEmail;
+	
+	private string _donorPhoneHome;
+	
+	private string _donorPhoneWork;
+	
+	private string _donorEmailSend;
+	
+	public spGetDonorInformationResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorId", DbType="Int NOT NULL")]
+	public int donorId
+	{
+		get
+		{
+			return this._donorId;
+		}
+		set
+		{
+			if ((this._donorId != value))
+			{
+				this._donorId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorAmount", DbType="Int NOT NULL")]
+	public int donorAmount
+	{
+		get
+		{
+			return this._donorAmount;
+		}
+		set
+		{
+			if ((this._donorAmount != value))
+			{
+				this._donorAmount = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorTitle", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorTitle
+	{
+		get
+		{
+			return this._donorTitle;
+		}
+		set
+		{
+			if ((this._donorTitle != value))
+			{
+				this._donorTitle = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorFirstName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorFirstName
+	{
+		get
+		{
+			return this._donorFirstName;
+		}
+		set
+		{
+			if ((this._donorFirstName != value))
+			{
+				this._donorFirstName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorMiddleName", DbType="NVarChar(50)")]
+	public string donorMiddleName
+	{
+		get
+		{
+			return this._donorMiddleName;
+		}
+		set
+		{
+			if ((this._donorMiddleName != value))
+			{
+				this._donorMiddleName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorLastName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorLastName
+	{
+		get
+		{
+			return this._donorLastName;
+		}
+		set
+		{
+			if ((this._donorLastName != value))
+			{
+				this._donorLastName = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorType", DbType="NVarChar(50)")]
+	public string DonorType
+	{
+		get
+		{
+			return this._DonorType;
+		}
+		set
+		{
+			if ((this._DonorType != value))
+			{
+				this._DonorType = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorCompany", DbType="NVarChar(50)")]
+	public string DonorCompany
+	{
+		get
+		{
+			return this._DonorCompany;
+		}
+		set
+		{
+			if ((this._DonorCompany != value))
+			{
+				this._DonorCompany = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorZipCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string donorZipCode
+	{
+		get
+		{
+			return this._donorZipCode;
+		}
+		set
+		{
+			if ((this._donorZipCode != value))
+			{
+				this._donorZipCode = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPoBox", DbType="NVarChar(50)")]
+	public string donorPoBox
+	{
+		get
+		{
+			return this._donorPoBox;
+		}
+		set
+		{
+			if ((this._donorPoBox != value))
+			{
+				this._donorPoBox = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCountry", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorCountry
+	{
+		get
+		{
+			return this._donorCountry;
+		}
+		set
+		{
+			if ((this._donorCountry != value))
+			{
+				this._donorCountry = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorProvince", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorProvince
+	{
+		get
+		{
+			return this._donorProvince;
+		}
+		set
+		{
+			if ((this._donorProvince != value))
+			{
+				this._donorProvince = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCity", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorCity
+	{
+		get
+		{
+			return this._donorCity;
+		}
+		set
+		{
+			if ((this._donorCity != value))
+			{
+				this._donorCity = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmail", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+	public string donorEmail
+	{
+		get
+		{
+			return this._donorEmail;
+		}
+		set
+		{
+			if ((this._donorEmail != value))
+			{
+				this._donorEmail = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneHome", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+	public string donorPhoneHome
+	{
+		get
+		{
+			return this._donorPhoneHome;
+		}
+		set
+		{
+			if ((this._donorPhoneHome != value))
+			{
+				this._donorPhoneHome = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneWork", DbType="NVarChar(20)")]
+	public string donorPhoneWork
+	{
+		get
+		{
+			return this._donorPhoneWork;
+		}
+		set
+		{
+			if ((this._donorPhoneWork != value))
+			{
+				this._donorPhoneWork = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmailSend", DbType="NChar(10)")]
+	public string donorEmailSend
+	{
+		get
+		{
+			return this._donorEmailSend;
+		}
+		set
+		{
+			if ((this._donorEmailSend != value))
+			{
+				this._donorEmailSend = value;
+			}
+		}
+	}
+}
+
+public partial class spGetBedRoomAndRoomTypeResult
+{
+	
+	private int _bedId;
+	
+	private int _bedCount;
+	
+	private int _bedAvailable;
+	
+	private int _bedRoomId;
+	
+	private string _roomType;
+	
+	private int _roomTotleBed;
+	
+	private int _roomId;
+	
+	private System.Nullable<int> _roomNo;
+	
+	public spGetBedRoomAndRoomTypeResult()
+	{
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bedId", DbType="Int NOT NULL")]
+	public int bedId
+	{
+		get
+		{
+			return this._bedId;
+		}
+		set
+		{
+			if ((this._bedId != value))
+			{
+				this._bedId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bedCount", DbType="Int NOT NULL")]
+	public int bedCount
+	{
+		get
+		{
+			return this._bedCount;
+		}
+		set
+		{
+			if ((this._bedCount != value))
+			{
+				this._bedCount = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bedAvailable", DbType="Int NOT NULL")]
+	public int bedAvailable
+	{
+		get
+		{
+			return this._bedAvailable;
+		}
+		set
+		{
+			if ((this._bedAvailable != value))
+			{
+				this._bedAvailable = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_bedRoomId", DbType="Int NOT NULL")]
+	public int bedRoomId
+	{
+		get
+		{
+			return this._bedRoomId;
+		}
+		set
+		{
+			if ((this._bedRoomId != value))
+			{
+				this._bedRoomId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_roomType", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+	public string roomType
+	{
+		get
+		{
+			return this._roomType;
+		}
+		set
+		{
+			if ((this._roomType != value))
+			{
+				this._roomType = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_roomTotleBed", DbType="Int NOT NULL")]
+	public int roomTotleBed
+	{
+		get
+		{
+			return this._roomTotleBed;
+		}
+		set
+		{
+			if ((this._roomTotleBed != value))
+			{
+				this._roomTotleBed = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_roomId", DbType="Int NOT NULL")]
+	public int roomId
+	{
+		get
+		{
+			return this._roomId;
+		}
+		set
+		{
+			if ((this._roomId != value))
+			{
+				this._roomId = value;
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_roomNo", DbType="Int")]
+	public System.Nullable<int> roomNo
+	{
+		get
+		{
+			return this._roomNo;
+		}
+		set
+		{
+			if ((this._roomNo != value))
+			{
+				this._roomNo = value;
 			}
 		}
 	}

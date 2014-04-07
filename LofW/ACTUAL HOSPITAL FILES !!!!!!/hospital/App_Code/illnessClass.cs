@@ -8,7 +8,7 @@ public class illnessClass
 {
     public IQueryable<illnessAdmin> getIllnesses()
     {
-        submClassDataContext objIll = new submClassDataContext();
+        hospitalDataContext objIll = new hospitalDataContext();
 
         var allIllnesses = objIll.illnessAdmins.Select(x => x); /*x just represents your columns*/
         /*var allSubmissions = from x in objSub.submissions select x; */
@@ -17,7 +17,7 @@ public class illnessClass
     }
     public IQueryable<illnessAdmin> getIllnessesK(string _Location)
     {
-        submClassDataContext objIll = new submClassDataContext();
+        hospitalDataContext objIll = new hospitalDataContext();
        
         var Illnesses = objIll.illnessAdmins.Where(x => x.Location == "Kenora").Select(x=> x); /*x just represents your columns*/
     /*var allSubmissions = from x in objSub.submissions select x; */
@@ -26,7 +26,7 @@ public class illnessClass
 }
     public IQueryable<illnessAdmin> getIllnessesO(string _Location)
     {
-        submClassDataContext objIll = new submClassDataContext();
+        hospitalDataContext objIll = new hospitalDataContext();
 
         var Illnesses = objIll.illnessAdmins.Where(x => x.Location == "Ontario").Select(x => x); /*x just represents your columns*/
         /*var allSubmissions = from x in objSub.submissions select x; */
@@ -36,7 +36,7 @@ public class illnessClass
 
     public IQueryable<illnessAdmin> getIllnessesC(string _Location)
     {
-        submClassDataContext objIll = new submClassDataContext();
+        hospitalDataContext objIll = new hospitalDataContext();
 
         var Illnesses = objIll.illnessAdmins.Where(x => x.Location == "Canada").Select(x => x); /*x just represents your columns*/
         /*var allSubmissions = from x in objSub.submissions select x; */
@@ -46,14 +46,14 @@ public class illnessClass
 
     public IQueryable<illnessAdmin> getIllnessesByID(int _Id)
     {
-        submClassDataContext objIll = new submClassDataContext();
+        hospitalDataContext objIll = new hospitalDataContext();
         var allIllnesses = objIll.illnessAdmins.Where(x => x.Id == _Id).Select(x => x);
         return allIllnesses;
     }
 
     public bool commitInsert(string _InfectionName, string _Location, string _entryDate, string _Description, string __symptoms, string _preventatives, string _treatments, string _recomend) /* if it works it comes back as 1, if it doesn't it comes back at 0.  Just another method on how to do this.*/
     {
-        submClassDataContext objIll = new submClassDataContext();
+        hospitalDataContext objIll = new hospitalDataContext();
         using (objIll)
         {
             illnessAdmin objNewIll = new illnessAdmin(); /*referencing designer.cs file */
@@ -73,7 +73,7 @@ public class illnessClass
     }
     public bool commitUpdate(int _Id, string _InfectionName, string _Location, string _entryDate, string _Description, string __symptoms, string _preventatives, string _treatments, string _recomend)
     {
-        submClassDataContext objIll = new submClassDataContext();
+        hospitalDataContext objIll = new hospitalDataContext();
         using (objIll)
         {
             var objUpIll = objIll.illnessAdmins.Single(x => x.Id == _Id);
@@ -91,7 +91,7 @@ public class illnessClass
     }
     public bool commitDelete(int _Id)
     {
-        submClassDataContext objIll = new submClassDataContext();
+        hospitalDataContext objIll = new hospitalDataContext();
         using (objIll)
         {
             var objDelIll = objIll.illnessAdmins.Single(x => x.Id == _Id);
