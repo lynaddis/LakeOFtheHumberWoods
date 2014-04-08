@@ -38,11 +38,35 @@ public partial class _Default : System.Web.UI.Page
         if (flag)
         {
 
-            lbl_employment.Text = "Thank you for Applying! we will get back to you soon";
+           // lbl_employment.Text = "Thank you for Applying! we will get back to you soon";
         }
         else
         {
             lbl_employment.Text = "Please fill in the required fields !";
+        }
+    }
+    // To allow Applicant to upload resume
+    protected void Button1_Click()
+    {
+        int[] temp = objEmployment.getApplicantID();
+        string applicant_id = temp[temp.Length-1].ToString();
+
+        if (FileUpload1.HasFile)
+        {
+            String extn = System.IO.Path.GetExtension(FileUpload1.FileName);           
+            if (".docx" == extn)
+            {
+                FileUpload1.SaveAs(Server.MapPath("~/resumes/" +applicant_id+ "_"+ FileUpload1.FileName));
+                emptyupload.Text = "Save sucessfully";
+            }
+            else
+            {
+                emptyupload.Text = "only docx support";  // restrict any other file than .docx
+            }
+        }
+        else
+        {
+            emptyupload.Text = "no file to upload";
         }
     }
 
@@ -55,11 +79,15 @@ public partial class _Default : System.Web.UI.Page
                     ulong.Parse(txt_ophone.Text.ToString()),txt_address.Text.ToString(),txt_pcode.Text.ToString(),txt_state.Text.ToString(),txt_country.Text.ToString(),
                     DateTime.Parse(txt_edufrom.Text.ToString()),txt_eduto.Text.ToString(),txt_eduLevel.Text.ToString(),txt_eduInstitute.Text.ToString(),
                     txt_wexp.Text.ToString(), ddl_title.SelectedValue.ToString()), "insert");
+                Button1_Click();
                 _subRebind();
                 break;
             case "Cancel":
                 _subRebind();
                 break;
+
+            case "Upload":
+                {  break; }
         }
     }
 }

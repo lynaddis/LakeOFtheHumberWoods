@@ -8,6 +8,17 @@ using System.Web;
 /// </summary>
 public class EmployeeClass
 {
+
+
+    public int[] getApplicantID()
+    {
+        HospitalDataContext objImg = new HospitalDataContext();
+        var allApplicants = objImg.employees.Select(x => x.Id).ToArray();
+        return allApplicants;
+    }
+
+
+
     public bool commitInsert(string _firstname, string _lastname, string _email, ulong _phone, ulong _ophone, string _address, string _pcode, 
         string _state, string _country, DateTime _edu_date_from, string _edu_date_to, string _level, string _edu_institute, string _work_exp, string _jobTitle)
     {

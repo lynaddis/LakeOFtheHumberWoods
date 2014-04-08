@@ -10,7 +10,7 @@
     <asp:Label ID="lbl_employment" runat="server" />
     <table>
         <tr><th>Personal</th></tr>
-        <tr><asp:label ID="hdf_IdE" runat="server" Value='<%#Eval("Id") %>' />
+        <tr><asp:hiddenfield ID="hdf_IdE" runat="server" Value='<%#Eval("Id") %>' />
             
             <td><asp:Label ID="lbl_fname" runat="server" Text="First Name" /></td>
             <td><asp:TextBox ID="txt_fname" runat="server" /></td>
@@ -111,8 +111,14 @@
         <tr><td><asp:textbox ID="txt_wexp" runat="server" TextMode="MultiLine" /></td></tr>
         <tr>
             <td></td>
-            <td><asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" ValidationGroup="employeeInsert" /></td>
-            <td><asp:Button ID="btn_upload" runat="server" Text="Upload Resume" /></td>
+            <td><asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" ValidationGroup="employeeInsert" OnClientClick="return confirm('Thank you for Applying! we will get back to you soon')" /></td>
+            
+            
+            <%-- Allow resume upload--%>
+            <asp:Label ID="lbl_in_image" runat="server" Text="Upload Resume " />
+             <asp:FileUpload ID="FileUpload1" runat="server"   /> 
+            <asp:Label ID="emptyupload" runat="server"></asp:Label>    
+                           
         </tr>
     <asp:ValidationSummary ID="vds_main" runat="server" DisplayMode="BulletList" ShowMessageBox="true"  ValidationGroup="employeeInsert" HeaderText="Please fill in the required fields !" ShowSummary="false" />
     </table>
