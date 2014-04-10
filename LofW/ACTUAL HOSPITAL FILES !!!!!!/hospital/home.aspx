@@ -11,7 +11,7 @@
      <div class="banner">
             <div id="textDesc">
 
-                There SHOULD be a fucking slideshow here
+            
           
    </div>
          </div>
