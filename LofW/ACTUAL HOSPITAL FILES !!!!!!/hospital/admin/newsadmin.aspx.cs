@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 public partial class newsadmin : System.Web.UI.Page
 {
 
-    sugAdminClass objLinq = new sugAdminClass();  //new instance of the class
+    newsClass objLinq = new newsClass();  //new instance of the class
     private void _subRebind()
     {
         txt_filterI.Text = string.Empty;
