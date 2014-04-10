@@ -9,7 +9,7 @@ public class suggestionClass
     public IQueryable<suggestion> getSuggestion()
     {
         // creating an instance of our linq object
-        suggestionDataContext objSug = new suggestionDataContext();
+        HospitalDataContext objSug = new HospitalDataContext();
 
         //creating an anonymous variable with its value being the instance of our linq object
 
@@ -22,7 +22,7 @@ public class suggestionClass
 
     public IQueryable<suggestion> getSuggestionByID(int _id)
     {
-        suggestionDataContext objSug = new suggestionDataContext(); // new instance of class
+        HospitalDataContext objSug = new HospitalDataContext(); // new instance of class
 
         var allSuggestions = objSug.suggestions.Where(x => x.Id == _id).Select(x => x);
 
@@ -31,7 +31,7 @@ public class suggestionClass
 
     public bool commitInsert(string _type, string _first, string _last,string _phone, string _hours, string _email, string _comment ) //allows insert using boolean and string to validate 
     {
-        suggestionDataContext objSug = new suggestionDataContext();
+        HospitalDataContext objSug = new HospitalDataContext();
         using (objSug)
         {
            suggestion objNewSug = new suggestion();
@@ -51,7 +51,7 @@ public class suggestionClass
 
     public bool commitUpdate(int _id, string _type, string _first, string _last, string _phone, string _hours, string _email, string _comment) //allows update
     {
-        suggestionDataContext objSug = new suggestionDataContext();
+        HospitalDataContext objSug = new HospitalDataContext();
         using (objSug)
         {
             var objUpSug = objSug.suggestions.Single(x => x.Id == _id);
@@ -72,7 +72,7 @@ public class suggestionClass
 
     public bool commmitDelete(int _id) //allows delete
     {
-        suggestionDataContext objSug = new suggestionDataContext();
+        HospitalDataContext objSug = new HospitalDataContext();
         using (objSug)
         {
             var objDelSug = objSug.suggestions.Single(x => x.Id == _id);

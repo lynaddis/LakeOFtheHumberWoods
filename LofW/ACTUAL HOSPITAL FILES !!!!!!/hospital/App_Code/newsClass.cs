@@ -4,35 +4,55 @@ using System.Linq;
 using System.Web;
 
 
-public class sugAdminClass
+public class newsClass
 {
-
-		 public IQueryable<New> getNew()
+    public IQueryable<New> getNews()
     {
         // creating an instance of our linq object
-      HospitalDataContext objNews = new HospitalDataContext();
+      HospitalDataContext objNews = newHospitalDataContext();
 
         //creating an anonymous variable with its value being the instance of our linq object
 
         var allNews = objNews.News.Select(x => x);
 
-        //var allProducts = from x in objNews.products select x;
+        //var allProducts = from x in objProd.products select x;
         return allNews;
     }
 
-
-    public IQueryable<New> getProductByID(int _id)
+    public List<New>  getNewsType() 
     {
-        HospitalDataContext objNews = new HospitalDataContext(); // new instance of class
+       HospitalDataContext objNews = newHospitalDataContext(); // new instance of class
 
-        var allNews= objNews.News.Where(x => x.Id == _id).Select(x => x);
+
+      var allNews=  objNews.News.GroupBy(x => x.Department).Select(x => x.SingleOrDefault());
+
+      return allNews.ToList();
+        
+       // return allNews; // selecting products from the database by their ID
+    }
+
+    public IQueryable<New> getNewsByID(int _id)
+    {
+       HospitalDataContext objNews = newHospitalDataContext(); // new instance of class
+
+        var allNews = objNews.News.Where(x => x.Id == _id).Select(x => x);
+
+        return allNews; // selecting products from the database by their ID
+    }
+
+
+    public IQueryable<New> getNewsByDepartment(string _depart)
+    {
+       HospitalDataContext objNews = newHospitalDataContext(); // new instance of class
+
+        var allNews = objNews.News.Where(x => x.Department == _depart).Select(x => x);
 
         return allNews; // selecting products from the database by their ID
     }
 
     public bool commitInsert(string _publishfirst, string _publishafter, string _Dep, string _Date) //allows insert using boolean and string to validate 
     {
-        HospitalDataContext objNews = new HospitalDataContext();
+       HospitalDataContext objNews = newHospitalDataContext();
         using (objNews)
         {
             New objNewNews = new New();
@@ -44,11 +64,12 @@ public class sugAdminClass
             objNews.SubmitChanges();
             return true;
         }
+
     }
 
     public bool commitUpdate(int _id, string _publishfirst, string _publishafter, string _Dep, string _Date) //allows update
     {
-        HospitalDataContext objNews = new HospitalDataContext();
+       HospitalDataContext objNews = newHospitalDataContext();
         using (objNews)
         {
             var objUpNews = objNews.News.Single(x => x.Id == _id);
@@ -68,7 +89,7 @@ public class sugAdminClass
 
     public bool commmitDelete(int _id) //allows delete
     {
-        HospitalDataContext objNews= new HospitalDataContext();
+       HospitalDataContext objNews = newHospitalDataContext();
         using (objNews)
         {
             var objDelNews = objNews.News.Single(x => x.Id == _id);
@@ -78,4 +99,6 @@ public class sugAdminClass
         }
 
     }
+
+
 }

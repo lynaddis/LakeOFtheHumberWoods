@@ -20,48 +20,50 @@ public partial class newsupdates : System.Web.UI.Page
         
         panel3.Visible = false;
     }
-    protected void ButtonEditP1_Click(object sender, EventArgs e)
+    protected void btn_news_Click(object sender, EventArgs e)
     {
        
         panel3.Visible = true;
-        sugClass objLinqClass = new sugClass();
-       DropDownList1.DataSource= objLinqClass.getNews();
-       DropDownList1.DataTextField = "Department";
-       DropDownList1.DataValueField = "Id";
-       DropDownList1.DataBind();
+        newsClass objLinqClass = new newsClass();
+       ddl_news.DataSource= objLinqClass.getNews();
+       ddl_news.DataTextField = "Department";
+       ddl_news.DataValueField = "Id";
+       ddl_news.DataBind();
 
-       ListView1.DataSource = objLinqClass.getNewsByID(Convert.ToInt32(DropDownList1.SelectedItem.Value));
+       ListView1.DataSource = objLinqClass.getNewsByID(Convert.ToInt32(ddl_news.SelectedItem.Value));
        ListView1.DataBind();
         
     }
-    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    protected void ddl_news_SelectedIndexChanged(object sender, EventArgs e)
     {
-        bindProduct();
+        bindNews();
     }
     protected void ListView1_ItemCommand(object sender, ListViewCommandEventArgs e)
     {
         switch (e.CommandName)
         {
             case "Selectx":
-        sugClass objLinqClass = new sugClass();
-        ListView1.DataSource = objLinqClass.getNewsByID(Convert.ToInt32(DropDownList1.SelectedItem.Value));
-        ListView1.DataBind();
+        newsClass objLinqClass = new newsClass();
+        ListView1.DataSource = objLinqClass.getNewsByID(Convert.ToInt32(ddl_news.SelectedItem.Value));
+       ListView1.DataBind();
         
                 break;
 
         }
     }
 
-    private void bindProduct()
+    private void bindNews()
     {
-        sugClass objLinq = new sugClass();
+        newsClass objLinq = new newsClass();
 
-        ListView1.DataSource = objLinq.getNewsByID(Convert.ToInt32(DropDownList1.SelectedItem.Value));
+        //ListView1.DataSource = objLinq.getNewsByID(Convert.ToInt32(ddl_news.SelectedItem.Value));
+
+        ListView1.DataSource = objLinq.getNewsType();
         ListView1.DataBind();
-        DropDownList1.DataSource = objLinq.getNews();
-        DropDownList1.DataTextField = "Department";
-        DropDownList1.DataValueField = "Id";
-        DropDownList1.DataBind();
+        ddl_news.DataSource = objLinq.getNews();
+        ddl_news.DataTextField = "Department";
+        ddl_news.DataValueField = "Department";
+        ddl_news.DataBind();
     }
     
 }
