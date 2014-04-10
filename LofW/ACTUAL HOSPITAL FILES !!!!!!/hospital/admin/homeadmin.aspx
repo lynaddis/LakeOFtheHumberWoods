@@ -24,7 +24,26 @@
     </div>
 
         <div class="contentBody">
-                <a href="adminhealthconcerns.aspx">Add a New Health Concern</a>
+            <ul>
+            <li><asp:HyperLink ID="hyp_usr_add" runat="server" Text="Create new user" NavigateUrl="~/Admin/addUser.aspx"  />   </li>
+            <li><asp:HyperLink ID="hyp_usr_edit" runat="server" Text="Edit User" NavigateUrl="~/Admin/editUser.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_invoce_add" runat="server" Text="Create New Invocie" NavigateUrl="~/Admin/addInvoice.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_invoice_edit" runat="server" Text="Edit Invoice" NavigateUrl="~/Admin/editInvoice.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_location_add" runat="server" Text="Add New Hospital Branch Location" NavigateUrl="~/Admin/addLocation.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_Calender" runat="server" Text="Add Specialists to Calendar" NavigateUrl="~/admin/adminCalendar.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_ContactUs" runat="server" Text="ContactUs_Admin" NavigateUrl="~/admin/AdminContactUs.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_Emp" runat="server" Text="Employment Admin" NavigateUrl="~/admin/AdminEmployment.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_health" runat="server" Text="Add a New Health Concern" NavigateUrl="~/admin/adminhealthconcerns.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_slider" runat="server" Text="Image Slider admin" NavigateUrl="~/admin/AdminImageSlider.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_administrative" runat="server" Text="Administrative?" NavigateUrl="~/admin/administrative.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_healthupdate" runat="server" Text="Update Or Delete Health Concerns" NavigateUrl="~/admin/adminupdatehealth.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_volunteer" runat="server" Text="View Submitted Volunteer Forms" NavigateUrl="~/admin/adminvolunteer.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_jobs" runat="server" Text="jobs" NavigateUrl="~/admin/jobs.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_lab" runat="server" Text="lab" NavigateUrl="~/admin/lab.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_news" runat="server" Text="News" NavigateUrl="~/admin/newsadmin.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_suggestion" runat="server" Text="Suggestion" NavigateUrl="~/admin/sugAdmin.aspx" /></li>
+        </ul>
+  <%--              <a href="adminhealthconcerns.aspx">Add a New Health Concern</a>
     <br />
        <br />
    
@@ -34,7 +53,7 @@
     <a href="adminvolunteer.aspx">View Submitted Volunteer Forms</a>
         <br />
        <br />
-    <a href="adminCalendar.aspx">Add Specialists to Calendar</a>
+    <a href="adminCalendar.aspx">Add Specialists to Calendar</a>--%>
         </div>
         <div class="sidebar">
         <div class="infectBox">

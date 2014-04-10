@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <asp:Login ID="log_form" runat="server" DestinationPageUrl="~/Admin/manage.aspx" />
+    <asp:Login ID="log_form" runat="server" DestinationPageUrl="~/admin/homeadmin.aspx" />
         <br />
     </div>
     </form>

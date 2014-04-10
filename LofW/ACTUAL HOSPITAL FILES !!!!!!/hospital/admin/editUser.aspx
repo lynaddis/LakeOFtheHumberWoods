@@ -40,7 +40,7 @@
         </asp:LoginView>
 
 
-        <asp:HyperLink ID="hyp_admin_menu" runat="server" Text="Main Menu"  NavigateUrl="~/Admin/manage.aspx" />
+        <asp:HyperLink ID="hyp_admin_menu" runat="server" Text="Main Menu"  NavigateUrl="~/admin/homeadmin.aspx" />
         <br /> <br /> <br />
         </div>
     <div>
