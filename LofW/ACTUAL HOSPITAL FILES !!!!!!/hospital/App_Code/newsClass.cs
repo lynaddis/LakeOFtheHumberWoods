@@ -9,7 +9,7 @@ public class newsClass
     public IQueryable<New> getNews()
     {
         // creating an instance of our linq object
-      HospitalDataContext objNews = newHospitalDataContext();
+      HospitalDataContext objNews = new HospitalDataContext();
 
         //creating an anonymous variable with its value being the instance of our linq object
 
@@ -21,7 +21,7 @@ public class newsClass
 
     public List<New>  getNewsType() 
     {
-       HospitalDataContext objNews = newHospitalDataContext(); // new instance of class
+       HospitalDataContext objNews = new HospitalDataContext(); // new instance of class
 
 
       var allNews=  objNews.News.GroupBy(x => x.Department).Select(x => x.SingleOrDefault());
@@ -33,7 +33,7 @@ public class newsClass
 
     public IQueryable<New> getNewsByID(int _id)
     {
-       HospitalDataContext objNews = newHospitalDataContext(); // new instance of class
+       HospitalDataContext objNews = new HospitalDataContext(); // new instance of class
 
         var allNews = objNews.News.Where(x => x.Id == _id).Select(x => x);
 
@@ -52,7 +52,7 @@ public class newsClass
 
     public bool commitInsert(string _publishfirst, string _publishafter, string _Dep, string _Date) //allows insert using boolean and string to validate 
     {
-       HospitalDataContext objNews = newHospitalDataContext();
+       HospitalDataContext objNews = new HospitalDataContext();
         using (objNews)
         {
             New objNewNews = new New();
