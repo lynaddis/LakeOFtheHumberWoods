@@ -44,12 +44,9 @@ public partial class adminhealthconcerns : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            rpt_rec.DataSource = objRec.getRecommendations();
-            rpt_rec.DataBind();
-
+          
             _subRebind();
-            _subRebinded();
-
+          
         }
 
     }
@@ -73,24 +70,6 @@ public partial class adminhealthconcerns : System.Web.UI.Page
 
         }
 
-    }
-
-    protected void subDel(object sender, RepeaterCommandEventArgs e) //specify it is a datalist Command event args.
-    {
-        switch (e.CommandName)
-        {
-            case "Delete":
-
-                int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_Id")).Value);//use Id numbers to delete rows.
-                _strMessage(objRec.commitDelete(_Id), "delete");
-                _subRebinded();
-                break;
-            case "Cancel":
-                _subRebinded();
-                break;
-
-
-        }
     }
 
     private void _strMessage(bool flag, string str)
