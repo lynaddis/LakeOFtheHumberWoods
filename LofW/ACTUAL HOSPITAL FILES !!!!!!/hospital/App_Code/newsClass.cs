@@ -43,7 +43,7 @@ public class newsClass
 
     public IQueryable<New> getNewsByDepartment(string _depart)
     {
-       HospitalDataContext objNews = newHospitalDataContext(); // new instance of class
+       HospitalDataContext objNews = new HospitalDataContext(); // new instance of class
 
         var allNews = objNews.News.Where(x => x.Department == _depart).Select(x => x);
 
@@ -69,7 +69,7 @@ public class newsClass
 
     public bool commitUpdate(int _id, string _publishfirst, string _publishafter, string _Dep, string _Date) //allows update
     {
-       HospitalDataContext objNews = newHospitalDataContext();
+       HospitalDataContext objNews = new HospitalDataContext();
         using (objNews)
         {
             var objUpNews = objNews.News.Single(x => x.Id == _id);
@@ -89,7 +89,7 @@ public class newsClass
 
     public bool commmitDelete(int _id) //allows delete
     {
-       HospitalDataContext objNews = newHospitalDataContext();
+       HospitalDataContext objNews = new HospitalDataContext();
         using (objNews)
         {
             var objDelNews = objNews.News.Single(x => x.Id == _id);
