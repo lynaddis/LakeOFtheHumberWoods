@@ -11,6 +11,9 @@
         <asp:Label ID="lbl_message" runat="server" />
         <br />
         <br />
+ <asp:Literal ID="ltl_suggestion" runat="server" Text="We at Lake of Humber Woods are dedicated to providing you the best quality care possible. Part of this committment is  understanding how we can work on those areas where our service is strong and improve on those areas where our service is weak."  /><br />
+
+    <br /><br />
              <asp:Label ID="lbl_suggestionI" runat="server" AssociatedControlID="ddl_suggestionType" Text="Suggestion Type" />
              <asp:DropDownList ID="ddl_suggestionType" runat="server" >
                <asp:ListItem>Suggestion</asp:ListItem>
