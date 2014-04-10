@@ -7,8 +7,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
+     <div id="vol_title" >
 
-               
+           <h2>Sign Up To Volunteer!</h2>
+        <p>If you want to help out in any way, please fill out all applicable fields of this form and we will be sure to contact you!   </p>
+    </div>
+  
+               <div id="vol_form1">
         <asp:Label ID="lbl_fname" runat="server" Text="Full Name: " />
         <br />
                     <asp:TextBox ID="txt_nameI" runat="server" /> 
@@ -44,13 +49,18 @@
                  <br />   <asp:TextBox ID="txt_reasonI" runat="server" TextMode="MultiLine" Rows="4" />
                         <asp:RequiredFieldValidator ID="rfv_reasonI" runat="server" ControlToValidate="txt_reasonI" SetFocusOnError="true" ErrorMessage="Please enter your reason for volunteering" ValidationGroup="vol_val" Text="Enter Reason For Volunteering!"  ForeColor="Red" />
                   <br />
+
+  
           <asp:Label ID="lbl_Experience" runat="server" Text="Have you Volunteered here before?" />
                <br />     <asp:TextBox ID="txt_VolExpI" runat="server" />
                       <asp:RequiredFieldValidator ID="rfv_VolExpI" runat="server" ControlToValidate="txt_VolExpI" SetFocusOnError="true" ErrorMessage="Please Fill out if you have volunteered here before" ValidationGroup="vol_val" Text="Required!"  ForeColor="Red" />
                   <br />
+                   </div>
+    <div id="vol_form2" />
           <asp:Label ID="lbl_yes" runat="server" Text="If yes, what did you do?" />
                <br />     <asp:TextBox ID="txt_ifYesI" runat="server" />
-                   <br />
+   
+                   <br />  
           <asp:Label ID="lbl_noHours" runat="server" Text="How many hours do you want?" />
                   <br />  <asp:TextBox ID="txt_noHoursI" runat="server" />
    <asp:RequiredFieldValidator ID="rfv_hour" runat="server" ControlToValidate="txt_noHoursI" SetFocusOnError="true" ErrorMessage="Enter # of hours (1-50)" ValidationGroup="vol_val" Text="Required!"  ForeColor="Red" />
@@ -77,8 +87,8 @@
         <br />
                     <asp:Button ID="btn_insert" runat="server" Text="Submit" OnCommand="subInsert" CommandName="Insert" ValidationGroup="vol_val" CausesValidation="true" />
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" CausesValidation="true" />
-
-    <asp:ValidationSummary ID="vld_sum" runat="server" DisplayMode="BulletList" HeaderText="Errors!" ShowMessageBox="true" ValidationGroup="vol_val" />
+    </div>
+    <asp:ValidationSummary ID="vld_sum" runat="server" DisplayMode="BulletList" HeaderText="Errors!" ShowSummary="false" ShowMessageBox="true" ValidationGroup="vol_val" />
         
             <%-- end of insert rows--%>
         <br />
@@ -92,16 +102,5 @@
              </asp:DataList>
 
 
-
-</asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="cph_IB" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="cph_donate" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="cph_cal" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content8" ContentPlaceHolderID="cph_map" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content9" ContentPlaceHolderID="cph_other" Runat="Server">
-</asp:Content>
+    </asp:Content>
 
