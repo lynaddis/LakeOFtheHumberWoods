@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class admin_sugAdmin : System.Web.UI.Page
 {
-    linqClassA objLinq = new linqClassA();  //new instance of the class
+    sugAdminClass objLinq = new sugAdminClass();  //new instance of the class
     private void _subRebind()
     {
         txt_suggestionI.Text = string.Empty;

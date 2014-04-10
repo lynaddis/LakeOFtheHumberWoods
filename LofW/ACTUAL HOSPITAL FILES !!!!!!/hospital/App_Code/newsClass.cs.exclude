@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 
 
-public class linqClass
+public class sugClass
 {
     public IQueryable<New> getNews()
     {
         // creating an instance of our linq object
-       NewsDataContext objNews = new NewsDataContext();
+       HospitalDataContext objNews = new HospitalDataContext();
 
         //creating an anonymous variable with its value being the instance of our linq object
 
@@ -22,7 +22,7 @@ public class linqClass
 
     public IQueryable<New> getNewsByID(int _id)
     {
-        NewsDataContext objNews = new NewsDataContext(); // new instance of class
+        HospitalDataContext objNews = new HospitalDataContext(); // new instance of class
 
         var allNews = objNews.News.Where(x => x.Id == _id).Select(x => x);
 
@@ -31,7 +31,7 @@ public class linqClass
 
     public bool commitInsert(string _publishfirst, string _publishafter, string _Dep, string _Date) //allows insert using boolean and string to validate 
     {
-        NewsDataContext objNews = new NewsDataContext();
+        HospitalDataContext objNews = new HospitalDataContext();
         using (objNews)
         {
             New objNewNews = new New();

@@ -8,7 +8,7 @@ public class SubmissionsClass
 {
     public IQueryable<submission> getSubmissions()
     {
-        hospitalDataContext objSub = new hospitalDataContext();
+        HospitalDataContext objSub = new HospitalDataContext();
 
         var allSubmissions = objSub.submissions.Select(x => x); /*x just represents your columns*/
         /*var allSubmissions = from x in objSub.submissions select x; */
@@ -18,14 +18,14 @@ public class SubmissionsClass
 
     public IQueryable<submission> getSubmissionsByID(int _Id)
     {
-        hospitalDataContext objSub = new hospitalDataContext();
+        HospitalDataContext objSub = new HospitalDataContext();
         var allSubmissions = objSub.submissions.Where(x => x.Id == _Id).Select(x => x);
         return allSubmissions;
     }
 
     public bool commitInsert(string _FullName, int _Age, string _Gender, string _Email, string _Phone, string _Reason, string _VolExp, string _ifYes, decimal _Nohours, string _PersonR, string _Interest, string _Allergies, string _Drefuse, string _Drequest) /* if it works it comes back as 1, if it doesn't it comes back at 0.  Just another method on how to do this.*/
     {
-        hospitalDataContext objSub = new hospitalDataContext();
+        HospitalDataContext objSub = new HospitalDataContext();
         using (objSub)
         {
             submission objNewSub = new submission(); /*referencing designer.cs file */
@@ -52,7 +52,7 @@ public class SubmissionsClass
     }
     public bool commitUpdate(int _Id, string _FullName, int _Age, string _Gender, string _Email, string _Phone, string _Reason, string _VolExp, string _ifYes, decimal _Nohours, string _PersonR, string _Interest, string _Allergies, string _Drefuse, string _Drequest)
     {
-        hospitalDataContext objSub = new hospitalDataContext();
+        HospitalDataContext objSub = new HospitalDataContext();
         using (objSub)
         {
             var objUpSub = objSub.submissions.Single(x => x.Id == _Id);
@@ -78,7 +78,7 @@ public class SubmissionsClass
     }
     public bool commitDelete(int _Id)
     {
-        hospitalDataContext objSub = new hospitalDataContext();
+        HospitalDataContext objSub = new HospitalDataContext();
         using (objSub)
         {
             var objDelSub = objSub.submissions.Single(x => x.Id == _Id);

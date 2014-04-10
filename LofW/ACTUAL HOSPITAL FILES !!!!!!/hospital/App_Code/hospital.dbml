@@ -1,50 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DeetaBase" Class="submClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DeetaBase" Class="HospitalDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=DeetaBase.db.12042275.hostedresource.com;Initial Catalog=DeetaBase;Persist Security Info=True;User ID=DeetaBase" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DeetaBaseConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.recommendations" Member="recommendations">
-    <Type Name="recommendation">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="ill_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="region" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="recomend" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Entry" Member="Entries">
-    <Type Name="Entry">
-      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AppAvail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.illnessAdmin" Member="illnessAdmins">
-    <Type Name="illnessAdmin">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="InfectionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Location" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="entryDate" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+  <Table Name="dbo.Articles" Member="Articles">
+    <Type Name="Article">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="symptoms" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="preventatives" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="treatments" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="recomend" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.submissions" Member="submissions">
-    <Type Name="submission">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FullName" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
-      <Column Name="phone" Type="System.String" DbType="Char(11)" CanBeNull="true" />
-      <Column Name="reason" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="VolExp" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="ifYes" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="noHours" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="personRequest" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
-      <Column Name="interest" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="allergies" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="deptRefuse" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="deptRequest" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ArticleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.contactus" Member="contactus">
@@ -52,19 +14,10 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="firstname" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="lastname" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="telephone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="telephone" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
       <Column Name="email" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="subject" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="message" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Wait_times" Member="Wait_times">
-    <Type Name="Wait_time">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="time" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="number_doctors" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="number_beds" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Credit_transactions" Member="Credit_transactions">
@@ -78,6 +31,14 @@
       <Column Name="transaction_date" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
       <Association Name="Invoice_Credit_transaction" Member="Invoice" ThisKey="invoice_id" OtherKey="Id" Type="Invoice" IsForeignKey="true" />
       <Association Name="Patient_Credit_transaction" Member="Patient" ThisKey="user_id" OtherKey="Id" Type="Patient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Direction_request" Member="Direction_requests">
+    <Type Name="Direction_request">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="startloc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="endloc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="request_date" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.donorInformation" Member="donorInformations">
@@ -107,8 +68,8 @@
       <Column Name="firstname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="lastname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="primary_phone" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="other_phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="primary_phone" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="other_phone" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="address" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="postal_code" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="state" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -119,6 +80,13 @@
       <Column Name="edu_institute" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="work_exp" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="upload_resume" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="jobTitle" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Entry" Member="Entries">
+    <Type Name="Entry">
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AppAvail" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.Hospital_locations" Member="Hospital_locations">
@@ -126,6 +94,20 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="hospital_name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="hospital_address" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.illnessAdmin" Member="illnessAdmins">
+    <Type Name="illnessAdmin">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InfectionName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="entryDate" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="symptoms" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="preventatives" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="treatments" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="recomend" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.imageslider" Member="imagesliders">
@@ -148,16 +130,6 @@
       <Association Name="Patient_Invoice" Member="Patient" ThisKey="patient_id" OtherKey="Id" Type="Patient" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.jobPosting" Member="jobPostings">
-    <Type Name="jobPosting">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="closing_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="department" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.lab" Member="labs">
     <Type Name="lab">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -176,6 +148,24 @@
       <Column Name="units" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.jobPosting" Member="jobPostings">
+    <Type Name="jobPosting">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="closing_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="department" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Map_request" Member="Map_requests">
+    <Type Name="Map_request">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="startloc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="endloc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="request_date" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.News" Member="News">
     <Type Name="New">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -183,6 +173,8 @@
       <Column Name="PublishAfter" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="Department" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="Date" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Details" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Patient" Member="Patients">
@@ -219,6 +211,41 @@
       <Column Name="Name" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.recommendations" Member="recommendations">
+    <Type Name="recommendation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="ill_name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="region" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="recomend" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ScheduleDB" Member="ScheduleDBs">
+    <Type Name="ScheduleDB">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Entry" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.submissions" Member="submissions">
+    <Type Name="submission">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="phone" Type="System.String" DbType="Char(11)" CanBeNull="true" />
+      <Column Name="reason" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VolExp" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ifYes" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="noHours" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="personRequest" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="interest" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="allergies" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="deptRefuse" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="deptRequest" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.suggestion" Member="suggestions">
@@ -278,67 +305,24 @@
       <Column Name="roomTotleBed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.tblCity" Member="tblCity1s">
-    <Type Name="tblCity1">
-      <Column Name="cityId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="cityName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="cityProvinceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblCountry" Member="tblCountry1s">
-    <Type Name="tblCountry1">
-      <Column Name="countryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="countryName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblProvince" Member="tblProvince1s">
-    <Type Name="tblProvince1">
-      <Column Name="provinceId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="provikceName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="provinceCountryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.tblRoomType" Member="tblRoomType1s">
-    <Type Name="tblRoomType1">
-      <Column Name="roomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="roomType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="roomTotleBed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.tblTickets" Member="tblTickets">
     <Type Name="tblTicket">
       <Column Name="ticketId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="ticketNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.tblBedRooms" Member="tblBedRoom1s">
-    <Type Name="tblBedRoom1">
-      <Column Name="bedId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="bedCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="bedAvailable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="bedRoomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="roomNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="dbo.volunteer" Member="volunteers">
+    <Type Name="volunteer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.donorInformation" Member="donorInformation1s">
-    <Type Name="donorInformation1">
-      <Column Name="donorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="donorAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="donorTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="donorFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="donorMiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donorLastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DonorType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DonorCompany" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donorZipCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="donorPoBox" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donorCountry" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorProvince" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorCity" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorEmail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorPhoneHome" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="donorPhoneWork" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="donorEmailSend" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+  <Table Name="dbo.Wait_times" Member="Wait_times">
+    <Type Name="Wait_time">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="time" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="number_doctors" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="number_beds" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.spUpdateDonorInformation" Method="spUpdateDonorInformation">
@@ -361,11 +345,6 @@
     <Parameter Name="emailsend" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.spUpdateBedRooms" Method="spUpdateBedRooms">
-    <Parameter Name="bedcount" Type="System.Int32" DbType="Int" />
-    <Parameter Name="bedid" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.spInsertDonorInformation" Method="spInsertDonorInformation">
     <Parameter Name="amount" Type="System.Int32" DbType="Int" />
     <Parameter Name="title" Type="System.String" DbType="NVarChar(50)" />
@@ -383,6 +362,11 @@
     <Parameter Name="phonehome" Type="System.String" DbType="NVarChar(20)" />
     <Parameter Name="phonework" Type="System.String" DbType="NVarChar(20)" />
     <Parameter Name="emailsend" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spUpdateBedRooms" Method="spUpdateBedRooms">
+    <Parameter Name="bedcount" Type="System.Int32" DbType="Int" />
+    <Parameter Name="bedid" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.spGetDonorInformationById" Method="spGetDonorInformationById">

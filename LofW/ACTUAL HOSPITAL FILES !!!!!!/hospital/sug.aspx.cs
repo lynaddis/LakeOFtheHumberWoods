@@ -9,7 +9,7 @@ using System.Net.Mail;
 public partial class admin : System.Web.UI.Page
 {
 
-    linqClass objLinq = new linqClass();  //new instance of the class
+    sugClass objLinq = new sugClass();  //new instance of the class
     private void _subRebind()
     {
         ddl_suggestionType.DataTextField = "suggestionType";

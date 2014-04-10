@@ -10,21 +10,21 @@ public class CalenderClass
 {
     public List<Entry> getEntry()
     {
-        hospitalDataContext objcal = new hospitalDataContext();
+        HospitalDataContext objcal = new HospitalDataContext();
         var allEntries = objcal.Entries.Select(x => x);
         return allEntries.ToList();
     }
 
     public List<Entry> getEntryID(DateTime _EntryDate)
     {
-        hospitalDataContext objcal = new hospitalDataContext();
+        HospitalDataContext objcal = new HospitalDataContext();
         var allEntries = objcal.Entries.Where(x => x.EntryDate == _EntryDate).Select(x => x);
         return allEntries.ToList();
     }
 
     public bool commitInsert(DateTime _EntryDate, string _AppAvail)
     {
-        hospitalDataContext objcal = new hospitalDataContext();
+        HospitalDataContext objcal = new HospitalDataContext();
         using (objcal)
         {
             Entry objNewEnt = new Entry();
@@ -39,7 +39,7 @@ public class CalenderClass
 
     public bool commitUpdate(DateTime _EntryDate, string _AppAvail)
     {
-        hospitalDataContext objschd = new hospitalDataContext();
+        HospitalDataContext objschd = new HospitalDataContext();
         using (objschd)
         {
             var objUpEnt = objschd.Entries.Single(x => x.EntryDate == _EntryDate);
@@ -51,7 +51,7 @@ public class CalenderClass
 
     public bool commitDelete(DateTime _EntryDate)
     {
-        hospitalDataContext objcal = new hospitalDataContext();
+        HospitalDataContext objcal = new HospitalDataContext();
         using (objcal)
         {
             var objDelCal = objcal.Entries.Single(x => x.EntryDate == _EntryDate);

@@ -11,7 +11,7 @@ public class labClass
     public IQueryable<lab> getLabs()
     {
         // creating an instance of our linq object
-        labDataContext objLAB = new labDataContext();
+        HospitalDataContext objLAB = new HospitalDataContext();
 
         //creating an anonymous variable with its value being the instance of our linq object
 
@@ -24,7 +24,7 @@ public class labClass
 
     public int getPatientCodeByUsername(string user)
     {
-        labDataContext objLab = new labDataContext();
+        HospitalDataContext objLab = new HospitalDataContext();
         return objLab.labs.Where(x => x.patientCode == user).Select(x => x.Id).FirstOrDefault();
 
     }
@@ -32,7 +32,7 @@ public class labClass
 
     public IQueryable<lab> getLabsByID(int _id)
     {
-        labDataContext objLAB = new labDataContext();
+        HospitalDataContext objLAB = new HospitalDataContext();
 
         var allLabs = objLAB.labs.Where(x => x.Id == _id).Select(x => x);
 
@@ -42,7 +42,7 @@ public class labClass
     public bool commitInsert(string _patient, string _code, string _age , string _sex, string _type, string _testcode, 
         string _result1, string _result2, string _desc, string _abnormal , string _refrange, string _unit, string _dob  )
     {
-       labDataContext objLAB = new labDataContext();
+       HospitalDataContext objLAB = new HospitalDataContext();
         using (objLAB)
         {
             lab objNewLAB = new lab();
@@ -70,7 +70,7 @@ public class labClass
     public bool commitUpdate(int _id, string _patient, string _code, string _age, string _sex, string _type, string _testcode,
         string _result1, string _result2, string _desc, string _abnormal, string _refrange, string _unit, string _dob)
     {
- labDataContext objLAB = new labDataContext();
+ HospitalDataContext objLAB = new HospitalDataContext();
         using (objLAB)
         {
             var objUPLAB = objLAB.labs.Single(x => x.Id == _id);
@@ -96,7 +96,7 @@ public class labClass
 
     public bool commmitDelete(int _id)
     {
-        labDataContext objLAB = new labDataContext();
+        HospitalDataContext objLAB = new HospitalDataContext();
         using (objLAB)
         {
 

@@ -24,7 +24,7 @@ public partial class newsupdates : System.Web.UI.Page
     {
        
         panel3.Visible = true;
-        linqClass objLinqClass = new linqClass();
+        sugClass objLinqClass = new sugClass();
        DropDownList1.DataSource= objLinqClass.getNews();
        DropDownList1.DataTextField = "Department";
        DropDownList1.DataValueField = "Id";
@@ -43,7 +43,7 @@ public partial class newsupdates : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Selectx":
-        linqClass objLinqClass = new linqClass();
+        sugClass objLinqClass = new sugClass();
         ListView1.DataSource = objLinqClass.getNewsByID(Convert.ToInt32(DropDownList1.SelectedItem.Value));
         ListView1.DataBind();
         
@@ -54,7 +54,7 @@ public partial class newsupdates : System.Web.UI.Page
 
     private void bindProduct()
     {
-        linqClass objLinq = new linqClass();
+        sugClass objLinq = new sugClass();
 
         ListView1.DataSource = objLinq.getNewsByID(Convert.ToInt32(DropDownList1.SelectedItem.Value));
         ListView1.DataBind();
