@@ -6,6 +6,7 @@
         margin-right: auto;
         /*border: 1px solid;  Keep this here to check if container is cooperating*/
         min-height: 1000px;
+         font-family:'Adobe Gurmukhi';
     }
     .login {
     float:right;
@@ -157,6 +158,16 @@ text-decoration:none;
     }
 
     /*End of Home Page*/
+    /* Admin Home Page */
+    #adminhome_title h2 {
+  padding-top:10px;
+  text-align:left;
+  background-color: ButtonFace;
+  height: 40px;
+  width: 960px;
+  font-family:'Adobe Gurmukhi';
+}
+    /*End Home Page Admin*/
     /*About Page*/
 
 #about_text {
@@ -176,24 +187,125 @@ text-decoration:none;
     border:dashed 2px;
 }
 /*End of About Page*/
-/*Health Concerns Page*/
+/*Health Concerns Page (public)*/
 
 #listed_concern {
 
     min-height:500px;
     width:500px;
     float:left;
-    border: dashed 2px;
     margin-right: 60px;
 
 }
 
-#recommend {
+#health_title h2 {
+  padding-top:10px;
+  text-align:left;
+  background-color: ButtonFace;
+  height: 40px;
+  width: 960px;
+  font-family:'Adobe Gurmukhi';
+}
 
+    #health_title p {
+         font-family:'Adobe Gurmukhi';
+         width: 960px;
+    }
+
+#recommend {
+    
     float:left;
-    width:300px;
+    width:350px;
+    background-color: #f7bd41;
+    padding-left: 30px;
+    padding-bottom:30px;
+    font-family:'Adobe Gurmukhi';
+}
+#recommend p {
+    width: 300px;
+}
+
+.titleText H3 {
+     background-color: #00b0a2;
+     width: 40%;
+     height: 20%;
+     text-decoration:none;
+    font-family:'Adobe Gurmukhi';
+    font-size: 25px;
 
 }
+
+.titleText {
+    text-decoration:none;
+    color: white;
+
+}
+
+.Kenora {
+    background-color: #dcf4f2;
+    font-family:'Adobe Gurmukhi';
+}
+
+.Ontario {
+    background-color: #dcf4f2;
+    font-family:'Adobe Gurmukhi';
+}
+.Canada {
+    background-color: #dcf4f2;
+    font-family:'Adobe Gurmukhi';
+}
+
+/*End of Health Concerns*/
+/*Beginning of Volunteers (public)*/
+
+#vol_form1 {
+    padding-top: 15px;
+    padding-left: 40px;
+    width: 260px;
+    float:left;
+     background-color: #dcf4f2;
+     height: 450px;
+     font-family:'Adobe Gurmukhi';    
+
+}
+
+#vol_form2 {
+    padding-top: 15px;
+    width: 300px;
+    float:left;
+     background-color: #dcf4f2;
+      height: 450px;
+      font-family:'Adobe Gurmukhi';
+}
+#vol_title h2 {
+  padding-top:10px;
+  text-align:left;
+  background-color: ButtonFace;
+  height: 40px;
+  width: 960px;
+  font-family:'Adobe Gurmukhi';
+}
+
+#vol_title p {
+         font-family:'Adobe Gurmukhi';
+         width: 600px;
+         padding-bottom: 15px;
+         background-color: #00b0a2;
+    }
+
+
+/*End of Volunteers(public)*/
+/*Volunteer Admin Page*/
+#adminvol_title h2 {
+  padding-top:10px;
+  text-align:left;
+  background-color: ButtonFace;
+  height: 40px;
+  width: 960px;
+  font-family:'Adobe Gurmukhi';
+}
+
+/*End Volunteer Admin Page*/
 
 /* iPads (portrait and landscape) ----------- */
 @media screen and (min-width : 481px) and (max-width : 1024px) {

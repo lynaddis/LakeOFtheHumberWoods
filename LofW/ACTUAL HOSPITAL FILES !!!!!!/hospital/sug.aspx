@@ -30,7 +30,7 @@
                 <asp:Label ID="lbl_phone" runat="server" Text="Phone Number:"  AssociatedControlID="txt_phoneI" />
                 <asp:TextBox ID="txt_phoneI" runat="server" placeholder="000-000-0000" />
                 <asp:RequiredFieldValidator ID="rvf_phone" runat="server" ControlToValidate="txt_phoneI" Text="*Required"  ValidationGroup="insert" />
-                <asp:RegularExpressionValidator ID="rev_phone"  runat="server" ErrorMessage="Phone Number is not valid" ValidationGroup="insert" ControlToValidate="txt_phoneI"  ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"> </asp:RegularExpressionValidator>  
+                <asp:RegularExpressionValidator ID="rev_phone"  runat="server" ErrorMessage="Phone Number is not valid" ValidationGroup="insert" ControlToValidate="txt_phoneI"  ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" />  
                 <%--user's must enter a value for phone number--%><br />
                 <br />
                 <asp:Label ID="lbl_hours" runat="server"  Text="Contact Hours"  /><br />

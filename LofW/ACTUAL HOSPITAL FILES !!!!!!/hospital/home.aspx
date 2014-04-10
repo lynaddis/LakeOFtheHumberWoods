@@ -16,7 +16,7 @@
    </div>
          </div>
 
-        <div class="contentBody">
+               <div class="contentBody">
          this is a student project. THis is in no way affiliated with the real hosptial.
             
         </div>
@@ -28,12 +28,21 @@
 
                     </div>
                    
-                      <asp:GridView ID="grd_health" runat="server">
-                          <PagerTemplate>
-                              <asp:Label ID="lbl_illness" runat="server" Text="Current Health Trends" />
-                         <asp:Label ID="illname_Home" runat="server" Text='<%#Eval ("InfectionName") %>' />
-                          </PagerTemplate>
+                      <asp:GridView ID="grd_health" runat="server" AutoGenerateColumns="false" GridLines="None">
+                          <Columns>
+                              <asp:TemplateField>
+                                  <HeaderTemplate>Trending Illnessess...</HeaderTemplate>
+                                  
+                                  <ItemTemplate>
+                                      
+                                      <asp:Label ID="region_home" runat="server" Text='<%#Eval ("Location") %>' /> 
+                             <asp:Label ID="illname_Home" runat="server" Text='<%#Eval ("InfectionName") %>' />
+                                      </ItemTemplate>
+                                  </asp:TemplateField>
+                          </Columns>
+
                       </asp:GridView> 
+
                
         
 
@@ -49,7 +58,20 @@
                 <div class="bottomBar">
         <div class="calendar">
  <h3><a href="CalA.aspx">Visiting Specialists Calendar</a></h3>
-           
+            <asp:GridView ID="home_cal" runat="server" AutoGenerateColumns="false" GridLines="None">
+                          <Columns>
+                              <asp:TemplateField>
+                                  <HeaderTemplate>V</HeaderTemplate>
+                                  
+                                  <ItemTemplate>
+                                      
+                                      <asp:Label ID="region_home" runat="server" Text='<%#Eval ("") %>' /> 
+                           
+                                      </ItemTemplate>
+                                  </asp:TemplateField>
+                          </Columns>
+
+                      </asp:GridView> 
         </div>
 
             <div class="Maps">
