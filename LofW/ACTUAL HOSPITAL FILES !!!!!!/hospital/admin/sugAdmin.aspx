@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="sugAdmin.aspx.cs"   MasterPageFile="~/Master.master"   Inherits="admin_sugAdmin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="sugAdmin.aspx.cs"  MasterPageFile="~/Master.master"  Inherits="admin_sugAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -7,6 +7,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
+
     <asp:LoginName ID="lgn_name" runat="server" FormatString="Hello, {0}!" /> <%--user's registered user name--%>
         <hr />
          <asp:Label ID="lbl_output" runat="server" /> <asp:LoginStatus ID="lgs_main" runat="server" /> <%--renders login or logout (authenticates)--%>
@@ -127,6 +128,13 @@
             Logged in user(s)
         </LoggedInTemplate>
     </asp:LoginView>
-    
-
+   </asp:Content>
+<asp:Content ID="Content6" ContentPlaceHolderID="cph_donate" Runat="Server">
 </asp:Content>
+<asp:Content ID="Content7" ContentPlaceHolderID="cph_cal" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content8" ContentPlaceHolderID="cph_map" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content9" ContentPlaceHolderID="cph_other" Runat="Server">
+</asp:Content>
+
