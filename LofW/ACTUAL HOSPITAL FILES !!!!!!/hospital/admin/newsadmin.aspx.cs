@@ -15,7 +15,7 @@ public partial class newsadmin : System.Web.UI.Page
         txt_filterafterI.Text = string.Empty;
         txt_departmentI.Text = string.Empty;
         txt_dateI.Text = string.Empty;
-        dlt_all.DataSource = objLinq.getNew();
+        dlt_all.DataSource = objLinq.getNews();
         dlt_all.DataBind();
         // Binds the data from the database and allows it to be manipulated through the textboxes
     }
