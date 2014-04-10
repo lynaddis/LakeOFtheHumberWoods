@@ -19,14 +19,14 @@ public class newsClass
         return allNews;
     }
 
-    public List<New>  getNewsType() 
+    public IQueryable<string> getNewsType() 
     {
        HospitalDataContext objNews = new HospitalDataContext(); // new instance of class
 
 
-      var allNews=  objNews.News.GroupBy(x => x.Department).Select(x => x.SingleOrDefault());
+       var allNews = objNews.News.Select(x => x.Department).Distinct();
 
-      return allNews.ToList();
+       return allNews;
         
        // return allNews; // selecting products from the database by their ID
     }

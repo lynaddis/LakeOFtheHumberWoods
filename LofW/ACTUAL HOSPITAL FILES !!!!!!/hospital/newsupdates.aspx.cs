@@ -25,13 +25,13 @@ public partial class newsupdates : System.Web.UI.Page
        
         panel3.Visible = true;
         newsClass objLinqClass = new newsClass();
-       ddl_news.DataSource= objLinqClass.getNews();
-       ddl_news.DataTextField = "Department";
-       ddl_news.DataValueField = "Id";
+       ddl_news.DataSource= objLinqClass.getNewsType();
+      // ddl_news.DataTextField = "Department";
+      // ddl_news.DataValueField = "Department";
        ddl_news.DataBind();
 
-       ListView1.DataSource = objLinqClass.getNewsByID(Convert.ToInt32(ddl_news.SelectedItem.Value));
-       ListView1.DataBind();
+      // ListView1.DataSource = objLinqClass.getNewsByDepartment(ddl_news.SelectedItem.Text.ToString());
+      // ListView1.DataBind();
         
     }
     protected void ddl_news_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,12 +58,15 @@ public partial class newsupdates : System.Web.UI.Page
 
         //ListView1.DataSource = objLinq.getNewsByID(Convert.ToInt32(ddl_news.SelectedItem.Value));
 
-        ListView1.DataSource = objLinq.getNewsType();
+       // ListView1.DataSource = objLinq.getNewsType();
+       // ListView1.DataBind();
+        //ddl_news.DataSource = objLinq.getNews();
+        //ddl_news.DataTextField = "Department";
+        //ddl_news.DataValueField = "Department";
+        //ddl_news.DataBind();
+
+        ListView1.DataSource = objLinq.getNewsByDepartment(ddl_news.SelectedItem.Text.ToString());
         ListView1.DataBind();
-        ddl_news.DataSource = objLinq.getNews();
-        ddl_news.DataTextField = "Department";
-        ddl_news.DataValueField = "Department";
-        ddl_news.DataBind();
     }
     
 }
