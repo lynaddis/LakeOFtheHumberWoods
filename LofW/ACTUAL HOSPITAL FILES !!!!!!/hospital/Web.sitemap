@@ -9,7 +9,7 @@
       <siteMapNode url="~/newsupdates.aspx" title="News Updates" description="News Updates" />
     </siteMapNode>
     <siteMapNode url="~/care.aspx" title="We Care"  description="We Care">
-      <siteMapNode url="~/CalA.aspx" title="Specialists Calendar" description="Visiting Specialists"/>
+      <siteMapNode url="~/visitingspecialists.aspx" title="Specialists Calendar" description="Visiting Specialists"/>
       <siteMapNode url="~/userlogin.aspx" title="Pay Bills" description="Pay Bills" />
       <siteMapNode url="~/lab.aspx" title="Lab Results" description="Lab Results" />
     </siteMapNode>

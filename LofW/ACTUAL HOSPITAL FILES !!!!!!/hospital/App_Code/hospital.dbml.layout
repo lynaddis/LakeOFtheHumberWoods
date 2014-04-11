@@ -188,40 +188,46 @@
         <elementListCompartment Id="3cff19a4-bbc7-4ee6-a73c-9d9cd281f7d4" absoluteBounds="17.765, 2.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.5 : 3.875); (4.5 : 1.82774983723958); (6.25 : 1.82774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.96875 : 3.875); (4.96875 : 2.6819482421875); (6.25 : 2.6819482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/HospitalDataContext/Invoice/Invoice_Credit_transaction" />
       <nodes>
         <classShapeMoniker Id="0f111d54-fa7d-49f0-ba62-d8c2061fd7be" />
         <classShapeMoniker Id="7f53c7cf-442d-4e65-b4be-9a8fc5820154" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 3.5); (1.75 : 2.39787725585937); (4.41666666666667 : 2.39787725585937 : JumpStart); (4.58333333333333 : 2.39787725585937 : JumpEnd); (6.25 : 2.39787725585937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.53125 : 3.5); (1.53125 : 2.82497645833333); (4.88541666666667 : 2.82497645833333 : JumpStart); (5.05208333333333 : 2.82497645833333 : JumpEnd); (6.25 : 2.82497645833333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/HospitalDataContext/Patient/Patient_Credit_transaction" />
       <nodes>
         <classShapeMoniker Id="a8da872b-db7d-4b4e-bb25-d70f34b30264" />
         <classShapeMoniker Id="7f53c7cf-442d-4e65-b4be-9a8fc5820154" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.85659912109375); (3.5 : 4.85659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.85659912109375); (3.5 : 4.85659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HospitalDataContext/Patient/Patient_Invoice" />
       <nodes>
         <classShapeMoniker Id="a8da872b-db7d-4b4e-bb25-d70f34b30264" />
         <classShapeMoniker Id="0f111d54-fa7d-49f0-ba62-d8c2061fd7be" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (6.25 : 4.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (6.25 : 4.88544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HospitalDataContext/Invoice/Invoice_Paypal_transaction" />
       <nodes>
         <classShapeMoniker Id="0f111d54-fa7d-49f0-ba62-d8c2061fd7be" />
         <classShapeMoniker Id="0b24d4ed-10fc-4807-b633-315908a88d1d" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.06655110677083); (7.25 : 6.06655110677083); (7.25 : 5.77089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.06655110677083); (7.25 : 6.06655110677083); (7.25 : 5.77089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HospitalDataContext/Patient/Patient_Paypal_transaction" />
       <nodes>
         <classShapeMoniker Id="a8da872b-db7d-4b4e-bb25-d70f34b30264" />
         <classShapeMoniker Id="0b24d4ed-10fc-4807-b633-315908a88d1d" />
       </nodes>
     </associationConnector>
+    <classShape Id="a81b6853-2601-4472-a09a-e22a3180e447" absoluteBounds="2.375, 0.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/HospitalDataContext/appRequest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="216d8231-cdb5-4974-b7f2-006612c8f787" absoluteBounds="2.39, 1.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

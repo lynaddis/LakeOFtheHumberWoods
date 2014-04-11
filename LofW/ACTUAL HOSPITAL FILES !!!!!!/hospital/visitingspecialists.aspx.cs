@@ -127,6 +127,7 @@ public partial class visitingspecialists : System.Web.UI.Page
         string appAvail = "";
         string appInfo = "";
         string specField = "";
+        string times = "";
         //  String appAvail;
         if (e != null)
         {
@@ -144,6 +145,7 @@ public partial class visitingspecialists : System.Web.UI.Page
                     specField = dr["SpecialistField"].ToString();
                     appAvail = dr["AppAvail"].ToString();
                     appInfo = dr["AppInfo"].ToString();
+                    times = dr["TimesAvail"].ToString();
                     // DateTime ndate3 = DateTime.Parse(ndate2);
                     //this is where i'd add in more stuff
                 }
@@ -153,7 +155,7 @@ public partial class visitingspecialists : System.Web.UI.Page
             {
                 lbl_output.Text = "sadfdsa. ";
             }
-            else { lbl_output.Text = "<br />" + specName + "<ul><li>" + specField + "</li>" + "<li>" + appInfo + "</li>" + "<li>" + appAvail + "</li></ul>"; }
+            else { lbl_output.Text = "<br />" + specName + "<ul><li>" + specField + "</li>" + "<li>" + appInfo + "</li>" + "<li>" + appAvail + "</li>" + "<li>" + times + "</li></ul>"; }
 
         }
     }

@@ -10,10 +10,7 @@
       <asp:Calendar ID="calSchedule" OnDayRender="Cal_DR" SelectedDate='<%#Bind ("EntryDate") %>' OnSelectionChanged="selectChange" runat="server">
           <DayHeaderStyle BackColor="DeepSkyBlue" />
             <DayStyle BorderStyle="Solid" BorderWidth="2px" />
-       
-
-
-      </asp:Calendar>
+             </asp:Calendar>
 
         <asp:Label ID="lbl_output" runat="server" />
    </div>
