@@ -11,8 +11,7 @@ public partial class newsupdates : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-         
-            panel3.Visible = false;
+          panel3.Visible = false;
         }
     }
     protected void ButtonInsertP1_Click(object sender, EventArgs e)
@@ -25,15 +24,9 @@ public partial class newsupdates : System.Web.UI.Page
        
         panel3.Visible = true;
         newsClass objLinqClass = new newsClass();
-       ddl_news.DataSource= objLinqClass.getNewsType();
-      // ddl_news.DataTextField = "Department";
-      // ddl_news.DataValueField = "Department";
-       ddl_news.DataBind();
-
-      // ListView1.DataSource = objLinqClass.getNewsByDepartment(ddl_news.SelectedItem.Text.ToString());
-      // ListView1.DataBind();
-        
-    }
+        ddl_news.DataSource= objLinqClass.getNewsType();
+        ddl_news.DataBind();
+           }
     protected void ddl_news_SelectedIndexChanged(object sender, EventArgs e)
     {
         bindNews();
@@ -42,10 +35,10 @@ public partial class newsupdates : System.Web.UI.Page
     {
         switch (e.CommandName)
         {
-            case "Selectx":
+        case "Selectx":
         newsClass objLinqClass = new newsClass();
         ListView1.DataSource = objLinqClass.getNewsByID(Convert.ToInt32(ddl_news.SelectedItem.Value));
-       ListView1.DataBind();
+        ListView1.DataBind();
         
                 break;
 
@@ -55,16 +48,6 @@ public partial class newsupdates : System.Web.UI.Page
     private void bindNews()
     {
         newsClass objLinq = new newsClass();
-
-        //ListView1.DataSource = objLinq.getNewsByID(Convert.ToInt32(ddl_news.SelectedItem.Value));
-
-       // ListView1.DataSource = objLinq.getNewsType();
-       // ListView1.DataBind();
-        //ddl_news.DataSource = objLinq.getNews();
-        //ddl_news.DataTextField = "Department";
-        //ddl_news.DataValueField = "Department";
-        //ddl_news.DataBind();
-
         ListView1.DataSource = objLinq.getNewsByDepartment(ddl_news.SelectedItem.Text.ToString());
         ListView1.DataBind();
     }

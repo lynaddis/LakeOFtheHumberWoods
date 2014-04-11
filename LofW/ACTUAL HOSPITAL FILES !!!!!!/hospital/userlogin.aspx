@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
      <div id="vol_title" >
-             <asp:Login ID="log_form" runat="server" DestinationPageUrl="~/admin/homeadmin.aspx" />
+             <asp:Login ID="log_form" runat="server" DestinationPageUrl="~/patient/account.aspx" />
 
 
     </asp:Content>
