@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Master.master" CodeFile="newsupdates.aspx.cs" Inherits="newsupdates" %>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-            <p>Here you can View Our News Events and Activities for the hospital</p>
+            <p>Here you can View Our News Events & Activities for the hospital</p>
             <asp:Button ID="btn_news" runat="server" Text="Find News" CommandName="ViewNews" OnClick="btn_news_Click" />
     
        
@@ -16,7 +16,7 @@
                             <th>Details</th>
                             <th>See More....</th>
                             </tr>
-                        <tr>
+                         <tr>
                             
                             <asp:HiddenField ID="hdf_idE" runat="server" Value ='<%#Eval ("Id") %>' /> 
                             <td> <asp:label ID="lbl_date" runat="server" Text='<%#Eval("Date") %>'></asp:label></td>
