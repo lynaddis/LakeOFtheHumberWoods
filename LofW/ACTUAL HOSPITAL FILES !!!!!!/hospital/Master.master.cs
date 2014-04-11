@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 
 public partial class Master : System.Web.UI.MasterPage
 {
+
+
     private string _heading = "LOGO"; 
     public string pp_masterHeading
     {

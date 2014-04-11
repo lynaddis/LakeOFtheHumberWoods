@@ -5,15 +5,27 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
 </asp:Content>
 <asp:Content ID="content_home" ContentPlaceHolderID="cph_main" runat="server">
-<div id="IMGslide">
-                
-            </div>
-     <div class="banner">
-            <div id="textDesc">
 
-            
-          
-   </div>
+     <div class="banner">
+                       <asp:ScriptManager ID="scr" runat="server" />
+    <asp:UpdatePanel ID="udp" runat="server">
+        <ContentTemplate>
+           
+            <asp:MultiView ID="mlt" runat="server">
+             
+            </asp:MultiView>
+        </ContentTemplate>
+      <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="tmr" EventName="Tick" />
+      </Triggers>
+    </asp:UpdatePanel>
+        <asp:Timer ID="tmr" runat="server" Interval="5000" OnTick="subTick" />
+    <table>
+        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+           <td><asp:Button ID="btn_back" runat="server" Text="Backward" OnClick="ImgBackward" /></td> 
+            <td><asp:Button ID="btn_forw" runat="server" Text="Forward" OnClick="ImgForward" /></td> 
+        <td></td><td></td><td></td><td></td><td></td></tr>
+     </table>
          </div>
 
                <div class="contentBody">

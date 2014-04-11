@@ -22,17 +22,11 @@
     /*home page*/
     .banner {
         width: 960px;
-        height: 210px;
-        border: 1px solid;
+       /* height: 210px;*/
+       /* border: 1px solid;*/
     }
 
-    #textDesc {
-        float: left;
-        width: 480px;
-        height: 210px;
-        background-color: #f7bd41;
-    }
-
+   
     #IMGslide {
         float: left;
         width: 480px;
