@@ -11,10 +11,10 @@ public partial class newsadmin : System.Web.UI.Page
     newsClass objLinq = new newsClass();  //new instance of the class
     private void _subRebind()
     {
-        txt_filterI.Text = string.Empty;
-        txt_filterafterI.Text = string.Empty;
-        txt_departmentI.Text = string.Empty;
         txt_dateI.Text = string.Empty;
+        txt_departmentI.Text = string.Empty;
+        txt_detailsI.Text = string.Empty;
+        txt_urlI.Text = string.Empty;
         dlt_all.DataSource = objLinq.getNews();
         dlt_all.DataBind();
         // Binds the data from the database and allows it to be manipulated through the textboxes
@@ -32,10 +32,8 @@ public partial class newsadmin : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "Insert":
-                string PublishBefore = (Convert.ToDateTime(txt_filterI.Text)).ToShortDateString();
-                string PublishAfter = (Convert.ToDateTime(txt_filterafterI.Text)).ToShortDateString();
-                string Date = (Convert.ToDateTime(txt_dateI.Text)).ToShortDateString();
-                _strMessage(objLinq.commitInsert(PublishBefore, PublishAfter,txt_departmentI.Text, Date), "insert");
+                 string Date = (Convert.ToDateTime(txt_dateI.Text)).ToShortDateString();
+                _strMessage(objLinq.commitInsert(txt_departmentI.Text,txt_detailsI.Text,txt_urlI.Text, Date), "insert");
                 _subRebind();
                 break;
             case "Cancel":
@@ -65,13 +63,14 @@ public partial class newsadmin : System.Web.UI.Page
         switch (e.CommandName) // allows  Updates or deletes data using the textboxes  from the interface which is bounded to the database
         {
             case "Update":
-                TextBox txtFirst = (TextBox)e.Item.FindControl("txt_filterE");
-                TextBox txtAfter = (TextBox)e.Item.FindControl("txt_filterafterE");
+               
                 TextBox txtDep = (TextBox)e.Item.FindControl("txt_departmentE");
+                TextBox txtDetails = (TextBox)e.Item.FindControl("txt_detailsE");
+                TextBox txtUrl = (TextBox)e.Item.FindControl("txt_urlE");
                 TextBox txtDate = (TextBox)e.Item.FindControl("txt_dateE");
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
                 int newsID = int.Parse(hdfID.Value.ToString());
-                _strMessage(objLinq.commitUpdate(newsID, txtFirst.Text, txtAfter.Text, txtDep.Text, txtDate.Text), "update");
+                _strMessage(objLinq.commitUpdate(newsID, txtDate.Text,txtDep.Text,txtDetails.Text,txtUrl.Text), "update");
                 _subRebind();
                 break;
             case "Delete":
