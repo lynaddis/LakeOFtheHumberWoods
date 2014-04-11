@@ -12,7 +12,20 @@
 
 .level2
 {
-    color: white;
+     color: White;
+    background-color: #3d506b;
+    font-variant: small-caps;
+    font-size: large;
+    font-weight: bold;
+    padding: 15px;
+    width: 145.15px;
+    text-align: center;
+}
+ 
+
+
+.level3 {
+   color: white;
     font-family: Gill Sans MT !important;
     font-size: medium;
     background-color: #336ec2;

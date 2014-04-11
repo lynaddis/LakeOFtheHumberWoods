@@ -21,56 +21,10 @@
       
 
                   
-        <%--<asp:SiteMapDataSource ID="sds_main" runat="server" /> --%>
+        <asp:SiteMapDataSource ID="sds_main" runat="server" />
         <div id="menu">
-          <asp:menu id="mnu_main" orientation="Horizontal" CssClass="menu" runat="server">
- <%--DataSourceID="sds_main"--%>
-
+          <asp:menu id="mnu_main" orientation="Horizontal" StaticDisplayLevels="2" CssClass="menu" runat="server" DataSourceID="sds_main" >
   
-  <staticHoverStyle CssClass="hover"/>
-  
-             
-  <items>
-        <asp:menuitem text="Home" tooltip="Home" />
-      <asp:MenuItem Text="About" ToolTip="About" >
-       <asp:menuitem text="Vid About Hosptial"/>
-          <asp:menuitem text="Illness Outbreaks" />
-        <asp:menuitem text="Administration" />
-           <asp:menuitem text="Employment" />
-           <asp:menuitem text="News Updates" />
-           <asp:menuitem text="Board Members" />
-            </asp:MenuItem>
-
-            <asp:MenuItem Text="We Care" ToolTip="Care" >
-           <asp:menuitem text="Patient Care"/>
-        <asp:menuitem text="Cardiac Care" />
-                 <asp:menuitem text="Visiting Specialists Calendar" />
-                 <asp:menuitem text="Pay Bills Online" />
-                 <asp:menuitem text="Operational Services" />
-                 <asp:menuitem text="Lab Results" />
-      </asp:MenuItem>
-      <asp:MenuItem Text="Ways To Help" ToolTip="How You Can Help" >
-           <asp:menuitem text="Donations"/>
-        <asp:menuitem text="Volunteer"></asp:menuitem>
-      </asp:MenuItem>
-    
-            <asp:MenuItem Text="Community" ToolTip="Community Programs" >
-           <asp:menuitem text="Partnerships"/>
-        <asp:menuitem text="Event Request Forms" />
-      </asp:MenuItem>
-    
-    
-    <asp:menuitem text="Contact Us" tooltip="Contact Us">
-        <asp:menuitem text="Visiting Hours"  />
-        <asp:menuitem text="Suggestion Forms" />
-         <asp:menuitem text="Wait Times" />
-         <asp:menuitem text="Current Beds Available" />
-         <asp:menuitem text="Maps & Directions" />
-      </asp:menuitem>
-     
-
- 
-  </items>
 </asp:menu>
     </div>
        <asp:ContentPlaceHolder ID="cph_main" runat="server">
@@ -84,10 +38,13 @@
             </div>
 
            </asp:ContentPlaceHolder>
-         <div class="footer">  </div>
-         <%--  <asp:TreeView ID="trv_main" runat="server" DataSourceID="sds_main" ShowLines="true" />
-            <asp:SiteMapDataSource ID="sds_tree" runat="server"  ShowStartingNode="true"/>--%>
+         <div class="footer">
+
+                    <asp:TreeView ID="trv_main" runat="server" DataSourceID="sds_main" ShowLines="true" />
+            <asp:SiteMapDataSource ID="sds_tree" runat="server"  ShowStartingNode="true"/>
       
+  
+         </div>
   
 
          </div>

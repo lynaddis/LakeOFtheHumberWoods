@@ -28,12 +28,15 @@
 
     </script>
     
+    <div id="health_title" >
 
+           <h2>Health Concerns</h2>
+        <p>Select different regions to view currently trending health concerns.  All information known to the hosptial has been made available to you.  This includes symptoms, preventatives, treatments, and any reccommendations submitted by users of the site </p>
+    </div>
   
     <div id="listed_concern">
-        <h2>Health Concerns</h2>
-        <p>Select different regions to view currently trending health concerns</p>
-       <a href="javascript:void(0);" class="titleText toggler">+    Kenora</a>
+     
+       <a href="javascript:void(0);" class="titleText toggler"><h3>+    Kenora</h3></a>
 
 
         <div class="Kenora" style="display: none;">
@@ -75,7 +78,7 @@
 
         <br />
 
-        <a href="javascript:void(0);" class="titleText toggler">+   Ontario</a>
+        <a href="javascript:void(0);" class="titleText toggler"><h3>+   Ontario</h3></a>
         <div class="Ontario" style="display:none">
          <asp:DataList ID="dtl_Ont" runat="server"  >
         <ItemTemplate>
@@ -113,7 +116,7 @@
 
         <br />
         <br />
-        <a href="javascript:void(0);" class="titleText toggler">+   Canada</a>
+        <a href="javascript:void(0);" class="titleText toggler"><h3>+   Canada</h3></a>
         <div class="Canada" style="display:none">
         <asp:ListView ID="ltv_Can" runat="server" >
         <ItemTemplate>
@@ -153,26 +156,33 @@
             </div>
 
         <div id="recommend">
-
-        <h4>Do you have a recommendation for any listed illnessess? Let us know!</h4>
+        
+        <h3>Recommendations</h3>
+            <p>If you know any information on existing illnesses that is not here, or that you think may help others please let us know.</p>
         
         <asp:Label ID="lbl_nameI" runat="server" Text="Your Name: " />
          <br /><asp:TextBox ID="txt_nameI" runat="server" />
+            <asp:RequiredFieldValidator ID="rfv_name" runat="server" ControlToValidate="txt_nameI" Text="*Required" ErrorMessage="Please Enter Your Name!" SetFocusOnError="true" ValidationGroup="recommend_val" />
         <br />
         <asp:Label ID="lbl_illI" runat="server" Text="Illness: " />
        <br />  <asp:TextBox ID="txt_illI" runat="server" />
+            <asp:RequiredFieldValidator ID="rfv_illness" ControlToValidate="txt_illI" runat="server" Text="*Required" ErrorMessage="Please Enter Illness Name!" SetFocusOnError="true" ValidationGroup="recommend_val" />
         <br />
         <%-- need a compare validator to make sure they put in Kenora, Ontario, or Canada and thats it --%>
-             <asp:Label ID="lbl_regionI" runat="server" Text="Region (Kenora, Ontario, or Canada): " />
+             <asp:Label ID="lbl_regionI" runat="server" Text="Region <br />(Kenora, Ontario, or Canada): " />
          <br /><asp:TextBox ID="txt_regionI" runat="server" />
+            <asp:RequiredFieldValidator ID="rfv_region" runat="server" ControlToValidate="txt_regionI" Text="*Required" ErrorMessage="Please Enter Region (Kenora, Ontario, or Canada)" SetFocusOnError="true" ValidationGroup="recommend_val" />
+            <asp:RegularExpressionValidator ID="rg_region" runat="server" ControlToValidate="txt_regionI" Text="*Invalid Region" ErrorMessage="Must be Kenora, Ontario, or Canada" SetFocusOnError="true" ValidationGroup="recommend_val" ValidationExpression="^(?:k|K|kenora|Kenora|o|O|ontario|Ontario|c|C|canada|Canada)$" />
         <br />        
         <asp:Label ID="lbl_rec" runat="server" Text="Information: "/>
         <br /> <asp:TextBox ID="txt_infoI" runat="server" TextMode="MultiLine" Rows="5" />
+            <asp:RequiredFieldValidator ID="rfv_rec" runat="server" ControlToValidate="txt_infoI" Text="*Required" ErrorMessage="Please Enter Recommendation" SetFocusOnError="true" ValidationGroup="recommend_val" />
          <br />
      
-                    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" /><%-- onCommand for subroutine on code behind called subAdmin --%>
-                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" />
+                    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" ValidationGroup="recommend_val"/><%-- onCommand for subroutine on code behind called subAdmin --%>
+                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" CausesValidation="false" />
            <asp:Label ID="lbl_message" runat="server" />
+            <asp:ValidationSummary ID="vs_recommend" runat="server" ValidationGroup="recommend_val" ShowMessageBox="true" />
     </div>
         
 </asp:Content>

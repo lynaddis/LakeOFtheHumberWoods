@@ -1,7 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="" title=""  description="">
-        <siteMapNode url="" title=""  description="" />
-        <siteMapNode url="" title=""  description="" />
+  <siteMapNode url="~/home.aspx" title="Home"  description="Home">
+               
+    <siteMapNode url="~/About.aspx" title="About"  description="About">
+      <siteMapNode url="~/healthconcerns.aspx" title="Health Concerns" description="Health Concerns"/>
+      <siteMapNode url="~/employment.aspx" title="Apply" description="Apply" />
+      <siteMapNode url="~/viewJobsPublic.aspx" title="View Jobs" description="View Jobs" />
+      <siteMapNode url="~/newsupdates.aspx" title="News Updates" description="News Updates" />
     </siteMapNode>
+    <siteMapNode url="~/care.aspx" title="We Care"  description="We Care">
+      <siteMapNode url="~/CalA.aspx" title="Specialists Calendar" description="Visiting Specialists"/>
+      <siteMapNode url="~/account.aspx" title="Pay Bills" description="Pay Bills" />
+      <siteMapNode url="~/lab.aspx" title="Lab Results" description="Lab Results" />
+    </siteMapNode>
+    <siteMapNode url="~/help.aspx" title="Ways To Help"  description="Ways To Help">
+      <siteMapNode url="~/Donation.aspx" title="Donations" description="Donations"/>
+      <siteMapNode url="~/volunteer.aspx" title="Volunteer" description="Volunteer" />
+    </siteMapNode>
+    <siteMapNode url="~/community.aspx" title="Community"  description="Community">
+      <siteMapNode url="~/part.aspx" title="Partnerships" description="Donations"/>
+      <siteMapNode url="~/event.aspx" title="Event Requests" description="Event Requests" />
+    </siteMapNode>
+
+    <siteMapNode url="~/ContactUs.aspx" title="Contact Us"  description="Contact Us">
+      <siteMapNode url="~/sug.aspx" title="Suggestion Forms" description="Suggestion Forms"/>
+      <siteMapNode url="~/wait.aspx" title="Wait Times" description="Wait Times" />
+      <siteMapNode url="~/beds.aspx" title="Beds Available" description="Beds Available" />
+      <siteMapNode url="~/map.aspx" title="Maps" description="Maps" />
+    </siteMapNode>
+
+  </siteMapNode>
 </siteMap>
+ 
