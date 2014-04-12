@@ -22,7 +22,7 @@ public class CalenderClass
         return allEntries.ToList();
     }
 
-    public bool commitInsert(DateTime _EntryDate, string _AppAvail)
+    public bool commitInsert(DateTime _EntryDate, string _AppAvail, string _SpecialistName, string _SpecialistField, string _AppInfo, string TimesAvail)
     {
         HospitalDataContext objcal = new HospitalDataContext();
         using (objcal)
@@ -30,20 +30,27 @@ public class CalenderClass
             Entry objNewEnt = new Entry();
             objNewEnt.EntryDate = _EntryDate;
             objNewEnt.AppAvail = _AppAvail;
-
+            objNewEnt.SpecialistName = _SpecialistName;
+            objNewEnt.SpecialistField = _SpecialistField;
+            objNewEnt.AppInfo = _AppInfo;
+            objNewEnt.TimesAvail = TimesAvail;
             objcal.Entries.InsertOnSubmit(objNewEnt);
             objcal.SubmitChanges();
             return true;
         }
     }
 
-    public bool commitUpdate(DateTime _EntryDate, string _AppAvail)
+    public bool commitUpdate(DateTime _EntryDate, string _AppAvail, string _SpecialistName, string _SpecialistField, string _AppInfo, string _TimesAvail)
     {
         HospitalDataContext objschd = new HospitalDataContext();
         using (objschd)
         {
             var objUpEnt = objschd.Entries.Single(x => x.EntryDate == _EntryDate);
             objUpEnt.AppAvail = _AppAvail;
+            objUpEnt.SpecialistField = _SpecialistName;
+            objUpEnt.SpecialistField = _SpecialistField;
+            objUpEnt.AppAvail = _AppInfo;
+            objUpEnt.TimesAvail = _TimesAvail;
             objschd.SubmitChanges();
             return true;
         }

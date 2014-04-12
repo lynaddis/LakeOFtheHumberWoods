@@ -16,7 +16,7 @@
 
         <asp:Label ID="lbl_output" runat="server" />
    
-    <asp:SqlDataSource ID="sds_mail" runat="server" ConnectionString="<%$ ConnectionStrings:DeetaBaseConnectionString %>" SelectCommand="SELECT * FROM [Entry]" />
+   
 
 </asp:Content>
 
