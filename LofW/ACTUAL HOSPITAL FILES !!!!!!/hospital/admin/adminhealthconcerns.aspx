@@ -9,8 +9,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
      <div class="page_title"><h2>Add Health Concern</h2></div>
-    <br />
-    <br />
+
      <asp:Label ID="lbl_message" runat="server" />
         <br />
         <br />

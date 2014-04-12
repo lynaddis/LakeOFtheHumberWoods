@@ -9,8 +9,6 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
      <div class="page_title"><h2>Add, Update, or Delete Specialist Appointments</h2></div>
 
-    <br />
-    <br />
     <asp:Label ID="lbl_output" runat="server" />
     <br />
     <br />
