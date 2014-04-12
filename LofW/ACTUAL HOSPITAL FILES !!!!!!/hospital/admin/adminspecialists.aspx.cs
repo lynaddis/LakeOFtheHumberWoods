@@ -52,21 +52,26 @@ public partial class adminspecialists : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "UpdateE":
-               
 
-                TextBox txtEdate = (TextBox)e.Item.FindControl("txt_entryDateE");
-                TextBox txtnameE = (TextBox)e.Item.FindControl("txt_snameE");
+
+                TextBox txtEdate = (TextBox)e.Item.FindControl("txt_entrydateE");
+                TextBox txtsnameE = (TextBox)e.Item.FindControl("txt_snameE");
                 TextBox txtfieldE = (TextBox)e.Item.FindControl("txt_fieldE");
                 TextBox txtappAvailE = (TextBox)e.Item.FindControl("txt_appAvailE");
                 TextBox txtappInfoE = (TextBox)e.Item.FindControl("txt_appInfoE");
                 TextBox txttimesAvailE = (TextBox)e.Item.FindControl("txt_timesAvailE");
-
-                DateTime Date = (DateTime.Parse(txt_entryDateE.Text.ToString()));
+               
+                //DateTime.Parse(txtEdate
+                //string txtEdate = (string)e.Item.FindControl("txt_entryDateE");
+                //DateTime EntryDate = DateTime.Parse(txtEdate.ToString()); 
+                //DateTime txtEdate = (DateTime.Parse(txt_entryDateE.Text.ToString()));
+                //string entryDate = (Convert.ToDateTime(txt_entryDateE)).ToShortDateString();
+               // DateTime txtEdate = (DateTime.Parse(txt_entryDateE.Text.ToString()));
 
                 HiddenField hdfIDU = (HiddenField)e.Item.FindControl("hdf_idE");
                 int Id = int.Parse(hdfIDU.Value.ToString());
 
-                _strMessage(specCal.commitUpdate(Id, Date, txtfieldE.Text, txtappAvailE.Text, txtappAvailE.Text, txtappInfoE.Text, txttimesAvailE.Text), "update");
+                _strMessage(specCal.commitUpdate(Id, DateTime.Parse(txtEdate.Text.ToString()), txtsnameE.Text, txtfieldE.Text, txtappAvailE.Text, txtappInfoE.Text, txttimesAvailE.Text), "update");
 
                 _subRebind();
 
