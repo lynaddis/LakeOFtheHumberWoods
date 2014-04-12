@@ -12,8 +12,11 @@
 
         <h2>Donations</h2>
 
+        <p>Any and all donations are accepted and greatly appreciated by Lake of the Humber Woods Hospital.  Please be sure to fill out all fields correctly.   On behalf of all those who are assisted by your kind donation, Thank-you.</p>
+
     </div>
-     <div class="donation">
+     <div class="form_back">
+         <h3>Please Fill Out All Required Fields</h3>
         <asp:Table ID="Table2" runat="server" CssClass="donation">
             <asp:TableHeaderRow><asp:TableCell>Donation</asp:TableCell></asp:TableHeaderRow>
             <asp:TableRow >

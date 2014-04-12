@@ -1,4 +1,4 @@
-﻿/*Main Classes*/
+﻿/*Global Classes*/
 
     .container {
         width: 960px;
@@ -66,6 +66,15 @@
         font-family:'Adobe Gurmukhi';
 
     }
+
+.purple_style {
+
+    background-color:#95779a;
+    width: 300px;
+    padding-left:50px;
+    margin-top: 30px;
+
+}
     /*home page*/
     .banner {
         width: 960px;

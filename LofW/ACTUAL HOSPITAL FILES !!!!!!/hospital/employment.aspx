@@ -8,8 +8,21 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
     <asp:Label ID="lbl_employment" runat="server" />
-    <div class="page_title"> <h2>Employment Form</h2></div>
-    <p>Please use .docx format for your resume attachment</p>
+    <div class="page_title"> <h2>Employment Form</h2>
+
+        <p>Please use .docx format for your resume attachment</p>
+
+    </div>
+
+     <%-- Allow resume upload--%>
+    <div class="purple_style">
+            <asp:Label ID="lbl_in_image" runat="server" Text="Upload Resume " />
+        <br />
+             <asp:FileUpload ID="FileUpload1" runat="server"   /> 
+        <br />
+            <asp:Label ID="emptyupload" runat="server"></asp:Label> 
+        </div>   
+    <div class="form_back">
     <table>
         <tr><th>Personal</th></tr>
         <tr><asp:hiddenfield ID="hdf_IdE" runat="server" Value='<%#Eval("Id") %>' />
@@ -21,7 +34,7 @@
                 <asp:RegularExpressionValidator ID="rgv_fname" runat="server" display="Dynamic" ControlToValidate="txt_fname" 
                     ErrorMessage="Enter First Name in Characters only!" validationexpression="[a-zA-Z]*" ValidationGroup="employeeInsert" />
              </td>
-            <td></td><td></td>
+            
             <td><asp:Label ID="lbl_address" runat="server" Text="Address" /></td>
             <td><asp:TextBox ID="txt_address" runat="server" /><span style="color:Red"><asp:Label ID="astrAdd" runat="server" Text="*"/></span>
                 <asp:RequiredFieldValidator ID="rqv_add" runat="server" ControlToValidate="txt_address" ErrorMessage="*Address Required" Text="Required" ValidationGroup="employeeInsert"/>
@@ -34,7 +47,6 @@
                 <asp:RegularExpressionValidator ID="rgv_lname" runat="server" display="Dynamic" ControlToValidate="txt_lname" 
                     ErrorMessage="Enter Last Name in Characters only!" validationexpression="[a-zA-Z]*" ValidationGroup="employeeInsert" />
             </td>
-            <td></td><td></td>
              <td><asp:Label ID="lbl_pcode" runat="server" Text="Postal Code" /></td>
             <td><asp:TextBox ID="txt_pcode" runat="server" /><span style="color:Red"><asp:Label ID="astrPcode" runat="server" Text="*"/></span>
                <asp:RequiredFieldValidator ID="rqv_pcode" runat="server" ControlToValidate="txt_pcode" ErrorMessage="*Postal Code Required" Text="Required" ValidationGroup="employeeInsert" />
@@ -49,7 +61,6 @@
                         ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="*Enter a valid e-mail" ValidationGroup="employeeInsert"/>
                    
             </td>
-            <td></td><td></td>
              <td><asp:Label ID="lbl_state" runat="server" Text="State" /></td>
             <td><asp:TextBox ID="txt_state" runat="server" /><span style="color:Red"><asp:Label ID="astrState" runat="server" Text="*"/></span>
            <asp:RequiredFieldValidator ID="rqv_state" runat="server" ControlToValidate="txt_state" ErrorMessage="*State Required" Text="Required" ValidationGroup="employeeInsert" />
@@ -66,7 +77,6 @@
                  ErrorMessage="Provide valid mobile number, Must be 10 digits" ValidationGroup="employeeInsert" />
                 
            </td>
-            <td></td><td></td>
             <td><asp:Label ID="lbl_country" runat="server" text="Country" /></td>
             <td><asp:TextBox ID="txt_country" runat="server" /><span style="color:Red"><asp:Label ID="astrCountry" runat="server" Text="*"/></span>
                 <asp:RequiredFieldValidator ID="rqv_country" runat="server" ControlToValidate="txt_country" ErrorMessage="*Country Required" Text="Required" ValidationGroup="employeeInsert" />
@@ -82,10 +92,8 @@
              <asp:RegularExpressionValidator ID="rgv_ophone" runat="server" ControlToValidate="txt_ophone" ValidationExpression="^[0-9]{10}$" 
                  ErrorMessage="Provide valid mobile number, Must be 10 digits" ValidationGroup="employeeInsert" /> 
             </td>
-            <td></td><td></td>
             <td><asp:Label ID="lbl_ddl" runat="server" Text="Applying For" /></td>
             <td><asp:DropDownList ID="ddl_title" runat="server" /></td>                
-            <td></td><td></td>
             
         </tr>
         <tr><th>Highest Qualification</th></tr>
@@ -120,16 +128,13 @@
         </tr>
         <tr><td><asp:textbox ID="txt_wexp" runat="server" TextMode="MultiLine" /></td></tr>
         <tr>
-            <td></td>
             <td><asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" ValidationGroup="employeeInsert" /></td>
             
             
-            <%-- Allow resume upload--%>
-            <asp:Label ID="lbl_in_image" runat="server" Text="Upload Resume " />
-             <asp:FileUpload ID="FileUpload1" runat="server"   /> 
-            <asp:Label ID="emptyupload" runat="server"></asp:Label>    
+           
                            
         </tr>
     <asp:ValidationSummary ID="vds_main" runat="server" DisplayMode="BulletList" ShowMessageBox="true"  ValidationGroup="employeeInsert" HeaderText="Please fill in the required fields !" ShowSummary="false" />
     </table>
+        </div>
 </asp:Content>
