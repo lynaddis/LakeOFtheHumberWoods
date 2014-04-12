@@ -9,6 +9,13 @@ public partial class adminvolunteer : System.Web.UI.Page
 {
     SubmissionsClass objVol = new SubmissionsClass();
 
+    //protected void dtl_Change(object sender, PagePropertiesChangingEventArgs e)
+    //{
+    //    dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+    //    
+    //}
+
+
     protected void Page_Load(object sender, EventArgs e)
     {
 

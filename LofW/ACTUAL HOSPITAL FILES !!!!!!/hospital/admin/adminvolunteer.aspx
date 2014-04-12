@@ -106,12 +106,13 @@
                  
                 </ItemTemplate>
             </asp:DataList>
-   <%--     <asp:LinkButton runat="server" OnClientClick="onNext();" ID="lnkPrev" Text="" OnClick="lnkPrev_Click"> </asp:LinkButton>
+     <%--        <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="dtl_all" PageSize="1">
+                <Fields>
+                   
+                    <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />
+                    <asp:NumericPagerField ButtonType="Link" />
+                    <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="false" />
+                </Fields>
+</asp:DataPager>--%>
 
-<asp:LinkButton runat="server" OnClientClick="onNext();" ID="lnkNext" Text="" OnClick="lnkNext_Click"> </asp:LinkButton>
-
-<asp:LinkButton runat="server" OnClientClick="onNext();" ID="lnkFirst" Text="" OnClick="lnkFirst_Click"> </asp:LinkButton>
-
-<asp:LinkButton runat="server" OnClientClick="onNext();" ID="lnkLast" Text="" OnClick="lnkLast_Click"> </asp:LinkButton> --%>
-       </div>
 </asp:Content> 
