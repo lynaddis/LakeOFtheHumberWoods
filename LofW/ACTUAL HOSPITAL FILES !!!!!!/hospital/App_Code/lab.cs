@@ -5,13 +5,13 @@ using System.Web;
 
 public class labClass
 {
-
+	
 
 
     public IQueryable<lab> getLabs()
     {
         // creating an instance of our linq object
-   HospitalDataContext objLAB = new HospitalDataContext();
+        HospitalDataContext objLAB = new HospitalDataContext();
 
         //creating an anonymous variable with its value being the instance of our linq object
 
@@ -24,7 +24,7 @@ public class labClass
 
     public int getPatientCodeByUsername(string user)
     {
-   HospitalDataContext objLab = new HospitalDataContext();
+        HospitalDataContext objLab = new HospitalDataContext();
         return objLab.labs.Where(x => x.patientCode == user).Select(x => x.Id).FirstOrDefault();
 
     }
@@ -32,17 +32,17 @@ public class labClass
 
     public IQueryable<lab> getLabsByID(int _id)
     {
-   HospitalDataContext objLAB = new HospitalDataContext();
+        HospitalDataContext objLAB = new HospitalDataContext();
 
         var allLabs = objLAB.labs.Where(x => x.Id == _id).Select(x => x);
 
         return allLabs;
     }
 
-    public bool commitInsert(string _patient, string _code, string _age, string _sex, string _type, string _testcode,
-        string _result1, string _result2, string _desc, string _abnormal, string _refrange, string _unit, string _dob)
+    public bool commitInsert(string _patient, string _code, string _age , string _sex, string _type, string _testcode, 
+        string _result1, string _result2, string _desc, string _abnormal , string _refrange, string _unit, string _dob  )
     {
-   HospitalDataContext objLAB = new HospitalDataContext();
+       HospitalDataContext objLAB = new HospitalDataContext();
         using (objLAB)
         {
             lab objNewLAB = new lab();
@@ -70,7 +70,7 @@ public class labClass
     public bool commitUpdate(int _id, string _patient, string _code, string _age, string _sex, string _type, string _testcode,
         string _result1, string _result2, string _desc, string _abnormal, string _refrange, string _unit, string _dob)
     {
-   HospitalDataContext objLAB = new HospitalDataContext();
+ HospitalDataContext objLAB = new HospitalDataContext();
         using (objLAB)
         {
             var objUPLAB = objLAB.labs.Single(x => x.Id == _id);
@@ -97,7 +97,7 @@ public class labClass
 
     public bool commmitDelete(int _id)
     {
-   HospitalDataContext objLAB = new HospitalDataContext();
+        HospitalDataContext objLAB = new HospitalDataContext();
         using (objLAB)
         {
 

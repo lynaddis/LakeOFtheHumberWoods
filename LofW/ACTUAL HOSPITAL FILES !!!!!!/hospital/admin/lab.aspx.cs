@@ -9,66 +9,67 @@ using System.Web.UI.WebControls;
 
 public partial class lab : System.Web.UI.Page
 {
-    labClass objLab = new labClass();
+      labClass objLab = new labClass();
 
 
 
-    private void _subRebind()
-    {
-        txt_patientidI.Text = string.Empty;
-        txt_patientcodeI.Text = string.Empty;
-        txt_dobI.Text = string.Empty;
-        txt_ageI.Text = string.Empty;
-        txt_sexI.Text = string.Empty;
-        txt_testTypeI.Text = string.Empty;
-        txt_testCodeI.Text = string.Empty;
-        txt_result1I.Text = string.Empty;
-        txt_result2I.Text = string.Empty;
-        txt_abnormalI.Text = string.Empty;
-        txt_refrangeI.Text = string.Empty;
-        txt_unitsI.Text = string.Empty;
-        rpt_all.DataSource = objLab.getLabs();
-        rpt_all.DataBind();
-
-    }
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        if (!Page.IsPostBack)
+        private void _subRebind()
         {
-            _subRebind();
+            txt_patientidI.Text = string.Empty;
+            txt_patientcodeI.Text = string.Empty;
+            txt_dobI.Text = string.Empty;
+            txt_ageI.Text = string.Empty;
+            txt_sexI.Text = string.Empty;
+            txt_testTypeI.Text = string.Empty;
+            txt_testCodeI.Text = string.Empty;
+            txt_result1I.Text = string.Empty;
+            txt_result2I.Text = string.Empty;
+            txt_abnormalI.Text = string.Empty;
+            txt_refrangeI.Text = string.Empty;
+            txt_unitsI.Text = string.Empty;
+            rpt_all.DataSource = objLab.getLabs();
+            rpt_all.DataBind();
+
         }
+     protected void Page_Load(object sender, EventArgs e)
+     {
+         if (!Page.IsPostBack)
+         {
+             _subRebind();
+         }
     }
 
-    protected void subAdmin(object sender, CommandEventArgs e)
+    protected void subAdmin (object sender, CommandEventArgs e)
     {
         switch (e.CommandName)
         {
-
-            case "Insert":
+                        
+          case "Insert":
                 string DateofBirth = (Convert.ToDateTime(txt_dobI.Text)).ToShortDateString();
                 _strMessage(objLab.commitInsert(txt_patientidI.Text.ToString(), txt_patientcodeI.Text.ToString(), txt_ageI.Text.ToString(), txt_sexI.Text.ToString(), txt_testTypeI.Text.ToString(), txt_testCodeI.Text.ToString(), txt_result1I.Text.ToString(), txt_result2I.Text.ToString(), txt_resultDescI.Text.ToString(), txt_abnormalI.Text.ToString(), txt_refrangeI.Text.ToString(), txt_unitsI.Text.ToString(), DateofBirth), "insert");
                 _subRebind();
                 break;
             case "Cancel":
                 _subRebind();
-                break;
+                break; 
         }
 
     }
 
-    private void _strMessage(bool flag, string str)
+    private void _strMessage (bool flag, string str)
+
     {
         if (flag)
         {
-            lbl_message.Text = "lab " + str + "was successful";
+                    lbl_message.Text = "lab " + str +   "was successful";
 
-        }
+                    }
 
-        else
-        {
-            lbl_message.Text = "Sorry, unable to  " + str + "lab";
+                    else 
+                {
+                    lbl_message.Text ="Sorry, unable to  " + str + "lab";
 
-        }
+                }
     }
     protected void subUpDel(object sender, RepeaterCommandEventArgs e)
     {
@@ -92,13 +93,11 @@ public partial class lab : System.Web.UI.Page
 
 
 
-
-
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
                 int labID = int.Parse(hdfID.Value.ToString());
                 string DateofBirth = (Convert.ToDateTime(txtdob.Text)).ToString("dd/mm/yyyy");
-                _strMessage(objLab.commitUpdate(labID, txtpID.Text.ToString(), txtPC.Text.ToString(), txtAge.Text.ToString(), txtSex.Text.ToString(), txtType.Text.ToString(), txtCode.Text.ToString(), txtResult1.Text.ToString(), txtResult2.Text.ToString(), txtResultD.Text.ToString(), txtAbnormal.Text.ToString(), txtRef.Text.ToString(), txtUnits.Text.ToString(), DateofBirth), "update");
-                _subRebind();
+                _strMessage(objLab.commitUpdate(labID,txtpID.Text.ToString(),txtPC.Text.ToString(),txtAge.Text.ToString(),txtSex.Text.ToString(),txtType.Text.ToString(),txtCode.Text.ToString(),txtResult1.Text.ToString(),txtResult2.Text.ToString(),txtResultD.Text.ToString(),txtAbnormal.Text.ToString(),txtRef.Text.ToString(),txtUnits.Text.ToString(), DateofBirth), "update");
+                 _subRebind();
                 break;
             case "Delete":
                 int _id = int.Parse(((HiddenField)e.Item.FindControl("hdf_idE")).Value);
@@ -113,6 +112,6 @@ public partial class lab : System.Web.UI.Page
 
 
     }
-
-
+    
+ 
 }
