@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
-    AdminEmployeeClass objApp = new AdminEmployeeClass();
+    AdminEmployeeClass objApp = new AdminEmployeeClass(); //instance of class
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)

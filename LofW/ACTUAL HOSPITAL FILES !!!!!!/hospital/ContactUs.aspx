@@ -8,13 +8,21 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
      <asp:Label ID="lbl_msg" runat="server" />
+     <h2>Concerns or comments about patient care?</h2>
+    <h3>If you have concerns or comments about patient care that have not been addressed by the department or nursing unit where 
+        the patient is receiving care or did receive care, please feel welcome to share patient experience.<br />
+        <br />
+        Please note: Lake of Humber Woods cannot provide personal health advice over the internet.
+         Please consult your own physician for advice, appointments or referral.</h3><br />
+      
         <br />
         <table>
             <tr>
                 <td><asp:Label ID="lbl_fname" runat="server" Text="First Name " /></td>
                 <td><asp:TextBox ID="txt_fname" runat="server" />
                     <asp:RequiredFieldValidator ID="rqv_fname" runat="server" ControlToValidate="txt_fname" ErrorMessage="*First Name Required" Text="*Required" />
-                <asp:RegularExpressionValidator ID="rgv_fname" runat="server" display="Dynamic" ControlToValidate="txt_fname" 
+                <%-- TO make sure First name will be entered in chracters only--%> 
+                     <asp:RegularExpressionValidator ID="rgv_fname" runat="server" display="Dynamic" ControlToValidate="txt_fname" 
                     ErrorMessage="Enter First Name in Characters only!" validationexpression="[a-zA-Z]*" />
                 </td>                
             </tr>
@@ -22,7 +30,8 @@
                 <td><asp:Label ID="lbl_lname" runat="server" Text="Last Name " /></td>
                 <td><asp:TextBox ID="txt_lname" runat="server" />
                     <asp:RequiredFieldValidator ID="rqv_lname" runat="server" ControlToValidate="txt_lname" ErrorMessage="*Last Name Required" Text="*Required" />
-                <asp:RegularExpressionValidator ID="rgv_lname" runat="server" display="Dynamic" ControlToValidate="txt_lname" 
+                <%-- TO make sure Last name will be entered in chracters only--%> 
+                     <asp:RegularExpressionValidator ID="rgv_lname" runat="server" display="Dynamic" ControlToValidate="txt_lname" 
                     ErrorMessage="Enter Last Name in Characters only!" validationexpression="[a-zA-Z]*" />
                 </td>
             </tr>
@@ -62,5 +71,5 @@
                 <td><asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" /></td>
             </tr>
         </table>
-    <asp:ValidationSummary ID="vds_all" runat="server" HeaderText="Please fill in the required fields !" DisplayMode="BulletList" ShowSummary="true" />
+    <asp:ValidationSummary ID="vds_all" runat="server" HeaderText="Please fill in the required fields !" DisplayMode="BulletList" ShowSummary="false" ShowMessageBox="true" />
 </asp:Content>

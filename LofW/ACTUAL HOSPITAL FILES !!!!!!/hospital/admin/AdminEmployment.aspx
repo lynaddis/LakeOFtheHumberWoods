@@ -11,11 +11,11 @@
         <asp:Label ID="lbl_message" runat="server" />
         <tr>
                  <th><asp:Label ID="lbl_name" runat="server" Text="Name:" /></th>
-                 <th><asp:Label ID="lbl_lnamel" runat="server" Text="Qualification:" /></th>
-                 <th><asp:Label ID="lbl_lemail" runat="server" Text="Email:" /></th>
+                 <th style="width: 90px;"><asp:Label ID="lbl_lnamel" runat="server" Text="Qualification:" /></th>
+                 <th style="width: 150px;"><asp:Label ID="lbl_lemail" runat="server" Text="Email:" /></th>
                  <th><asp:Label ID="lbl_view" runat="server" Text="Option" /></th>
                  <th><asp:Label ID="lbl_del" runat="server" Text="Option" /></th>
-                 <th><asp:Label ID="lbl_cancel" runat="server" Text="Option" /></th>
+                 <%--<th><asp:Label ID="lbl_cancel" runat="server" Text="Option" /></th>--%>
              </tr>
        <asp:datalist ID="dtl_main" runat="server" OnItemCommand="subAdmin">
          <ItemTemplate>
@@ -26,20 +26,7 @@
                    <td><asp:label ID="lbl_email" runat="server" Text='<%#Eval("email") %>' /></td>
                    <td><asp:LinkButton ID="lnk_view" runat="server" Text="View" CommandName="Select" CommandArgument='<%#Eval("Id")%>' /></td>
                   <td><asp:LinkButton ID="lnk_del" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return confirm('Confirm ?')" CausesValidation="false" /></td>
-                  <td><asp:LinkButton ID="lnk_cancel" runat="server" Text="Cancel" CommandName="Cancel" /></td>
-<%--               <td><asp:Label ID="lbl_lname" runat="server" Text='<%#Eval("lastname") %>' /></td>
-               
-               <td><asp:Label ID="lbl_primaryphone" runat="server" Text='<%#Eval("primary_phone") %>'/></td>
-               <td><asp:Label ID="lbl_otherphone" runat="server" Text='<%#Eval("other_phone") %>' /></td>
-               <td><asp:Label ID="lbl_address" runat="server" Text='<%#Eval("address") %>' /></td>
-               <td><asp:Label ID="lbl_pcode" runat="server" Text='<%#Eval("postal_code") %>' /></td>
-               <td><asp:Label ID="lbl_state" runat="server" Text='<%#Eval("state") %>' /></td>
-               <td><asp:Label ID="lbl_country" runat="server" Text='<%#Eval("country") %>' /></td>
-               <td><asp:Label ID="lbl_eduf" runat="server" Text='<%#Eval("edu_date_from") %>' /></td>
-               <td><asp:Label ID="lbl_edut" runat="server" Text='<%#Eval("edu_date_to") %>' /></td>
-               
-               <td><asp:Label ID="lbl_inst" runat="server" Text='<%#Eval("edu_institute") %>' /></td>
-               <td><asp:Label ID="lbl_work" runat="server" Text='<%#Eval("work_exp") %>' /></td></tr>--%>
+                  <%--<td><asp:LinkButton ID="lnk_cancel" runat="server" Text="Cancel" CommandName="Cancel" /></td>--%>
            </ItemTemplate>     
       </asp:datalist>
    </table>
