@@ -40,16 +40,16 @@ public class CalenderClass
         }
     }
 
-    public bool commitUpdate(int _Id, DateTime _EntryDate, string _AppAvail, string _SpecialistName, string _SpecialistField, string _AppInfo, string _TimesAvail)
+    public bool commitUpdate(int _Id, DateTime _EntryDate, string _SpecialistName, string _SpecialistField, string _AppAvail, string _AppInfo, string _TimesAvail)
     {
         HospitalDataContext objschd = new HospitalDataContext();
         using (objschd)
         {
             var objUpEnt = objschd.Entries.Single(x => x.Id == _Id);
             objUpEnt.EntryDate = _EntryDate;
-            objUpEnt.AppAvail = _AppAvail;
             objUpEnt.SpecialistField = _SpecialistName;
             objUpEnt.SpecialistField = _SpecialistField;
+            objUpEnt.AppAvail = _AppAvail;
             objUpEnt.AppAvail = _AppInfo;
             objUpEnt.TimesAvail = _TimesAvail;
             objschd.SubmitChanges();

@@ -54,7 +54,7 @@ public partial class adminspecialists : System.Web.UI.Page
             case "UpdateE":
 
 
-                TextBox txtEdate = (TextBox)e.Item.FindControl("txt_entrydateE");
+                TextBox txtEdateE = (TextBox)e.Item.FindControl("txt_entrydateE");
                 TextBox txtsnameE = (TextBox)e.Item.FindControl("txt_snameE");
                 TextBox txtfieldE = (TextBox)e.Item.FindControl("txt_fieldE");
                 TextBox txtappAvailE = (TextBox)e.Item.FindControl("txt_appAvailE");
@@ -71,7 +71,7 @@ public partial class adminspecialists : System.Web.UI.Page
                 HiddenField hdfIDU = (HiddenField)e.Item.FindControl("hdf_idE");
                 int Id = int.Parse(hdfIDU.Value.ToString());
 
-                _strMessage(specCal.commitUpdate(Id, DateTime.Parse(txtEdate.Text.ToString()), txtsnameE.Text, txtfieldE.Text, txtappAvailE.Text, txtappInfoE.Text, txttimesAvailE.Text), "update");
+                _strMessage(specCal.commitUpdate(Id, DateTime.Parse(txtEdateE.Text.ToString()), txtsnameE.Text, txtfieldE.Text, txtappAvailE.Text, txtappInfoE.Text, txttimesAvailE.Text.ToString()), "update");
 
                 _subRebind();
 

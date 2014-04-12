@@ -45,7 +45,7 @@
         <itemTemplate>
             <asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("Id") %>' />
             <br />
-            <asp:TextBox ID="txt_entrydate" runat="server" Text='<%#Bind("EntryDate") %>' />
+            <asp:TextBox ID="txt_entrydateE" runat="server" Text='<%#Bind("EntryDate") %>' />
             <br />
             <asp:TextBox ID="txt_snameE" runat="server" Text='<%#Bind("SpecialistName") %>' />
             <br />
