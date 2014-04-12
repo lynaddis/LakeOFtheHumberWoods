@@ -52,17 +52,21 @@ public partial class adminspecialists : System.Web.UI.Page
         switch (e.CommandName)
         {
             case "UpdateE":
+               
 
+                TextBox txtEdate = (TextBox)e.Item.FindControl("txt_entryDateE");
                 TextBox txtnameE = (TextBox)e.Item.FindControl("txt_snameE");
                 TextBox txtfieldE = (TextBox)e.Item.FindControl("txt_fieldE");
                 TextBox txtappAvailE = (TextBox)e.Item.FindControl("txt_appAvailE");
                 TextBox txtappInfoE = (TextBox)e.Item.FindControl("txt_appInfoE");
                 TextBox txttimesAvailE = (TextBox)e.Item.FindControl("txt_timesAvailE");
-               
-                HiddenField hdfIDU = (HiddenField)e.Item.FindControl("hdf_idE");
-                DateTime cal = DateTime.Parse(hdfIDU.Value.ToString());
 
-                _strMessage(specCal.commitUpdate(cal, txtfieldE.Text, txtappAvailE.Text, txtappAvailE.Text, txtappInfoE.Text, txttimesAvailE.Text), "update");
+                DateTime Date = (DateTime.Parse(txt_entryDateE.Text.ToString()));
+
+                HiddenField hdfIDU = (HiddenField)e.Item.FindControl("hdf_idE");
+                int Id = int.Parse(hdfIDU.Value.ToString());
+
+                _strMessage(specCal.commitUpdate(Id, Date, txtfieldE.Text, txtappAvailE.Text, txtappAvailE.Text, txtappInfoE.Text, txttimesAvailE.Text), "update");
 
                 _subRebind();
 
@@ -70,9 +74,9 @@ public partial class adminspecialists : System.Web.UI.Page
 
             case "DeleteE":
                
-                DateTime _EntryDate = DateTime.Parse(((HiddenField)e.Item.FindControl("hdf_idE")).Value);
+                int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_idE")).Value);
 
-                _strMessage(specCal.commitDelete(_EntryDate), "delete");
+                _strMessage(specCal.commitDelete(_Id), "delete");
                 _subRebind();
                 break;
             case "CancelE":

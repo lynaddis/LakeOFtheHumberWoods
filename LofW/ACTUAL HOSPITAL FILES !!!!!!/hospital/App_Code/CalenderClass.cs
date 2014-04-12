@@ -40,12 +40,13 @@ public class CalenderClass
         }
     }
 
-    public bool commitUpdate(DateTime _EntryDate, string _AppAvail, string _SpecialistName, string _SpecialistField, string _AppInfo, string _TimesAvail)
+    public bool commitUpdate(int _Id, DateTime _EntryDate, string _AppAvail, string _SpecialistName, string _SpecialistField, string _AppInfo, string _TimesAvail)
     {
         HospitalDataContext objschd = new HospitalDataContext();
         using (objschd)
         {
-            var objUpEnt = objschd.Entries.Single(x => x.EntryDate == _EntryDate);
+            var objUpEnt = objschd.Entries.Single(x => x.Id == _Id);
+            objUpEnt.EntryDate = _EntryDate;
             objUpEnt.AppAvail = _AppAvail;
             objUpEnt.SpecialistField = _SpecialistName;
             objUpEnt.SpecialistField = _SpecialistField;
@@ -56,12 +57,12 @@ public class CalenderClass
         }
     }
 
-    public bool commitDelete(DateTime _EntryDate)
+    public bool commitDelete(int _Id)
     {
         HospitalDataContext objcal = new HospitalDataContext();
         using (objcal)
         {
-            var objDelCal = objcal.Entries.Single(x => x.EntryDate == _EntryDate);
+            var objDelCal = objcal.Entries.Single(x => x.Id == _Id);
             objcal.Entries.DeleteOnSubmit(objDelCal);
             objcal.SubmitChanges();
             return true;

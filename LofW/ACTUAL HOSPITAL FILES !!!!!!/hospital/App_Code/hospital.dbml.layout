@@ -223,10 +223,10 @@
         <elementListCompartment Id="05f7f1ba-730d-4623-a37a-c0370325dce8" absoluteBounds="1.2650000000000001, 11.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2f2ea0a8-975b-4faf-856b-d93da6e8d9d2" absoluteBounds="4, 10.375, 2, 1.9631982421875">
+    <classShape Id="d8619562-9a64-4f69-87b7-8a9b17089fea" absoluteBounds="4.625, 10.5, 2, 2.1554996744791666">
       <DataClassMoniker Name="/HospitalDataContext/Entry" />
       <nestedChildShapes>
-        <elementListCompartment Id="ce76aac8-7383-44a4-8f0f-254aa8a1e976" absoluteBounds="4.015, 10.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0a8f0dc8-192b-41c0-854d-81aeb0097115" absoluteBounds="4.64, 10.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

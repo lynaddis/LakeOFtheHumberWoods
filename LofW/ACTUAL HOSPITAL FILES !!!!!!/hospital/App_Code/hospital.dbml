@@ -329,7 +329,8 @@
   </Table>
   <Table Name="dbo.Entry" Member="Entries">
     <Type Name="Entry">
-      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="SpecialistName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="SpecialistField" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="AppAvail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />

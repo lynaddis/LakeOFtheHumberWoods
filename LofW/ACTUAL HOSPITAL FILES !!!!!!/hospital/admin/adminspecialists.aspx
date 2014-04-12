@@ -43,7 +43,10 @@
     <asp:ListView ID="ltv_all" runat="server" OnItemCommand="subEdit">
   
         <itemTemplate>
-            <asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("EntryDate") %>' />
+            <asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("Id") %>' />
+            <br />
+            <asp:TextBox ID="txt_entrydate" runat="server" Text='<%#Bind("EntryDate") %>' />
+            <br />
             <asp:TextBox ID="txt_snameE" runat="server" Text='<%#Bind("SpecialistName") %>' />
             <br />
             <asp:TextBox ID="txt_fieldE" runat="server" Text='<%#Bind("SpecialistField") %>' />

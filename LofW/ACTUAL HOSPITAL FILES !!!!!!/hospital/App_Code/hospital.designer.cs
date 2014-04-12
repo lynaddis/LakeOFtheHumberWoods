@@ -6198,6 +6198,8 @@ public partial class Entry : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 	
+	private int _Id;
+	
 	private System.DateTime _EntryDate;
 	
 	private string _SpecialistName;
@@ -6214,6 +6216,8 @@ public partial class Entry : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
     partial void OnEntryDateChanging(System.DateTime value);
     partial void OnEntryDateChanged();
     partial void OnSpecialistNameChanging(string value);
@@ -6233,7 +6237,27 @@ public partial class Entry : INotifyPropertyChanging, INotifyPropertyChanged
 		OnCreated();
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntryDate", DbType="DateTime NOT NULL", IsPrimaryKey=true)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntryDate", DbType="DateTime NOT NULL")]
 	public System.DateTime EntryDate
 	{
 		get
