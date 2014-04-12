@@ -6,12 +6,10 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-    <asp:Label ID="lbl_insert" runat="server"  Text=""/> <%--Insert begins here--%>
-    <br />
         <asp:Label ID="lbl_message" runat="server" />
         <br />
         <br />
- <asp:Literal ID="ltl_suggestion" runat="server" Text="We at Lake of Humber Woods are dedicated to providing you the best quality care possible. Part of this committment is  understanding how we can work on those areas where our service is strong and improve on those areas where our service is weak."  /><br />
+<p>We at Lake of Humber Woods are dedicated to providing you the best quality care possible. Part of this committment is  understanding how we can work on those areas where our service is strong and improve on those areas where our service is weak.</p><br />
 
     <br /><br />
              <asp:Label ID="lbl_suggestionI" runat="server" AssociatedControlID="ddl_suggestionType" Text="Suggestion Type" />
@@ -54,7 +52,7 @@
                 <%--Buttons for insert and cancel--%>
                 <asp:Button ID="btn_insert" runat="server" Text="Send" OnClick="btn" OnCommand="subAdmin" CommandName="Insert" ValidationGroup="insert"  />
                 <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subAdmin" CommandName="Cancel"  />
-                <asp:ValidationSummary ID="vds_main" runat="server" HeaderText="Errors:" ShowMessageBox="true" ShowSummary="false" />
+                <asp:ValidationSummary ID="vds_main" runat="server" HeaderText="Errors:" ShowMessageBox="true" DisplayMode="List"  ShowSummary="false" />
                 <hr />
         <p>
     <asp:Label ID="DisplayMessage" runat="server" Visible="false" />

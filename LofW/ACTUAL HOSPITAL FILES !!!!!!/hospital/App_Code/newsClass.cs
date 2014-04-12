@@ -50,15 +50,15 @@ public class newsClass
         return allNews; // selecting products from the database by their ID
     }
 
-    public bool commitInsert(string _publishfirst, string _publishafter, string _Dep, string _Date) //allows insert using boolean and string to validate 
+    public bool commitInsert(string _Dep, string _Details, string _Url, string _Date) //allows insert using boolean and string to validate 
     {
        HospitalDataContext objNews = new HospitalDataContext();
         using (objNews)
         {
             New objNewNews = new New();
-            objNewNews.PublishBefore = _publishfirst;
-            objNewNews.PublishAfter = _publishafter;
             objNewNews.Department = _Dep;
+            objNewNews.Details = _Details;
+            objNewNews.Url= _Url;
             objNewNews.Date = _Date;
             objNews.News.InsertOnSubmit(objNewNews);
             objNews.SubmitChanges();
@@ -67,16 +67,16 @@ public class newsClass
 
     }
 
-    public bool commitUpdate(int _id, string _publishfirst, string _publishafter, string _Dep, string _Date) //allows update
+    public bool commitUpdate(int _id, string _Dep, string _Details, string _Url, string _Date) //allows update
     {
        HospitalDataContext objNews = new HospitalDataContext();
         using (objNews)
         {
             var objUpNews = objNews.News.Single(x => x.Id == _id);
             New objNewNews = new New();
-            objNewNews.PublishBefore = _publishfirst;
-            objNewNews.PublishAfter = _publishafter;
             objNewNews.Department = _Dep;
+            objNewNews.Details = _Details;
+            objNewNews.Url = _Url;
             objNewNews.Date = _Date;
             objNews.SubmitChanges();
             return true;
