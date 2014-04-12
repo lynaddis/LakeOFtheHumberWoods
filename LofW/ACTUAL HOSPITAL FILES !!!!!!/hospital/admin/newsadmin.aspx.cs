@@ -65,8 +65,11 @@ public partial class newsadmin : System.Web.UI.Page
         switch (e.CommandName) // allows  Updates or deletes data using the textboxes  from the interface which is bounded to the database
         {
             case "Update":
+<<<<<<< HEAD
+=======
                 TextBox txtFirst = (TextBox)e.Item.FindControl("txt_filterE");
                 TextBox txtAfter = (TextBox)e.Item.FindControl("txt_filterafterE");
+>>>>>>> parent of 9b39f71... making changes NOUPDATES ACTUALLY WORK!!!!!GRRRR!!!!!!
                 TextBox txtDep = (TextBox)e.Item.FindControl("txt_departmentE");
                 TextBox txtDate = (TextBox)e.Item.FindControl("txt_dateE");
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
