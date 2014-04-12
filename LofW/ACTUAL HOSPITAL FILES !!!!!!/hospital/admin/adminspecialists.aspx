@@ -8,6 +8,8 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
+    <asp:Label ID="lbl_output" runat="server" />
+
     <asp:Label ID="lbl_entryDateI" runat="server" Text="EntryDate" />
     <br />
     <asp:TextBox ID="txt_entryDateI" runat="server" />
@@ -33,6 +35,35 @@
     <br />
         <asp:TextBox ID="txt_timeI" runat="server"/>
     <br />
+    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" /><%-- onCommand for subroutine on code behind called subAdmin --%><br />
+                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" />
+    <br />
     
-    <asp:ListView ID="ltv_all" runat="server"></asp:ListView>
+   
+    <asp:ListView ID="ltv_all" runat="server" OnItemCommand="subEdit">
+  
+        <itemTemplate>
+            <asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("EntryDate") %>' />
+            <asp:TextBox ID="txt_snameE" runat="server" Text='<%#Bind("SpecialistName") %>' />
+            <br />
+            <asp:TextBox ID="txt_fieldE" runat="server" Text='<%#Bind("SpecialistField") %>' />
+            <br />
+            <asp:TextBox ID="txt_appAvailE" runat="server" Text='<%#Bind("AppAvail") %>' />
+            <br />
+            <asp:TextBox ID="txt_appInfoE" runat="server" Text='<%#Bind("AppInfo") %>' />
+            <br />
+            <asp:TextBox ID="txt_timesAvailE" runat="server" Text='<%#Bind("TimesAvail") %>' />
+            <br />
+            <asp:LinkButton ID="update" runat="server" Text="Update" CommandName="UpdateE"  />
+        <br />
+        <asp:LinkButton ID="delete" runat="server" Text="Delete" CommandName="DeleteE" OnClientClick="return confirm('Confirm Delete?')" />
+             <br />
+         <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" CommandName="CancelE"  />
+
+
+        </itemTemplate>
+      
+
+
+    </asp:ListView>
 </asp:Content>

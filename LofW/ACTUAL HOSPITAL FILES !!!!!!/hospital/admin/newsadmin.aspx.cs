@@ -33,7 +33,8 @@ public partial class newsadmin : System.Web.UI.Page
         {
             case "Insert":
                  string Date = (Convert.ToDateTime(txt_dateI.Text)).ToShortDateString();
-                _strMessage(objLinq.commitInsert(txt_departmentI.Text,txt_detailsI.Text,txt_urlI.Text, Date), "insert");
+
+                _strMessage(objLinq.commitInsert(txt_departmentI.Text, txt_detailsI.Text, txt_urlI.Text, Date), "insert");
                 _subRebind();
                 break;
             case "Cancel":
