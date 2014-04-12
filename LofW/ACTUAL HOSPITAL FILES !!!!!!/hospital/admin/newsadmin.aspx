@@ -7,7 +7,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-
+     <div class="page_title"><h2>Edit News Updates</h2></div>
+    <br />
     <asp:Label ID="lbl_message" runat="server" />
         <br />
         <br />

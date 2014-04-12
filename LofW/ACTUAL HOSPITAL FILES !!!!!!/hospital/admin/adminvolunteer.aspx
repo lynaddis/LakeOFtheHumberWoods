@@ -11,7 +11,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
 
-        <div id="adminvol_title" >
+        <div class="page_title" >
 
            <h2>Submitted Volunteer Froms</h2>
   

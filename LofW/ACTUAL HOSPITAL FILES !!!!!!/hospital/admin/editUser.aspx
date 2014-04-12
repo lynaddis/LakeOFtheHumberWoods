@@ -7,6 +7,7 @@
     <title>Admin - Edit User</title>
 </head>
 <body>
+     <div class="page_title"><h2>Edit User</h2></div>
     <form id="form1" runat="server">
         <div>
             <%-- Displys welcome message to user --%> 

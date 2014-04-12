@@ -7,9 +7,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
+     <div class="page_title"><h2>Add, Update, or Delete Specialist Appointments</h2></div>
 
+    <br />
+    <br />
     <asp:Label ID="lbl_output" runat="server" />
-
+    <br />
+    <br />
     <asp:Label ID="lbl_entryDateI" runat="server" Text="EntryDate" />
     <br />
     <asp:TextBox ID="txt_entryDateI" runat="server" />

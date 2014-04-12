@@ -7,6 +7,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
+
+     <div class="page_title"><h2>Edit Jobs</h2></div>
     <asp:Panel ID="pnl_all" runat="server" GroupingText="List of Jobs">
     <table>
         <thead>

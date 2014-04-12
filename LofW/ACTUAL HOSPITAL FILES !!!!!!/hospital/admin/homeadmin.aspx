@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
     
-     <div id="adminhome_title" >
+     <div class="page_title" >
 
            <h2>Welcome Admin!</h2>
         <p>   </p>

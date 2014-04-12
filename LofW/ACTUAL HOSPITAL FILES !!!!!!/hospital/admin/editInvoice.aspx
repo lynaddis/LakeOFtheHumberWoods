@@ -8,6 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+         <div class="page_title"><h2>Edit Invoices</h2></div>
         <div>
            <%-- Displys welcome message to user --%> 
         <asp:LoginName ID="log_name" runat="server" FormatString="Welcome, {0} " />

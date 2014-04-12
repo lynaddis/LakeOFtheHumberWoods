@@ -9,6 +9,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+         <div class="page_title"><h2>Administrative</h2></div>
+
+
     <div class="vsContainer">
     <div class="vsheader"></div>
         <div class="vsSideNav">
