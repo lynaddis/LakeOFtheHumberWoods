@@ -69,4 +69,12 @@
 
 
     </asp:ListView>
+     <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="ltv_all" PageSize="1">
+                <Fields>
+                    <%--the first, previous, next, last page options are available--%>
+                    <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />
+                    <asp:NumericPagerField ButtonType="Link" />
+                    <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="false" />
+                </Fields>
+</asp:DataPager>
 </asp:Content>
