@@ -5,9 +5,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_main" Runat="Server">
-
-    <h1>About Our Project</h1>
-
+   
+     <div class="page_title" >
+    <h2>About Our Project</h2>
+</div>
     <div id="about_text">
     words about our projects and stuff.
         </div>

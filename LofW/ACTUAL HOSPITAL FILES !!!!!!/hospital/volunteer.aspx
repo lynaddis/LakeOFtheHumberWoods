@@ -7,7 +7,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-     <div id="vol_title" >
+     <div class="page_title" >
 
            <h2>Sign Up To Volunteer!</h2>
         <p>If you want to help out in any way, please fill out all applicable fields of this form and we will be sure to contact you!   </p>

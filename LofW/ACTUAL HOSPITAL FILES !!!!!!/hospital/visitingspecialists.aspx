@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_main" Runat="Server">
 
-     <div> <h1>THe Fuck you Calendar</h1>
+     <div class="page_title"> <h2>The Fuck you Calendar</h2>
       <asp:Calendar ID="calSchedule" OnDayRender="Cal_DR" SelectedDate='<%#Bind ("EntryDate") %>' OnSelectionChanged="selectChange" runat="server">
           <DayHeaderStyle BackColor="DeepSkyBlue" />
             <DayStyle BorderStyle="Solid" BorderWidth="2px" />

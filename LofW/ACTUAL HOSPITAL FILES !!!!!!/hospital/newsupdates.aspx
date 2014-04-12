@@ -1,6 +1,10 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Master.master" CodeFile="newsupdates.aspx.cs" Inherits="newsupdates" %>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
+
+    <div class="page_title">
+        <h2>Hospital News</h2>
+    </div>
             <p>Here you can View Our News Events & Activities for the hospital</p>
             <asp:Button ID="btn_news" runat="server" Text="Find News" CommandName="ViewNews" OnClick="btn_news_Click" />
     

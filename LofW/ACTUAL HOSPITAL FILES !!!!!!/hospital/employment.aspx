@@ -8,8 +8,8 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
     <asp:Label ID="lbl_employment" runat="server" />
-     <h1>Emplyment Form</h1>
-    <h3>For your resume attachment, please use a .docx format.</h3>
+    <div class="page_title"> <h2>Employment Form</h2></div>
+    <p>Please use .docx format for your resume attachment</p>
     <table>
         <tr><th>Personal</th></tr>
         <tr><asp:hiddenfield ID="hdf_IdE" runat="server" Value='<%#Eval("Id") %>' />

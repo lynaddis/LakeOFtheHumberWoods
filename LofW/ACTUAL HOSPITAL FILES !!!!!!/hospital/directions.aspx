@@ -43,6 +43,11 @@
     </style>
 </head>
 <body>
+
+    <div class="page_title" >
+        <h2>Maps and Directions</h2>
+
+    </div>
     <form id="getDirections" runat="server">
     <div>
     <table>

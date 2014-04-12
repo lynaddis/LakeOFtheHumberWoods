@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/pages/MasterPage.master" AutoEventWireup="true" CodeFile="seeRoomAvailability.aspx.cs" Inherits="pages_seeRoomAvailability" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="seeRoomAvailability.aspx.cs" Inherits="pages_seeRoomAvailability" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -7,8 +7,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-
-    <h1>Room Availabilty List</h1>
+    <div class="page_title"><h2>Room Availability</h2></div>
+   
     <asp:GridView ID="GridViewShowRoomAvailability"  runat="server" AutoGenerateColumns="False" DataKeyNames="bedId" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="GridViewSearchAll_RowDataBound">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>

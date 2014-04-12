@@ -7,9 +7,19 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-     <asp:Label ID="lbl_msg" runat="server" />
-     <h1>Employment Opportunities</h1>
-     <h3>There are a variety of roles required to deliver world-class health care at Lake of Humber Woods.</h3>
+
+     <div class="page_title">
+         <h2>Employment Opportunities</h2>
+     </div>
+
+     <p>There are a variety of roles required to deliver world-class health care at Lake of Humber Woods.</p>
+
+
+    <br />
+    <br />
+         <asp:Label ID="lbl_msg" runat="server" />
+    <br />
+    <br />
     <table border="1" style="word-wrap: break-word">
         <thead>
                      <tr>

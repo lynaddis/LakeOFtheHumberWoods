@@ -1,0 +1,54 @@
+ALTER TABLE budgets 
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE cards
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE card_sets
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE events
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE exercises
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE jobs
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE landing_pages
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE movienight
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE questions
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE recipe
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);
+
+ALTER TABLE sales 
+ADD CONSTRAINT FK_search_id
+FOREIGN KEY (search) 
+REFERENCES sales(user_id);

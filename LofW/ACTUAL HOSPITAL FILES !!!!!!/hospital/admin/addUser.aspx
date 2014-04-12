@@ -9,6 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+             <div class="page_title"><h2>Add User</h2></div>
           <%-- Displys welcome message to user --%> 
         <asp:LoginName ID="log_name" runat="server" FormatString="Welcome, {0} " />
 

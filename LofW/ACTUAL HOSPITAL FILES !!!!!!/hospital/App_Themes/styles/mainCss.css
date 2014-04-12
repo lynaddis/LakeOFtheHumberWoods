@@ -1,4 +1,4 @@
-﻿/*Main desktop view*/
+﻿/*Main Classes*/
 
     .container {
         width: 960px;
@@ -19,6 +19,15 @@
         min-height: 100px;
     }
 
+
+    .page_title h2 {
+  padding-top:10px;
+  text-align:left;
+  background-color: ButtonFace;
+  height: 40px;
+  width: 960px;
+  font-family:'Adobe Gurmukhi';
+}
     /*home page*/
     .banner {
         width: 960px;
@@ -164,6 +173,7 @@ text-decoration:none;
     /*End Home Page Admin*/
     /*About Page*/
 
+
 #about_text {
     height: 300px;
     width: 450px;
@@ -181,6 +191,19 @@ text-decoration:none;
     border:dashed 2px;
 }
 /*End of About Page*/
+
+/*Contact Us Public*/
+
+
+/*End Contact Us Public*/
+
+/*Directions Public*/
+
+
+/*End Directions Public*/
+
+/*Donations Public*/
+/*End Donations Public*/
 /*Health Concerns Page (public)*/
 
 #listed_concern {
@@ -192,14 +215,7 @@ text-decoration:none;
 
 }
 
-#health_title h2 {
-  padding-top:10px;
-  text-align:left;
-  background-color: ButtonFace;
-  height: 40px;
-  width: 960px;
-  font-family:'Adobe Gurmukhi';
-}
+
 
     #health_title p {
          font-family:'Adobe Gurmukhi';
@@ -271,14 +287,7 @@ text-decoration:none;
       height: 450px;
       font-family:'Adobe Gurmukhi';
 }
-#vol_title h2 {
-  padding-top:10px;
-  text-align:left;
-  background-color: ButtonFace;
-  height: 40px;
-  width: 960px;
-  font-family:'Adobe Gurmukhi';
-}
+
 
 #vol_title p {
          font-family:'Adobe Gurmukhi';
@@ -290,14 +299,7 @@ text-decoration:none;
 
 /*End of Volunteers(public)*/
 /*Volunteer Admin Page*/
-#adminvol_title h2 {
-  padding-top:10px;
-  text-align:left;
-  background-color: ButtonFace;
-  height: 40px;
-  width: 960px;
-  font-family:'Adobe Gurmukhi';
-}
+
 
 /*End Volunteer Admin Page*/
 

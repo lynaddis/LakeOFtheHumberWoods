@@ -7,13 +7,18 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
+
+    <div class="page_title" >
+        <h2>Contact Us</h2>
+    </div>
+
      <asp:Label ID="lbl_msg" runat="server" />
-     <h2>Concerns or comments about patient care?</h2>
-    <h3>If you have concerns or comments about patient care that have not been addressed by the department or nursing unit where 
+     <h3>Concerns or comments about patient care?</h3>
+    <p>If you have concerns or comments about patient care that have not been addressed by the department or nursing unit where 
         the patient is receiving care or did receive care, please feel welcome to share patient experience.<br />
         <br />
         Please note: Lake of Humber Woods cannot provide personal health advice over the internet.
-         Please consult your own physician for advice, appointments or referral.</h3><br />
+         Please consult your own physician for advice, appointments or referral.</p><br />
       
         <br />
         <table>

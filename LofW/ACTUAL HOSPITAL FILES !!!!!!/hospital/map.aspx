@@ -32,6 +32,9 @@
     </style>
 </head>
 <body>
+    <div class="page_title">
+        <h2>Maps</h2>
+    </div>
     <form id="form1" runat="server">
     <div>
     <div id="map-canvas" style=" width:500px; height:400px; border:1px dashed red;"></div>

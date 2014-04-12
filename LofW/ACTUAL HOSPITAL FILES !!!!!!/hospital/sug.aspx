@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Master.master"  AutoEventWireup="true"  CodeFile="sug.aspx.cs" Theme="MenuStyle" Inherits="admin" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master.master"  AutoEventWireup="true"  CodeFile="sug.aspx.cs" Inherits="admin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
@@ -6,11 +6,15 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-        <asp:Label ID="lbl_message" runat="server" />
+    <div class="page_title" ><h2>Suggestion Form</h2></div>
+
+        
         <br />
         <br />
 <p>We at Lake of Humber Woods are dedicated to providing you the best quality care possible. Part of this committment is  understanding how we can work on those areas where our service is strong and improve on those areas where our service is weak.</p><br />
-
+    <br />
+    <br />
+    <asp:Label ID="lbl_message" runat="server" />
     <br /><br />
              <asp:Label ID="lbl_suggestionI" runat="server" AssociatedControlID="ddl_suggestionType" Text="Suggestion Type" />
              <asp:DropDownList ID="ddl_suggestionType" runat="server" >

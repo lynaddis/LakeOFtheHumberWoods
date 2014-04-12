@@ -28,7 +28,7 @@
 
     </script>
     
-    <div id="health_title" >
+    <div class="page_title" >
 
            <h2>Health Concerns</h2>
         <p>Select different regions to view currently trending health concerns.  All information known to the hosptial has been made available to you.  This includes symptoms, preventatives, treatments, and any reccommendations submitted by users of the site </p>
