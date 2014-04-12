@@ -62,12 +62,6 @@
       <Column Name="donorEmailSend" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Entry" Member="Entries">
-    <Type Name="Entry">
-      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AppAvail" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.Hospital_locations" Member="Hospital_locations">
     <Type Name="Hospital_location">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -331,6 +325,16 @@
       <Column Name="edu_institute" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="work_exp" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="jobTitle" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Entry" Member="Entries">
+    <Type Name="Entry">
+      <Column Name="EntryDate" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SpecialistName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="SpecialistField" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AppAvail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AppInfo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TimesAvail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.spUpdateDonorInformation" Method="spUpdateDonorInformation">

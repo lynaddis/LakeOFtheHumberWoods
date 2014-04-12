@@ -32,12 +32,6 @@
         <elementListCompartment Id="301f7a58-a707-4cf3-ad59-1516fbf19a75" absoluteBounds="8.765, 2.585, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e1a55bae-cf80-48df-91dd-9c8dd7786d55" absoluteBounds="3.75, 10.125, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/HospitalDataContext/Entry" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7343e613-b15e-47f6-ace7-d7779a68d65c" absoluteBounds="3.765, 10.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="44077200-d9eb-4e5a-9f65-d49f032497aa" absoluteBounds="6.75, 10.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/HospitalDataContext/Hospital_location" />
       <nestedChildShapes>
@@ -196,7 +190,7 @@
         <classShapeMoniker Id="7f53c7cf-442d-4e65-b4be-9a8fc5820154" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.85659912109375); (3.5 : 4.85659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.85659912109375); (3.5 : 4.85659912109375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/HospitalDataContext/Patient/Patient_Invoice" />
       <nodes>
         <classShapeMoniker Id="a8da872b-db7d-4b4e-bb25-d70f34b30264" />
@@ -227,6 +221,12 @@
       <DataClassMoniker Name="/HospitalDataContext/employee" />
       <nestedChildShapes>
         <elementListCompartment Id="05f7f1ba-730d-4623-a37a-c0370325dce8" absoluteBounds="1.2650000000000001, 11.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f2ea0a8-975b-4faf-856b-d93da6e8d9d2" absoluteBounds="4, 10.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/HospitalDataContext/Entry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce76aac8-7383-44a4-8f0f-254aa8a1e976" absoluteBounds="4.015, 10.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

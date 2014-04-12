@@ -41,9 +41,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
   partial void InsertDirection_request(Direction_request instance);
   partial void UpdateDirection_request(Direction_request instance);
   partial void DeleteDirection_request(Direction_request instance);
-  partial void InsertEntry(Entry instance);
-  partial void UpdateEntry(Entry instance);
-  partial void DeleteEntry(Entry instance);
   partial void InsertHospital_location(Hospital_location instance);
   partial void UpdateHospital_location(Hospital_location instance);
   partial void DeleteHospital_location(Hospital_location instance);
@@ -104,6 +101,9 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
   partial void Insertemployee(employee instance);
   partial void Updateemployee(employee instance);
   partial void Deleteemployee(employee instance);
+  partial void InsertEntry(Entry instance);
+  partial void UpdateEntry(Entry instance);
+  partial void DeleteEntry(Entry instance);
   #endregion
 	
 	public HospitalDataContext() : 
@@ -173,14 +173,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<donorInformation>();
-		}
-	}
-	
-	public System.Data.Linq.Table<Entry> Entries
-	{
-		get
-		{
-			return this.GetTable<Entry>();
 		}
 	}
 	
@@ -389,6 +381,14 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<employee>();
+		}
+	}
+	
+	public System.Data.Linq.Table<Entry> Entries
+	{
+		get
+		{
+			return this.GetTable<Entry>();
 		}
 	}
 	
@@ -1565,92 +1565,6 @@ public partial class donorInformation
 			{
 				this._donorEmailSend = value;
 			}
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Entry")]
-public partial class Entry : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private System.DateTime _EntryDate;
-	
-	private string _AppAvail;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnEntryDateChanging(System.DateTime value);
-    partial void OnEntryDateChanged();
-    partial void OnAppAvailChanging(string value);
-    partial void OnAppAvailChanged();
-    #endregion
-	
-	public Entry()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntryDate", DbType="DateTime NOT NULL", IsPrimaryKey=true)]
-	public System.DateTime EntryDate
-	{
-		get
-		{
-			return this._EntryDate;
-		}
-		set
-		{
-			if ((this._EntryDate != value))
-			{
-				this.OnEntryDateChanging(value);
-				this.SendPropertyChanging();
-				this._EntryDate = value;
-				this.SendPropertyChanged("EntryDate");
-				this.OnEntryDateChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppAvail", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-	public string AppAvail
-	{
-		get
-		{
-			return this._AppAvail;
-		}
-		set
-		{
-			if ((this._AppAvail != value))
-			{
-				this.OnAppAvailChanging(value);
-				this.SendPropertyChanging();
-				this._AppAvail = value;
-				this.SendPropertyChanged("AppAvail");
-				this.OnAppAvailChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }
@@ -6253,6 +6167,188 @@ public partial class employee : INotifyPropertyChanging, INotifyPropertyChanged
 				this._jobTitle = value;
 				this.SendPropertyChanged("jobTitle");
 				this.OnjobTitleChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Entry")]
+public partial class Entry : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private System.DateTime _EntryDate;
+	
+	private string _SpecialistName;
+	
+	private string _SpecialistField;
+	
+	private string _AppAvail;
+	
+	private string _AppInfo;
+	
+	private string _TimesAvail;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEntryDateChanging(System.DateTime value);
+    partial void OnEntryDateChanged();
+    partial void OnSpecialistNameChanging(string value);
+    partial void OnSpecialistNameChanged();
+    partial void OnSpecialistFieldChanging(string value);
+    partial void OnSpecialistFieldChanged();
+    partial void OnAppAvailChanging(string value);
+    partial void OnAppAvailChanged();
+    partial void OnAppInfoChanging(string value);
+    partial void OnAppInfoChanged();
+    partial void OnTimesAvailChanging(string value);
+    partial void OnTimesAvailChanged();
+    #endregion
+	
+	public Entry()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntryDate", DbType="DateTime NOT NULL", IsPrimaryKey=true)]
+	public System.DateTime EntryDate
+	{
+		get
+		{
+			return this._EntryDate;
+		}
+		set
+		{
+			if ((this._EntryDate != value))
+			{
+				this.OnEntryDateChanging(value);
+				this.SendPropertyChanging();
+				this._EntryDate = value;
+				this.SendPropertyChanged("EntryDate");
+				this.OnEntryDateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpecialistName", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string SpecialistName
+	{
+		get
+		{
+			return this._SpecialistName;
+		}
+		set
+		{
+			if ((this._SpecialistName != value))
+			{
+				this.OnSpecialistNameChanging(value);
+				this.SendPropertyChanging();
+				this._SpecialistName = value;
+				this.SendPropertyChanged("SpecialistName");
+				this.OnSpecialistNameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SpecialistField", DbType="VarChar(50)")]
+	public string SpecialistField
+	{
+		get
+		{
+			return this._SpecialistField;
+		}
+		set
+		{
+			if ((this._SpecialistField != value))
+			{
+				this.OnSpecialistFieldChanging(value);
+				this.SendPropertyChanging();
+				this._SpecialistField = value;
+				this.SendPropertyChanged("SpecialistField");
+				this.OnSpecialistFieldChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppAvail", DbType="VarChar(MAX)")]
+	public string AppAvail
+	{
+		get
+		{
+			return this._AppAvail;
+		}
+		set
+		{
+			if ((this._AppAvail != value))
+			{
+				this.OnAppAvailChanging(value);
+				this.SendPropertyChanging();
+				this._AppAvail = value;
+				this.SendPropertyChanged("AppAvail");
+				this.OnAppAvailChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AppInfo", DbType="VarChar(MAX)")]
+	public string AppInfo
+	{
+		get
+		{
+			return this._AppInfo;
+		}
+		set
+		{
+			if ((this._AppInfo != value))
+			{
+				this.OnAppInfoChanging(value);
+				this.SendPropertyChanging();
+				this._AppInfo = value;
+				this.SendPropertyChanged("AppInfo");
+				this.OnAppInfoChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimesAvail", DbType="VarChar(MAX)")]
+	public string TimesAvail
+	{
+		get
+		{
+			return this._TimesAvail;
+		}
+		set
+		{
+			if ((this._TimesAvail != value))
+			{
+				this.OnTimesAvailChanging(value);
+				this.SendPropertyChanging();
+				this._TimesAvail = value;
+				this.SendPropertyChanged("TimesAvail");
+				this.OnTimesAvailChanged();
 			}
 		}
 	}
