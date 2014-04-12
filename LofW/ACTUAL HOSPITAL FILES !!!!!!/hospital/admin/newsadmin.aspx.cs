@@ -63,16 +63,14 @@ public partial class newsadmin : System.Web.UI.Page
         switch (e.CommandName) // allows  Updates or deletes data using the textboxes  from the interface which is bounded to the database
         {
             case "Update":
-
-                TextBox txtFirst = (TextBox)e.Item.FindControl("txt_filterE");
-                TextBox txtAfter = (TextBox)e.Item.FindControl("txt_filterafterE");
                 TextBox txtDep = (TextBox)e.Item.FindControl("txt_departmentE");
                 TextBox txtDetails = (TextBox)e.Item.FindControl("txt_detailsE");
                 TextBox txtUrl = (TextBox)e.Item.FindControl("txt_urlE");
                 TextBox txtDate = (TextBox)e.Item.FindControl("txt_dateE");
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
                 int newsID = int.Parse(hdfID.Value.ToString());
-                _strMessage(objLinq.commitUpdate(newsID, txtDate.Text,txtDep.Text,txtDetails.Text,txtUrl.Text), "update");
+                string Date = (Convert.ToDateTime(txtDate.Text)).ToString("dd/mm/yyyy");
+                _strMessage(objLinq.commitUpdate(newsID, txtDep.Text,txtDetails.Text,txtUrl.Text, Date), "update");
                 _subRebind();
                 break;
             case "Delete":
