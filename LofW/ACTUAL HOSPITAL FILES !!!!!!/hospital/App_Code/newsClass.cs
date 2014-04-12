@@ -73,13 +73,11 @@ public class newsClass
         using (objNews)
         {
             var objUpNews = objNews.News.Single(x => x.Id == _id);
-
             New objNewNews = new New();
             objNewNews.Department = _Dep;
             objNewNews.Details = _Details;
             objNewNews.Url = _Url;
             objNewNews.Date = _Date;
-            objNews.News.InsertOnSubmit(objNewNews);
             objNews.SubmitChanges();
             return true;
         }
