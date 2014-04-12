@@ -41,9 +41,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
   partial void InsertDirection_request(Direction_request instance);
   partial void UpdateDirection_request(Direction_request instance);
   partial void DeleteDirection_request(Direction_request instance);
-  partial void Insertemployee(employee instance);
-  partial void Updateemployee(employee instance);
-  partial void Deleteemployee(employee instance);
   partial void InsertEntry(Entry instance);
   partial void UpdateEntry(Entry instance);
   partial void DeleteEntry(Entry instance);
@@ -104,6 +101,9 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
   partial void InsertappRequest(appRequest instance);
   partial void UpdateappRequest(appRequest instance);
   partial void DeleteappRequest(appRequest instance);
+  partial void Insertemployee(employee instance);
+  partial void Updateemployee(employee instance);
+  partial void Deleteemployee(employee instance);
   #endregion
 	
 	public HospitalDataContext() : 
@@ -173,14 +173,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<donorInformation>();
-		}
-	}
-	
-	public System.Data.Linq.Table<employee> employees
-	{
-		get
-		{
-			return this.GetTable<employee>();
 		}
 	}
 	
@@ -389,6 +381,14 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<appRequest>();
+		}
+	}
+	
+	public System.Data.Linq.Table<employee> employees
+	{
+		get
+		{
+			return this.GetTable<employee>();
 		}
 	}
 	
@@ -1565,452 +1565,6 @@ public partial class donorInformation
 			{
 				this._donorEmailSend = value;
 			}
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.employee")]
-public partial class employee : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _Id;
-	
-	private string _firstname;
-	
-	private string _lastname;
-	
-	private string _email;
-	
-	private decimal _primary_phone;
-	
-	private System.Nullable<decimal> _other_phone;
-	
-	private string _address;
-	
-	private string _postal_code;
-	
-	private string _state;
-	
-	private string _country;
-	
-	private System.DateTime _edu_date_from;
-	
-	private string _edu_date_to;
-	
-	private string _level;
-	
-	private string _edu_institute;
-	
-	private string _work_exp;
-	
-	private string _upload_resume;
-	
-	private string _jobTitle;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnfirstnameChanging(string value);
-    partial void OnfirstnameChanged();
-    partial void OnlastnameChanging(string value);
-    partial void OnlastnameChanged();
-    partial void OnemailChanging(string value);
-    partial void OnemailChanged();
-    partial void Onprimary_phoneChanging(decimal value);
-    partial void Onprimary_phoneChanged();
-    partial void Onother_phoneChanging(System.Nullable<decimal> value);
-    partial void Onother_phoneChanged();
-    partial void OnaddressChanging(string value);
-    partial void OnaddressChanged();
-    partial void Onpostal_codeChanging(string value);
-    partial void Onpostal_codeChanged();
-    partial void OnstateChanging(string value);
-    partial void OnstateChanged();
-    partial void OncountryChanging(string value);
-    partial void OncountryChanged();
-    partial void Onedu_date_fromChanging(System.DateTime value);
-    partial void Onedu_date_fromChanged();
-    partial void Onedu_date_toChanging(string value);
-    partial void Onedu_date_toChanged();
-    partial void OnlevelChanging(string value);
-    partial void OnlevelChanged();
-    partial void Onedu_instituteChanging(string value);
-    partial void Onedu_instituteChanged();
-    partial void Onwork_expChanging(string value);
-    partial void Onwork_expChanged();
-    partial void Onupload_resumeChanging(string value);
-    partial void Onupload_resumeChanged();
-    partial void OnjobTitleChanging(string value);
-    partial void OnjobTitleChanged();
-    #endregion
-	
-	public employee()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int Id
-	{
-		get
-		{
-			return this._Id;
-		}
-		set
-		{
-			if ((this._Id != value))
-			{
-				this.OnIdChanging(value);
-				this.SendPropertyChanging();
-				this._Id = value;
-				this.SendPropertyChanged("Id");
-				this.OnIdChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string firstname
-	{
-		get
-		{
-			return this._firstname;
-		}
-		set
-		{
-			if ((this._firstname != value))
-			{
-				this.OnfirstnameChanging(value);
-				this.SendPropertyChanging();
-				this._firstname = value;
-				this.SendPropertyChanged("firstname");
-				this.OnfirstnameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string lastname
-	{
-		get
-		{
-			return this._lastname;
-		}
-		set
-		{
-			if ((this._lastname != value))
-			{
-				this.OnlastnameChanging(value);
-				this.SendPropertyChanging();
-				this._lastname = value;
-				this.SendPropertyChanged("lastname");
-				this.OnlastnameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string email
-	{
-		get
-		{
-			return this._email;
-		}
-		set
-		{
-			if ((this._email != value))
-			{
-				this.OnemailChanging(value);
-				this.SendPropertyChanging();
-				this._email = value;
-				this.SendPropertyChanged("email");
-				this.OnemailChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_primary_phone", DbType="Decimal(18,0) NOT NULL")]
-	public decimal primary_phone
-	{
-		get
-		{
-			return this._primary_phone;
-		}
-		set
-		{
-			if ((this._primary_phone != value))
-			{
-				this.Onprimary_phoneChanging(value);
-				this.SendPropertyChanging();
-				this._primary_phone = value;
-				this.SendPropertyChanged("primary_phone");
-				this.Onprimary_phoneChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_other_phone", DbType="Decimal(18,0)")]
-	public System.Nullable<decimal> other_phone
-	{
-		get
-		{
-			return this._other_phone;
-		}
-		set
-		{
-			if ((this._other_phone != value))
-			{
-				this.Onother_phoneChanging(value);
-				this.SendPropertyChanging();
-				this._other_phone = value;
-				this.SendPropertyChanged("other_phone");
-				this.Onother_phoneChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-	public string address
-	{
-		get
-		{
-			return this._address;
-		}
-		set
-		{
-			if ((this._address != value))
-			{
-				this.OnaddressChanging(value);
-				this.SendPropertyChanging();
-				this._address = value;
-				this.SendPropertyChanged("address");
-				this.OnaddressChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_postal_code", DbType="VarChar(50)")]
-	public string postal_code
-	{
-		get
-		{
-			return this._postal_code;
-		}
-		set
-		{
-			if ((this._postal_code != value))
-			{
-				this.Onpostal_codeChanging(value);
-				this.SendPropertyChanging();
-				this._postal_code = value;
-				this.SendPropertyChanged("postal_code");
-				this.Onpostal_codeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_state", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string state
-	{
-		get
-		{
-			return this._state;
-		}
-		set
-		{
-			if ((this._state != value))
-			{
-				this.OnstateChanging(value);
-				this.SendPropertyChanging();
-				this._state = value;
-				this.SendPropertyChanged("state");
-				this.OnstateChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_country", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string country
-	{
-		get
-		{
-			return this._country;
-		}
-		set
-		{
-			if ((this._country != value))
-			{
-				this.OncountryChanging(value);
-				this.SendPropertyChanging();
-				this._country = value;
-				this.SendPropertyChanged("country");
-				this.OncountryChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edu_date_from", DbType="Date NOT NULL")]
-	public System.DateTime edu_date_from
-	{
-		get
-		{
-			return this._edu_date_from;
-		}
-		set
-		{
-			if ((this._edu_date_from != value))
-			{
-				this.Onedu_date_fromChanging(value);
-				this.SendPropertyChanging();
-				this._edu_date_from = value;
-				this.SendPropertyChanged("edu_date_from");
-				this.Onedu_date_fromChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edu_date_to", DbType="NChar(10) NOT NULL", CanBeNull=false)]
-	public string edu_date_to
-	{
-		get
-		{
-			return this._edu_date_to;
-		}
-		set
-		{
-			if ((this._edu_date_to != value))
-			{
-				this.Onedu_date_toChanging(value);
-				this.SendPropertyChanging();
-				this._edu_date_to = value;
-				this.SendPropertyChanged("edu_date_to");
-				this.Onedu_date_toChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[level]", Storage="_level", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string level
-	{
-		get
-		{
-			return this._level;
-		}
-		set
-		{
-			if ((this._level != value))
-			{
-				this.OnlevelChanging(value);
-				this.SendPropertyChanging();
-				this._level = value;
-				this.SendPropertyChanged("level");
-				this.OnlevelChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edu_institute", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-	public string edu_institute
-	{
-		get
-		{
-			return this._edu_institute;
-		}
-		set
-		{
-			if ((this._edu_institute != value))
-			{
-				this.Onedu_instituteChanging(value);
-				this.SendPropertyChanging();
-				this._edu_institute = value;
-				this.SendPropertyChanged("edu_institute");
-				this.Onedu_instituteChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_work_exp", DbType="VarChar(MAX)")]
-	public string work_exp
-	{
-		get
-		{
-			return this._work_exp;
-		}
-		set
-		{
-			if ((this._work_exp != value))
-			{
-				this.Onwork_expChanging(value);
-				this.SendPropertyChanging();
-				this._work_exp = value;
-				this.SendPropertyChanged("work_exp");
-				this.Onwork_expChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_upload_resume", DbType="VarChar(MAX)")]
-	public string upload_resume
-	{
-		get
-		{
-			return this._upload_resume;
-		}
-		set
-		{
-			if ((this._upload_resume != value))
-			{
-				this.Onupload_resumeChanging(value);
-				this.SendPropertyChanging();
-				this._upload_resume = value;
-				this.SendPropertyChanged("upload_resume");
-				this.Onupload_resumeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobTitle", DbType="VarChar(100)")]
-	public string jobTitle
-	{
-		get
-		{
-			return this._jobTitle;
-		}
-		set
-		{
-			if ((this._jobTitle != value))
-			{
-				this.OnjobTitleChanging(value);
-				this.SendPropertyChanging();
-				this._jobTitle = value;
-				this.SendPropertyChanged("jobTitle");
-				this.OnjobTitleChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }
@@ -6277,6 +5831,428 @@ public partial class appRequest : INotifyPropertyChanging, INotifyPropertyChange
 				this._specName = value;
 				this.SendPropertyChanged("specName");
 				this.OnspecNameChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.employee")]
+public partial class employee : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _firstname;
+	
+	private string _lastname;
+	
+	private string _email;
+	
+	private decimal _primary_phone;
+	
+	private System.Nullable<decimal> _other_phone;
+	
+	private string _address;
+	
+	private string _postal_code;
+	
+	private string _state;
+	
+	private string _country;
+	
+	private System.DateTime _edu_date_from;
+	
+	private string _edu_date_to;
+	
+	private string _level;
+	
+	private string _edu_institute;
+	
+	private string _work_exp;
+	
+	private string _jobTitle;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnfirstnameChanging(string value);
+    partial void OnfirstnameChanged();
+    partial void OnlastnameChanging(string value);
+    partial void OnlastnameChanged();
+    partial void OnemailChanging(string value);
+    partial void OnemailChanged();
+    partial void Onprimary_phoneChanging(decimal value);
+    partial void Onprimary_phoneChanged();
+    partial void Onother_phoneChanging(System.Nullable<decimal> value);
+    partial void Onother_phoneChanged();
+    partial void OnaddressChanging(string value);
+    partial void OnaddressChanged();
+    partial void Onpostal_codeChanging(string value);
+    partial void Onpostal_codeChanged();
+    partial void OnstateChanging(string value);
+    partial void OnstateChanged();
+    partial void OncountryChanging(string value);
+    partial void OncountryChanged();
+    partial void Onedu_date_fromChanging(System.DateTime value);
+    partial void Onedu_date_fromChanged();
+    partial void Onedu_date_toChanging(string value);
+    partial void Onedu_date_toChanged();
+    partial void OnlevelChanging(string value);
+    partial void OnlevelChanged();
+    partial void Onedu_instituteChanging(string value);
+    partial void Onedu_instituteChanged();
+    partial void Onwork_expChanging(string value);
+    partial void Onwork_expChanged();
+    partial void OnjobTitleChanging(string value);
+    partial void OnjobTitleChanged();
+    #endregion
+	
+	public employee()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_firstname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string firstname
+	{
+		get
+		{
+			return this._firstname;
+		}
+		set
+		{
+			if ((this._firstname != value))
+			{
+				this.OnfirstnameChanging(value);
+				this.SendPropertyChanging();
+				this._firstname = value;
+				this.SendPropertyChanged("firstname");
+				this.OnfirstnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lastname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string lastname
+	{
+		get
+		{
+			return this._lastname;
+		}
+		set
+		{
+			if ((this._lastname != value))
+			{
+				this.OnlastnameChanging(value);
+				this.SendPropertyChanging();
+				this._lastname = value;
+				this.SendPropertyChanged("lastname");
+				this.OnlastnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string email
+	{
+		get
+		{
+			return this._email;
+		}
+		set
+		{
+			if ((this._email != value))
+			{
+				this.OnemailChanging(value);
+				this.SendPropertyChanging();
+				this._email = value;
+				this.SendPropertyChanged("email");
+				this.OnemailChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_primary_phone", DbType="Decimal(18,0) NOT NULL")]
+	public decimal primary_phone
+	{
+		get
+		{
+			return this._primary_phone;
+		}
+		set
+		{
+			if ((this._primary_phone != value))
+			{
+				this.Onprimary_phoneChanging(value);
+				this.SendPropertyChanging();
+				this._primary_phone = value;
+				this.SendPropertyChanged("primary_phone");
+				this.Onprimary_phoneChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_other_phone", DbType="Decimal(18,0)")]
+	public System.Nullable<decimal> other_phone
+	{
+		get
+		{
+			return this._other_phone;
+		}
+		set
+		{
+			if ((this._other_phone != value))
+			{
+				this.Onother_phoneChanging(value);
+				this.SendPropertyChanging();
+				this._other_phone = value;
+				this.SendPropertyChanged("other_phone");
+				this.Onother_phoneChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string address
+	{
+		get
+		{
+			return this._address;
+		}
+		set
+		{
+			if ((this._address != value))
+			{
+				this.OnaddressChanging(value);
+				this.SendPropertyChanging();
+				this._address = value;
+				this.SendPropertyChanged("address");
+				this.OnaddressChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_postal_code", DbType="VarChar(50)")]
+	public string postal_code
+	{
+		get
+		{
+			return this._postal_code;
+		}
+		set
+		{
+			if ((this._postal_code != value))
+			{
+				this.Onpostal_codeChanging(value);
+				this.SendPropertyChanging();
+				this._postal_code = value;
+				this.SendPropertyChanged("postal_code");
+				this.Onpostal_codeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_state", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string state
+	{
+		get
+		{
+			return this._state;
+		}
+		set
+		{
+			if ((this._state != value))
+			{
+				this.OnstateChanging(value);
+				this.SendPropertyChanging();
+				this._state = value;
+				this.SendPropertyChanged("state");
+				this.OnstateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_country", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string country
+	{
+		get
+		{
+			return this._country;
+		}
+		set
+		{
+			if ((this._country != value))
+			{
+				this.OncountryChanging(value);
+				this.SendPropertyChanging();
+				this._country = value;
+				this.SendPropertyChanged("country");
+				this.OncountryChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edu_date_from", DbType="Date NOT NULL")]
+	public System.DateTime edu_date_from
+	{
+		get
+		{
+			return this._edu_date_from;
+		}
+		set
+		{
+			if ((this._edu_date_from != value))
+			{
+				this.Onedu_date_fromChanging(value);
+				this.SendPropertyChanging();
+				this._edu_date_from = value;
+				this.SendPropertyChanged("edu_date_from");
+				this.Onedu_date_fromChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edu_date_to", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+	public string edu_date_to
+	{
+		get
+		{
+			return this._edu_date_to;
+		}
+		set
+		{
+			if ((this._edu_date_to != value))
+			{
+				this.Onedu_date_toChanging(value);
+				this.SendPropertyChanging();
+				this._edu_date_to = value;
+				this.SendPropertyChanged("edu_date_to");
+				this.Onedu_date_toChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[level]", Storage="_level", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string level
+	{
+		get
+		{
+			return this._level;
+		}
+		set
+		{
+			if ((this._level != value))
+			{
+				this.OnlevelChanging(value);
+				this.SendPropertyChanging();
+				this._level = value;
+				this.SendPropertyChanged("level");
+				this.OnlevelChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_edu_institute", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+	public string edu_institute
+	{
+		get
+		{
+			return this._edu_institute;
+		}
+		set
+		{
+			if ((this._edu_institute != value))
+			{
+				this.Onedu_instituteChanging(value);
+				this.SendPropertyChanging();
+				this._edu_institute = value;
+				this.SendPropertyChanged("edu_institute");
+				this.Onedu_instituteChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_work_exp", DbType="VarChar(MAX)")]
+	public string work_exp
+	{
+		get
+		{
+			return this._work_exp;
+		}
+		set
+		{
+			if ((this._work_exp != value))
+			{
+				this.Onwork_expChanging(value);
+				this.SendPropertyChanging();
+				this._work_exp = value;
+				this.SendPropertyChanged("work_exp");
+				this.Onwork_expChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_jobTitle", DbType="VarChar(100)")]
+	public string jobTitle
+	{
+		get
+		{
+			return this._jobTitle;
+		}
+		set
+		{
+			if ((this._jobTitle != value))
+			{
+				this.OnjobTitleChanging(value);
+				this.SendPropertyChanging();
+				this._jobTitle = value;
+				this.SendPropertyChanged("jobTitle");
+				this.OnjobTitleChanged();
 			}
 		}
 	}
