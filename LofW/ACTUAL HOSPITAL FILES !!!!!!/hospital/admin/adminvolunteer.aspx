@@ -28,8 +28,9 @@
               <a href="homeadmin.aspx">Back To Home</a>
  
           
-                 <asp:DataList ID="dtl_all" runat="server" OnItemCommand="subUpDel">
-                     <ItemTemplate>
+               <asp:ListView ID="ltv_all" runat="server" OnItemCommand="subEdit">
+  
+        <ItemTemplate>
                               <br />
                             <asp:HiddenField ID="hdf_IdE" runat="server" Value='<%#Eval("Id") %>' />
                             
@@ -99,20 +100,25 @@
                           <asp:TextBox ID="txt_deptRequestE" runat="server" Text='<%#Bind("deptRequest") %>' />
                       
                          <br />  
-                                <asp:Button ID="btn_update" runat="server" Text="Update" CommandName="Update" ValidationGroup="admin_vol" />
-                                <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" CausesValidation="false" OnClientClick="return confirm('Confirm Delete?');" />
-                                <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" />
+                          <asp:LinkButton ID="update" runat="server" Text="Update" CommandName="UpdateE" ValidationGroup="vs_adminVol" />
+        <br />
+        <asp:LinkButton ID="delete" runat="server" Text="Delete" CommandName="DeleteE" OnClientClick="return confirm('Confirm Delete?')" />
+             <br />
+         <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" CommandName="CancelE" CausesValidation="false" />
+
+
+       
                        <asp:ValidationSummary ID="vs_adminVol" runat="server" DisplayMode="BulletList" HeaderText="Errors!" ShowMessageBox="true" ValidationGroup="admin_vol" />
                  
                 </ItemTemplate>
-            </asp:DataList>
-     <%--        <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="dtl_all" PageSize="1">
+            </asp:ListView>
+             <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="ltv_all" PageSize="1">
                 <Fields>
                    
                     <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />
                     <asp:NumericPagerField ButtonType="Link" />
                     <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="false" />
                 </Fields>
-</asp:DataPager>--%>
+</asp:DataPager>
 
 </asp:Content> 

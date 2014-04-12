@@ -9,11 +9,11 @@ public partial class adminvolunteer : System.Web.UI.Page
 {
     SubmissionsClass objVol = new SubmissionsClass();
 
-    //protected void dtl_Change(object sender, PagePropertiesChangingEventArgs e)
-    //{
-    //    dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
-    //    
-    //}
+    protected void dtl_Change(object sender, PagePropertiesChangingEventArgs e)
+    {
+        dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+
+    }
 
 
     protected void Page_Load(object sender, EventArgs e)
@@ -43,11 +43,11 @@ public partial class adminvolunteer : System.Web.UI.Page
     private void _subRebind() //sub routine used to reset fields 
     {
 
-        dtl_all.DataSource = objVol.getSubmissions();
-        dtl_all.DataBind(); //binds data
+        ltv_all.DataSource = objVol.getSubmissions();
+        ltv_all.DataBind(); //binds data
     }
 
-    protected void subUpDel(object sender, DataListCommandEventArgs e) //specify it is a datalist Command event args.
+    protected void subEdit(object sender, ListViewCommandEventArgs e) //specify it is a datalist Command event args.
     {
         switch (e.CommandName)
         {
