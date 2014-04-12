@@ -8,6 +8,7 @@
    
      <div class="page_title" >
     <h2>About Our Project</h2>
+         <p>Get to know our team!</p>
 </div>
     <div id="about_text">
     words about our projects and stuff.

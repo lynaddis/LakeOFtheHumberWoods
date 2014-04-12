@@ -10,17 +10,21 @@
 
     <div class="page_title" >
         <h2>Contact Us</h2>
-    </div>
 
-     <asp:Label ID="lbl_msg" runat="server" />
-     <h3>Concerns or comments about patient care?</h3>
-    <p>If you have concerns or comments about patient care that have not been addressed by the department or nursing unit where 
+        <p>If you have concerns or comments about patient care that have not been addressed by the department or nursing unit where 
         the patient is receiving care or did receive care, please feel welcome to share patient experience.<br />
         <br />
         Please note: Lake of Humber Woods cannot provide personal health advice over the internet.
-         Please consult your own physician for advice, appointments or referral.</p><br />
-      
+        Please consult your own physician for advice, appointments or referral.</p>
+    </div>
+
+
+
+     <asp:Label ID="lbl_msg" runat="server" />
+
         <br />
+    <div class="form_back">
+        <h3>Please Fill Out All Fields</h3>
         <table>
             <tr>
                 <td><asp:Label ID="lbl_fname" runat="server" Text="First Name " /></td>
@@ -77,4 +81,5 @@
             </tr>
         </table>
     <asp:ValidationSummary ID="vds_all" runat="server" HeaderText="Please fill in the required fields !" DisplayMode="BulletList" ShowSummary="false" ShowMessageBox="true" />
+        </div>
 </asp:Content>
