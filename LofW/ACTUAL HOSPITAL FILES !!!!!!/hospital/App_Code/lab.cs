@@ -88,6 +88,7 @@ public class labClass
             objUPLAB.abnormal = _abnormal;
             objUPLAB.referenceRange = _refrange;
             objUPLAB.units = _unit;
+            objLAB.SubmitChanges();
             return true;
         }
 

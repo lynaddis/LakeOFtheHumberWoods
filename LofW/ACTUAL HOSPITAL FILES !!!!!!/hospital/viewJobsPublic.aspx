@@ -8,14 +8,16 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
      <asp:Label ID="lbl_msg" runat="server" />
+     <h1>Employment Opportunities</h1>
+     <h3>There are a variety of roles required to deliver world-class health care at Lake of Humber Woods.</h3>
     <table border="1" style="word-wrap: break-word">
         <thead>
                      <tr>
-                         <th><asp:Label ID="lbl_htitle" runat="server" Text="Title" /></th>
-                         <th><asp:Label ID="lbl_hdesc" runat="server" Text="Description" /></th>
-                         <th><asp:Label ID="lbl_hdate" runat="server" Text="Closing Date" /></th>
-                         <th><asp:Label ID="lbl_hdept" runat="server" Text="Department" /></th>
-                         <th><asp:Label ID="lbl_hstatus" runat="server" Text="Status" /></th>
+                         <th style="width: 100px;"><asp:Label ID="lbl_htitle" runat="server" Text="Title" /></th>
+                         <th style="width: 300px;"><asp:Label ID="lbl_hdesc" runat="server" Text="Description" /></th>
+                         <th style="width: 130px;"><asp:Label ID="lbl_hdate" runat="server" Text="Closing Date" /></th>
+                         <th style="width: 70px;"><asp:Label ID="lbl_hdept" runat="server" Text="Department" /></th>
+                         <th style="width: 70px;"><asp:Label ID="lbl_hstatus" runat="server" Text="Status" /></th>
                          <th><asp:Label ID="lbl_happly" runat="server" Text="Apply now" /></th>
                      </tr>
        </thead>

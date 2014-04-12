@@ -93,8 +93,6 @@ public partial class lab : System.Web.UI.Page
 
 
 
-
-
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
                 int labID = int.Parse(hdfID.Value.ToString());
                 string DateofBirth = (Convert.ToDateTime(txtdob.Text)).ToString("dd/mm/yyyy");

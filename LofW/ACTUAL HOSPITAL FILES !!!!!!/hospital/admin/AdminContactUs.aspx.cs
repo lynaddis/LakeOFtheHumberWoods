@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
-    AdminContactClass objContact = new AdminContactClass();
+    AdminContactClass objContact = new AdminContactClass(); //new instance of class
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -18,7 +18,7 @@ public partial class _Default : System.Web.UI.Page
             //ltv_main.DataBind();
         }
     }
-
+    //Message will be displayed on successful or unsucessful completion of operation
     private void _strMessageView(List<contactus> flag, string str)
     {
         if (flag != null)
