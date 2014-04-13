@@ -15,8 +15,8 @@
      <input type='hidden' id='show_per_page' /> 
      <div id='page_navigation'></div>  
      <div id="pagingControls"></div>
-            <asp:Label ID="lbl_message" runat="server" />
-                <asp:Label ID="patientidI" Text="PatientID" runat="server" />
+                    <asp:Label ID="lbl_message" runat="server" />
+                    <asp:Label ID="patientidI" Text="PatientID" runat="server" />
                     <asp:TextBox ID="txt_patientidI" runat="server" Text='<%#Bind ("patientID") %>' />
                     <asp:RequiredFieldValidator ID="rfv_patientidI" runat="server" ControlToValidate="txt_patientidI" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="edit" Text="Required!" />
                     <br />
@@ -66,10 +66,8 @@
                 <asp:ValidationSummary ID="vds_summary" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="insert" />
                     <br />
                     <hr />
-                    <br />
                     <asp:ListView ID="lst_all" runat="server" OnItemCommand="subUpDel">
                     <ItemTemplate>
-                    <br />
                     <asp:HiddenField ID="hdf_idE" runat="server" Value ='<%#Eval ("Id") %>' />
                     <asp:Label ID="patientidE" Text="PatientID" runat="server" />
                     <asp:TextBox ID="txt_patientidE" runat="server" Text='<%#Bind ("patientID") %>' />
@@ -120,7 +118,7 @@
                     <br />
                    </ItemTemplate>
                    </asp:ListView>
-                 <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="lst_all" PageSize="1">
+                 <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="lst_all" PageSize="2">
                 <Fields>
                     <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />
                     <asp:NumericPagerField ButtonType="link" />
