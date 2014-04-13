@@ -115,14 +115,15 @@
                      <asp:Button ID="btn_update" runat="server" Text="Update" CommandName ="Update" /></td>
                      <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return confirm                                 ('Confirm Delete?');" />
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" /></td>
+                    <asp:ValidationSummary ID="vds_sum" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="edit" />
                     <br />
                    </ItemTemplate>
                    </asp:ListView>
-                 <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="lst_all" PageSize="2">
+                 <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="lst_all" PageSize="1">
                 <Fields>
-                    <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />
+                    <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="true" />
                     <asp:NumericPagerField ButtonType="link" />
-                    <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="false" />
+                    <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="true" />
                 </Fields>
                 </asp:DataPager>
                 </asp:Content>
