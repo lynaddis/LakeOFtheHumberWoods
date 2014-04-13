@@ -12,8 +12,8 @@
            <h2>Sign Up To Volunteer!</h2>
         <p>If you want to help out in any way, please fill out all applicable fields of this form and we will be sure to contact you!   </p>
     </div>
-  
-               <div id="vol_form1">
+  <div class="form_back">
+               <div id="vol1">
         <asp:Label ID="lbl_fname" runat="server" Text="Full Name: " />
         <br />
                     <asp:TextBox ID="txt_nameI" runat="server" /> 
@@ -56,7 +56,7 @@
                       <asp:RequiredFieldValidator ID="rfv_VolExpI" runat="server" ControlToValidate="txt_VolExpI" SetFocusOnError="true" ErrorMessage="Please Fill out if you have volunteered here before" ValidationGroup="vol_val" Text="Required!"  ForeColor="Red" />
                   <br />
                    </div>
-    <div id="vol_form2" />
+    <div id="vol2" />
           <asp:Label ID="lbl_yes" runat="server" Text="If yes, what did you do?" />
                <br />     <asp:TextBox ID="txt_ifYesI" runat="server" />
    
@@ -85,11 +85,11 @@
                  <br />   <asp:TextBox ID="txt_deptRequestI" runat="server" />
             <br />
         <br />
-                    <asp:Button ID="btn_insert" runat="server" Text="Submit" OnCommand="subInsert" CommandName="Insert" ValidationGroup="vol_val" CausesValidation="true" />
+                    <asp:Button ID="btn_insert" runat="server" Text="Submit" OnCommand="subInsert" CommandName="Insert" ValidationGroup="vol_val" CausesValidation="true" SkinID="btn_submit" />
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" CausesValidation="true" />
-    </div>
+    
     <asp:ValidationSummary ID="vld_sum" runat="server" DisplayMode="BulletList" HeaderText="Errors!" ShowSummary="false" ShowMessageBox="true" ValidationGroup="vol_val" />
-        
+         </div>
             <%-- end of insert rows--%>
         <br />
         <br />
