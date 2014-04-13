@@ -314,6 +314,26 @@ text-decoration:none;
 }
 
 /*End of Health Concerns*/
+
+/*News Updates Public*/
+
+.form_back_news {
+    margin-left:50px;
+   background-color: #d5bda8;
+   width: 700px;
+  font-family:'Adobe Gurmukhi';
+  padding-bottom:15px;
+}
+
+    .form_back_news h3 {
+
+        background-color: #a7917e;
+        font-family:'Adobe Gurmukhi';
+
+    }
+
+
+/*End of News Updates Public*/
 /*Beginning of Volunteers (public)*/
 
 #vol_form1 {
@@ -350,6 +370,8 @@ text-decoration:none;
 
 
 /*End Volunteer Admin Page*/
+
+
 
 /* iPads (portrait and landscape) ----------- */
 @media screen and (min-width : 481px) and (max-width : 1024px) {
