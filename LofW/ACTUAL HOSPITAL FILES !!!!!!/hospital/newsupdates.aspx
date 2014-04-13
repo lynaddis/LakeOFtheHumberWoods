@@ -17,12 +17,12 @@
             <asp:ListView ID="ListView1" runat="server" OnItemCommand="ListView1_ItemCommand">
                 <ItemTemplate>
                
-                                              <asp:HiddenField ID="hdf_idE" runat="server" Value ='<%#Eval ("Id") %>' /> 
+                    <asp:HiddenField ID="hdf_idE" runat="server" Value ='<%#Eval ("Id") %>' /> 
                     <asp:Label ID="lbl_DateT" runat="server" Text="Date: " />
                              <asp:label ID="lbl_date" runat="server" Text='<%#Eval("Date") %>' />
                     <br /><br />
                             <asp:Label ID="lbl_DepartmentT" runat="server" Text="Department: " />
-                             <asp:label ID="lbl_department" runat="server" Text='<%#Eval("Department") %>' />
+                            <asp:label ID="lbl_department" runat="server" Text='<%#Eval("Department") %>' />
                             <br /><br />
                             <asp:Label ID="lbl_DetailsT" runat="server" Text="Details: " />
                              <asp:label ID="lbl_details" runat="server" Text='<%#Eval("Details") %>' />

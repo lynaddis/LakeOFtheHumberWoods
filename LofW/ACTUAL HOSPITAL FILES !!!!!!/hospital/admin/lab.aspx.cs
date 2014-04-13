@@ -10,8 +10,11 @@ using System.Web.UI.WebControls;
 public partial class lab : System.Web.UI.Page
 {
       labClass objLab = new labClass();
+      protected void dtl_Change(object sender, PagePropertiesChangingEventArgs e)
+      {
+          dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
 
-
+      }
 
         private void _subRebind()
         {
@@ -27,8 +30,8 @@ public partial class lab : System.Web.UI.Page
             txt_abnormalI.Text = string.Empty;
             txt_refrangeI.Text = string.Empty;
             txt_unitsI.Text = string.Empty;
-            rpt_all.DataSource = objLab.getLabs();
-            rpt_all.DataBind();
+            lst_all.DataSource = objLab.getLabs();
+            lst_all.DataBind();
 
         }
      protected void Page_Load(object sender, EventArgs e)
@@ -71,7 +74,7 @@ public partial class lab : System.Web.UI.Page
 
                 }
     }
-    protected void subUpDel(object sender, RepeaterCommandEventArgs e)
+    protected void subUpDel(object sender, ListViewCommandEventArgs e)
     {
 
         switch (e.CommandName)
@@ -90,9 +93,8 @@ public partial class lab : System.Web.UI.Page
                 TextBox txtAbnormal = (TextBox)e.Item.FindControl("txt_abnormalE");
                 TextBox txtRef = (TextBox)e.Item.FindControl("txt_refrangeE");
                 TextBox txtUnits = (TextBox)e.Item.FindControl("txt_unitsE");
-
-
-
+                               
+                
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
                 int labID = int.Parse(hdfID.Value.ToString());
                 string DateofBirth = (Convert.ToDateTime(txtdob.Text)).ToString("dd/mm/yyyy");

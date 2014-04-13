@@ -16,7 +16,7 @@
     <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" Font-Bold="True" />
     <HeaderStyle BackColor="Tan" Font-Bold="True" />
     <AlternatingRowStyle BackColor="PaleGoldenrod" />
-         <Columns>
+             <Columns>
            <asp:TemplateField>
                <ItemTemplate>
                    <asp:Label ID="lbl_name" runat="server" Text='<%#Eval("patientCode")%>' />
