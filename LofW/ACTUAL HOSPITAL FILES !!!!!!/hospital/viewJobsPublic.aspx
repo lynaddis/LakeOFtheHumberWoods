@@ -20,14 +20,11 @@
          <asp:Label ID="lbl_msg" runat="server" />
     <br />
     <br />
-    <table border="1" style="word-wrap: break-word">
-        <thead>
-                     <tr>
-                         <th style="width: 100px;"><asp:Label ID="lbl_htitle" runat="server" Text="Title" /></th>
-                         <th style="width: 300px;"><asp:Label ID="lbl_hdesc" runat="server" Text="Description" /></th>
-                         <th style="width: 130px;"><asp:Label ID="lbl_hdate" runat="server" Text="Closing Date" /></th>
-                         <th style="width: 70px;"><asp:Label ID="lbl_hdept" runat="server" Text="Department" /></th>
-                         <th style="width: 70px;"><asp:Label ID="lbl_hstatus" runat="server" Text="Status" /></th>
+   <asp:Label ID="lbl_htitle" runat="server" Text="Title" />
+                        <asp:Label ID="lbl_hdesc" runat="server" Text="Description" />
+                        <asp:Label ID="lbl_hdate" runat="server" Text="Closing Date" /></th>
+                         <asp:Label ID="lbl_hdept" runat="server" Text="Department" /></th>
+                         <asp:Label ID="lbl_hstatus" runat="server" Text="Status" /></th>
                          <th><asp:Label ID="lbl_happly" runat="server" Text="Apply now" /></th>
                      </tr>
        </thead>

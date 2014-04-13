@@ -6,14 +6,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-    <div class="page_title" ><h2>Suggestion Form</h2></div>
+    <div class="page_title" ><h2>Suggestion Form</h2>
+        <p>We at Lake of Humber Woods are dedicated to providing you the best quality care possible. Part of this committment is  understanding how we can work on those areas where our service is strong and improve on those areas where our service is weak.</p>
+    </div>
 
-        
-        <br />
-        <br />
-<p>We at Lake of Humber Woods are dedicated to providing you the best quality care possible. Part of this committment is  understanding how we can work on those areas where our service is strong and improve on those areas where our service is weak.</p><br />
-    <br />
-    <br />
+   <div class="form_back">
+
+       <h3>Please Fill Out All Applicable Fields</h3>
     <asp:Label ID="lbl_message" runat="server" />
     <br /><br />
              <asp:Label ID="lbl_suggestionI" runat="server" AssociatedControlID="ddl_suggestionType" Text="Suggestion Type" />
@@ -60,6 +59,6 @@
                 <hr />
         <p>
     <asp:Label ID="DisplayMessage" runat="server" Visible="false" />
-</p>  
+</p>  </div>
         <%--extended login control authenticates, creates and change users, redirects user to another page using a url--%>
     </asp:Content>
