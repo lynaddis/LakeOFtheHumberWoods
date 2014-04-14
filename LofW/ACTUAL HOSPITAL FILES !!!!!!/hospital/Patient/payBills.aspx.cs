@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
+using System.IO;
 
 public partial class Patient_payBills : System.Web.UI.Page
 {
@@ -168,6 +170,27 @@ public partial class Patient_payBills : System.Web.UI.Page
             lbl_msg.Text = "Payment failed";
         }
 
+    }
+
+    protected void subPaypal(object sender, EventArgs e)
+    {
+        string url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+        string query = "?cmd=_xclick&business=dev-facilitator@j-lacroix.net&lc=CA&item_name=" + hdf_proc.Value.ToString() +
+            "&item_number=" + hdf_id.Value.ToString() + "&amount=" + hdf_amount.Value.ToString() + "&currency_code=CAD"+
+            "&button_subtype=services&return=http://daniellestirling.com/hospital/processing.aspx" +"&cancel_return="+
+            "http://daniellestirling.com/hospital/cancel.aspx" + "&bn=PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted";
+
+        Response.Redirect(url + query);
+
+        //HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+
+        //req.Method = "POST";
+        //req.ContentType = "application/x-www-form-urlencoded";
+        //req.ContentLength = query.Length;
+
+        //StreamWriter sysOut = new StreamWriter(req.GetRequestStream(), System.Text.Encoding.ASCII);
+        //sysOut.Write(query);
+        //sysOut.Close();
     }
 
 

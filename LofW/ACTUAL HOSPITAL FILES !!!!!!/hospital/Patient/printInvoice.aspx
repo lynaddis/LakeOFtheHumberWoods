@@ -9,7 +9,6 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:Label ID="lbl" runat="server" />
 
      <asp:DetailsView ID="dv_print" runat="server" AutoGenerateRows="false" >
             <Fields>

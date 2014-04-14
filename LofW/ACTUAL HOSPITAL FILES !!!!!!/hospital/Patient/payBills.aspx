@@ -142,7 +142,9 @@
     </div>
             
         <asp:Panel ID="pnl_paypal" runat="server">
-            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+           <asp:ImageButton ID="imgbutton" runat="server"  ImageUrl="https://www.sandbox.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" OnClick="subPaypal" />
+           <asp:Image ID="Image1" runat="server"  ImageUrl="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" />
+     <%--       <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_xclick"/>
             <input type="hidden" name="business" value="dev-facilitator@j-lacroix.net"/>
             <input type="hidden" name="lc" value="CA"/>
@@ -156,7 +158,7 @@
             <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted"/>
             <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
             <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
-            </form>
+            </form>--%>
 
         </asp:Panel>
 

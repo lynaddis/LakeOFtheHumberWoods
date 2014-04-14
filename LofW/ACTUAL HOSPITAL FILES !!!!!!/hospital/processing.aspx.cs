@@ -53,7 +53,7 @@ public partial class Patient_processing : System.Web.UI.Page
                 // lbl.Text += "   myStatus: " + "Success";
 
                  PDTHolder pdt = PDTHolder.Parse(strResponse);
-                 lbl.Text = string.Format("Thank you {0} {1} for your payment of {2} {3}! A conformation e-mail of this transaction has been sent to {4}. please click the link below to return to the home page",
+                 lbl.Text = string.Format("Thank you {0} {1} for your payment of ${2} {3}! A conformation e-mail of this transaction has been sent to {4}. please click the link below to return to the home page",
                   pdt.PayerFirstName, pdt.PayerLastName, pdt.GrossTotal, pdt.Currency,pdt.PayerEmail);
 
                  int patient_id = objInvoice.getPatientIdByInvoice(Convert.ToInt32(pdt.ItemNumber));

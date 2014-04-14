@@ -16,7 +16,6 @@ public partial class Patient_printInvoice : System.Web.UI.Page
 
             if (!string.IsNullOrEmpty(Request.QueryString["param"]))
             {
-                lbl.Text = Request.QueryString["param"].ToString();
                 dv_print.DataSource = objInvoice.getInvoiceById(Convert.ToInt32(Request.QueryString["param"].ToString()));
                 dv_print.DataBind();
             }

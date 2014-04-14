@@ -8,7 +8,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
      <asp:LoginName ID="log_name" runat="server" FormatString="Welcome, {0} " />
-
+    <br />
       <%-- Allows user to logout if logged in --%>  
     <asp:LoginStatus ID="log_status" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/index.aspx" />
         <br />
@@ -40,6 +40,6 @@
     <asp:Label ID="lbl" runat="server" />
         <br />
 
-        <asp:HyperLink ID="hyp_home" runat="server" Text="Homepage" NavigateUrl="~/index.aspx" />
+        <asp:HyperLink ID="hyp_home" runat="server" Text="Account" NavigateUrl="~/home.aspx" />
     </div>
 </asp:Content>
