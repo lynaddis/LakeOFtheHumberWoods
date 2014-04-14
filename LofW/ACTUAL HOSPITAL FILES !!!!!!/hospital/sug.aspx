@@ -25,15 +25,15 @@
                 <br />
                 <asp:Label ID="lbl_first" runat="server"   AssociatedControlID="txt_firstI" Text="First Name:" />
                 <asp:TextBox ID="txt_firstI" runat="server" /> 
-                <asp:RequiredFieldValidator ID="rvf_first" runat="server" ControlToValidate="txt_firstI" Text="*Required"  ValidationGroup="insert" />
+                <asp:RequiredFieldValidator ID="rvf_first" runat="server" ControlToValidate="txt_firstI" Text="*Required"  ForeColor="#ff0000" ValidationGroup="insert" />
                 <asp:RegularExpressionValidator ID="rev_name" runat="server" Text="*DataError" ErrorMessage="Not a valid name" ValidationGroup="insert" ControlToValidate="txt_firstI" ValidationExpression="^[a-zA-Z ]*$" />
                 <%--user's must enter a value for first name--%> <br />
                 <asp:Label ID="lbl_last" runat="server"   AssociatedControlID="txt_lastI" Text="Last Name:" />
                 <asp:TextBox ID="txt_lastI" runat="server" />
-                <asp:RequiredFieldValidator ID="rvf_last" runat="server" ControlToValidate="txt_lastI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a value for last name--%><br />
+                <asp:RequiredFieldValidator ID="rvf_last" runat="server" ControlToValidate="txt_lastI" Text="*Required"  ForeColor="#ff0000" ValidationGroup="insert" /> <%--user's must enter a value for last name--%><br />
                 <asp:Label ID="lbl_phone" runat="server" Text="Phone Number:"  AssociatedControlID="txt_phoneI" />
                 <asp:TextBox ID="txt_phoneI" runat="server" placeholder="000-000-0000" />
-                <asp:RequiredFieldValidator ID="rvf_phone" runat="server" ControlToValidate="txt_phoneI" Text="*Required"  ValidationGroup="insert" />
+                <asp:RequiredFieldValidator ID="rvf_phone" runat="server" ControlToValidate="txt_phoneI" Text="*Required"   ForeColor="#ff0000" ValidationGroup="insert" />
                 <asp:RegularExpressionValidator ID="rev_phone"  runat="server" ErrorMessage="Phone Number is not valid" ValidationGroup="insert" ControlToValidate="txt_phoneI"  ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"> </asp:RegularExpressionValidator>  
                 <%--user's must enter a value for phone number--%><br />
                 <br />
@@ -45,17 +45,17 @@
                 <br />
                 <asp:Label ID="lbl_emailI" runat="server" Text="Email:"  AssociatedControlID="txt_emailI" />
                 <asp:TextBox ID ="txt_emailI" runat="server" placeholder="example@address.com" /> 
-        <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" ControlToValidate="txt_emailI" Text="*Required"  ValidationGroup="insert" />
-        <asp:RegularExpressionValidator ID="rev_email" runat="server" Text="Invalid Email" ControlToValidate="txt_emailI" Display="Dynamic" SetFocusOnError="true" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="Please enter a valid email" />
+        <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" ControlToValidate="txt_emailI" Text="*Required"  ForeColor="#ff0000" ValidationGroup="insert" />
+        <asp:RegularExpressionValidator ID="rev_email" runat="server" Text="Invalid Email" ControlToValidate="txt_emailI"  ForeColor="#ff0000" Display="Dynamic" SetFocusOnError="true" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ErrorMessage="Please enter a valid email" />
          <%--user's must enter a value for email--%><br />
                 <asp:Label ID="lbl_comment" runat="server" Text="Message:"  AssociatedControlID="txt_commentI" />
                 <asp:TextBox ID ="txt_commentI" Rows="5" textmode="MultiLine" runat="server" /> 
-                <asp:RequiredFieldValidator ID="rvf_comment" runat="server" ControlToValidate="txt_commentI" Text="*Required"  ValidationGroup="insert"  Display="Dynamic" /> <%--user's must enter a value for comment--%><br />
+                <asp:RequiredFieldValidator ID="rvf_comment" runat="server" ControlToValidate="txt_commentI" Text="*Required"  ValidationGroup="insert"  ForeColor="#ff0000" Display="Dynamic" /> <%--user's must enter a value for comment--%><br />
                 <br />
                 <%--Buttons for insert and cancel--%>
                 <asp:Button ID="btn_insert" runat="server" Text="Send" OnClick="btn" OnCommand="subAdmin" CommandName="Insert" ValidationGroup="insert" SkinID="btn_submit" />
                 <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subAdmin" CommandName="Cancel" SkinID="btn_submit" />
-                <asp:ValidationSummary ID="vds_main" runat="server" HeaderText="Errors:" ShowMessageBox="true" DisplayMode="List"  ShowSummary="false" />
+                <asp:ValidationSummary ID="vds_main" runat="server" HeaderText="Errors:" ShowMessageBox="true" DisplayMode="List" validationGroup="insert" ShowSummary="false" />
                 <hr />
         <p>
     <asp:Label ID="DisplayMessage" runat="server" Visible="false" />

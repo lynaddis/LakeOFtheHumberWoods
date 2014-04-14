@@ -19,7 +19,8 @@
                     <asp:Label ID="lbl_message" runat="server" /><br />
                     <asp:Label ID="patientidI" Text="PatientID" runat="server" />
                     <asp:TextBox ID="txt_patientidI" runat="server" />
-                    <asp:RequiredFieldValidator ID="rfv_patientidI" runat="server" ControlToValidate="txt_patientidI" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="insert" Text="Required!" />
+                    <asp:RequiredFieldValidator ID="rfv_patientidI" runat="server" ControlToValidate="txt_patientidI"                                       SetFocusOnError="true" ErrorMessage="Enter Patient ID" ValidationGroup="insert"                                                         Text="Required!" />
+                    <asp:RegularExpressionValidator ID="rfv_pid" runat="server" Text="*Enter your patient id, view registration form"                       ErrorMessage="Not a valid patient id" ValidationGroup="insert" ControlToValidate="txt_patientidI"                                       ValidationExpression="^\d{1,2}$" />
                     <br />
                     <asp:Label ID="patientcodeI" Text="Patient Code" runat="server" /> 
                     <asp:TextBox ID="txt_patientcodeI" runat="server" />
@@ -28,13 +29,17 @@
                     <asp:Label ID="lbl_dobI" Text="Date of Birth" runat="server" /> 
                     <asp:TextBox ID="txt_dobI" runat="server"  />
                     <asp:RequiredFieldValidator ID="rfv_dobI" runat="server" ControlToValidate="txt_dobI"                                                       SetFocusOnError="true" ErrorMessage="Enter Date of Birth" ValidationGroup="insert" Text="Required!" />
+                    <asp:RegularExpressionValidator ID="rev_dobI" runat="server" Text="*Enter patient date of birth dd-mm-yyyy"                             ErrorMessage="Use this format (dd-mm-yyyy)" ValidationGroup="insert" ControlToValidate="txt_dobI"                                       ValidationExpression="^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$" />
                     <br />      
                     <asp:Label ID="lbl_ageI" Text="Age" runat="server" />
                     <asp:TextBox ID="txt_ageI" runat="server" />
-                    <asp:RequiredFieldValidator ID="rfv_ageI" runat="server" ControlToValidate="txt_ageI"                                                       SetFocusOnError="true" ErrorMessage="Enter Age" ValidationGroup="insert" Text="Required!" />
+                    <asp:RequiredFieldValidator ID="rfv_ageI" runat="server" ControlToValidate="txt_ageI"                                                    SetFocusOnError="true" ErrorMessage="Enter Age" ValidationGroup="insert" Text="Required!" />
+                     <asp:RegularExpressionValidator ID="rev_age" runat="server" Text="*Enter a digit for age" ErrorMessage="Not a valid                     age" ValidationGroup="insert" ControlToValidate="txt_ageI" ValidationExpression="^\d{1,2}$" />
                     <br />        
                     <asp:Label ID="lbl_sexI" Text="Gender" runat="server" />
                     <asp:TextBox ID="txt_sexI" runat="server"  />
+                    <asp:RequiredFieldValidator ID="rfv_sexI" runat="server" ControlToValidate="txt_sexI" SetFocusOnError="true"   ErrorMessage="Enter Gender(Male or Female)" ValidationnGroup="insert" Text="*Required!" />
+           <asp:RegularExpressionValidator ID="rev_sexI" runat="server" ControlToValidate="txt_sexI" ValidationExpression="^[a-zA-Z ]*$"  />
                     <br />
                     <asp:Label ID="lbl_testTypeI" Text="Test Type" runat="server" />
                     <asp:TextBox ID="txt_testTypeI" runat="server" />
