@@ -151,8 +151,8 @@
             <input type="hidden" name="amount" value="<%= hdf_amount.Value %>"/>
             <input type="hidden" name="currency_code" value="CAD"/>
             <input type="hidden" name="button_subtype" value="services"/>
-            <input type="hidden" name="return" value="http://lacroix-j.net/lothw/processing.aspx" />
-            <input type="hidden" name="cancel_return" value="http://lacroix-j.net/lothw/cancel.aspx" />
+            <input type="hidden" name="return" value="http://daniellestirling.com/hospital/processing.aspx" />
+            <input type="hidden" name="cancel_return" value="http://daniellestirling.com/hospital/cancel.aspx" />
             <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted"/>
             <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
             <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
