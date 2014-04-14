@@ -67,11 +67,11 @@
                 <asp:ValidationSummary ID="vds_summary" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="insert" />
                     <br />
                     <hr />
-                    <asp:ListView ID="lst_all" runat="server" OnItemCommand="subUpDel">
+                    <asp:ListView ID="lst_all" runat="server" OnItemCommand="subUpDel" >
                     <ItemTemplate>
                     <asp:HiddenField ID="hdf_idE" runat="server" Value ='<%#Eval ("Id") %>' />
                     <asp:Label ID="patientidE" Text="PatientID" runat="server" />
-                    <asp:TextBox ID="txt_patientidE" runat="server" Text='<%#Bind ("patientID") %>' />
+                    <asp:TextBox ID="txt_patientidE" runat="server" Text='<%#Eval ("patientID") %>' />
                     <asp:RequiredFieldValidator ID="rfv_patientidE" runat="server" ControlToValidate="txt_patientidE" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="edit" Text="Required!" />
                     <br />
                     <asp:Label ID="patientcodeE" Text="Patient Code" runat="server" /> 

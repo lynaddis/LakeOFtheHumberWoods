@@ -10,11 +10,11 @@ using System.Web.UI.WebControls;
 public partial class lab : System.Web.UI.Page
 {
     labClass objLab = new labClass(); //new instance of the class
-      protected void dtl_Change(object sender, PagePropertiesChangingEventArgs e)
-      {
-          dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false); //datapager 
+    protected void dtl_Change(object sender, PagePropertiesChangingEventArgs e)
+    {
+        dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false); //datapager 
 
-      }
+    }
 
         private void _subRebind()
         {
@@ -49,7 +49,8 @@ public partial class lab : System.Web.UI.Page
                         
           case "Insert":
                 string DateofBirth = (Convert.ToDateTime(txt_dobI.Text)).ToShortDateString();
-                _strMessage(objLab.commitInsert(txt_patientidI.Text.ToString(), txt_patientcodeI.Text.ToString(), txt_ageI.Text.ToString(), txt_sexI.Text.ToString(), txt_testTypeI.Text.ToString(), txt_testCodeI.Text.ToString(), txt_result1I.Text.ToString(), txt_result2I.Text.ToString(), txt_resultDescI.Text.ToString(), txt_abnormalI.Text.ToString(), txt_refrangeI.Text.ToString(), txt_unitsI.Text.ToString(), DateofBirth), "insert");
+                int pid = Convert.ToInt32(txt_patientidI.Text.ToString());
+                _strMessage(objLab.commitInsert(pid, txt_patientcodeI.Text.ToString(), txt_ageI.Text.ToString(), txt_sexI.Text.ToString(), txt_testTypeI.Text.ToString(), txt_testCodeI.Text.ToString(), txt_result1I.Text.ToString(), txt_result2I.Text.ToString(), txt_resultDescI.Text.ToString(), txt_abnormalI.Text.ToString(), txt_refrangeI.Text.ToString(), txt_unitsI.Text.ToString(), DateofBirth), "insert");
                 _subRebind();
                 break;
             case "Cancel":
@@ -96,9 +97,10 @@ public partial class lab : System.Web.UI.Page
                                
                 
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
-                int labID = int.Parse(hdfID.Value.ToString());
-                string DateofBirth = (Convert.ToDateTime(txtdob.Text)).ToString("dd/mm/yyyy");
-                _strMessage(objLab.commitUpdate(labID,txtpID.Text.ToString(),txtPC.Text.ToString(),txtAge.Text.ToString(),txtSex.Text.ToString(),txtType.Text.ToString(),txtCode.Text.ToString(),txtResult1.Text.ToString(),txtResult2.Text.ToString(),txtResultD.Text.ToString(),txtAbnormal.Text.ToString(),txtRef.Text.ToString(),txtUnits.Text.ToString(), DateofBirth), "update");
+                int labID = Convert.ToInt32(hdfID.Value.ToString());
+                int pid = Convert.ToInt32(txtpID.Text.ToString());
+                string DateofBirth = (Convert.ToDateTime(txtdob.Text)).ToString("dd/MM/yyyy");
+                _strMessage(objLab.commitUpdate(labID,pid,txtPC.Text.ToString(),txtAge.Text.ToString(),txtSex.Text.ToString(),txtType.Text.ToString(),txtCode.Text.ToString(),txtResult1.Text.ToString(),txtResult2.Text.ToString(),txtResultD.Text.ToString(),txtAbnormal.Text.ToString(),txtRef.Text.ToString(),txtUnits.Text.ToString(), DateofBirth), "update");
                  _subRebind();
                 break;
             case "Delete": //delete record from the database by the ID

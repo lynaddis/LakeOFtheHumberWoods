@@ -70,7 +70,7 @@ public partial class newsadmin : System.Web.UI.Page
                 TextBox txtDate = (TextBox)e.Item.FindControl("txt_dateE");
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
                 int newsID = int.Parse(hdfID.Value.ToString());
-                string Date = (Convert.ToDateTime(txtDate.Text)).ToString("dd/mm/yyyy");
+                string Date = (Convert.ToDateTime(txtDate.Text)).ToString("dd/MM/yyyy");
                 _strMessage(objLinq.commitUpdate(newsID, txtDep.Text,txtDetails.Text,txtUrl.Text, Date), "update");
                 _subRebind();
                 break;

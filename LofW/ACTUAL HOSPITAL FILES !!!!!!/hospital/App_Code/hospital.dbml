@@ -103,24 +103,6 @@
       <Association Name="Patient_Invoice" Member="Patient" ThisKey="patient_id" OtherKey="Id" Type="Patient" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.lab" Member="labs">
-    <Type Name="lab">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patientID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="patientCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="DateofBirth" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="age" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="sex" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="testType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="testCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="resultType1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="resultType2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="resultdescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="abnormal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="referenceRange" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="units" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.jobPosting" Member="jobPostings">
     <Type Name="jobPosting">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -165,6 +147,7 @@
       <Association Name="Patient_Credit_transaction" Member="Credit_transactions" ThisKey="Id" OtherKey="user_id" Type="Credit_transaction" />
       <Association Name="Patient_Invoice" Member="Invoices" ThisKey="Id" OtherKey="patient_id" Type="Invoice" />
       <Association Name="Patient_Paypal_transaction" Member="Paypal_transactions" ThisKey="Id" OtherKey="user_id" Type="Paypal_transaction" />
+      <Association Name="Patient_lab" Member="labs" ThisKey="Id" OtherKey="patientID" Type="lab" />
     </Type>
   </Table>
   <Table Name="dbo.Paypal_transactions" Member="Paypal_transactions">
@@ -336,6 +319,25 @@
       <Column Name="AppAvail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="AppInfo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="TimesAvail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.lab" Member="labs">
+    <Type Name="lab">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="patientCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateofBirth" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="age" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="testType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="testCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="resultType1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="resultType2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="resultdescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="abnormal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="referenceRange" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="units" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Patient_lab" Member="Patient" ThisKey="patientID" OtherKey="Id" Type="Patient" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.spUpdateDonorInformation" Method="spUpdateDonorInformation">
