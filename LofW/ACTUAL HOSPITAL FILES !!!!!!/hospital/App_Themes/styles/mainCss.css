@@ -314,7 +314,29 @@ text-decoration:none;
 
     font-family:'Adobe Gurmukhi';
 }
+/*Health Concerns Update (Admin)*/
 
+.form_backHC {
+  margin-left:50px;
+  background-color: #d5bda8;
+  width: 400px;
+  font-family:'Adobe Gurmukhi';
+  float:left;
+
+}
+
+    .form_backHC h3 {
+
+    background-color: #a7917e;
+    font-family:'Adobe Gurmukhi';
+
+
+}
+#adU_sidebar {
+    margin-left: 50px;
+    float:left;
+}
+/*End of HCU admin*/
 /*End of Health Concerns*/
 
 /*News Updates Public*/
@@ -369,7 +391,11 @@ text-decoration:none;
 
 /*End of Volunteers(public)*/
 /*Volunteer Admin Page*/
+.page_buttons {
 
+
+  text-align:center;
+}
 
 /*End Volunteer Admin Page*/
 

@@ -9,6 +9,13 @@ public partial class _Default : System.Web.UI.Page
 {
     illnessClass objHealth = new illnessClass();
 
+    protected void dtl_change(object sender, PagePropertiesChangingEventArgs e)
+    {
+        datapager_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        _subRebind();
+
+    }
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -24,7 +31,7 @@ public partial class _Default : System.Web.UI.Page
     {
         if (flag)
         {
-            lbl_message.Text = "successfully" + str + "ed!";
+            lbl_message.Text = "Record has been successfully" + str + "d!";
         }
         else
         {
@@ -35,15 +42,15 @@ public partial class _Default : System.Web.UI.Page
     private void _subRebind() //sub routine used to reset fields 
     {
 
-        dtl_update.DataSource = objHealth.getIllnesses();
-        dtl_update.DataBind(); //binds data
+        ltv_update.DataSource = objHealth.getIllnesses();
+        ltv_update.DataBind(); //binds data
     }
 
-    protected void subUpDel(object sender, DataListCommandEventArgs e) //specify it is a datalist Command event args.
+    protected void subUpDel(object sender, ListViewCommandEventArgs e) //specify it is a datalist Command event args.
     {
         switch (e.CommandName)
         {
-            case "Update":
+            case "UpdateX":
 
                 TextBox txtname = (TextBox)e.Item.FindControl("txt_infnameU");
                 TextBox txtloc = (TextBox)e.Item.FindControl("txt_locationU");
@@ -63,12 +70,12 @@ public partial class _Default : System.Web.UI.Page
 
                 break;
 
-            case "Delete":
+            case "DeleteX":
                 int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_Id")).Value);//use Id numbers to delete rows.
                 _strMessage(objHealth.commitDelete(_Id), "delete");
                 _subRebind();
                 break;
-            case "Cancel":
+            case "CancelX":
                 _subRebind();
                 break;
         }

@@ -18,7 +18,8 @@
             <th><asp:Label ID="lbl_d" runat="server" Text="Description" /></th>
             <th><asp:Label ID="lbl_option1" runat="server" Text="Option" /></th>
             <th><asp:Label ID="lbl_option2" runat="server" Text="Option" /></th>
-            <th><asp:LinkButton ID="LinkButton1" runat="server" Text="Add New Image" OnClick="showAddPanel" /></th>
+            <th>&nbsp</th>
+       
            
             </tr>
     <asp:Repeater ID="rpt_main" runat="server">
@@ -29,25 +30,30 @@
             <td><asp:HiddenField ID="hdf_id" runat="server" Value='<%#Eval("id") %>' /></td>
             <td><asp:Label ID="lbl_imgURL"  runat="server" Text='<%#Eval("image_url") %>' /></td>
             <td><asp:Label ID="lbl_desc" runat="server" Text='<%#Eval("description") %>' /></td>
-            <td><asp:Button ID="btn_edit" runat="server" Text="Edit" CommandArgument='<%#Eval("id")%>' CommandName="Update" OnCommand="subAdmin" /></td>
-            <td><asp:Button ID="btn_del" runat="server" Text="Delete" CommandName="delete" CommandArgument='<%#Eval("id")%>' OnClientClick="return confirm('Confirm Delete?');" OnCommand="subAdmin" /></td>
+            <td><asp:Button ID="btn_edit" runat="server"  SkinID="btn_submit" Text="Edit" CommandArgument='<%#Eval("id")%>' CommandName="Update" OnCommand="subAdmin" /></td>
+            <td><asp:Button ID="btn_del" runat="server" SkinID="btn_submit" Text="Delete" CommandName="delete" CommandArgument='<%#Eval("id")%>' OnClientClick="return confirm('Confirm Delete?');" OnCommand="subAdmin" /></td>
             
            </tr>
         </ItemTemplate>
     </asp:Repeater>
     </table>
+        <br />
+        <br />
+        <asp:LinkButton ID="LinkButton1" runat="server" Text="Add New Image" OnClick="showAddPanel" SkinID="link_submit" Font-Underline="false" />
+        <br />
+        <br />
    </asp:Panel>
     <%-- Panel for update operation --%>
     <asp:Panel ID="pnl_update" runat="server" GroupingText="Update Image Information">
        <table>
-           <tr><th></th><th><asp:Label ID="lbl_imageurlE" runat="server" Text="Image Url" /></th>
+           <tr><th><asp:Label ID="lbl_imageurlE" runat="server" Text="Image Url" /></th>
                         <th><asp:Label ID="lbl_descE" runat="server" Text="Description" /></th>
           <th></th> </tr>
         <asp:Repeater ID="rpt_update" runat="server" OnItemCommand="subUpdate">
           <ItemTemplate>
-              <tr>
-                  <td><asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("id") %>' /></td>
-                  <td><asp:TextBox ID="txt_imgU" runat="server" Text='<%#Eval("image_url") %>' /></td>
+              <tr><td>
+                  <asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("id") %>' />
+                  <asp:TextBox ID="txt_imgU" runat="server" Text='<%#Eval("image_url") %>' /></td>
                   <td><asp:TextBox ID="txt_descU" runat="server" Text='<%#Eval("description") %>' /></td>
               </tr>
               <tr><td></td>
@@ -72,8 +78,8 @@
             <td><asp:TextBox ID="txt_descA" runat="server" Text='<%#Eval("description") %>' /></td>
         </tr>
         <tr>
-            <td><asp:LinkButton ID="btn_add" runat="server" Text="ADD" commandname="insert" OnCommand="subAdmin" /></td>
-            <td><asp:LinkButton ID="btn_cancel" runat="server" Text="Cancel" CommandName="cancel" OnCommand="subAdmin" /></td>
+            <td><asp:LinkButton ID="btn_add" runat="server" Text="ADD" commandname="insert" OnCommand="subAdmin" Font-Underline="false" SkinID="link_submit" /></td>
+            <td><asp:LinkButton ID="btn_cancel" runat="server" Text="Cancel" CommandName="cancel" OnCommand="subAdmin" Font-Underline="false" SkinID="link_submit"  /></td>
         </tr>
                   
         </table>

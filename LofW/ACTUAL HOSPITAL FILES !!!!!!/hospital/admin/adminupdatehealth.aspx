@@ -8,16 +8,25 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
-     <div class="page_title"><h2>Update Health Concerns</h2></div>
+     <div class="page_title"><h2>Update Health Concerns</h2>
+
+         <p>All records of health concerns currently published online.  Submitted recommendations can be added to existing health concerns information and removed, or saved for later if needed.</p>
+
+     </div>
+  
+     <a href="adminhealthconcerns.aspx">Back To Add Health Conerns</a><br />
+     <a href="homeadmin.aspx">Back To Home</a>
+    <br /><br />
              <asp:Label ID="lbl_message" runat="server" />
 
-    <br />
-    <br />
-     <a href="adminhealthconcerns.aspx">Back To Add Health Conerns</a>
-    <asp:DataList ID="dtl_update" runat="server" OnItemCommand="subUpDel">
+  <br /><br />
+    <div class="form_backHC">
+        <h3>
+            Edit Health Concerns
+        </h3>
+    <asp:ListView ID="ltv_update" runat="server" OnItemCommand="subUpDel" OnPagePropertiesChanging="dtl_change">
         <ItemTemplate>
-        <br />
-        <br />    
+          
              <asp:HiddenField ID="hdf_Id" runat="server" Value='<%#Eval("Id") %>' />
 
                      <asp:Label ID="lbl_illnameU" runat="server" Text="Illness Name: " />
@@ -58,12 +67,22 @@
        
                     <asp:TextBox ID="txt_recommendU" runat="server" Text='<%#Bind ("recomend") %>' />
                        
-
-                    <asp:Button ID="btn_update" runat="server" Text="Update" CommandName="Update" /><%-- onCommand for subroutine on code behind called subAdmin --%>
-                    <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return confirm('Are you sure?')" />
-                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" />
+            <br />
+                    <asp:Button ID="btn_update" runat="server" Text="Update" CommandName="UpdateX" SkinID="btn_submit" /><%-- onCommand for subroutine on code behind called subAdmin --%>
+                    <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="DeleteX" OnClientClick="return confirm('Are you sure?')" SkinID="btn_submit" />
+                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="CancelX" SkinID="btn_submit" />
             </ItemTemplate>
-    </asp:DataList>
+    </asp:ListView>
+           <br /><br />
+             <asp:DataPager ID="datapager_listAll" runat="server" PagedControlID="ltv_update" PageSize="1" >
+                <Fields>
+                   
+                    <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />
+                    <asp:NumericPagerField ButtonType="Link" />
+                    <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="false" />
+                </Fields>
+</asp:DataPager>
+        </div>
 
     <%--Add in recommendation w/ deletes.  --%>
 
@@ -83,10 +102,10 @@
             <asp:label ID="lt_region" runat="server" Text='<%#Eval ("region") %>' />
             <br />
             <asp:label ID="lt_rec" runat="server" Text='<%#Eval ("recomend") %>' />
-
-    <asp:Button ID="btn_delete" runat="server" CommandName="Deletex" Text="Delete" OnClientClick="return confirm('Are you sure?')" />
-    <asp:Button ID="btn_cancel" runat="server" CommandName="Cancelx" Text="Cancel" />
-
+    <br />
+    <asp:Button ID="btn_delete" runat="server" CommandName="Deletex" Text="Delete" OnClientClick="return confirm('Are you sure?')" SkinID="btn_submit" /><br />
+    <asp:Button ID="btn_cancel" runat="server" CommandName="Cancelx" Text="Cancel" SkinID="btn_submit" />
+    <br />  
     </ItemTemplate>
     </asp:Repeater>
 
