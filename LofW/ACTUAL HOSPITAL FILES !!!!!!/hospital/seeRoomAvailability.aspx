@@ -33,7 +33,7 @@
     </asp:GridView>
 
     <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DB_66299_aspprojectConnectionString %>" SelectCommand="SELECT tblBedRooms.bedId, tblBedRooms.bedCount, tblBedRooms.bedAvailable, tblBedRooms.bedRoomId, tblRoomType.roomType, tblRoomType.roomTotleBed, tblBedRooms.roomNo FROM tblBedRooms INNER JOIN tblRoomType ON tblBedRooms.bedRoomId = tblRoomType.roomId"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DeetaBaseConnectionString %>" SelectCommand="SELECT tblBedRooms.bedId, tblBedRooms.bedCount, tblBedRooms.bedAvailable, tblBedRooms.bedRoomId, tblRoomType.roomType, tblRoomType.roomTotleBed, tblBedRooms.roomNo FROM tblBedRooms INNER JOIN tblRoomType ON tblBedRooms.bedRoomId = tblRoomType.roomId"></asp:SqlDataSource>
         
 </asp:Content>
 
