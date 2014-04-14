@@ -30,7 +30,7 @@
 
                             <asp:Label ID="lbl_seemoreT" runat="server" Text="See More....: " />
                             <asp:HyperLink ID="hyp_link" runat="server" Text="Link" NavigateUrl='<%#Eval("Url") %>'></asp:HyperLink>
-                 
+                 <br /><hr />
                 </ItemTemplate>
                
             </asp:ListView>
