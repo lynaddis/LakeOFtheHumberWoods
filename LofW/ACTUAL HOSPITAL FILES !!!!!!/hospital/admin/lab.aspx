@@ -67,7 +67,7 @@
                 <asp:ValidationSummary ID="vds_summary" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="insert" />
                     <br />
                     <hr />
-                    <asp:ListView ID="lst_all" runat="server" OnItemCommand="subUpDel" >
+                    <asp:ListView ID="lst_all" runat="server" OnItemCommand="subUpDel" OnPagePropertiesChanging="dtl_Change" >
                     <ItemTemplate>
                     <asp:HiddenField ID="hdf_idE" runat="server" Value ='<%#Eval ("Id") %>' />
                     <asp:Label ID="patientidE" Text="PatientID" runat="server" />
@@ -116,14 +116,13 @@
                      <asp:LinkButton ID="update" runat="server" Text="Update" CommandName="UpdateE" ValidationGroup="" />
                      <asp:LinkButton ID="delete" runat="server" Text="Delete" CommandName="DeleteE" OnClientClick="return confirm('Confirm Delete?')" />
                     <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" CommandName="CancelE" CausesValidation="false" />
-
                     <asp:ValidationSummary ID="vds_sum" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="edit" />
                     <br />
                    </ItemTemplate>
                    </asp:ListView>
                  <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="lst_all" PageSize="1">
                 <Fields>
-                    <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="true" />
+                    <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />
                     <asp:NumericPagerField ButtonType="link" />
                     <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="true" />
                 </Fields>

@@ -27,32 +27,32 @@
                 <br />
                 <asp:TextBox ID="txt_dateI" runat="server" />
                 </td>
-                  <asp:RequiredFieldValidator ID="rvf_dateI" runat="server" ControlToValidate="txt_dateI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a date--%>
+                  <asp:RequiredFieldValidator ID="rvf_dateI" runat="server" ControlToValidate="txt_dateI" Text="*Required"  ForeColor="#ff0000"  ValidationGroup="insert" /> <%--user's must enter a date--%>
                  <td>
                  <asp:Label ID="lbl_departmentI" runat="server"   AssociatedControlID="txt_departmentI" />
                  <br />
                  <asp:TextBox ID="txt_departmentI" runat="server" /> 
                 </td>
-                <asp:RequiredFieldValidator ID="rvf_department" runat="server" ControlToValidate="txt_departmentI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter department name--%> 
+                <asp:RequiredFieldValidator ID="rvf_department" runat="server" ControlToValidate="txt_departmentI" Text="*Required" ForeColor="#ff0000"  ValidationGroup="insert" /> <%--user's must enter department name--%> 
                 <asp:RegularExpressionValidator ID="rev_dep" runat="server" ControlToValidate="txt_departmentI" Text="*Please enter a valid Department Name" ErrorMessage="*Error! only text can be inserted" Display="Dynamic" SetFocusOnError="true" ValidationExpression="^[A-za-z]{2,}$" ValidationGroup="insert" />
                 <td>
                 <asp:Label ID="lbl_details" runat="server"   AssociatedControlID="txt_detailsI" />
                 <br />
                 <asp:TextBox ID="txt_detailsI" runat="server" />
                 </td>
-                <asp:RequiredFieldValidator ID="rvf_details" runat="server" ControlToValidate="txt_detailsI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter news details--%>
+                <asp:RequiredFieldValidator ID="rvf_details" runat="server" ControlToValidate="txt_detailsI" ForeColor="#ff0000" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter news details--%>
                 <td>
                 <asp:Label ID="lbl_url" runat="server"  AssociatedControlID="txt_urlI"  />
                 <br />
                 <asp:TextBox ID="txt_urlI" runat="server" />
                 </td>
-                <asp:RequiredFieldValidator ID="rvf_url" runat="server" ControlToValidate="txt_urlI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a value for news url/link--%>
+                <asp:RequiredFieldValidator ID="rvf_url" runat="server" ControlToValidate="txt_urlI" ForeColor="#ff0000"  Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a value for news url/link--%>
                 <td>
                 <br />
                 <%--Buttons for insert and cancel--%>
                 <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subAdmin" CommandName="Insert"  ValidationGroup="insert"  />
                 <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subAdmin" CommandName="Cancel"  />
-                <asp:ValidationSummary ID="vds_summary" runat="server" HeaderText="Errors" ShowMessageBox="true" ShowSummary="false" />
+                <asp:ValidationSummary ID="vds_summary" runat="server" HeaderText="Errors" ShowMessageBox="true"  />
                </td>
                 </tr>
                 <asp:Datalist ID="dlt_all" runat="server" OnItemCommand="subUpDel"> <%--Datalist data bound control --%>

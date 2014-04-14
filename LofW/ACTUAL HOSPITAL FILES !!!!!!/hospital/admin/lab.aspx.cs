@@ -13,6 +13,7 @@ public partial class lab : System.Web.UI.Page
     protected void dtl_Change(object sender, PagePropertiesChangingEventArgs e)
     {
         dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false); //datapager 
+        _subRebind();
 
     }
 
