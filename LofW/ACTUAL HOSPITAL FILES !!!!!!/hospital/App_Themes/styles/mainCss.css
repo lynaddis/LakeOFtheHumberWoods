@@ -358,6 +358,17 @@ text-decoration:none;
 
 
 /*End of News Updates Public*/
+/*Specialists Admin*/
+#insert_special {
+    float:left;
+    width: 300px;
+    margin-left:50px;
+    margin-right:60px;
+}
+#update_special {
+    float:left;
+}
+/*End of Specialists Admin*/
 /*Beginning of Volunteers (public)*/
 
 #vol_form1 {
@@ -390,6 +401,7 @@ text-decoration:none;
 
 
 /*End of Volunteers(public)*/
+
 /*Volunteer Admin Page*/
 .page_buttons {
 
