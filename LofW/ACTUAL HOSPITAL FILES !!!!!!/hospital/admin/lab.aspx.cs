@@ -28,6 +28,7 @@ public partial class lab : System.Web.UI.Page
             txt_testCodeI.Text = string.Empty;
             txt_result1I.Text = string.Empty;
             txt_result2I.Text = string.Empty;
+            txt_resultDescI.Text = string.Empty;
             txt_abnormalI.Text = string.Empty;
             txt_refrangeI.Text = string.Empty;
             txt_unitsI.Text = string.Empty;
