@@ -1,1 +1,3 @@
 ﻿<asp:Button runat="server" backcolor="#91619a" font-family="Adobe Gurmukhi" Font-Bold="true" forecolor="White" SkinID="btn_submit" height="25px" />
+<asp:Button runat="server" backcolor="#a7917e" font-family="Adobe Gurmukhi" Font-Bold="true" forecolor="White" SkinID="btn_update" height="25px" />
+<asp:LinkButton runat="server" backcolor="#91619a" font-family="Adobe Gurmukhi" Font-Bold="true" forecolor="White" SkinID="link_submit" height="25px"  BorderWidth="3px" BorderColor="#91619a" />

@@ -54,8 +54,8 @@
                 <td>
                 <br />
                 <%--Buttons for insert and cancel--%>
-                <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subAdmin" CommandName="Insert"  ValidationGroup="insert"  />
-                <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subAdmin" CommandName="Cancel"  />
+                <asp:Button ID="btn_insert" runat="server" Text="Insert" SkinID="btn_submit" OnCommand="subAdmin" CommandName="Insert"  ValidationGroup="insert"  />
+                <asp:Button ID="btn_cancel" runat="server" Text="Cancel" SkinID="btn_submit" OnCommand="subAdmin" CommandName="Cancel"  />
                 <asp:ValidationSummary ID="vds_summary" runat="server" HeaderText="Errors" ShowMessageBox="true"  ValidationGroup="insert" />
                </td>
                 </tr>
@@ -82,10 +82,10 @@
                             </td>
                              <asp:RequiredFieldValidator ID="rvf_url" runat="server" ControlToValidate="txt_urlE" Text="*Required"  ValidationGroup="update" /> <%--user's must enter a value for news url/link--%>
                             <td>
-                                <asp:Button ID="btn_update" runat="server" Text="Update" CommandName ="Update"  ValidationGroup="update"  />
-                                <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return confirm('Confirm Delete?');" />
-                                <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel"  CausesValidation="false"/>
-                                <asp:ValidationSummary ID="vds_summ" runat="server" HeaderText="Errors" ShowMessageBox="true" ShowSummary="false" />
+                                <asp:Button ID="btn_update" runat="server" Text="Update" SkinID="btn_submit" CommandName ="Update"  ValidationGroup="update"  />
+                                <asp:Button ID="btn_delete" runat="server" Text="Delete" SkinID="btn_submit" CommandName="Delete" OnClientClick="return confirm('Confirm Delete?');" />
+                                <asp:Button ID="btn_cancel" runat="server" Text="Cancel" SkinID="btn_submit" CommandName="Cancel"  CausesValidation="false"/>
+                                <asp:ValidationSummary ID="vds_summ" runat="server" HeaderText="Errors" ShowMessageBox="true"  ShowSummary="true" />
                          </td>
                         </tr>
                     </ItemTemplate>
