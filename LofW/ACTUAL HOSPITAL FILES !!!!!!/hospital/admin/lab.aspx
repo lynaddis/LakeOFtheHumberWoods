@@ -18,15 +18,15 @@
     <a href="homeadmin.aspx">Back To Home</a><br />
                     <asp:Label ID="lbl_message" runat="server" /><br />
                     <asp:Label ID="patientidI" Text="PatientID" runat="server" />
-                    <asp:TextBox ID="txt_patientidI" runat="server" Text='<%#Bind ("patientID") %>' />
+                    <asp:TextBox ID="txt_patientidI" runat="server" />
                     <asp:RequiredFieldValidator ID="rfv_patientidI" runat="server" ControlToValidate="txt_patientidI" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="edit" Text="Required!" />
                     <br />
                     <asp:Label ID="patientcodeI" Text="Patient Code" runat="server" /> 
-                    <asp:TextBox ID="txt_patientcodeI" runat="server" Text='<%#Bind ("patientCode") %>' />
+                    <asp:TextBox ID="txt_patientcodeI" runat="server" />
                     <asp:RequiredFieldValidator ID="rfv_patientcodeI" runat="server" ControlToValidate="txt_patientcodeI"                                       SetFocusOnError="true" ErrorMessage="Enter patientCode" ValidationGroup="edit" Text="Required!" />
                     <br />      
                     <asp:Label ID="lbl_dobI" Text="Date of Birth" runat="server" /> 
-                    <asp:TextBox ID="txt_dobI" runat="server" Text='<%#Bind ("DateofBirth") %>' />
+                    <asp:TextBox ID="txt_dobI" runat="server"  />
                     <asp:RequiredFieldValidator ID="rfv_dobI" runat="server" ControlToValidate="txt_dobI"                                                       SetFocusOnError="true" ErrorMessage="Enter Date of Birth" ValidationGroup="edit" Text="Required!" />
                     <br />      
                     <asp:Label ID="lbl_ageI" Text="Age" runat="server" />
@@ -71,7 +71,7 @@
                     <ItemTemplate>
                     <asp:HiddenField ID="hdf_idE" runat="server" Value ='<%#Eval ("Id") %>' />
                     <asp:Label ID="patientidE" Text="PatientID" runat="server" />
-                    <asp:TextBox ID="txt_patientidE" runat="server" Text='<%#Eval ("patientID") %>' />
+                    <asp:TextBox ID="txt_patientidE" runat="server" Text='<%#Bind ("patientID") %>' />
                     <asp:RequiredFieldValidator ID="rfv_patientidE" runat="server" ControlToValidate="txt_patientidE" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="edit" Text="Required!" />
                     <br />
                     <asp:Label ID="patientcodeE" Text="Patient Code" runat="server" /> 
