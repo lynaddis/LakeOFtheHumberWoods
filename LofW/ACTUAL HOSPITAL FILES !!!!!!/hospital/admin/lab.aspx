@@ -19,15 +19,15 @@
                     <asp:Label ID="lbl_message" runat="server" /><br />
                     <asp:Label ID="patientidI" Text="PatientID" runat="server" />
                     <asp:TextBox ID="txt_patientidI" runat="server" />
-                    <asp:RequiredFieldValidator ID="rfv_patientidI" runat="server" ControlToValidate="txt_patientidI" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="edit" Text="Required!" />
+                    <asp:RequiredFieldValidator ID="rfv_patientidI" runat="server" ControlToValidate="txt_patientidI" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="insert" Text="Required!" />
                     <br />
                     <asp:Label ID="patientcodeI" Text="Patient Code" runat="server" /> 
                     <asp:TextBox ID="txt_patientcodeI" runat="server" />
-                    <asp:RequiredFieldValidator ID="rfv_patientcodeI" runat="server" ControlToValidate="txt_patientcodeI"                                       SetFocusOnError="true" ErrorMessage="Enter patientCode" ValidationGroup="edit" Text="Required!" />
+                    <asp:RequiredFieldValidator ID="rfv_patientcodeI" runat="server" ControlToValidate="txt_patientcodeI"                                       SetFocusOnError="true" ErrorMessage="Enter patientCode" ValidationGroup="insert" Text="Required!" />
                     <br />      
                     <asp:Label ID="lbl_dobI" Text="Date of Birth" runat="server" /> 
                     <asp:TextBox ID="txt_dobI" runat="server"  />
-                    <asp:RequiredFieldValidator ID="rfv_dobI" runat="server" ControlToValidate="txt_dobI"                                                       SetFocusOnError="true" ErrorMessage="Enter Date of Birth" ValidationGroup="edit" Text="Required!" />
+                    <asp:RequiredFieldValidator ID="rfv_dobI" runat="server" ControlToValidate="txt_dobI"                                                       SetFocusOnError="true" ErrorMessage="Enter Date of Birth" ValidationGroup="insert" Text="Required!" />
                     <br />      
                     <asp:Label ID="lbl_ageI" Text="Age" runat="server" />
                     <asp:TextBox ID="txt_ageI" runat="server" />
@@ -113,18 +113,18 @@
                     <asp:Label ID="lbl_unitsE" Text="Units" runat="server" />
                     <asp:TextBox ID="txt_unitsE" runat="server" Text='<%#Bind ("units") %>' />
                     <br />
-                     <asp:LinkButton ID="update" runat="server" Text="Update" CommandName="UpdateE" ValidationGroup="" />
-                     <asp:LinkButton ID="delete" runat="server" Text="Delete" CommandName="DeleteE" OnClientClick="return confirm('Confirm Delete?')" />
+                     <asp:LinkButton ID="update" runat="server" Text="Update" CommandName="UpdateE" ValidationGroup="edit" />
+                     <asp:LinkButton ID="delete" runat="server" Text="Delete" CommandName="DeleteE" OnClientClick="return confirm                               ('Confirm Delete?')" />
                     <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" CommandName="CancelE" CausesValidation="false" />
                     <asp:ValidationSummary ID="vds_sum" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="edit" />
                     <br />
                    </ItemTemplate>
                    </asp:ListView>
-                 <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="lst_all" PageSize="1">
-                <Fields>
-                    <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />
-                    <asp:NumericPagerField ButtonType="link" />
-                    <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="true" />
-                </Fields>
+                     <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="lst_all" PageSize="1">
+                    <Fields>
+                        <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />
+                        <asp:NumericPagerField ButtonType="link" />
+                        <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="true" />
+                    </Fields>
                 </asp:DataPager>
                 </asp:Content>
