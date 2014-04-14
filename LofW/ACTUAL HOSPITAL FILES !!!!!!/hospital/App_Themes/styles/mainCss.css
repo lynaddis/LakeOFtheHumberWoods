@@ -1,11 +1,11 @@
 ﻿/*Global Classes*/
 
-    .container {
+    .container_mast {
         width: 960px;
         margin-left: auto;
         margin-right: auto;
         /*border: 1px solid;  Keep this here to check if container is cooperating*/
-        min-height: 1000px;
+        min-height: 800px;
          font-family:'Adobe Gurmukhi';
          background-color: #fbecda;
     }
@@ -218,6 +218,51 @@ text-decoration:none;
   height: 40px;
   width: 960px;
   font-family:'Adobe Gurmukhi';
+}
+    .links H3 {
+     background-color: #95779a;
+     width: 250px;
+     height: 20%;
+    font-family:'Adobe Gurmukhi';
+    font-size: 20px;
+    color:white;
+    text-decoration:none;
+}
+
+#contentbody_6 {
+    margin-top:20px;
+    margin-left: 80px;
+   
+    width: 250px;
+    float:left;
+    margin-right:20px;
+
+}
+#contentbody_12 {
+    margin-top:20px;
+    width: 250px;
+    float:left;
+    margin-right:20px;
+
+}
+#contentbody_18 {
+     margin-top:20px;
+     width:250px;
+    float:left;
+   
+}
+.links {
+    text-decoration:none;
+   
+}
+
+.page_links{
+    text-decoration:none;
+    color: black;
+    margin-left: 30px;
+    width:200px;
+    padding-bottom:5px;
+
 }
     /*End Home Page Admin*/
     /*About Page*/

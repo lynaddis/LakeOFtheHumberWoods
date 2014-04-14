@@ -10,7 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="container">
+    <div class="container_mast">
         <asp:ContentPlaceHolder id="cph_header" runat="server">
         
         </asp:ContentPlaceHolder>
