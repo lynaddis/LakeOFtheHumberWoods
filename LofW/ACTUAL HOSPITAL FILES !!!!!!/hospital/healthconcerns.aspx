@@ -179,8 +179,8 @@
             <asp:RequiredFieldValidator ID="rfv_rec" runat="server" ControlToValidate="txt_infoI" Text="*Required" ErrorMessage="Please Enter Recommendation" SetFocusOnError="true" ValidationGroup="recommend_val" />
          <br />
      
-                    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" ValidationGroup="recommend_val"/><%-- onCommand for subroutine on code behind called subAdmin --%>
-                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" CausesValidation="false" />
+                    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" ValidationGroup="recommend_val" SkinID="btn_submit"/><%-- onCommand for subroutine on code behind called subAdmin --%>
+                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" CausesValidation="false" SkinID="btn_submit" />
            <asp:Label ID="lbl_message" runat="server" />
             <asp:ValidationSummary ID="vs_recommend" runat="server" ValidationGroup="recommend_val" ShowMessageBox="true" />
     </div>

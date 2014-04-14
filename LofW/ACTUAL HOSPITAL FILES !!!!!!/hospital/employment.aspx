@@ -125,7 +125,7 @@
         <br /><br />
         <asp:textbox ID="txt_wexp" runat="server" TextMode="MultiLine" />
         <br /><br />
-            <asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" ValidationGroup="employeeInsert" />
+            <asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" ValidationGroup="employeeInsert" SkinID="btn_submit" />
             
             
            

@@ -8,7 +8,7 @@
 
      <div class="banner">
                        <asp:ScriptManager ID="scr" runat="server" />
-    <asp:UpdatePanel ID="udp" runat="server">
+<%--    <asp:UpdatePanel ID="udp" runat="server">
         <ContentTemplate>
            
             <asp:MultiView ID="mlt" runat="server">
@@ -20,13 +20,13 @@
       </Triggers>
     </asp:UpdatePanel>
         <asp:Timer ID="tmr" runat="server" Interval="5000" OnTick="subTick" />
-    <table>
+    <table id="pictures">
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
            <td><asp:Button ID="btn_back" runat="server" Text="Backward" OnClick="ImgBackward" /></td> 
             <td><asp:Button ID="btn_forw" runat="server" Text="Forward" OnClick="ImgForward" /></td> 
         <td></td><td></td><td></td><td></td><td></td></tr>
      </table>
-         </div>
+         </div>--%>
 
                <div class="contentBody">
          this is a student project. THis is in no way affiliated with the real hosptial.
@@ -61,7 +61,7 @@
         </div>
 
             <div class="donate">
-                <h3><a href="#">Donations Informations</a></h3>
+                <h3><a href="#">Donations </a></h3>
            
               Check out our donations
 

@@ -9,10 +9,15 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
-     <div class="page_title"><h2>Contact Us</h2></div>
+     <div class="page_title"><h2>Contact Us</h2>
+
+         <p>View submitted contact froms, update or delete them</p>
+
+     </div>
 
     <br />
     <br />
+    <div class="form_back">
     <asp:Label ID="lbl_msg" runat="server" />   
    <table>
                 <tr>
@@ -34,10 +39,12 @@
                 </tr>            
         </ItemTemplate>
        </asp:ListView>
-     </table>   
+     </table>   </div>
     <br />
     <br />
     <%-- To view all details of selected message --%>
+    
+
     <asp:GridView ID="grd_main" runat="server">
        <Columns>
            <asp:TemplateField>
