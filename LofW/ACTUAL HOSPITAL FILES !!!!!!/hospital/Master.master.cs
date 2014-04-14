@@ -25,6 +25,14 @@ public partial class Master : System.Web.UI.MasterPage
         get { return trv_main; }
         set { trv_main = value; }
     }*/
+
+
+    //protected void Page_Load(object sender, EventArgs e)
+    //{
+    //    trv_main.CollapseAll();
+    //}
+
+
     protected void subCollapse(object sender, EventArgs e)
     {
         trv_main.CollapseAll();
