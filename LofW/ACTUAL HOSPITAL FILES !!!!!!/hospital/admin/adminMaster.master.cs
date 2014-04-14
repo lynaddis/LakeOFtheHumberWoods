@@ -5,11 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Master : System.Web.UI.MasterPage
+public partial class admin_adminMaster : System.Web.UI.MasterPage
 {
-
-
-    private string _heading = "LOGO"; 
+    private string _heading = "LOGO";
     public string pp_masterHeading
     {
         get { return _heading; }

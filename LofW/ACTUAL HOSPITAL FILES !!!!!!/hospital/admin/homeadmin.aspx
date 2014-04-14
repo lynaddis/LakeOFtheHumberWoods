@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="homeadmin.aspx.cs" Inherits="homeadmin" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/adminMaster.master" AutoEventWireup="true" CodeFile="homeadmin.aspx.cs" Inherits="homeadmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -7,7 +7,16 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-    
+    <script src="../js/jquery.js" ></script>
+    <script>
+        $(function () {
+            $('a.toggler').on('click', function () {
+                $('+ li', this).toggle();
+            });
+        });
+
+    </script>
+
      <div class="page_title" >
 
            <h2>Welcome Admin!</h2>
@@ -15,8 +24,13 @@
     </div>
 
         <div class="contentBody">
+            
+            <br />
+
+
             <ul>
-            <li><asp:HyperLink ID="hyp_usr_add" runat="server" Text="Create new user" NavigateUrl="~/Admin/addUser.aspx"  />   </li>
+
+            <li><a href="javascript:void(0);" class="titleText toggler"><h3>+    Create New User</h3></a><p>Pages for adding new patients to the site so they can have access to pay bills online and lab results</p><asp:HyperLink ID="hyp_usr_add" runat="server" Text="Create new user" NavigateUrl="~/Admin/addUser.aspx"  />   </li>
             <li><asp:HyperLink ID="hyp_usr_edit" runat="server" Text="Edit User" NavigateUrl="~/Admin/editUser.aspx" /></li>
             <li><asp:HyperLink ID="hyp_invoce_add" runat="server" Text="Create New Invocie" NavigateUrl="~/Admin/addInvoice.aspx" /></li>
             <li><asp:HyperLink ID="hyp_invoice_edit" runat="server" Text="Edit Invoice" NavigateUrl="~/Admin/editInvoice.aspx" /></li>

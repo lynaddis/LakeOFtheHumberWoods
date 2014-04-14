@@ -45,9 +45,11 @@
     </style>
 
     <div class="page_title" >
+
         <h2>Maps and Directions</h2>
+        <p>If you need to find our hosptial simply add in your address you are travelling from then select the building you wish to arrive at.  For your convenience, all travelling information you need will be calculated and appear to the right of the map</p>
         <br />
-        <asp:HyperLink ID="hyp_maps" runat="server" Text="Click here for map locations" NavigateUrl="~/map.aspx" />
+        <asp:HyperLink ID="hyp_maps" runat="server" Text="Click here for map locations" NavigateUrl="~/map.aspx" Font-Underline="false" SkinID="hblink_submit" />
         <br /><br />
     </div>
     <div>
@@ -80,7 +82,7 @@
      <input type="hidden" id="Highway" value="<%= cb_highway.Checked %>" />  
             
 <div id="wrapper_dir">
-    <p> div wrapper</p>
+   
 <div id="directions-panel" style=" width:500px; height:600px; border:1px dashed blue;" ></div>
 <div id="map-canvas" style=" width:500px; height:600px; border:1px dashed red;"></div>
 </div>

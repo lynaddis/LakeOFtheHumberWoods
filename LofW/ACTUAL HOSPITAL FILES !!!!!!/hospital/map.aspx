@@ -38,7 +38,7 @@
         <br /><br />
          <asp:Literal ID="lit_msg" runat="server" Text="Hospital Network" />  
     <br />
-    <asp:HyperLink ID="hyp_directions" runat="server" Text="Chlick here for directions to Hospital /Branch locations" NavigateUrl="~/directions.aspx" />
+    <asp:HyperLink ID="hyp_directions" runat="server" Text="Click here for directions to Hospital /Branch locations" Font-Underline="false" NavigateUrl="~/directions.aspx" SkinID="hlink_submit" />
     <br />
     <div>
        

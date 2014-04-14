@@ -8,7 +8,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
     <script src="js/jquery.js"></script>
-     <script type="text/javascript" src="scripts/page/jquery.simplePagination.js" ></script>   
+    
     <script>
 
         $(function () {
@@ -16,15 +16,7 @@
                 $('+ div', this).toggle();
             });
         });
-        /*
-          $(function () {
-              $('div.repeater').pagination({
-                  items: 100,
-                  itemsOnPage: 1,
-                  cssStyle: 'light-theme'
-              });
-          });
-          */
+
 
     </script>
     
