@@ -1,0 +1,147 @@
+﻿
+    /*SmartPhones*/
+@media screen and (min-width : 320px) and (max-width : 480px) {
+            /*Menu!*/
+    /*.level1 {
+        color: White;
+        background-color: #3d506b;
+        font-variant: small-caps;
+        font-size: large;
+        font-weight: bold;
+        padding: 15px;
+        width: 320px;
+        text-align: center;
+    }
+
+    .level2 {
+
+        color: White;
+        background-color: #3d506b;
+        font-variant: small-caps;
+        font-size: large;
+        font-weight: bold;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }*/
+  /*End of Menu!*/
+
+        .container {
+            width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            min-height:1350px;
+        }
+
+        .banner {
+            display:none;
+        }
+
+ 
+        .contentBody { display:none; }
+
+        .sidebar {
+            float:left;
+            width: 320px;
+            min-height:300px;
+        }
+            #heading h3 {
+        height: 30px;
+        width: 320px;
+        background-color: #a7917e;
+        text-align: center;
+    }
+
+        #heading h3 a {
+            text-decoration: none;
+            color: white;
+        }
+        .infectBox {
+            width: 320px;
+            min-height: 150px;
+            margin-bottom: 10px;
+           
+        }
+
+        .donate {
+            width: 320px;
+            height: 150px;
+           margin-bottom: 10px;
+          
+        }
+              .donate H3 {
+            background-color: #a7917e;
+            height: 30px;
+            width: 320px;
+            text-align: center;
+        }
+
+            .donate H3 a {
+                text-decoration: none;
+                text-align: center;
+                color: white;
+            }
+
+            .bottomBar {
+            min-height: 500px;
+            width: 320px;
+            float: left;
+            margin-top: 10px;
+           
+        }
+        .calendar {
+           width: 310px;
+            height: 150px;
+           }
+
+    
+        .Maps { 
+            width: 320px;
+        height: 150px;
+        margin-bottom: 20px;
+        float: left;
+        margin-left: 0px;
+             }
+
+            .Maps H3 {
+        text-align: center;
+        background-color: #a7917e;
+        width: 320px;
+        height: 30px;
+    }
+
+        .Maps H3 a {
+            text-decoration: none;
+            color: white;
+        }
+
+    .paybills H3 {
+        background-color: #a7917e;
+        height: 30px;
+        text-align: center;
+        width:320px;
+    }
+        
+     .paybills H3 a {
+            text-decoration: none;
+            color: white;
+        }
+
+    .paybills {
+        width: 320px;
+        height: 150px;
+        margin-bottom: 20px;
+        float: left;
+        margin-left: 0px;
+    }
+
+ .footer {
+           background-color: #a7917e;
+            width: 320px;
+            float: left;
+            margin-top: 5px;
+            min-height: 50px;
+        }
+
+}
+    

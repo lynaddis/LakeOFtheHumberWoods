@@ -25,13 +25,14 @@
            <td><asp:Button ID="btn_back" runat="server" Text="Backward" OnClick="ImgBackward" /></td> 
             <td><asp:Button ID="btn_forw" runat="server" Text="Forward" OnClick="ImgForward" /></td> 
         <td></td><td></td><td></td><td></td><td></td></tr>
-     </table>
-         </div>--%>
+     </table>--%>
+         </div>
 
                <div class="contentBody">
          this is a student project. THis is in no way affiliated with the real hosptial.
             
         </div>
+         <div class="mobile_contain">
         <div class="sidebar">
         <div class="infectBox">
             
@@ -69,7 +70,7 @@
             </div>
                 <div class="bottomBar">
         <div class="calendar">
- <h3><a href="CalA.aspx">Visiting Specialists Calendar</a></h3>
+ <h3><a href="CalA.aspx">Visiting Specialists</a></h3>
             <asp:GridView ID="home_cal" runat="server" AutoGenerateColumns="false" GridLines="None">
                           <Columns>
                               <asp:TemplateField>
@@ -94,5 +95,5 @@
         <h3><a href="#">PayBills</a></h3>
 
         </div>
-                    </div>
+                    </div></div>
                     </asp:Content>
