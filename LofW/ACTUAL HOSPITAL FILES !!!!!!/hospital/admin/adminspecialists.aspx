@@ -41,12 +41,19 @@
     <br />
         <asp:TextBox ID="txt_timeI" runat="server"/>
     <br />
-    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" SkinID="btn_submit" /><%-- onCommand for subroutine on code behind called subAdmin --%><br />
+    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" SkinID="btn_submit" /><%-- onCommand for subroutine on code behind called subAdmin --%>
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" SkinID="btn_submit" />
     <br />
+        <br />
     </div>
+
+   
        <div id="update_special">
              <h3>Update or Remove Specialist Appointments</h3>
+             <asp:Button ID="btn_update" runat="server" Text="Update Existing Records" OnCommand="subInsert" CommandName="Cancel" SkinID="btn_update" />
+            <br />
+            
+
     <asp:ListView ID="ltv_all" runat="server" OnItemCommand="subEdit" OnPagePropertiesChanging="ltv_allChange">
   
         <itemTemplate>

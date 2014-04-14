@@ -13,6 +13,7 @@ public partial class adminspecialists : System.Web.UI.Page
     protected void ltv_allChange(object sender, PagePropertiesChangingEventArgs e)
     {
         dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        _subRebind();
       
     }
 
