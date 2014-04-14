@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
- <asp:GridView ID="grd_main" runat="server"  AllowSorting="true"  AutoGenerateColumns="false" BorderWidth="1px" CellPadding="2" ForeColor="Black"                GridLines="Vertical">
+ <asp:GridView ID="grd_main" runat="server"  AllowSorting="true"  AutoGenerateColumns="false" BorderWidth="1px" CellPadding="2" ForeColor="Black"    GridLines="Vertical"> <%--Grid view data bound control --%>
              
     <FooterStyle BackColor="Tan" />
     <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />

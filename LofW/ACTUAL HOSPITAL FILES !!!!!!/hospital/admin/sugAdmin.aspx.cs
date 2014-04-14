@@ -29,7 +29,7 @@ public partial class admin_sugAdmin : System.Web.UI.Page
         }
     }
 
-    protected void subAdmin(object sender, CommandEventArgs e) // Admin inserts or cancels products into the database using linq 
+    protected void subAdmin(object sender, CommandEventArgs e) // Admin inserts or cancels records into the database using linq 
     {
         switch (e.CommandName)
         {

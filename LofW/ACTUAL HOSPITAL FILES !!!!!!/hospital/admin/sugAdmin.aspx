@@ -34,44 +34,44 @@
                 <br />
                 <asp:TextBox ID="txt_suggestionI" runat="server" />
                 </td>
-                  <asp:RequiredFieldValidator ID="rvf_suggestionI" runat="server" ControlToValidate="txt_suggestionI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a value for product name--%>
+                  <asp:RequiredFieldValidator ID="rvf_suggestionI" runat="server" ControlToValidate="txt_suggestionI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a value for suggestion type--%>
                 <td>
                  <asp:Label ID="lbl_first" runat="server"   AssociatedControlID="txt_firstI" />
                  <br />
                  <asp:TextBox ID="txt_firstI" runat="server" /> 
                 </td>
-                <asp:RequiredFieldValidator ID="rvf_first" runat="server" ControlToValidate="txt_firstI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a value for product name--%> 
+                <asp:RequiredFieldValidator ID="rvf_first" runat="server" ControlToValidate="txt_firstI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a first name--%> 
                 <td>
                 <asp:Label ID="lbl_last" runat="server"   AssociatedControlID="txt_lastI" />
                 <br />
                 <asp:TextBox ID="txt_lastI" runat="server" />
                 </td>
-                <asp:RequiredFieldValidator ID="rvf_last" runat="server" ControlToValidate="txt_lastI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a value for product description--%>
+                <asp:RequiredFieldValidator ID="rvf_last" runat="server" ControlToValidate="txt_lastI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter last name--%>
                 <td>
                 <asp:Label ID="lbl_phone" runat="server"  AssociatedControlID="txt_phoneI"  />
                 <br />
                 <asp:TextBox ID="txt_phoneI" runat="server" />
                 </td>
-                <asp:RequiredFieldValidator ID="rvf_phone" runat="server" ControlToValidate="txt_phoneI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a value for product description--%>
+                <asp:RequiredFieldValidator ID="rvf_phone" runat="server" ControlToValidate="txt_phoneI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter phone number--%>
               
                 <td>
                 <asp:Label ID="lbl_hours" runat="server"  />
                 <br />
                 <asp:TextBox ID="txt_hours" runat="server" />
                 </td> 
-                <asp:RequiredFieldValidator ID="rvf_hours" runat="server" ControlToValidate="txt_hours" Text="*Required" ValidationGroup="insert" />
+                <asp:RequiredFieldValidator ID="rvf_hours" runat="server" ControlToValidate="txt_hours" Text="*Required" ValidationGroup="insert" /><%--user's must enter contact hours--%>
                 <td>
                 <asp:Label ID="lbl_emailI" runat="server"  AssociatedControlID="txt_emailI" />
                 <br />
                 <asp:TextBox ID ="txt_emailI" runat="server" /> 
                 </td>
-                <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" ControlToValidate="txt_emailI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter a value for product description--%>
+                <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" ControlToValidate="txt_emailI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter an email--%>
                 <td>
                 <asp:Label ID="lbl_comment" runat="server"   AssociatedControlID="txt_commentI" />
                 <br />
                 <asp:TextBox ID ="txt_commentI"  runat="server" /> 
                  </td>
-                <asp:RequiredFieldValidator ID="rfv_comment" runat="server" ControlToValidate="txt_commentI" Text="*Required"  ValidationGroup="insert"  Display="Dynamic" /> <%--user's must enter a value for product price--%>
+                <asp:RequiredFieldValidator ID="rfv_comment" runat="server" ControlToValidate="txt_commentI" Text="*Required"  ValidationGroup="insert"  Display="Dynamic" /> <%--user's must enter a comment--%>
                 <td>
                 <br />
                 <%--Buttons for insert and cancel--%>

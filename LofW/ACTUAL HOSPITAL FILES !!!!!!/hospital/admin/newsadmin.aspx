@@ -14,7 +14,7 @@
         <br />
         <table>
             <tr>
-                <%--Headings for Suggestion info--%>
+                <%--Headings for News info--%>
                 <th>Date</th>
                 <th>Department </th>
                 <th>Details</th> 
