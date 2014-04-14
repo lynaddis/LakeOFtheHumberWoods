@@ -14,7 +14,7 @@ public partial class Patient_payBills : System.Web.UI.Page
     // gets user name from login name control
     string user = HttpContext.Current.User.Identity.Name.ToString();
     int invoiceID;
-    private int ID;
+    int ID;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -61,6 +61,8 @@ public partial class Patient_payBills : System.Web.UI.Page
     protected void subBindlist(string user)
     {
         ID = objPatient.getPatientIdByUsername(user); // stores id of user to global variable for id 
+        hdf_pid.Value = ID.ToString();
+        //lbl_msg.Text = ID.ToString();
         gv_bills_list.DataSource = objInvoice.getInvoiceByPatientId(ID); // takes global id and uses it to get associated record
         gv_bills_list.DataBind();
     }
@@ -94,9 +96,26 @@ public partial class Patient_payBills : System.Web.UI.Page
                     invoiceID = Convert.ToInt32(id.Text.ToString());
                     hdf_amount.Value = amount.Text.ToString();
                     hdf_proc.Value = proc.Text.ToString();
-
+                    hdf_id.Value = id.Text.ToString();
                     pnl_form.Visible = true;
                 }
+
+                else
+                {
+                    lbl_msg.Text = "Invlice has already beeen paid.";
+
+                }
+
+                break;
+
+            case "Printx": // new window code here
+
+                string url = "printInvoice.aspx?param="+ e.CommandArgument.ToString();
+
+                string s = "window.open('" + url + "', 'popup_window', 'width=300,height=400,left=400,top=100,resizable=yes,menubar=yes');";
+
+      
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "script",s, true);
 
                 break;
 
@@ -117,6 +136,9 @@ public partial class Patient_payBills : System.Web.UI.Page
     // and updates Patient invoice to paided 
     protected void subPay(object sender, EventArgs e)
     {
+        invoiceID = Convert.ToInt32(hdf_id.Value.ToString());
+        ID = Convert.ToInt32(hdf_pid.Value.ToString()); 
+        lbl_msg.Text = hdf_pid.Value;
         objInvoice.commitUpdatePaid(invoiceID, "Paid", "Creditcard");
         CommandResult(objCredit.commitInsert(invoiceID, ID, txt_cardNum.ToString(), txt_cardName.ToString(), txt_expireDate.ToString(), DateTime.Now.ToShortDateString()));
         clearForm();
@@ -130,6 +152,8 @@ public partial class Patient_payBills : System.Web.UI.Page
         txt_expireDate.Text = string.Empty;
 
         pnl_form.Visible = false;
+        pnl_list.Visible = true;
+        pnl_info.Visible = false;
     }
 
     private void CommandResult(bool commandFlag)

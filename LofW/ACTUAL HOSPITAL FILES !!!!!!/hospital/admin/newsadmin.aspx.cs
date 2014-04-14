@@ -27,12 +27,12 @@ public partial class newsadmin : System.Web.UI.Page
         }
     }
 
-    protected void subAdmin(object sender, CommandEventArgs e) // Admin inserts or cancels products into the database using linq 
+    protected void subAdmin(object sender, CommandEventArgs e) // Admin inserts or cancels records into the database using linq 
     {
         switch (e.CommandName)
         {
             case "Insert":
-                 string Date = (Convert.ToDateTime(txt_dateI.Text)).ToShortDateString();
+                 string Date = (Convert.ToDateTime(txt_dateI.Text)).ToShortDateString(); //converts string to date/time without the time 
 
                 _strMessage(objLinq.commitInsert(txt_departmentI.Text, txt_detailsI.Text, txt_urlI.Text, Date), "insert");
                 _subRebind();
@@ -61,7 +61,7 @@ public partial class newsadmin : System.Web.UI.Page
     protected void subUpDel(object sender, DataListCommandEventArgs e)
     {
 
-        switch (e.CommandName) // allows  Updates or deletes data using the textboxes  from the interface which is bounded to the database
+        switch (e.CommandName) // allows Updates or deletes data using the textboxes  from the interface which is bounded to the database
         {
             case "Update":
                 TextBox txtDep = (TextBox)e.Item.FindControl("txt_departmentE");
@@ -70,11 +70,11 @@ public partial class newsadmin : System.Web.UI.Page
                 TextBox txtDate = (TextBox)e.Item.FindControl("txt_dateE");
                 HiddenField hdfID = (HiddenField)e.Item.FindControl("hdf_idE");
                 int newsID = int.Parse(hdfID.Value.ToString());
-                string Date = (Convert.ToDateTime(txtDate.Text)).ToString("dd/mm/yyyy");
+                string Date = (Convert.ToDateTime(txtDate.Text)).ToString("dd/MM/yyyy");
                 _strMessage(objLinq.commitUpdate(newsID, txtDep.Text,txtDetails.Text,txtUrl.Text, Date), "update");
                 _subRebind();
                 break;
-            case "Delete":
+            case "Delete": //delete record from the database by the ID
                 int _id = int.Parse(((HiddenField)e.Item.FindControl("hdf_idE")).Value);
                 _strMessage(objLinq.commmitDelete(_id), "delete");
                 _subRebind();

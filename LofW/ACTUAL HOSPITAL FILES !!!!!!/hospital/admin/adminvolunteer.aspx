@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="adminvolunteer.aspx.cs" Inherits="adminvolunteer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/adminMaster.master" AutoEventWireup="true" CodeFile="adminvolunteer.aspx.cs" Inherits="adminvolunteer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -26,9 +26,9 @@
         <br />
     <div id="content" >
               <a href="homeadmin.aspx">Back To Home</a>
- 
-          
-               <asp:ListView ID="ltv_all" runat="server" OnItemCommand="subEdit">
+ <div class="form_back">
+          <h3>Edit Volunteer Forms</h3>
+               <asp:ListView ID="ltv_all" runat="server" OnItemCommand="subEdit" OnPagePropertiesChanging="dtl_Change">
   
         <ItemTemplate>
                               <br />
@@ -99,20 +99,24 @@
                             <asp:Label ID="lbl_deptRequest" runat="server" Text="Preferred Department:" />
                           <asp:TextBox ID="txt_deptRequestE" runat="server" Text='<%#Bind("deptRequest") %>' />
                       
-                         <br />  
-                          <asp:LinkButton ID="update" runat="server" Text="Update" CommandName="UpdateE" ValidationGroup="vs_adminVol" />
-        <br />
-        <asp:LinkButton ID="delete" runat="server" Text="Delete" CommandName="DeleteE" OnClientClick="return confirm('Confirm Delete?')" />
-             <br />
-         <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" CommandName="CancelE" CausesValidation="false" />
-
+                         <br />  <br />
+            <div class="page_buttons">
+                          <asp:LinkButton ID="update" runat="server" Text="Update" CommandName="UpdateE" ValidationGroup="vs_adminVol" SkinID="link_submit" Font-Underline="false"/>
+        
+        <asp:LinkButton ID="delete" runat="server" Text="Delete" CommandName="DeleteE" OnClientClick="return confirm('Confirm Delete?')" SkinID="link_submit" Font-Underline="false" />
+             
+         <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" CommandName="CancelE" CausesValidation="false" SkinID="link_submit" Font-Underline="false"  /></div>
+            <br />
+            <br />
+            
 
        
                        <asp:ValidationSummary ID="vs_adminVol" runat="server" DisplayMode="BulletList" HeaderText="Errors!" ShowMessageBox="true" ValidationGroup="admin_vol" />
                  
                 </ItemTemplate>
-            </asp:ListView>
-             <asp:DataPager ID="dp_listAll" runat="server" PagedControlID="ltv_all" PageSize="1">
+            </asp:ListView></div>
+        <br /><br />
+             <asp:DataPager ID="datapager_listAll" runat="server" PagedControlID="ltv_all" PageSize="1">
                 <Fields>
                    
                     <asp:NextPreviousPagerField ShowFirstPageButton="true" ShowNextPageButton="false" />

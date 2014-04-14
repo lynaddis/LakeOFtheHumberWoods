@@ -42,7 +42,7 @@
     </Type>
   </Table>
   <Table Name="dbo.donorInformation" Member="donorInformations">
-    <Type Name="donorInformation">
+    <Type Name="donorInformation" Id="ID1">
       <Column Name="donorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="donorAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="donorTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
@@ -103,24 +103,6 @@
       <Association Name="Patient_Invoice" Member="Patient" ThisKey="patient_id" OtherKey="Id" Type="Patient" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.lab" Member="labs">
-    <Type Name="lab">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="patientID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="patientCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="DateofBirth" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="age" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="sex" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="testType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="testCode" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="resultType1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="resultType2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="resultdescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="abnormal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="referenceRange" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="units" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.jobPosting" Member="jobPostings">
     <Type Name="jobPosting">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -165,6 +147,7 @@
       <Association Name="Patient_Credit_transaction" Member="Credit_transactions" ThisKey="Id" OtherKey="user_id" Type="Credit_transaction" />
       <Association Name="Patient_Invoice" Member="Invoices" ThisKey="Id" OtherKey="patient_id" Type="Invoice" />
       <Association Name="Patient_Paypal_transaction" Member="Paypal_transactions" ThisKey="Id" OtherKey="user_id" Type="Paypal_transaction" />
+      <Association Name="Patient_lab" Member="labs" ThisKey="Id" OtherKey="patientID" Type="lab" />
     </Type>
   </Table>
   <Table Name="dbo.Paypal_transactions" Member="Paypal_transactions">
@@ -338,6 +321,25 @@
       <Column Name="TimesAvail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.lab" Member="labs">
+    <Type Name="lab">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="patientID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="patientCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateofBirth" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="age" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="testType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="testCode" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="resultType1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="resultType2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="resultdescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="abnormal" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="referenceRange" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="units" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Patient_lab" Member="Patient" ThisKey="patientID" OtherKey="Id" Type="Patient" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.spUpdateDonorInformation" Method="spUpdateDonorInformation">
     <Parameter Name="id" Type="System.Int32" DbType="Int" />
     <Parameter Name="amount" Type="System.Int32" DbType="Int" />
@@ -382,49 +384,6 @@
     <Parameter Name="bedid" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.spGetDonorInformationById" Method="spGetDonorInformationById">
-    <Parameter Name="id" Type="System.Int32" DbType="Int" />
-    <ElementType Name="spGetDonorInformationByIdResult">
-      <Column Name="donorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="donorAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="donorTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="donorFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="donorMiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donorLastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DonorType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DonorCompany" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donorZipCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="donorPoBox" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donorCountry" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorProvince" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorCity" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorEmail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorPhoneHome" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="donorPhoneWork" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="donorEmailSend" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.spGetDonorInformation" Method="spGetDonorInformation">
-    <ElementType Name="spGetDonorInformationResult">
-      <Column Name="donorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="donorAmount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="donorTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="donorFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="donorMiddleName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donorLastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DonorType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DonorCompany" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donorZipCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="donorPoBox" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="donorCountry" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorProvince" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorCity" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorEmail" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="donorPhoneHome" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="donorPhoneWork" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="donorEmailSend" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.spGetBedRoomAndRoomType" Method="spGetBedRoomAndRoomType">
     <ElementType Name="spGetBedRoomAndRoomTypeResult">
       <Column Name="bedId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -436,5 +395,12 @@
       <Column Name="roomId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="roomNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.spGetDonorInformation" Method="spGetDonorInformation">
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spGetDonorInformationById" Method="spGetDonorInformationById">
+    <Parameter Name="id" Type="System.Int32" DbType="Int" />
+    <ElementType IdRef="ID1" />
   </Function>
 </Database>

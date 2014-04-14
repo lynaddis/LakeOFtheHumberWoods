@@ -12,7 +12,7 @@ public partial class LabResults : System.Web.UI.Page
     string user = HttpContext.Current.User.Identity.Name.ToString();
     private int ID;
 
-    protected void Page_Load(object sender, EventArgs e)
+    protected void Page_Load(object sender, EventArgs e)// loads page 
     {
         if (!Page.IsPostBack) // Shows if the page is visited for the first time
         {
@@ -24,7 +24,7 @@ public partial class LabResults : System.Web.UI.Page
 
    private void _subRebind()
    {
-      grd_main.DataSource = objLinq.getLabs();
+      grd_main.DataSource = objLinq.getLabs(); //binds grid view
       grd_main.DataBind();
        
    }

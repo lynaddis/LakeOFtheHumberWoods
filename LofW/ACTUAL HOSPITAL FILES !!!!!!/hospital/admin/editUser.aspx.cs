@@ -15,12 +15,9 @@ public partial class Admin_editUser : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
-           // lbl_editlist.Text = "Search Results: Full List";
-            lbl_editlist.Text = "page not posted back";
             lv_editUser.Items.Clear();
             subRebind();
 
-           // Page.Response.AppendHeader("Refresh", "~/editUser.aspx");
             txt_byFName.Enabled = false;
             txt_byLname.Enabled = false;
             txt_bydob.Enabled = false;
@@ -29,20 +26,13 @@ public partial class Admin_editUser : System.Web.UI.Page
             txt_byUsername.Enabled = false;
             btn_byUsername.Enabled = false;
         }
-
-        else
-        {
-            lbl_editlist.Text = "page posted back";
-        }
     }
 
 
     protected void subRebind()
     {
-       // List<Patient> dataObj = new List<Patient>();
-       //  dataObj = objPatient.getPatients();
         lv_editUser.Items.Clear();
-        lv_editUser.DataSource = objPatient.getPatients(); //dataObj;
+        lv_editUser.DataSource = objPatient.getPatients(); 
         lv_editUser.EditIndex = -1;
         lv_editUser.DataBind();
 

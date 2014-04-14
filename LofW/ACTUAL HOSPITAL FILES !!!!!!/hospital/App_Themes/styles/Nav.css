@@ -25,48 +25,41 @@
 
 
 .level3 {
-   color: white;
-    font-family: Gill Sans MT !important;
+    color: white;
+   
     font-size: medium;
     background-color: #336ec2;
     padding: 10px;
+      width: 145.15px;
 }
 
-
-.hover
-{
-    font-weight: bold;
-    font-style: italic;
-    background-color: pink;
-}
 
 @media screen and (min-width : 320px) and (max-width : 480px) {
-
-    .menu {
-width: 320px;
+    /*Menu!*/
+    .level1 {
+        color: White;
+        background-color: #3d506b;
+        font-variant: small-caps;
+        font-size: large;
+        font-weight: bold;
+        padding: 15px;
+        width: 309px;
+        text-align: center;
     }
-
-    .level1
-{
-    color: White;
-    background-color: khaki;
-    font-variant: small-caps;
-    font-size: large;
-    font-weight: bold;
-    padding: 5px;
-    width: 320px;
-    text-align: center;
-}
 
     .level2 {
-     background-color: pink;
+        color: White;
+        background-color: #3d506b;
+        font-variant: small-caps;
+        font-size: large;
+        font-weight: bold;
+        padding: 15px;
+        width: 309px;
+        text-align: center;
     }
+    .level3  {
+     
+        display:none;
 
-.hover
-{
-    font-weight: bold;
-    font-style: italic;
-    background-color: pink;
-}
-
+    }
 }

@@ -1,13 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="payBills.aspx.cs" Inherits="Patient_payBills" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="payBills.aspx.cs" Inherits="Patient_payBills" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
     <div>
         <%-- Displys welcome message to user --%> 
     <asp:LoginName ID="log_name" runat="server" FormatString="Welcome, {0} " />
@@ -57,19 +55,11 @@
                         <asp:Label ID="lbl_header" runat="server" Text="Invoice List" />
                     </HeaderTemplate>
                     <ItemTemplate>
-                        <table>
-                            <tr>
-                                <td>
-                                    <asp:Label ID="lbl_invoice_num" runat="server" Text="Invoice Number: " />
-                                </td>
-                                <td>
+                                    <asp:Label ID="lbl_invoice_num" runat="server" Text="Invoice Number: " AssociatedControlID="lbl_num" />
                                     <asp:Label ID="lbl_num" runat="server" Text='<%#Eval("Id") %>' />
-                                </td>
-                                <td>
                                     <asp:LinkButton ID="lnk_select" runat="server" Text="Select" CommandArgument='<%#Eval("Id") %>' CommandName="Selectx" /> 
-                                </td>
-                            </tr>
-                        </table>
+                                    <br /><br />
+
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -83,41 +73,22 @@
             <Fields>
                 <asp:TemplateField>
                     <ItemTemplate>
-                        <table>
-                            <tr>
-                                <td>
-                                    <asp:Label ID="lbl_invoice_num" runat="server" Text="Invoice #:" />
-                                </td>
-                                <td>
+
+                                    <asp:Label ID="lbl_invoice_num" runat="server" Text="Invoice #:" AssociatedControlID="lbl_num" />
                                     <asp:Label ID="lbl_num" runat="server" Text='<%#Eval("Id") %>' />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Label ID="lbl_colAmount" runat="server" Text="Amount :" />
-                                </td>
-                                <td>
+                                    <br /><br />
+                                    <asp:Label ID="lbl_colAmount" runat="server" Text="Amount :" AssociatedControlID="lbl_amount" />
                                     <asp:Label ID="lbl_amount" runat="server" Text='<%#Eval("amount") %>' /> 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <asp:Label ID="lbl_colProcedure" runat="server" Text="Procedure :" />
-                                </td>
-                                <td>
+                                    <br /><br />
+                                    <asp:Label ID="lbl_colProcedure" runat="server" Text="Procedure :" AssociatedControlID="lbl_procedure" />
                                     <asp:Label ID="lbl_procedure" runat="server" Text='<%#Eval("procedure") %>' />
-                                </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <asp:Label ID="lbl_colStatus" runat="server" Text="Status :" />
-                              </td>
-                                <td>
+                                    <br /><br />
+                                    <asp:Label ID="lbl_colStatus" runat="server" Text="Status :" AssociatedControlID="lbl_status" />
                                     <asp:Label ID="lbl_status" runat="server" Text='<%#Eval("status") %>' />
-                                </td>
-                            </tr>
-                        </table>
+                                    <br /><br />
                         <asp:LinkButton ID="lnk_pay" runat="server" Text="Pay Invoice" CommandArgument='<%#Eval("status") %>' CommandName="Payx" />
+                        <br />
+                        <asp:LinkButton ID="lnk_print" runat="server" Text="Print Invoice" CommandArgument='<%#Eval("Id") %>' CommandName="Printx" />
                         <br />
                         <asp:LinkButton ID="lnk_cancel" runat="server" Text="Cancel" CommandName="Cancelx" />
                     </ItemTemplate>
@@ -128,18 +99,15 @@
 
         <asp:HiddenField ID="hdf_amount" runat="server" Value="" />
         <asp:HiddenField ID="hdf_proc" runat="server" Value="" />
+        <asp:HiddenField ID="hdf_id" runat="server" Value="" />
+        <asp:HiddenField ID="hdf_pid" runat="server" Value="" />
 
         <asp:Panel ID="pnl_form" runat="server">
-            <table>
-                <tr>
-                    <td>
+
                         <asp:RadioButton ID="rbl_credit" runat="server" Text="Credit Card" OnCheckedChanged="Checked" GroupName="payment" AutoPostBack="true"  />
-                    </td>
-                    <td>
+
                         <asp:RadioButton ID="rbl_paypal" runat="server" Text="PayPal" OnCheckedChanged="Checked" GroupName="payment" AutoPostBack="true" />
-                    </td>
-                </tr>
-            </table>
+
 
             <asp:Panel ID="pnl_credit" runat="server">
                 <asp:Label ID="lbl_cardnum" runat="server" Text="CardNumber" />
@@ -172,26 +140,26 @@
         <asp:Label ID="test" runat="server" />
 
     </div>
-    </form>
-
             
         <asp:Panel ID="pnl_paypal" runat="server">
             <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_xclick"/>
-            <input type="hidden" name="business" value="dev@j-lacroix.net"/>
+            <input type="hidden" name="business" value="dev-facilitator@j-lacroix.net"/>
             <input type="hidden" name="lc" value="CA"/>
             <input type="hidden" name="item_name" value="<%= hdf_proc.Value %>"/>
+            <input type="hidden" name="item_number" value="<%= hdf_id.Value %>"/>
             <input type="hidden" name="amount" value="<%= hdf_amount.Value %>"/>
             <input type="hidden" name="currency_code" value="CAD"/>
             <input type="hidden" name="button_subtype" value="services"/>
+            <input type="hidden" name="return" value="http://daniellestirling.com/hospital/processing.aspx" />
+            <input type="hidden" name="cancel_return" value="http://daniellestirling.com/hospital/cancel.aspx" />
             <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted"/>
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
-            <img alt="" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+            <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+            <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
             </form>
 
         </asp:Panel>
 
     <asp:Label ID="lbl_msg" runat="server" />
 
-</body>
-</html>
+</asp:Content>

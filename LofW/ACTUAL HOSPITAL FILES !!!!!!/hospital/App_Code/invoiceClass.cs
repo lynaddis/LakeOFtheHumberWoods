@@ -29,6 +29,14 @@ public class invoiceClass
         return allInvoice.ToList();
     }
 
+
+    public int getPatientIdByInvoice(int id)
+    {
+        HospitalDataContext objPatient = new HospitalDataContext();
+        return objPatient.Invoices.Where(x => x.Id  == id).Select(x => x.patient_id).First();
+
+    }
+
     public bool commintInsert(decimal amount, string procedure, int p_id)
     {
         HospitalDataContext objInvoice = new HospitalDataContext();

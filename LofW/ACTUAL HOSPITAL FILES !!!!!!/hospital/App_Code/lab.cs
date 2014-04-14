@@ -39,7 +39,7 @@ public class labClass
         return allLabs;
     }
 
-    public bool commitInsert(string _patient, string _code,  string _age , string _sex, string _type, string _testcode, 
+    public bool commitInsert(int _patient, string _code,  string _age , string _sex, string _type, string _testcode, 
         string _result1, string _result2, string _desc, string _abnormal , string _refrange, string _unit, string _dob   )
     {
        HospitalDataContext objLAB = new HospitalDataContext();
@@ -67,7 +67,7 @@ public class labClass
 
     }
 
-    public bool commitUpdate(int _id, string _patient, string _code,string _unit, string _age, string _sex, string _type, string _testcode,
+    public bool commitUpdate(int _id, int _patient, string _code,string _unit, string _age, string _sex, string _type, string _testcode,
         string _result1, string _result2, string _desc, string _abnormal, string _refrange, string _dob)
     {
  HospitalDataContext objLAB = new HospitalDataContext();

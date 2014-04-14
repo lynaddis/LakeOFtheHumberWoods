@@ -8,15 +8,12 @@ using System.Web.UI.WebControls;
 public partial class adminspecialists : System.Web.UI.Page
 {
     CalenderClass specCal = new CalenderClass();
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
 
 
     protected void ltv_allChange(object sender, PagePropertiesChangingEventArgs e)
     {
         dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        _subRebind();
       
     }
 
@@ -102,11 +99,15 @@ public partial class adminspecialists : System.Web.UI.Page
     {
         if (flag)
         {
-            lbl_output.Text = "Submissions" + str + " was successful"; //if insert is successful subroutie )strMessage will say "(submission you inserted) was successful"
+            lbl_output.Text =  str + " was successful"; //if insert is successful subroutie )strMessage will say "(submission you inserted) was successful"
         }
         else
         {
             lbl_output.Text = "Sorry, unable to " + str + "submissions";//if insert fails then this message is produced.
         }
+    }
+    protected void ltv_all_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+    {
+
     }
 }

@@ -11,7 +11,8 @@ public partial class adminvolunteer : System.Web.UI.Page
 
     protected void dtl_Change(object sender, PagePropertiesChangingEventArgs e)
     {
-        dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        datapager_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        _subRebind();
 
     }
 
@@ -32,7 +33,7 @@ public partial class adminvolunteer : System.Web.UI.Page
     {
         if (flag)
         {
-            lbl_message.Text = "Submission" + str + "has been submitted!";
+            lbl_message.Text = "Volunteer form has been successfully " + str + "d!";
         }
         else
         {
@@ -51,7 +52,7 @@ public partial class adminvolunteer : System.Web.UI.Page
     {
         switch (e.CommandName)
         {
-            case "Update":
+            case "UpdateE":
 
                 TextBox txtname = (TextBox)e.Item.FindControl("txt_nameE");
                 TextBox txtage = (TextBox)e.Item.FindControl("txt_ageE");
@@ -78,12 +79,12 @@ public partial class adminvolunteer : System.Web.UI.Page
 
                 break;
 
-            case "Delete":
+            case "DeleteE":
                 int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_IdE")).Value);//use Id numbers to delete rows.
                 _strMessage(objVol.commitDelete(_Id), "delete");
                 _subRebind();
                 break;
-            case "Cancel":
+            case "CancelE":
                 _subRebind();
                 break;
         }

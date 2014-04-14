@@ -53,9 +53,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
   partial void InsertInvoice(Invoice instance);
   partial void UpdateInvoice(Invoice instance);
   partial void DeleteInvoice(Invoice instance);
-  partial void Insertlab(lab instance);
-  partial void Updatelab(lab instance);
-  partial void Deletelab(lab instance);
   partial void InsertjobPosting(jobPosting instance);
   partial void UpdatejobPosting(jobPosting instance);
   partial void DeletejobPosting(jobPosting instance);
@@ -104,6 +101,9 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
   partial void InsertEntry(Entry instance);
   partial void UpdateEntry(Entry instance);
   partial void DeleteEntry(Entry instance);
+  partial void Insertlab(lab instance);
+  partial void Updatelab(lab instance);
+  partial void Deletelab(lab instance);
   #endregion
 	
 	public HospitalDataContext() : 
@@ -205,14 +205,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<Invoice>();
-		}
-	}
-	
-	public System.Data.Linq.Table<lab> labs
-	{
-		get
-		{
-			return this.GetTable<lab>();
 		}
 	}
 	
@@ -392,6 +384,14 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
+	public System.Data.Linq.Table<lab> labs
+	{
+		get
+		{
+			return this.GetTable<lab>();
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spUpdateDonorInformation")]
 	public int spUpdateDonorInformation(
 				[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id, 
@@ -446,25 +446,25 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		return ((int)(result.ReturnValue));
 	}
 	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetDonorInformationById")]
-	public ISingleResult<spGetDonorInformationByIdResult> spGetDonorInformationById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
-		return ((ISingleResult<spGetDonorInformationByIdResult>)(result.ReturnValue));
-	}
-	
-	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetDonorInformation")]
-	public ISingleResult<spGetDonorInformationResult> spGetDonorInformation()
-	{
-		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-		return ((ISingleResult<spGetDonorInformationResult>)(result.ReturnValue));
-	}
-	
 	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetBedRoomAndRoomType")]
 	public ISingleResult<spGetBedRoomAndRoomTypeResult> spGetBedRoomAndRoomType()
 	{
 		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		return ((ISingleResult<spGetBedRoomAndRoomTypeResult>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetDonorInformation")]
+	public ISingleResult<donorInformation> spGetDonorInformation()
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		return ((ISingleResult<donorInformation>)(result.ReturnValue));
+	}
+	
+	[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.spGetDonorInformationById")]
+	public ISingleResult<donorInformation> spGetDonorInformationById([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
+	{
+		IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+		return ((ISingleResult<donorInformation>)(result.ReturnValue));
 	}
 }
 
@@ -2108,7 +2108,23 @@ public partial class Invoice : INotifyPropertyChanging, INotifyPropertyChanged
     partial void Onpatient_idChanging(int value);
     partial void Onpatient_idChanged();
     #endregion
-	
+
+
+    partial void OnCreated()
+    {
+        if (this.status == null)
+        {
+            this.status = "Unpaid";
+        }
+
+        if (this.payment_method == null)
+        {
+            this.payment_method = "None";
+        }
+
+    }
+
+
 	public Invoice()
 	{
 		this._Credit_transactions = new EntitySet<Credit_transaction>(new Action<Credit_transaction>(this.attach_Credit_transactions), new Action<Credit_transaction>(this.detach_Credit_transactions));
@@ -2343,380 +2359,6 @@ public partial class Invoice : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		this.SendPropertyChanging();
 		entity.Invoice = null;
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.lab")]
-public partial class lab : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _Id;
-	
-	private string _patientID;
-	
-	private string _patientCode;
-	
-	private string _DateofBirth;
-	
-	private string _age;
-	
-	private string _sex;
-	
-	private string _testType;
-	
-	private string _testCode;
-	
-	private string _resultType1;
-	
-	private string _resultType2;
-	
-	private string _resultdescription;
-	
-	private string _abnormal;
-	
-	private string _referenceRange;
-	
-	private string _units;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnpatientIDChanging(string value);
-    partial void OnpatientIDChanged();
-    partial void OnpatientCodeChanging(string value);
-    partial void OnpatientCodeChanged();
-    partial void OnDateofBirthChanging(string value);
-    partial void OnDateofBirthChanged();
-    partial void OnageChanging(string value);
-    partial void OnageChanged();
-    partial void OnsexChanging(string value);
-    partial void OnsexChanged();
-    partial void OntestTypeChanging(string value);
-    partial void OntestTypeChanged();
-    partial void OntestCodeChanging(string value);
-    partial void OntestCodeChanged();
-    partial void OnresultType1Changing(string value);
-    partial void OnresultType1Changed();
-    partial void OnresultType2Changing(string value);
-    partial void OnresultType2Changed();
-    partial void OnresultdescriptionChanging(string value);
-    partial void OnresultdescriptionChanged();
-    partial void OnabnormalChanging(string value);
-    partial void OnabnormalChanged();
-    partial void OnreferenceRangeChanging(string value);
-    partial void OnreferenceRangeChanged();
-    partial void OnunitsChanging(string value);
-    partial void OnunitsChanged();
-    #endregion
-	
-	public lab()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int Id
-	{
-		get
-		{
-			return this._Id;
-		}
-		set
-		{
-			if ((this._Id != value))
-			{
-				this.OnIdChanging(value);
-				this.SendPropertyChanging();
-				this._Id = value;
-				this.SendPropertyChanged("Id");
-				this.OnIdChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientID", DbType="VarChar(20)")]
-	public string patientID
-	{
-		get
-		{
-			return this._patientID;
-		}
-		set
-		{
-			if ((this._patientID != value))
-			{
-				this.OnpatientIDChanging(value);
-				this.SendPropertyChanging();
-				this._patientID = value;
-				this.SendPropertyChanged("patientID");
-				this.OnpatientIDChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientCode", DbType="VarChar(20)")]
-	public string patientCode
-	{
-		get
-		{
-			return this._patientCode;
-		}
-		set
-		{
-			if ((this._patientCode != value))
-			{
-				this.OnpatientCodeChanging(value);
-				this.SendPropertyChanging();
-				this._patientCode = value;
-				this.SendPropertyChanged("patientCode");
-				this.OnpatientCodeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateofBirth", DbType="VarChar(15)")]
-	public string DateofBirth
-	{
-		get
-		{
-			return this._DateofBirth;
-		}
-		set
-		{
-			if ((this._DateofBirth != value))
-			{
-				this.OnDateofBirthChanging(value);
-				this.SendPropertyChanging();
-				this._DateofBirth = value;
-				this.SendPropertyChanged("DateofBirth");
-				this.OnDateofBirthChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_age", DbType="VarChar(3)")]
-	public string age
-	{
-		get
-		{
-			return this._age;
-		}
-		set
-		{
-			if ((this._age != value))
-			{
-				this.OnageChanging(value);
-				this.SendPropertyChanging();
-				this._age = value;
-				this.SendPropertyChanged("age");
-				this.OnageChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sex", DbType="VarChar(10)")]
-	public string sex
-	{
-		get
-		{
-			return this._sex;
-		}
-		set
-		{
-			if ((this._sex != value))
-			{
-				this.OnsexChanging(value);
-				this.SendPropertyChanging();
-				this._sex = value;
-				this.SendPropertyChanged("sex");
-				this.OnsexChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_testType", DbType="VarChar(MAX)")]
-	public string testType
-	{
-		get
-		{
-			return this._testType;
-		}
-		set
-		{
-			if ((this._testType != value))
-			{
-				this.OntestTypeChanging(value);
-				this.SendPropertyChanging();
-				this._testType = value;
-				this.SendPropertyChanged("testType");
-				this.OntestTypeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_testCode", DbType="VarChar(20)")]
-	public string testCode
-	{
-		get
-		{
-			return this._testCode;
-		}
-		set
-		{
-			if ((this._testCode != value))
-			{
-				this.OntestCodeChanging(value);
-				this.SendPropertyChanging();
-				this._testCode = value;
-				this.SendPropertyChanged("testCode");
-				this.OntestCodeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resultType1", DbType="VarChar(MAX)")]
-	public string resultType1
-	{
-		get
-		{
-			return this._resultType1;
-		}
-		set
-		{
-			if ((this._resultType1 != value))
-			{
-				this.OnresultType1Changing(value);
-				this.SendPropertyChanging();
-				this._resultType1 = value;
-				this.SendPropertyChanged("resultType1");
-				this.OnresultType1Changed();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resultType2", DbType="VarChar(MAX)")]
-	public string resultType2
-	{
-		get
-		{
-			return this._resultType2;
-		}
-		set
-		{
-			if ((this._resultType2 != value))
-			{
-				this.OnresultType2Changing(value);
-				this.SendPropertyChanging();
-				this._resultType2 = value;
-				this.SendPropertyChanged("resultType2");
-				this.OnresultType2Changed();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resultdescription", DbType="VarChar(MAX)")]
-	public string resultdescription
-	{
-		get
-		{
-			return this._resultdescription;
-		}
-		set
-		{
-			if ((this._resultdescription != value))
-			{
-				this.OnresultdescriptionChanging(value);
-				this.SendPropertyChanging();
-				this._resultdescription = value;
-				this.SendPropertyChanged("resultdescription");
-				this.OnresultdescriptionChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_abnormal", DbType="VarChar(50)")]
-	public string abnormal
-	{
-		get
-		{
-			return this._abnormal;
-		}
-		set
-		{
-			if ((this._abnormal != value))
-			{
-				this.OnabnormalChanging(value);
-				this.SendPropertyChanging();
-				this._abnormal = value;
-				this.SendPropertyChanged("abnormal");
-				this.OnabnormalChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_referenceRange", DbType="VarChar(MAX)")]
-	public string referenceRange
-	{
-		get
-		{
-			return this._referenceRange;
-		}
-		set
-		{
-			if ((this._referenceRange != value))
-			{
-				this.OnreferenceRangeChanging(value);
-				this.SendPropertyChanging();
-				this._referenceRange = value;
-				this.SendPropertyChanged("referenceRange");
-				this.OnreferenceRangeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_units", DbType="VarChar(50)")]
-	public string units
-	{
-		get
-		{
-			return this._units;
-		}
-		set
-		{
-			if ((this._units != value))
-			{
-				this.OnunitsChanging(value);
-				this.SendPropertyChanging();
-				this._units = value;
-				this.SendPropertyChanged("units");
-				this.OnunitsChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
 	}
 }
 
@@ -3274,6 +2916,8 @@ public partial class Patient : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private EntitySet<Paypal_transaction> _Paypal_transactions;
 	
+	private EntitySet<lab> _labs;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3305,6 +2949,7 @@ public partial class Patient : INotifyPropertyChanging, INotifyPropertyChanged
 		this._Credit_transactions = new EntitySet<Credit_transaction>(new Action<Credit_transaction>(this.attach_Credit_transactions), new Action<Credit_transaction>(this.detach_Credit_transactions));
 		this._Invoices = new EntitySet<Invoice>(new Action<Invoice>(this.attach_Invoices), new Action<Invoice>(this.detach_Invoices));
 		this._Paypal_transactions = new EntitySet<Paypal_transaction>(new Action<Paypal_transaction>(this.attach_Paypal_transactions), new Action<Paypal_transaction>(this.detach_Paypal_transactions));
+		this._labs = new EntitySet<lab>(new Action<lab>(this.attach_labs), new Action<lab>(this.detach_labs));
 		OnCreated();
 	}
 	
@@ -3547,6 +3192,19 @@ public partial class Patient : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Patient_lab", Storage="_labs", ThisKey="Id", OtherKey="patientID")]
+	public EntitySet<lab> labs
+	{
+		get
+		{
+			return this._labs;
+		}
+		set
+		{
+			this._labs.Assign(value);
+		}
+	}
+	
 	public event PropertyChangingEventHandler PropertyChanging;
 	
 	public event PropertyChangedEventHandler PropertyChanged;
@@ -3598,6 +3256,18 @@ public partial class Patient : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 	
 	private void detach_Paypal_transactions(Paypal_transaction entity)
+	{
+		this.SendPropertyChanging();
+		entity.Patient = null;
+	}
+	
+	private void attach_labs(lab entity)
+	{
+		this.SendPropertyChanging();
+		entity.Patient = this;
+	}
+	
+	private void detach_labs(lab entity)
 	{
 		this.SendPropertyChanging();
 		entity.Patient = null;
@@ -4956,7 +4626,7 @@ public partial class sysdiagram
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_definition", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_definition", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 	public System.Data.Linq.Binary definition
 	{
 		get
@@ -6398,630 +6068,417 @@ public partial class Entry : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
-public partial class spGetDonorInformationByIdResult
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.lab")]
+public partial class lab : INotifyPropertyChanging, INotifyPropertyChanged
 {
 	
-	private int _donorId;
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 	
-	private int _donorAmount;
+	private int _Id;
 	
-	private string _donorTitle;
+	private System.Nullable<int> _patientID;
 	
-	private string _donorFirstName;
+	private string _patientCode;
 	
-	private string _donorMiddleName;
+	private string _DateofBirth;
 	
-	private string _donorLastName;
+	private string _age;
 	
-	private string _DonorType;
+	private string _sex;
 	
-	private string _DonorCompany;
+	private string _testType;
 	
-	private string _donorZipCode;
+	private string _testCode;
 	
-	private string _donorPoBox;
+	private string _resultType1;
 	
-	private string _donorCountry;
+	private string _resultType2;
 	
-	private string _donorProvince;
+	private string _resultdescription;
 	
-	private string _donorCity;
+	private string _abnormal;
 	
-	private string _donorEmail;
+	private string _referenceRange;
 	
-	private string _donorPhoneHome;
+	private string _units;
 	
-	private string _donorPhoneWork;
+	private EntityRef<Patient> _Patient;
 	
-	private string _donorEmailSend;
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnpatientIDChanging(System.Nullable<int> value);
+    partial void OnpatientIDChanged();
+    partial void OnpatientCodeChanging(string value);
+    partial void OnpatientCodeChanged();
+    partial void OnDateofBirthChanging(string value);
+    partial void OnDateofBirthChanged();
+    partial void OnageChanging(string value);
+    partial void OnageChanged();
+    partial void OnsexChanging(string value);
+    partial void OnsexChanged();
+    partial void OntestTypeChanging(string value);
+    partial void OntestTypeChanged();
+    partial void OntestCodeChanging(string value);
+    partial void OntestCodeChanged();
+    partial void OnresultType1Changing(string value);
+    partial void OnresultType1Changed();
+    partial void OnresultType2Changing(string value);
+    partial void OnresultType2Changed();
+    partial void OnresultdescriptionChanging(string value);
+    partial void OnresultdescriptionChanged();
+    partial void OnabnormalChanging(string value);
+    partial void OnabnormalChanged();
+    partial void OnreferenceRangeChanging(string value);
+    partial void OnreferenceRangeChanged();
+    partial void OnunitsChanging(string value);
+    partial void OnunitsChanged();
+    #endregion
 	
-	public spGetDonorInformationByIdResult()
+	public lab()
 	{
+		this._Patient = default(EntityRef<Patient>);
+		OnCreated();
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorId", DbType="Int NOT NULL")]
-	public int donorId
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
 	{
 		get
 		{
-			return this._donorId;
+			return this._Id;
 		}
 		set
 		{
-			if ((this._donorId != value))
+			if ((this._Id != value))
 			{
-				this._donorId = value;
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorAmount", DbType="Int NOT NULL")]
-	public int donorAmount
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientID", DbType="Int")]
+	public System.Nullable<int> patientID
 	{
 		get
 		{
-			return this._donorAmount;
+			return this._patientID;
 		}
 		set
 		{
-			if ((this._donorAmount != value))
+			if ((this._patientID != value))
 			{
-				this._donorAmount = value;
+				if (this._Patient.HasLoadedOrAssignedValue)
+				{
+					throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+				}
+				this.OnpatientIDChanging(value);
+				this.SendPropertyChanging();
+				this._patientID = value;
+				this.SendPropertyChanged("patientID");
+				this.OnpatientIDChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorTitle", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-	public string donorTitle
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_patientCode", DbType="VarChar(MAX)")]
+	public string patientCode
 	{
 		get
 		{
-			return this._donorTitle;
+			return this._patientCode;
 		}
 		set
 		{
-			if ((this._donorTitle != value))
+			if ((this._patientCode != value))
 			{
-				this._donorTitle = value;
+				this.OnpatientCodeChanging(value);
+				this.SendPropertyChanging();
+				this._patientCode = value;
+				this.SendPropertyChanged("patientCode");
+				this.OnpatientCodeChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorFirstName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-	public string donorFirstName
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateofBirth", DbType="VarChar(MAX)")]
+	public string DateofBirth
 	{
 		get
 		{
-			return this._donorFirstName;
+			return this._DateofBirth;
 		}
 		set
 		{
-			if ((this._donorFirstName != value))
+			if ((this._DateofBirth != value))
 			{
-				this._donorFirstName = value;
+				this.OnDateofBirthChanging(value);
+				this.SendPropertyChanging();
+				this._DateofBirth = value;
+				this.SendPropertyChanged("DateofBirth");
+				this.OnDateofBirthChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorMiddleName", DbType="NVarChar(50)")]
-	public string donorMiddleName
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_age", DbType="VarChar(MAX)")]
+	public string age
 	{
 		get
 		{
-			return this._donorMiddleName;
+			return this._age;
 		}
 		set
 		{
-			if ((this._donorMiddleName != value))
+			if ((this._age != value))
 			{
-				this._donorMiddleName = value;
+				this.OnageChanging(value);
+				this.SendPropertyChanging();
+				this._age = value;
+				this.SendPropertyChanged("age");
+				this.OnageChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorLastName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-	public string donorLastName
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sex", DbType="VarChar(MAX)")]
+	public string sex
 	{
 		get
 		{
-			return this._donorLastName;
+			return this._sex;
 		}
 		set
 		{
-			if ((this._donorLastName != value))
+			if ((this._sex != value))
 			{
-				this._donorLastName = value;
+				this.OnsexChanging(value);
+				this.SendPropertyChanging();
+				this._sex = value;
+				this.SendPropertyChanged("sex");
+				this.OnsexChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorType", DbType="NVarChar(50)")]
-	public string DonorType
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_testType", DbType="VarChar(MAX)")]
+	public string testType
 	{
 		get
 		{
-			return this._DonorType;
+			return this._testType;
 		}
 		set
 		{
-			if ((this._DonorType != value))
+			if ((this._testType != value))
 			{
-				this._DonorType = value;
+				this.OntestTypeChanging(value);
+				this.SendPropertyChanging();
+				this._testType = value;
+				this.SendPropertyChanged("testType");
+				this.OntestTypeChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorCompany", DbType="NVarChar(50)")]
-	public string DonorCompany
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_testCode", DbType="VarChar(MAX)")]
+	public string testCode
 	{
 		get
 		{
-			return this._DonorCompany;
+			return this._testCode;
 		}
 		set
 		{
-			if ((this._DonorCompany != value))
+			if ((this._testCode != value))
 			{
-				this._DonorCompany = value;
+				this.OntestCodeChanging(value);
+				this.SendPropertyChanging();
+				this._testCode = value;
+				this.SendPropertyChanged("testCode");
+				this.OntestCodeChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorZipCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-	public string donorZipCode
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resultType1", DbType="VarChar(MAX)")]
+	public string resultType1
 	{
 		get
 		{
-			return this._donorZipCode;
+			return this._resultType1;
 		}
 		set
 		{
-			if ((this._donorZipCode != value))
+			if ((this._resultType1 != value))
 			{
-				this._donorZipCode = value;
+				this.OnresultType1Changing(value);
+				this.SendPropertyChanging();
+				this._resultType1 = value;
+				this.SendPropertyChanged("resultType1");
+				this.OnresultType1Changed();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPoBox", DbType="NVarChar(50)")]
-	public string donorPoBox
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resultType2", DbType="VarChar(MAX)")]
+	public string resultType2
 	{
 		get
 		{
-			return this._donorPoBox;
+			return this._resultType2;
 		}
 		set
 		{
-			if ((this._donorPoBox != value))
+			if ((this._resultType2 != value))
 			{
-				this._donorPoBox = value;
+				this.OnresultType2Changing(value);
+				this.SendPropertyChanging();
+				this._resultType2 = value;
+				this.SendPropertyChanged("resultType2");
+				this.OnresultType2Changed();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCountry", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-	public string donorCountry
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_resultdescription", DbType="VarChar(MAX)")]
+	public string resultdescription
 	{
 		get
 		{
-			return this._donorCountry;
+			return this._resultdescription;
 		}
 		set
 		{
-			if ((this._donorCountry != value))
+			if ((this._resultdescription != value))
 			{
-				this._donorCountry = value;
+				this.OnresultdescriptionChanging(value);
+				this.SendPropertyChanging();
+				this._resultdescription = value;
+				this.SendPropertyChanged("resultdescription");
+				this.OnresultdescriptionChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorProvince", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-	public string donorProvince
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_abnormal", DbType="VarChar(50)")]
+	public string abnormal
 	{
 		get
 		{
-			return this._donorProvince;
+			return this._abnormal;
 		}
 		set
 		{
-			if ((this._donorProvince != value))
+			if ((this._abnormal != value))
 			{
-				this._donorProvince = value;
+				this.OnabnormalChanging(value);
+				this.SendPropertyChanging();
+				this._abnormal = value;
+				this.SendPropertyChanged("abnormal");
+				this.OnabnormalChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCity", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-	public string donorCity
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_referenceRange", DbType="VarChar(MAX)")]
+	public string referenceRange
 	{
 		get
 		{
-			return this._donorCity;
+			return this._referenceRange;
 		}
 		set
 		{
-			if ((this._donorCity != value))
+			if ((this._referenceRange != value))
 			{
-				this._donorCity = value;
+				this.OnreferenceRangeChanging(value);
+				this.SendPropertyChanging();
+				this._referenceRange = value;
+				this.SendPropertyChanged("referenceRange");
+				this.OnreferenceRangeChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmail", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-	public string donorEmail
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_units", DbType="VarChar(50)")]
+	public string units
 	{
 		get
 		{
-			return this._donorEmail;
+			return this._units;
 		}
 		set
 		{
-			if ((this._donorEmail != value))
+			if ((this._units != value))
 			{
-				this._donorEmail = value;
+				this.OnunitsChanging(value);
+				this.SendPropertyChanging();
+				this._units = value;
+				this.SendPropertyChanged("units");
+				this.OnunitsChanged();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneHome", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-	public string donorPhoneHome
+	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Patient_lab", Storage="_Patient", ThisKey="patientID", OtherKey="Id", IsForeignKey=true)]
+	public Patient Patient
 	{
 		get
 		{
-			return this._donorPhoneHome;
+			return this._Patient.Entity;
 		}
 		set
 		{
-			if ((this._donorPhoneHome != value))
+			Patient previousValue = this._Patient.Entity;
+			if (((previousValue != value) 
+						|| (this._Patient.HasLoadedOrAssignedValue == false)))
 			{
-				this._donorPhoneHome = value;
+				this.SendPropertyChanging();
+				if ((previousValue != null))
+				{
+					this._Patient.Entity = null;
+					previousValue.labs.Remove(this);
+				}
+				this._Patient.Entity = value;
+				if ((value != null))
+				{
+					value.labs.Add(this);
+					this._patientID = value.Id;
+				}
+				else
+				{
+					this._patientID = default(Nullable<int>);
+				}
+				this.SendPropertyChanged("Patient");
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneWork", DbType="NVarChar(20)")]
-	public string donorPhoneWork
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
 	{
-		get
+		if ((this.PropertyChanging != null))
 		{
-			return this._donorPhoneWork;
-		}
-		set
-		{
-			if ((this._donorPhoneWork != value))
-			{
-				this._donorPhoneWork = value;
-			}
+			this.PropertyChanging(this, emptyChangingEventArgs);
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmailSend", DbType="NChar(10)")]
-	public string donorEmailSend
+	protected virtual void SendPropertyChanged(String propertyName)
 	{
-		get
+		if ((this.PropertyChanged != null))
 		{
-			return this._donorEmailSend;
-		}
-		set
-		{
-			if ((this._donorEmailSend != value))
-			{
-				this._donorEmailSend = value;
-			}
-		}
-	}
-}
-
-public partial class spGetDonorInformationResult
-{
-	
-	private int _donorId;
-	
-	private int _donorAmount;
-	
-	private string _donorTitle;
-	
-	private string _donorFirstName;
-	
-	private string _donorMiddleName;
-	
-	private string _donorLastName;
-	
-	private string _DonorType;
-	
-	private string _DonorCompany;
-	
-	private string _donorZipCode;
-	
-	private string _donorPoBox;
-	
-	private string _donorCountry;
-	
-	private string _donorProvince;
-	
-	private string _donorCity;
-	
-	private string _donorEmail;
-	
-	private string _donorPhoneHome;
-	
-	private string _donorPhoneWork;
-	
-	private string _donorEmailSend;
-	
-	public spGetDonorInformationResult()
-	{
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorId", DbType="Int NOT NULL")]
-	public int donorId
-	{
-		get
-		{
-			return this._donorId;
-		}
-		set
-		{
-			if ((this._donorId != value))
-			{
-				this._donorId = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorAmount", DbType="Int NOT NULL")]
-	public int donorAmount
-	{
-		get
-		{
-			return this._donorAmount;
-		}
-		set
-		{
-			if ((this._donorAmount != value))
-			{
-				this._donorAmount = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorTitle", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-	public string donorTitle
-	{
-		get
-		{
-			return this._donorTitle;
-		}
-		set
-		{
-			if ((this._donorTitle != value))
-			{
-				this._donorTitle = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorFirstName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-	public string donorFirstName
-	{
-		get
-		{
-			return this._donorFirstName;
-		}
-		set
-		{
-			if ((this._donorFirstName != value))
-			{
-				this._donorFirstName = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorMiddleName", DbType="NVarChar(50)")]
-	public string donorMiddleName
-	{
-		get
-		{
-			return this._donorMiddleName;
-		}
-		set
-		{
-			if ((this._donorMiddleName != value))
-			{
-				this._donorMiddleName = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorLastName", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-	public string donorLastName
-	{
-		get
-		{
-			return this._donorLastName;
-		}
-		set
-		{
-			if ((this._donorLastName != value))
-			{
-				this._donorLastName = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorType", DbType="NVarChar(50)")]
-	public string DonorType
-	{
-		get
-		{
-			return this._DonorType;
-		}
-		set
-		{
-			if ((this._DonorType != value))
-			{
-				this._DonorType = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DonorCompany", DbType="NVarChar(50)")]
-	public string DonorCompany
-	{
-		get
-		{
-			return this._DonorCompany;
-		}
-		set
-		{
-			if ((this._DonorCompany != value))
-			{
-				this._DonorCompany = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorZipCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-	public string donorZipCode
-	{
-		get
-		{
-			return this._donorZipCode;
-		}
-		set
-		{
-			if ((this._donorZipCode != value))
-			{
-				this._donorZipCode = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPoBox", DbType="NVarChar(50)")]
-	public string donorPoBox
-	{
-		get
-		{
-			return this._donorPoBox;
-		}
-		set
-		{
-			if ((this._donorPoBox != value))
-			{
-				this._donorPoBox = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCountry", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-	public string donorCountry
-	{
-		get
-		{
-			return this._donorCountry;
-		}
-		set
-		{
-			if ((this._donorCountry != value))
-			{
-				this._donorCountry = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorProvince", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-	public string donorProvince
-	{
-		get
-		{
-			return this._donorProvince;
-		}
-		set
-		{
-			if ((this._donorProvince != value))
-			{
-				this._donorProvince = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorCity", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-	public string donorCity
-	{
-		get
-		{
-			return this._donorCity;
-		}
-		set
-		{
-			if ((this._donorCity != value))
-			{
-				this._donorCity = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmail", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-	public string donorEmail
-	{
-		get
-		{
-			return this._donorEmail;
-		}
-		set
-		{
-			if ((this._donorEmail != value))
-			{
-				this._donorEmail = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneHome", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-	public string donorPhoneHome
-	{
-		get
-		{
-			return this._donorPhoneHome;
-		}
-		set
-		{
-			if ((this._donorPhoneHome != value))
-			{
-				this._donorPhoneHome = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorPhoneWork", DbType="NVarChar(20)")]
-	public string donorPhoneWork
-	{
-		get
-		{
-			return this._donorPhoneWork;
-		}
-		set
-		{
-			if ((this._donorPhoneWork != value))
-			{
-				this._donorPhoneWork = value;
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_donorEmailSend", DbType="NChar(10)")]
-	public string donorEmailSend
-	{
-		get
-		{
-			return this._donorEmailSend;
-		}
-		set
-		{
-			if ((this._donorEmailSend != value))
-			{
-				this._donorEmailSend = value;
-			}
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }
