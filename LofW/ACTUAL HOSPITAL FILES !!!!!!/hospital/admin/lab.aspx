@@ -31,7 +31,7 @@
                     <br />      
                     <asp:Label ID="lbl_ageI" Text="Age" runat="server" />
                     <asp:TextBox ID="txt_ageI" runat="server" />
-                    <asp:RequiredFieldValidator ID="rfv_ageI" runat="server" ControlToValidate="txt_ageI"                                                       SetFocusOnError="true" ErrorMessage="Enter Age" ValidationGroup="edit" Text="Required!" />
+                    <asp:RequiredFieldValidator ID="rfv_ageI" runat="server" ControlToValidate="txt_ageI"                                                       SetFocusOnError="true" ErrorMessage="Enter Age" ValidationGroup="insert" Text="Required!" />
                     <br />        
                     <asp:Label ID="lbl_sexI" Text="Gender" runat="server" />
                     <asp:TextBox ID="txt_sexI" runat="server"  />
@@ -113,9 +113,10 @@
                     <asp:Label ID="lbl_unitsE" Text="Units" runat="server" />
                     <asp:TextBox ID="txt_unitsE" runat="server" Text='<%#Bind ("units") %>' />
                     <br />
-                     <asp:Button ID="btn_update" runat="server" Text="Update" CommandName ="Update" /></td>
-                     <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return confirm                                 ('Confirm Delete?');" />
-                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="Cancel" /></td>
+                     <asp:LinkButton ID="update" runat="server" Text="Update" CommandName="UpdateE" ValidationGroup="" />
+                     <asp:LinkButton ID="delete" runat="server" Text="Delete" CommandName="DeleteE" OnClientClick="return confirm('Confirm Delete?')" />
+                    <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" CommandName="CancelE" CausesValidation="false" />
+
                     <asp:ValidationSummary ID="vds_sum" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="edit" />
                     <br />
                    </ItemTemplate>
