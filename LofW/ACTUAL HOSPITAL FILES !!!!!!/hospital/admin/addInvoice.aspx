@@ -1,13 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="addInvoice.aspx.cs" Inherits="Admin_addInvoice" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="addInvoice.aspx.cs" Inherits="Admin_addInvoice" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
         <div>
 
             <div class="page_title"><h2>Add Invoice</h2></div>
@@ -47,54 +45,32 @@
 
     <div>
 
-        <asp:Label ID="lbl_title" runat="server" Text="Create Invoice" />
+       <asp:Label ID="lbl_title" runat="server" Text="Create Invoice" />
         <br /><br />
 
         <asp:Label ID="lbl_status" runat="server" />
         <br /><br />
 
-    <table>
-        <tr>
-            <td>
-                <asp:Label ID="lbl_amount" runat="server" Text="Amount" />
-            </td>
-            <td>
+                <asp:Label ID="lbl_amount" runat="server" Text="Amount" AssociatedControlID="txt_amount" />
                 <asp:TextBox ID="txt_amount" runat="server" />
-            </td>
-            <td>
+
                 <asp:RequiredFieldValidator ID="rfv_amount" runat="server" ControlToValidate="txt_amount" Text="*Required" ErrorMessage="An amount is required" Display="Static" ValidationGroup="AddInvoice" />
                 <asp:CompareValidator ID="cv_amount" runat="server" ControlToValidate="txt_amount" Operator="DataTypeCheck" Type="Currency" Display="None" ErrorMessage="Invalid amount entered" ValidationGroup="AddInvoice" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Label ID="lbl_procedure" runat="server" Text="Procedure" />
-            </td>
-            <td>
+                <br />
+                <asp:Label ID="lbl_procedure" runat="server" Text="Procedure" AssociatedControlID="txt_procedure"/>
                 <asp:TextBox ID="txt_procedure" runat="server" />
-            </td>
-            <td>
+
                 <asp:RequiredFieldValidator ID="rfv_procedure" runat="server" ControlToValidate="txt_procedure" Text="*Required" ErrorMessage="A procedure name is required" Display="Static" ValidationGroup="AddInvoice" />
                 <asp:RegularExpressionValidator ID="reg_procedure" runat="server" ControlToValidate="txt_procedure" ErrorMessage="Invalid procedure, characters only" Display="None" ValidationExpression="[A-Za-z\s]+$" ValidationGroup="AddInvoice" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Label ID="lbl_patient_id" runat="server" Text="Patient ID" />
-            </td>
-            <td>
+                <br />
+                <asp:Label ID="lbl_patient_id" runat="server" Text="Patient ID" AssociatedControlID="txt_pid" />
                 <asp:TextBox ID="txt_pid" runat="server" />
-            </td>
-            <td>
+
                 <asp:RequiredFieldValidator ID="rfv_pid" runat="server" ControlToValidate="txt_pid" Text="*Required" ErrorMessage="A Patient ID is required" Display="Static" ValidationGroup="AddInvoice" />
                 <asp:CompareValidator ID="cv_pid" runat="server" ControlToValidate="txt_pid" Operator="DataTypeCheck" Type="Integer" Display="None" ErrorMessage="Invalid patient ID" ValidationGroup="AddInvoice" />
-            </td>
-        </tr>
-    </table>
+
         <br />
         <asp:Button ID="btn_insert" runat="server" Text="Create Invoice" OnClick="subInsert" ValidationGroup="AddInvoice" />
         <asp:ValidationSummary ID="vs_addinvoice" runat="server" HeaderText="Create Invoice Errors" DisplayMode="BulletList" ShowMessageBox="true" ShowSummary="false" ValidationGroup="AddInvoice" />
-    </div>
-    </form>
-</body>
-</html>
+     </div>
+</asp:Content>

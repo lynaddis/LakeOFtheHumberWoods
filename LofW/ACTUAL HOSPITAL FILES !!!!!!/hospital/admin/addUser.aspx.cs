@@ -13,9 +13,7 @@ public partial class Admin_addUser : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        DateTime test = Convert.ToDateTime("05-Sep-1994");
 
-        lbl_accountStatus.Text = test.ToShortDateString();
     }
 
 

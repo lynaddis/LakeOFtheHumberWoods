@@ -15,7 +15,6 @@ using System.Web.UI.WebControls;
         {
             if (!Page.IsPostBack)
             {
-                //hospitalList = (DropDownList)Page.FindControl("ddl_list");
                 ddl_list.DataSource = objLocations.getLocations();
                 ddl_list.DataTextField = "hospital_name";
                 ddl_list.DataValueField = "hospital_address";
@@ -24,25 +23,6 @@ using System.Web.UI.WebControls;
                 ddl_list.SelectedIndex = 0;
             }
         }
-
-        //[System.Web.Services.WebMethod]
-        //public static bool subRequest(string start, string end)
-        //{
-        //    directionRequestClass newRequest = new directionRequestClass();
-        //    var insert = newRequest.commintInsert(start, end, DateTime.Now.ToShortDateString());
-        //    return insert;
-        //}
-
-        //[System.Web.Services.WebMethod]
-        //public static bool subReverseRequest(string start, string end)
-        //{
-        //    directionRequestClass newRequest = new directionRequestClass();
-        //    var insert = newRequest.commintInsert(start, end, DateTime.Now.ToShortDateString());
-        //    return insert;
-        //}
-
-
-
     }
 
 

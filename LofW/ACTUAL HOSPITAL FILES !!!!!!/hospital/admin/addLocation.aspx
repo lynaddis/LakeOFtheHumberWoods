@@ -1,13 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="addLocation.aspx.cs" Inherits="Admin_addLocation" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="addLocation.aspx.cs" Inherits="Admin_addLocation" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
     <div>
 
          <div class="page_title"><h2>Add Location</h2></div>
@@ -51,49 +49,31 @@
 
         <asp:Label ID="lbl_title" runat="server" Text="Add Hospital location to map" />
         <br />
-        <table>
-            <tr>
-                <td> <%-- Hospital Name --%>
-                    <asp:Label ID="lbl_name" runat="server" Text="Hospital Name:" />
-                </td>
-                <td>
+
+            <%-- Hospital Name --%>
+                 <asp:Label ID="lbl_name" runat="server" Text="Hospital Name:" AssociatedControlID="txt_name" />
                     <asp:TextBox ID="txt_name" runat="server" />
-                </td>
-                <td>
+
                     <asp:RequiredFieldValidator ID="rfv_name" runat="server" ControlToValidate="txt_name" Text="*Required" ErrorMessage="Hospital name is required" Display="Static" ValidationGroup="addLocation" />
                     <asp:RegularExpressionValidator ID="reg_name" runat="server" ControlToValidate="txt_name" ErrorMessage="Hospital name, characters only" Display="None" ValidationExpression="[A-Za-z\s]+$" ValidationGroup="addLocation" />
-                </td>    
-            </tr>
-            <tr>
-                <td><%-- Hospital address --%>
-                    <asp:Label ID="lbl_address" runat="server" Text="Hospital Address" />
-                </td>
-                <td>
+                     <br /><br />
+                <%-- Hospital address --%>
+                    <asp:Label ID="lbl_address" runat="server" Text="Hospital Address" AssociatedControlID="txt_address"/>
                     <asp:TextBox ID="txt_address" runat="server" AutoPostBack="true" />
-                </td>
-                <td>
+
                     <asp:RequiredFieldValidator ID="rfv_address" runat="server" ControlToValidate="txt_address" Text="*Required" ErrorMessage="Hospital address is required" Display="Static" ValidationGroup="addLocation" />
                     <asp:RegularExpressionValidator ID="reg_address" runat="server" ControlToValidate="txt_address" ErrorMessage="Invalid Hospital address, characters and spaces only" Display="None" ValidationExpression="\d+\s\w+\s\w+(\s\w+|\s\d+)*" ValidationGroup="addLocation" />
-                </td> 
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="lbl_desc" runat="server" Text="Hospital Description" />
-                </td>
-                <td>
+                    <br /><br />
+                <%-- Hospital Description --%>
+                    <asp:Label ID="lbl_desc" runat="server" Text="Hospital Description" AssociatedControlID="txt_des" />
                     <asp:TextBox ID="txt_des" runat="server" TextMode="MultiLine" />
-                </td>
-                <td>
+
                     <asp:RequiredFieldValidator ID="rfv_des" runat="server" ControlToValidate="txt_des" Text="*Required" ErrorMessage="Hospital Description is required" Display="Static" ValidationGroup="addLocation" />
-                </td>
-            </tr>
-            </table>
+
         <br /><br />
          <asp:Button ID="btn_addLocation" runat="server" Text="Add Location" OnClick="subAddLoc" ValidationGroup="addLocation"/>
         <asp:ValidationSummary ID="vs_addLocation" runat="server" HeaderText="Add Location Form" DisplayMode="BulletList" ShowMessageBox="true" ShowSummary="false" ValidationGroup="addLocation" />
 
 
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>

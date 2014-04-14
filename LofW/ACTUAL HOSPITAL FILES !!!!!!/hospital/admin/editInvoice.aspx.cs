@@ -13,8 +13,6 @@ public partial class Admin_editInvoice : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
-            //rp_editInvoice.DataSource = objInvoice.getInvoices();
-            //rp_editInvoice.DataBind();
             subRebind();
 
             btn_bypatient.Enabled = false;
@@ -22,9 +20,6 @@ public partial class Admin_editInvoice : System.Web.UI.Page
 
             txt_byInvoice.Enabled = false;
             btn_byInvoice.Enabled = false;
-
-            //pnl_edit.Visible = false;
-            //pnl_display.Visible = true;
         }
 
     }

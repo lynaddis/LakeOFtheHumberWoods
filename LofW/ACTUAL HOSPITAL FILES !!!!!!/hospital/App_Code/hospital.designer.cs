@@ -2108,7 +2108,23 @@ public partial class Invoice : INotifyPropertyChanging, INotifyPropertyChanged
     partial void Onpatient_idChanging(int value);
     partial void Onpatient_idChanged();
     #endregion
-	
+
+
+    partial void OnCreated()
+    {
+        if (this.status == null)
+        {
+            this.status = "Unpaid";
+        }
+
+        if (this.payment_method == null)
+        {
+            this.payment_method = "None";
+        }
+
+    }
+
+
 	public Invoice()
 	{
 		this._Credit_transactions = new EntitySet<Credit_transaction>(new Action<Credit_transaction>(this.attach_Credit_transactions), new Action<Credit_transaction>(this.detach_Credit_transactions));
