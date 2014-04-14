@@ -21,6 +21,8 @@
             <li><asp:HyperLink ID="hyp_invoce_add" runat="server" Text="Create New Invocie" NavigateUrl="~/Admin/addInvoice.aspx" /></li>
             <li><asp:HyperLink ID="hyp_invoice_edit" runat="server" Text="Edit Invoice" NavigateUrl="~/Admin/editInvoice.aspx" /></li>
             <li><asp:HyperLink ID="hyp_location_add" runat="server" Text="Add New Hospital Branch Location" NavigateUrl="~/Admin/addLocation.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_location_edit" runat="server" Text="Edit Hospital Locations" NavigateUrl="~/admin/editLocation.aspx" /></li>
+            <li><asp:HyperLink ID="hyp_waitTimes_edit" runat="server" Text="Update Hospital wait times" NavigateUrl="~/admin/editWait_times.aspx" /></li>
             <li><asp:HyperLink ID="hyp_Calender" runat="server" Text="Add Specialists to Calendar" NavigateUrl="~/admin/adminspecialists.aspx" /></li>
             <li><asp:HyperLink ID="hyp_ContactUs" runat="server" Text="ContactUs_Admin" NavigateUrl="~/admin/AdminContactUs.aspx" /></li>
             <li><asp:HyperLink ID="hyp_Emp" runat="server" Text="Employment Admin" NavigateUrl="~/admin/AdminEmployment.aspx" /></li>

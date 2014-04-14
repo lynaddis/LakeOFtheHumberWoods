@@ -46,7 +46,9 @@
 
     <div class="page_title" >
         <h2>Maps and Directions</h2>
-
+        <br />
+        <asp:HyperLink ID="hyp_maps" runat="server" Text="Click here for map locations" NavigateUrl="~/map.aspx" />
+        <br /><br />
     </div>
     <div>
      <asp:Label ID="lbl_startloc" runat="server" Text="Starting location" AssociatedControlID="txtStart" />

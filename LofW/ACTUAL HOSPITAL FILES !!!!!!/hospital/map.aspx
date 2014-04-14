@@ -36,7 +36,10 @@
     </div>
     <asp:Literal ID="lit_title" runat="server" Text="Maps" />
         <br /><br />
-         <asp:Literal ID="lit_msg" runat="server" Text="Hospital Network" /> 
+         <asp:Literal ID="lit_msg" runat="server" Text="Hospital Network" />  
+    <br />
+    <asp:HyperLink ID="hyp_directions" runat="server" Text="Chlick here for directions to Hospital /Branch locations" NavigateUrl="~/directions.aspx" />
+    <br />
     <div>
        
     <div id="map-canvas" style=" width:500px; height:400px; border:1px dashed red;"></div>
