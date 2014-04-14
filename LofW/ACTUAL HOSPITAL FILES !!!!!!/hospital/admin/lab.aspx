@@ -15,7 +15,8 @@
      <input type='hidden' id='show_per_page' /> 
      <div id='page_navigation'></div>  
      <div id="pagingControls"></div>
-                    <asp:Label ID="lbl_message" runat="server" />
+    <a href="homeadmin.aspx">Back To Home</a><br />
+                    <asp:Label ID="lbl_message" runat="server" /><br />
                     <asp:Label ID="patientidI" Text="PatientID" runat="server" />
                     <asp:TextBox ID="txt_patientidI" runat="server" Text='<%#Bind ("patientID") %>' />
                     <asp:RequiredFieldValidator ID="rfv_patientidI" runat="server" ControlToValidate="txt_patientidI" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="edit" Text="Required!" />
@@ -41,10 +42,10 @@
                     <asp:Label ID="lbl_testCodeI" Text="Test Code" runat="server" />
                     <asp:TextBox ID="txt_testCodeI" runat="server"  />
                     <br />
-                    <asp:Label ID="lbl_result1I" Text="ResultA" runat="server" />  
+                    <asp:Label ID="lbl_result1I" Text="Result A" runat="server" />  
                     <asp:TextBox ID="txt_result1I" runat="server"  />
                     <br />
-                    <asp:Label ID="lbl_result2I" Text="ResultB" runat="server" />       
+                    <asp:Label ID="lbl_result2I" Text="Result B" runat="server" />       
                     <asp:TextBox ID="txt_result2I" runat="server"  />
                     <br />
                     <asp:Label ID="lbl_resultDescI" Text="Result Description" runat="server" />
@@ -94,10 +95,10 @@
                     <asp:Label ID="lbl_testCodeE" Text="Test Code" runat="server" />
                     <asp:TextBox ID="txt_testCodeE" runat="server" Text='<%#Bind ("testCode") %>' />
                     <br />
-                    <asp:Label ID="lbl_result1E" Text="ResultA" runat="server" />  
+                    <asp:Label ID="lbl_result1E" Text="Result A" runat="server" />  
                     <asp:TextBox ID="txt_result1E" runat="server" Text='<%#Bind ("resultType1") %>' />
                     <br />
-                    <asp:Label ID="lbl_result2E" Text="ResultB" runat="server" />       
+                    <asp:Label ID="lbl_result2E" Text="Result B" runat="server" />       
                     <asp:TextBox ID="txt_result2E" runat="server" Text='<%#Bind ("resultType2") %>' />
                     <br />
                     <asp:Label ID="lbl_resultDescE" Text="Result Description" runat="server" />

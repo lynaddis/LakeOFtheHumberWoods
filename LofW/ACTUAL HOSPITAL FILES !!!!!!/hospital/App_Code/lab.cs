@@ -39,8 +39,8 @@ public class labClass
         return allLabs;
     }
 
-    public bool commitInsert(string _patient, string _code, string _dob, string _age , string _sex, string _type, string _testcode, 
-        string _result1, string _result2, string _desc, string _abnormal , string _refrange, string _unit   )
+    public bool commitInsert(string _patient, string _code,  string _age , string _sex, string _type, string _testcode, 
+        string _result1, string _result2, string _desc, string _abnormal , string _refrange, string _unit, string _dob   )
     {
        HospitalDataContext objLAB = new HospitalDataContext();
         using (objLAB)
@@ -48,7 +48,6 @@ public class labClass
             lab objNewLAB = new lab();
             objNewLAB.patientID = _patient;
             objNewLAB.patientCode = _code;
-            objNewLAB.DateofBirth = _dob;
             objNewLAB.age = _age;
             objNewLAB.sex = _sex;
             objNewLAB.testType = _type;
@@ -59,6 +58,7 @@ public class labClass
             objNewLAB.abnormal = _abnormal;
             objNewLAB.referenceRange = _refrange;
             objNewLAB.units = _unit;
+            objNewLAB.DateofBirth = _dob;
             objLAB.labs.InsertOnSubmit(objNewLAB);
             objLAB.SubmitChanges();
             return true;
@@ -67,8 +67,8 @@ public class labClass
 
     }
 
-    public bool commitUpdate(int _id, string _patient, string _code,string _dob, string _age, string _sex, string _type, string _testcode,
-        string _result1, string _result2, string _desc, string _abnormal, string _refrange, string _unit)
+    public bool commitUpdate(int _id, string _patient, string _code,string _unit, string _age, string _sex, string _type, string _testcode,
+        string _result1, string _result2, string _desc, string _abnormal, string _refrange, string _dob)
     {
  HospitalDataContext objLAB = new HospitalDataContext();
         using (objLAB)
@@ -77,7 +77,6 @@ public class labClass
 
             objUPLAB.patientID = _patient;
             objUPLAB.patientCode = _code;
-            objUPLAB.DateofBirth = _dob;
             objUPLAB.age = _age;
             objUPLAB.sex = _sex;
             objUPLAB.testType = _type;
@@ -88,6 +87,7 @@ public class labClass
             objUPLAB.abnormal = _abnormal;
             objUPLAB.referenceRange = _refrange;
             objUPLAB.units = _unit;
+            objUPLAB.DateofBirth = _dob;
             objLAB.SubmitChanges();
             return true;
         }
