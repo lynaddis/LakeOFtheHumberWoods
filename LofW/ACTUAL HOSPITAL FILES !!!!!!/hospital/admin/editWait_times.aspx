@@ -38,7 +38,7 @@
         </asp:LoginView>
 
 
-         <asp:HyperLink ID="hyp_admin_menu" runat="server" Text="Main Menu"  NavigateUrl="~/Admin/manage.aspx" />
+     <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
       
         <br /> <br />
 
@@ -65,7 +65,7 @@
                <asp:Label ID="lbl_time" runat="server" Text="Current wait time :" AssociatedControlID="lbl_current_time" />
                <asp:Label ID="lbl_current_time" runat="server" Text='<%#Eval("time") +" minutes" %>' />
                <br /><br />
-               <asp:LinkButton ID="lnk_edit" runat="server" Text="Update Time" CommandArgument='<%#Eval("Id") %>' CommandName="Editx" />
+               <asp:LinkButton ID="lnk_edit" runat="server" Text="Update Time" CommandArgument='<%#Eval("Id") %>' CommandName="Editx" SkinID="link_submit" Font-Underline="false" />
                <br /><br /><br />
            </ItemTemplate>
        </asp:ListView>
@@ -118,7 +118,9 @@
          
 
                <br />
-        <asp:Button ID="btn_update" runat="server" Text="Update" OnClick="subAdmin" />
+        <asp:Button ID="btn_update" runat="server" Text="Update" SkinID="btn_submit" OnClick="subAdmin" />
+            <br />
+            <br />
 
         </asp:Panel>
     </div>

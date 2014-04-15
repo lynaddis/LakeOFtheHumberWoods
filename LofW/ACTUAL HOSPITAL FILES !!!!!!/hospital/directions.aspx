@@ -45,9 +45,11 @@
     </style>
 
     <div class="page_title" >
+
         <h2>Maps and Directions</h2>
+        <p>If you need to find our hosptial simply add in your address you are travelling from then select the building you wish to arrive at.  For your convenience, all travelling information you need will be calculated and appear to the right of the map</p>
         <br />
-        <asp:HyperLink ID="hyp_maps" runat="server" Text="Click here for map locations" NavigateUrl="~/map.aspx" />
+        <asp:HyperLink ID="hyp_maps" runat="server" Text="Click here for map locations" NavigateUrl="~/map.aspx" Font-Underline="false" SkinID="hblink_submit" />
         <br /><br />
     </div>
     <div>
@@ -58,6 +60,7 @@
 
                 <asp:Label ID="lbl_endloc" runat="server" Text=" Ending location" AssociatedControlID="ddl_list" />
                 <asp:DropDownList ID="ddl_list" runat="server" AutoPostBack="true" ValidationGroup="Directions" />
+<<<<<<< HEAD
 
                 <asp:RequiredFieldValidator ID="rfv_endloc" runat="server" ControlToValidate="ddl_list" Text="*Required" Display="None" ErrorMessage="An ending address is required" ValidationGroup="Directions" EnableClientScript="true" />
                 <asp:CompareValidator ID="cmv_endloc" runat="server" ControlToValidate="ddl_list" Operator="GreaterThan" ValueToCompare="0" Display="static" Text="*Required" ErrorMessage="Please select a destination" ValidationGroup="Directions" EnableClientScript="true" />
@@ -67,6 +70,25 @@
                 <asp:Button ID="btn_reverse" runat="server" Text="Reverse"  OnClientClick="return checkReverse()"  UseSubmitBehavior="false" />
                 <br />
                 <asp:Label ID="lbl_toll" runat="server" Text="Avoid Toll Roads" AssociatedControlID="cb_toll" />
+=======
+            </td>
+            <td>
+                <asp:RequiredFieldValidator ID="rfv_endloc" runat="server" ControlToValidate="ddl_list" Text="*Required" Display="Static" ErrorMessage="An ending address is required" ValidationGroup="Directions" EnableClientScript="true" />
+                <asp:CompareValidator ID="cmv_endloc" runat="server" ControlToValidate="ddl_list" Operator="GreaterThan" ValueToCompare="0" Display="None" ErrorMessage="Please select a destination" ValidationGroup="Directions" EnableClientScript="true" />
+            </td>
+            <td>
+                <asp:Button ID="btnGenerate_D" runat="server" Text="Directions" OnClientClick="return checkDirection()" UseSubmitBehavior="false" /> 
+            </td>
+            <td>
+                <asp:Button ID="btn_reverse" runat="server" Text="Reverse"  OnClientClick="return checkReverse()"  UseSubmitBehavior="false" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <asp:Label ID="lbl_toll" runat="server" Text="Avoid Toll Roads" />
+            </td>
+            <td>
+>>>>>>> parent of eb10f68... Merge branch 'master' of https://github.com/lynaddis/LakeOFtheHumberWoods
                 <asp:CheckBox ID="cb_toll" runat="server" AutoPostBack="true" />
 
                 <asp:Label ID="lbl_highway" runat="server" Text="Avoid Highways" AssociatedControlID="cb_highway" />
@@ -80,7 +102,7 @@
      <input type="hidden" id="Highway" value="<%= cb_highway.Checked %>" />  
             
 <div id="wrapper_dir">
-    <p> div wrapper</p>
+   
 <div id="directions-panel" style=" width:500px; height:600px; border:1px dashed blue;" ></div>
 <div id="map-canvas" style=" width:500px; height:600px; border:1px dashed red;"></div>
 </div>

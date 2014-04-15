@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="AdminContactUs.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/adminMaster.master" AutoEventWireup="true" CodeFile="AdminContactUs.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -8,16 +8,13 @@
     
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-
-     <div class="page_title"><h2>Contact Us</h2>
-
-         <p>View submitted contact froms, update or delete them</p>
-
-     </div>
+     
+     <div class="page_title"><h2>Contact Us</h2></div>
 
     <br />
     <br />
-    <div class="form_back">
+      <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  /><br />
+    <br />
     <asp:Label ID="lbl_msg" runat="server" />   
    <table>
                 <tr>
@@ -39,12 +36,10 @@
                 </tr>            
         </ItemTemplate>
        </asp:ListView>
-     </table>   </div>
+     </table>   
     <br />
     <br />
     <%-- To view all details of selected message --%>
-    
-
     <asp:GridView ID="grd_main" runat="server">
        <Columns>
            <asp:TemplateField>

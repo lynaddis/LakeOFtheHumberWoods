@@ -20,8 +20,8 @@ public partial class _Default : System.Web.UI.Page
         grd_health.DataBind();
     }
 
-    //HospitalDataContext objdbImages = new HospitalDataContext();
-    //imageSliderClass objImage = new imageSliderClass();
+    HospitalDataContext objdbImages = new HospitalDataContext();
+    imageSliderClass objImage = new imageSliderClass();
   
     //protected void Page_Init(object sender, EventArgs e)
     //{

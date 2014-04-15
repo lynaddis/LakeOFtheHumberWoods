@@ -1,22 +1,22 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="Master" EnableTheming="true" Debug="true" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="adminMaster.master.cs" Inherits="admin_adminMaster" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    
+    <title></title>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="container">
+    <div class="container_mast">
         <asp:ContentPlaceHolder id="cph_header" runat="server">
         
         </asp:ContentPlaceHolder>
      <div class="login">
  
-<asp:Login ID="log_form" runat="server" DestinationPageUrl="~/Admin/homeadmin.aspx" />
+ <asp:LoginStatus ID="log_status" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/home.aspx" />
         </div>
       
 
@@ -28,6 +28,8 @@
 </asp:menu>
     </div>
        <asp:ContentPlaceHolder ID="cph_main" runat="server">
+     
+            <asp:LoginName ID="lgn_name" runat="server" FormatString="Hello, {0}!" /> <%--user's registered user name--%>
         <div class="banner">
            
             <asp:ContentPlaceHolder ID="cph_banner" runat="server">
@@ -37,7 +39,7 @@
             </div>
 
            </asp:ContentPlaceHolder>
-                 <div class="footer">
+         <div class="footer">
 
                     <asp:TreeView ID="trv_main" runat="server" DataSourceID="sds_main" ShowLines="true" ExpandDepth="0" />
             <asp:SiteMapDataSource ID="sds_tree" runat="server"  ShowStartingNode="false"/>
@@ -45,8 +47,8 @@
   
          </div>
   
-        </div>
-         
+
+         </div>
       
     </form>
 </body>

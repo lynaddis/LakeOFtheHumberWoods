@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class LabResults : System.Web.UI.Page
+public partial class patient_LabResults : System.Web.UI.Page
 {
     patientClass objPatient = new patientClass();
     labClass objLinq = new labClass();  //new instance of the class
@@ -18,22 +18,22 @@ public partial class LabResults : System.Web.UI.Page
         {
             subBindlist(user);
         }
-    
+
     }
 
 
-   private void _subRebind()
-   {
-      grd_main.DataSource = objLinq.getLabs(); //binds grid view
-      grd_main.DataBind();
-       
-   }
+    private void _subRebind()
+    {
+        grd_main.DataSource = objLinq.getLabs(); //binds grid view
+        grd_main.DataBind();
 
-   protected void subBindlist(string user)
-   {
-       ID = objPatient.getPatientIdByUsername(user); // stores id of user to global variable for id 
-       grd_main.DataSource = objLinq.getLabsByID(ID); // takes global id and uses it to get associated record
-       grd_main.DataBind();
-   }
+    }
+
+    protected void subBindlist(string user)
+    {
+        ID = objPatient.getPatientIdByUsername(user); // stores id of user to global variable for id 
+        grd_main.DataSource = objLinq.getLabsByID(ID); // takes global id and uses it to get associated record
+        grd_main.DataBind();
+    }
 
 }

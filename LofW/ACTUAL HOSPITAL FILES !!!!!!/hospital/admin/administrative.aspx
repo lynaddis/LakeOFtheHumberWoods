@@ -9,9 +9,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-
+          
          <div class="page_title"><h2>Administrative</h2></div>
-
+        <br />
+        <br />
+         <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
+        <br />
+        <br />
 
     <div class="vsContainer">
     <div class="vsheader"></div>

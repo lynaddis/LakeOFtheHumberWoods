@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="adminvolunteer.aspx.cs" Inherits="adminvolunteer" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/adminMaster.master" AutoEventWireup="true" CodeFile="adminvolunteer.aspx.cs" Inherits="adminvolunteer" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -9,7 +9,6 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-
 
         <div class="page_title" >
 
@@ -25,7 +24,7 @@
      <asp:Label ID="lbl_message" runat="server" />
         <br />
     <div id="content" >
-              <a href="homeadmin.aspx">Back To Home</a>
+             <asp:HyperLink ID="hp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
  <div class="form_back">
           <h3>Edit Volunteer Forms</h3>
                <asp:ListView ID="ltv_all" runat="server" OnItemCommand="subEdit" OnPagePropertiesChanging="dtl_Change">

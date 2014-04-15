@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="adminupdatehealth.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/adminMaster.master" AutoEventWireup="true" CodeFile="adminupdatehealth.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -7,16 +7,19 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-
+ 
      <div class="page_title"><h2>Update Health Concerns</h2>
 
          <p>All records of health concerns currently published online.  Submitted recommendations can be added to existing health concerns information and removed, or saved for later if needed.</p>
 
      </div>
-  
-     <a href="adminhealthconcerns.aspx">Back To Add Health Conerns</a><br />
-     <a href="homeadmin.aspx">Back To Home</a>
-    <br /><br />
+    <br />
+      <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
+    <br />
+    <br />
+  <asp:HyperLink ID="hp_health" runat="server" Text="Add Health Concern" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/adminhealthconcerns.aspx"  />
+
+    <br />
              <asp:Label ID="lbl_message" runat="server" />
 
   <br /><br />
