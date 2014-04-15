@@ -1,11 +1,19 @@
 ﻿/*Global Classes*/
-
+    .container {
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        /*border: 1px solid;  Keep this here to check if container is cooperating*/
+        min-height: 1000px;
+         font-family:'Adobe Gurmukhi';
+         background-color: #fbecda;
+    }
     .container_mast {
         width: 960px;
         margin-left: auto;
         margin-right: auto;
         /*border: 1px solid;  Keep this here to check if container is cooperating*/
-        min-height: 800px;
+        min-height: 1000px;
          font-family:'Adobe Gurmukhi';
          background-color: #fbecda;
     }
