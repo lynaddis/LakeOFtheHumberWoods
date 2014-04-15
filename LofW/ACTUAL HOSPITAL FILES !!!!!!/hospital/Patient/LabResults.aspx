@@ -17,20 +17,50 @@
     <HeaderStyle BackColor="Tan" Font-Bold="True" />
     <AlternatingRowStyle BackColor="PaleGoldenrod" />
              <Columns>
-           <asp:TemplateField>
-               <ItemTemplate>
-                   <asp:Label ID="lbl_name" runat="server" Text='<%#Eval("patientCode")%>' />
-                   <asp:Label ID="lbl_sex" runat="server" Text='<%#Eval("sex")%>' />
-                   <asp:Label ID="lbl_age" runat="server" Text='<%#Eval("age")%>' />
-                   <asp:label ID="lbl_result" runat="server" Text='<%#Eval("resultType1")%>' />
-                    </ItemTemplate>
-                 </asp:TemplateField>
-                </Columns>
-             </asp:GridView>
+        <asp:TemplateField HeaderText="Patient Code">
+        <ItemTemplate>
+        <%#Eval("patientCode")%> />
+       </ItemTemplate>
+     
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Date of Birth">
+        <ItemTemplate>
+          <%#Eval("DateofBirth")%>
+        </ItemTemplate>
+     
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Gender">
+        <ItemTemplate>
+          <%#Eval("sex")%>
+        </ItemTemplate>
+        </asp:TemplateField>
+     
+         <asp:TemplateField HeaderText="Test Code">
+        <ItemTemplate>
+         <%#Eval("testCode")%>
+        </ItemTemplate>
+          </asp:TemplateField>
+                                  
+        <asp:TemplateField HeaderText="Result">
+        <ItemTemplate>
+        <%#Eval("resultType1")%>
+        </ItemTemplate>
+        </asp:TemplateField>
 
+        <asp:TemplateField HeaderText="Result Description">
+        <ItemTemplate>
+        <%#Eval("resultdescription")%>
+        </ItemTemplate>
+        </asp:TemplateField>
 
-
-
+        <asp:TemplateField HeaderText="Reference Range">
+        <ItemTemplate>
+       <%#Eval("referenceRange")%>
+        </ItemTemplate>
+        </asp:TemplateField>
+        </Columns>
+         
+     </asp:GridView>
     </div>
     </form>
 </body>
