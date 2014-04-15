@@ -102,6 +102,18 @@ public partial class Patient_payBills : System.Web.UI.Page
 
                 break;
 
+            case "Printx": // new window code here
+
+                string url = "printInvoice.aspx?param=" + e.CommandArgument.ToString();
+
+                string s = "window.open('" + url + "', 'popup_window', 'width=300,height=400,left=400,top=100,resizable=yes,menubar=yes');";
+
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "script", s, true);
+
+                break;
+
+
             case "Cancelx":
                 pnl_list.Visible = true;
                 pnl_info.Visible = false;

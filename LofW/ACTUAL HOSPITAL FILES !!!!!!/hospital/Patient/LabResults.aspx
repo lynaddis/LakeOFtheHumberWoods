@@ -1,14 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LabResults.aspx.cs" Inherits="patient_LabResults" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="LabResults.aspx.cs" Inherits="patient_LabResults" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
     <div>
+        <asp:LoginName ID="log_name" runat="server" FormatString="Welcome, {0} " />
  <asp:GridView ID="grd_main" runat="server"  AllowSorting="true"  AutoGenerateColumns="false" BorderWidth="1px" CellPadding="2" ForeColor="Black"    GridLines="Vertical"> <%--Grid view data bound control --%>
              
     <FooterStyle BackColor="Tan" />
@@ -17,21 +16,49 @@
     <HeaderStyle BackColor="Tan" Font-Bold="True" />
     <AlternatingRowStyle BackColor="PaleGoldenrod" />
              <Columns>
-           <asp:TemplateField>
-               <ItemTemplate>
-                   <asp:Label ID="lbl_name" runat="server" Text='<%#Eval("patientCode")%>' />
-                   <asp:Label ID="lbl_sex" runat="server" Text='<%#Eval("sex")%>' />
-                   <asp:Label ID="lbl_age" runat="server" Text='<%#Eval("age")%>' />
-                   <asp:label ID="lbl_result" runat="server" Text='<%#Eval("resultType1")%>' />
-                    </ItemTemplate>
-                 </asp:TemplateField>
-                </Columns>
-             </asp:GridView>
+        <asp:TemplateField HeaderText="Patient Code">
+        <ItemTemplate>
+        <%#Eval("patientCode")%> />
+       </ItemTemplate>
+     
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Date of Birth">
+        <ItemTemplate>
+          <%#Eval("DateofBirth")%>
+        </ItemTemplate>
+     
+        </asp:TemplateField>
+        <asp:TemplateField HeaderText="Gender">
+        <ItemTemplate>
+          <%#Eval("sex")%>
+        </ItemTemplate>
+        </asp:TemplateField>
+     
+         <asp:TemplateField HeaderText="Test Code">
+        <ItemTemplate>
+         <%#Eval("testCode")%>
+        </ItemTemplate>
+          </asp:TemplateField>
+                                  
+        <asp:TemplateField HeaderText="Result">
+        <ItemTemplate>
+        <%#Eval("resultType1")%>
+        </ItemTemplate>
+        </asp:TemplateField>
 
+        <asp:TemplateField HeaderText="Result Description">
+        <ItemTemplate>
+        <%#Eval("resultdescription")%>
+        </ItemTemplate>
+        </asp:TemplateField>
 
-
-
+        <asp:TemplateField HeaderText="Reference Range">
+        <ItemTemplate>
+       <%#Eval("referenceRange")%>
+        </ItemTemplate>
+        </asp:TemplateField>
+        </Columns>
+         
+     </asp:GridView>
     </div>
-    </form>
-</body>
-</html>
+    </asp:Content>
