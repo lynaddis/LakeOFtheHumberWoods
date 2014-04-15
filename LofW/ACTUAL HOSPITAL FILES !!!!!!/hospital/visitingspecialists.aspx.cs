@@ -17,6 +17,7 @@ public partial class visitingspecialists : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Visiting Specialist";
 
         if (!Page.IsPostBack)
         {

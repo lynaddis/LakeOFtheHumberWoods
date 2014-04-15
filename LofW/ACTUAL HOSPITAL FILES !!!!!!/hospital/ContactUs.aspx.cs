@@ -10,7 +10,7 @@ public partial class _Default : System.Web.UI.Page
     ContactClass objContact = new ContactClass();
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Master.pp_masterTitle = "Contact Us";
     }
     //Message will be displayed on successful or unsuccessful submission of form
     private void _strMessage(bool flag, string str)

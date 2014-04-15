@@ -19,7 +19,7 @@ public partial class adminvolunteer : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Master.pp_masterTitle = "Admin - Volunteer";
         if (!IsPostBack)
         {
 

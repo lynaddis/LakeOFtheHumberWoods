@@ -10,6 +10,7 @@ public partial class _Default : System.Web.UI.Page
     AdminEmployeeClass objApp = new AdminEmployeeClass(); //instance of class
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Admin - Employment";
         if (!Page.IsPostBack)
         {
             subRebind();

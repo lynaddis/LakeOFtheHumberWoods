@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true"  MasterPageFile="~/Master.master" CodeFile="newsupdates.aspx.cs" Inherits="newsupdates" %>
-
+<%@ MasterType VirtualPath="~/Master.master" %>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
     <div class="page_title">

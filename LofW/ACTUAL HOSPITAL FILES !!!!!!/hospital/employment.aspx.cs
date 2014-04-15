@@ -11,6 +11,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Employment";
        //Load dropdown list with title values
         ddl_title.DataSource = objEmployment.getTitles();
         ddl_title.DataBind();

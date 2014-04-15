@@ -16,7 +16,7 @@ public partial class healthconcerns : System.Web.UI.Page
     
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Master.pp_masterTitle = "Health Conserns";
         if (!IsPostBack)
         {
             if (!string.IsNullOrEmpty(Request.QueryString["Location"]))

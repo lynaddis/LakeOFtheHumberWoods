@@ -9,7 +9,7 @@ public partial class pages_parkingBooking : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Master.pp_masterTitle = "Parking Booking";
     }
     protected void btnGenerateNo_Click(object sender, EventArgs e)
     {

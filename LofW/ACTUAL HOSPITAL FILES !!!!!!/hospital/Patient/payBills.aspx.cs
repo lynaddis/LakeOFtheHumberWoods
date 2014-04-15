@@ -20,6 +20,7 @@ public partial class Patient_payBills : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Pay Bills";
         if (!Page.IsPostBack)
         {
             //test.Text = objPatient.getPatientIdByUsername(user).ToString();

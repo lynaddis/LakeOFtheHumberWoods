@@ -15,6 +15,7 @@ public partial class calendar : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Calendar";
         if (!Page.IsPostBack)
         {
 

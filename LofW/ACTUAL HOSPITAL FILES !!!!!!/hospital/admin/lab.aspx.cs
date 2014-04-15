@@ -37,7 +37,8 @@ public partial class lab : System.Web.UI.Page
             // Binds the data from the database and allows it to be manipulated through the textboxes
         }
      protected void Page_Load(object sender, EventArgs e)
-     {
+        {
+            Master.pp_masterTitle = "Admin - Lab Results";
          if (!Page.IsPostBack)// Shows if the page is visited for the first time
          {
              _subRebind();

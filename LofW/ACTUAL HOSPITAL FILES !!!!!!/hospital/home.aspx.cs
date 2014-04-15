@@ -15,7 +15,9 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Home";
         //home_cal.DataSource =
+      
         grd_health.DataSource = objIllHome.getIllnesses();
         grd_health.DataBind();
     }

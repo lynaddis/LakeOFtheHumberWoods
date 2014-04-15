@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="_Default" %>
-
+<%@ MasterType VirtualPath="~/Master.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <title>Home</title>
 </asp:Content>
@@ -29,7 +29,7 @@
 
 
      </table>--%>
-
+         
          </div>
 
                <div class="contentBody">

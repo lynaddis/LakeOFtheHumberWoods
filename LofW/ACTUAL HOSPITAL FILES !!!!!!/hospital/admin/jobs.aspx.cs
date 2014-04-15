@@ -10,6 +10,7 @@ public partial class jobs : System.Web.UI.Page
     jobPost objclass = new jobPost();
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Admin - View Jobs";
         if (!Page.IsPostBack)
         {
             rpt_main.DataSource = objclass.getJobs();

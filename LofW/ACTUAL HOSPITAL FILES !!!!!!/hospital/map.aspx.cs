@@ -13,6 +13,7 @@ public partial class map : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Map";
         JavaScriptSerializer testJs = new JavaScriptSerializer();
         Array locations = objLocations.getLocs().ToArray();
 

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#"  MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="Wait_times.aspx.cs" Inherits="Wait_times" %>
-
+<%@ MasterType VirtualPath="~/Master.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">

@@ -10,6 +10,7 @@ public partial class _Default : System.Web.UI.Page
     imageSliderClass objImage = new imageSliderClass();
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Admin - Image Slider";
         if (!Page.IsPostBack)
         {
             rpt_main.DataSource = objImage.getAllImageInfo();

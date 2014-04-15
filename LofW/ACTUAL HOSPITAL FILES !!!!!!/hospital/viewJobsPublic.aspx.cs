@@ -10,6 +10,7 @@ public partial class _Default : System.Web.UI.Page
     viewJobsUser objUser = new viewJobsUser();
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "View Job Postings";
         if (!Page.IsPostBack)
         {
             dtl_main.DataSource = objUser.getJobs();

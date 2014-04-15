@@ -13,6 +13,7 @@ using System.Web.UI.WebControls;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Master.pp_masterTitle = "Directions";
             if (!Page.IsPostBack)
             {
                 ddl_list.DataSource = objLocations.getLocations();

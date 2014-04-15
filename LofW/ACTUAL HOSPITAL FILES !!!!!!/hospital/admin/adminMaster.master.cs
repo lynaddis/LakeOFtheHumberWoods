@@ -14,6 +14,13 @@ public partial class admin_adminMaster : System.Web.UI.MasterPage
         set { _heading = value; }
     }
 
+
+     private string _title = "Default Master Page Title";
+     public string pp_masterTitle
+     {
+         get { return _title; }
+         set { _title = value; }
+     }
     protected void subCollapse(object sender, EventArgs e)
     {
         trv_main.CollapseAll();

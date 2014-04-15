@@ -9,6 +9,7 @@ public partial class pages_seeRoomAvailability : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Room Availability";
         if (!IsPostBack)
         {
             //accessDropDownFill objaccess = new accessDropDownFill();

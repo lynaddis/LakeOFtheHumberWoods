@@ -11,6 +11,7 @@ public partial class Admin_editInvoice : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Admin - Edit Invoice";
         if (!Page.IsPostBack)
         {
             subRebind();

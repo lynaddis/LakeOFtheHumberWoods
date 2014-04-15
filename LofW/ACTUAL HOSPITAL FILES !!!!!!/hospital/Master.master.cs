@@ -8,7 +8,13 @@ using System.Web.UI.WebControls;
 public partial class Master : System.Web.UI.MasterPage
 {
 
+    private string _title = "Default Master Page Title";
+    public string pp_masterTitle
+    {
+        get { return _title; }
+        set { _title = value; }
 
+    }
 
     protected void subCollapse(object sender, EventArgs e)
     {

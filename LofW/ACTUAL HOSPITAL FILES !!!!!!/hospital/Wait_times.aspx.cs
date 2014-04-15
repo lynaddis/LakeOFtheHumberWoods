@@ -11,6 +11,7 @@ public partial class Wait_times : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Wait Times";
         lv_times.DataSource = objTimes.getTimes();
         lv_times.DataBind();
         pnl_times.Visible = false;

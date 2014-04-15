@@ -9,6 +9,10 @@ public partial class adminspecialists : System.Web.UI.Page
 {
     CalenderClass specCal = new CalenderClass();
 
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Master.pp_masterTitle = "Admin - Specialists";
+    }
 
     protected void ltv_allChange(object sender, PagePropertiesChangingEventArgs e)
     {

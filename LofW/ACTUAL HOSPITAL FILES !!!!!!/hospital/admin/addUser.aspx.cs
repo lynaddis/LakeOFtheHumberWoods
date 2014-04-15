@@ -13,7 +13,7 @@ public partial class Admin_addUser : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Master.pp_masterTitle = "Admin - Add Patient User";
     }
 
 

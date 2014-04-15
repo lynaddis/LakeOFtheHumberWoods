@@ -9,6 +9,7 @@ public partial class newsupdates : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "News Updates";
         if (!IsPostBack) // Shows if the page is visited for the first time
         {
           panel3.Visible = false;

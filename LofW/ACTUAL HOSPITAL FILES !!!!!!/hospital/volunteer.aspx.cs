@@ -34,6 +34,7 @@ public partial class volunteer : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Volunteer";
 
         if (!IsPostBack)
         {

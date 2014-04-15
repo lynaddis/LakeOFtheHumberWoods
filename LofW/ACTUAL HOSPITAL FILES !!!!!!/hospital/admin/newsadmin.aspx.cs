@@ -21,6 +21,7 @@ public partial class newsadmin : System.Web.UI.Page
     }
     protected void Page_Load(object sender, EventArgs e) // loads page 
     {
+        Master.pp_masterTitle = "Admin - News Updates";
         if (!Page.IsPostBack) // Shows if the page is visited for the first time
         {
             _subRebind();

@@ -10,6 +10,7 @@ public partial class Admin_editLocation : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        Master.pp_masterTitle = "Admin - Edit Location";
         if (!Page.IsPostBack)
         {
             subRebind();
