@@ -42,7 +42,7 @@
 
         
         <asp:HyperLink ID="hyp_user_bills" runat="server" Text="Pay Bills"  NavigateUrl="~/Patient/payBills.aspx" />
-        <asp:HyperLink ID="hyp_user_lab" runat="server" Text="Lab Results"  NavigateUrl="~/patient/LabResults.aspx" />
+        <asp:HyperLink ID="hyp_user_lab" runat="server" Text="Lab Results"  NavigateUrl="~/Admin/manage.aspx" />
         
 
     </div>
