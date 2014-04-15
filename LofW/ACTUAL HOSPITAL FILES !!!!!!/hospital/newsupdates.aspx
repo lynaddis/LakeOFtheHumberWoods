@@ -9,9 +9,10 @@
     
 
          
-            <asp:Button ID="btn_news" runat="server" Text="Find News" CommandName="ViewNews" OnClick="btn_news_Click" /> <%--button to view dropdown of departments--%>
-   
-       <div class="form_back_news"> 
+            
+       <div class="form_back_news">
+           <asp:Button ID="btn_news" runat="server" Text="Find News" CommandName="ViewNews" OnClick="btn_news_Click" SkinID="btn_submit" /> <%--button to view dropdown of departments--%>
+    
         <asp:Panel ID="panel3" runat="server">
            <h3> <asp:DropDownList ID="ddl_news" AutoPostBack="true" runat="server"  OnSelectedIndexChanged="ddl_news_SelectedIndexChanged"></asp:DropDownList></h3>
             <asp:ListView ID="ListView1" runat="server" OnItemCommand="ListView1_ItemCommand"> <%--List view data bound control --%>

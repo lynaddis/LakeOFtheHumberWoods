@@ -386,7 +386,9 @@ text-decoration:none;
 /*News Updates Public*/
 
 .form_back_news {
+    margin-top:20px;
     margin-left:50px;
+    margin-bottom:20px;
    background-color: #d5bda8;
    width: 700px;
    min-height:100px;
