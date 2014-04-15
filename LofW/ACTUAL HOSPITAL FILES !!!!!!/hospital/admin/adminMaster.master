@@ -28,6 +28,8 @@
 </asp:menu>
     </div>
        <asp:ContentPlaceHolder ID="cph_main" runat="server">
+     
+            <asp:LoginName ID="lgn_name" runat="server" FormatString="Hello, {0}!" /> <%--user's registered user name--%>
         <div class="banner">
            
             <asp:ContentPlaceHolder ID="cph_banner" runat="server">

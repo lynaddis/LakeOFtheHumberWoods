@@ -7,8 +7,9 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
+     <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
      <div class="page_title"><h2>Edit Suggestions</h2></div>
-    <asp:LoginName ID="lgn_name" runat="server" FormatString="Hello, {0}!" /> <%--user's registered user name--%>
+   
         <hr />
          <asp:Label ID="lbl_output" runat="server" /> <asp:LoginStatus ID="lgs_main" runat="server" /> <%--renders login or logout (authenticates)--%>
         <asp:Label ID="lbl_message" runat="server" />

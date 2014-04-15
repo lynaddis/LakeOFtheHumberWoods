@@ -7,8 +7,13 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-     <div class="page_title"><h2>Add, Update, or Delete Specialist Appointments</h2></div>
 
+
+     <div class="page_title"><h2>Add, Update, or Delete Specialist Appointments</h2></div>
+    <br />
+    <br />
+     <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
+<br /><br />
     <div id="insert_special">
         <h3>Add New Specialist to Calendar</h3>
        

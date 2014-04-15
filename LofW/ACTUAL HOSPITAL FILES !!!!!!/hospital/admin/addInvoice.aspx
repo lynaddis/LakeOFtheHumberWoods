@@ -39,7 +39,7 @@
             </RoleGroups>
         </asp:LoginView>
 
-        <asp:HyperLink ID="hyp_admin_menu" runat="server" Text="Main Menu"  NavigateUrl="~/admin/homeadmin.aspx" />
+       <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  /> 
         <br /> <br /> <br />
         </div>
 

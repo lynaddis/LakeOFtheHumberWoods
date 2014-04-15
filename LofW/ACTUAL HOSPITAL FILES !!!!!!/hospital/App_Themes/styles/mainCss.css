@@ -14,9 +14,10 @@
         margin-left: auto;
         margin-right: auto;
         /*border: 1px solid;  Keep this here to check if container is cooperating*/
-        min-height: 1000px;
+       
          font-family:'Adobe Gurmukhi';
          background-color: #fbecda;
+         overflow:auto;
     }
 
     .login {

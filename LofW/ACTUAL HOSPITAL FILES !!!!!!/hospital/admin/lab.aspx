@@ -11,11 +11,13 @@
     <br />
      <div class="page_title"><h2>Edit Lab Results</h2></div>
     <br />
+     <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
+    <br />
      <input type='hidden' id='current_page' />  
      <input type='hidden' id='show_per_page' /> 
      <div id='page_navigation'></div>  
      <div id="pagingControls"></div>
-    <a href="homeadmin.aspx">Back To Home</a><br />
+
                     <asp:Label ID="lbl_message" runat="server" /><br />
                     <asp:Label ID="patientidI" Text="Patient ID" runat="server" /><br />
                     <asp:TextBox ID="txt_patientidI" runat="server" />

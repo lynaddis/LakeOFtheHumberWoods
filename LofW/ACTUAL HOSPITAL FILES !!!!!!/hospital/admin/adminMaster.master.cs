@@ -14,8 +14,6 @@ public partial class admin_adminMaster : System.Web.UI.MasterPage
         set { _heading = value; }
     }
 
-
-
     protected void subCollapse(object sender, EventArgs e)
     {
         trv_main.CollapseAll();

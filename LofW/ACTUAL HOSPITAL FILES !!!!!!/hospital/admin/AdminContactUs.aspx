@@ -8,10 +8,12 @@
     
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-
+     
      <div class="page_title"><h2>Contact Us</h2></div>
 
     <br />
+    <br />
+      <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  /><br />
     <br />
     <asp:Label ID="lbl_msg" runat="server" />   
    <table>

@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_main" Runat="Server">
-    
+   <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
 
          <div class="page_title"><h2>Administrative</h2></div>
 

@@ -27,7 +27,7 @@
             
                  
 <a href="javascript:void(0);" class="links toggler"><h3>+    Create New User</h3></a>
-            <div class="page_links" ><p>Pages for adding new patients to the site so they can have access to pay bills online and lab results</p><asp:HyperLink ID="hyp_usr_add" runat="server" Text="Create new user" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/addUser.aspx"  />   </div>
+            <div class="page_links" ><p>Pages for adding new patients to the site so they can have access to pay bills online and lab results</p>   <asp:HyperLink ID="hyp_home" runat="server" Text="Create New User" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/addUser.aspx"  />  </div>
             
             <a href="javascript:void(0);" class="links toggler"><h3>+    Edit User</h3></a>
             <div class="page_links" style="display:none">
@@ -48,7 +48,7 @@
            <a href="javascript:void(0);" class="links toggler"><h3>+    Add New Hosptial Branch (Location)</h3></a>
              <div class="page_links" style="display:none">
                  <p>Page for adding a new building location that is affiliated with the hosptial.</p>
-                 <asp:HyperLink ID="hyp_location_add" runat="server" Text="Add New Hospital Branch Location" NavigateUrl="~/Admin/addLocation.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div>
+                 <asp:HyperLink ID="hyp_location_add" runat="server" Text="Add New Branch" NavigateUrl="~/Admin/addLocation.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div>
 
            <a href="javascript:void(0);" class="links toggler"><h3>+    Edit Hosptial Locations</h3></a>
              <div class="page_links" style="display:none">
@@ -70,7 +70,7 @@
            <a href="javascript:void(0);" class="links toggler"><h3>+    View Submitted Contact Forms</h3></a>
              <div class="page_links" style="display:none">
                  <p>Page for editing and reviwing user sumbitted contact forms</p>
-                 <asp:HyperLink ID="hyp_ContactUs" runat="server" Text="ContactUs_Admin" NavigateUrl="~/admin/AdminContactUs.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div>
+                 <asp:HyperLink ID="hyp_ContactUs" runat="server" Text="Contact Us " NavigateUrl="~/admin/AdminContactUs.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div>
 
            <a href="javascript:void(0);" class="links toggler"><h3>+    Employment Forms</h3></a>
              <div class="page_links" style="display:none">
@@ -104,7 +104,7 @@
            <a href="javascript:void(0);" class="links toggler"><h3>+   Volunteer Forms</h3></a>
              <div class="page_links" style="display:none">
                  <p>Page for viewing, updating, approving, and/or deleting submitted volunteer forms.</p>
-                 <asp:HyperLink ID="hyp_volunteer" runat="server" Text="View Submitted Volunteer Forms" NavigateUrl="~/admin/adminvolunteer.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div>
+                 <asp:HyperLink ID="hyp_volunteer" runat="server" Text="Edit Volunteer Forms" NavigateUrl="~/admin/adminvolunteer.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div>
 
             <a href="javascript:void(0);" class="links toggler"><h3>+    Add New Job Posting</h3></a>
             <div class="page_links" style="display:none">

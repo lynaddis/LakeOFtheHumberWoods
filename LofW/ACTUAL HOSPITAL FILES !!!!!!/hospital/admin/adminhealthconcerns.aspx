@@ -8,13 +8,19 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
-     <div class="page_title"><h2>Add Health Concern</h2></div>
 
+     <div class="page_title"><h2>Add Health Concern</h2></div>
+    <br />
+       <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
+    <br />
+    <br />
+       <asp:HyperLink ID="hpl_upH" runat="server" Text="Edit Health Concerns" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/adminupdatehealth.aspx"  />
+    <br />
      <asp:Label ID="lbl_message" runat="server" />
         <br />
         <br />
     
-                      <a href="homeadmin.aspx">Back To Home</a>
+                    
  
                     <%--Creating Insert textboxes --%>
     <asp:HiddenField ID="hdf_Id" runat="server" Value='<%#Eval("Id") %>' />
@@ -57,9 +63,9 @@
        
                     <asp:TextBox ID="txt_recommendI" runat="server" />
                        
-
-                    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" /><%-- onCommand for subroutine on code behind called subAdmin --%>
-                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" />
+    <br />
+                    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" SkinID="btn_submit" /><%-- onCommand for subroutine on code behind called subAdmin --%>
+                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" SkinID="btn_submit" />
                     <asp:ValidationSummary ID="vs_illnesVal" runat="server" ValidationGroup="illness_val" ShowMessageBox="true" HeaderText="Errors!" />
             <%-- end of insert rows--%>
 
@@ -67,9 +73,8 @@
                 <ItemTemplate>
                     </ItemTemplate>
              </asp:DataList>
-
-        <a href="adminupdatehealth.aspx">Update and Delete Health Concerns</a>
-                <a href="adminvolunteer.aspx">View, Update, Delete Volunteer Forms</a>
+  
+     
 
 
 
