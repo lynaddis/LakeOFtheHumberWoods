@@ -37,8 +37,7 @@
             </div>
 
            </asp:ContentPlaceHolder>
-        </div>
-         <div class="footer">
+                 <div class="footer">
 
                     <asp:TreeView ID="trv_main" runat="server" DataSourceID="sds_main" ShowLines="true" ExpandDepth="0" />
             <asp:SiteMapDataSource ID="sds_tree" runat="server"  ShowStartingNode="false"/>
@@ -46,7 +45,7 @@
   
          </div>
   
-
+        </div>
          
       
     </form>
