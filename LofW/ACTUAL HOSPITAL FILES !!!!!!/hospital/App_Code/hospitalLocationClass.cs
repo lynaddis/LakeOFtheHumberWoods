@@ -52,7 +52,7 @@ public class hospitalLocationClass
          }
     }
 
-    public bool DeleteRequest(int id)
+    public bool deleteLocation(int id)
     {
         HospitalDataContext objLocation = new HospitalDataContext();
         using (objLocation)
