@@ -62,24 +62,26 @@
                 <br />
                 <asp:TextBox ID="txt_hours" runat="server" />
                 </td> 
-                <asp:RequiredFieldValidator ID="rvf_hours" runat="server" ControlToValidate="txt_hours" Text="*Required" ValidationGroup="insert" /><%--user's must enter contact hours--%>
+                <asp:RequiredFieldValidator ID="rvf_hours" runat="server" SetFocusOnError="true" ControlToValidate="txt_hours" Text="*Required" ValidationGroup="insert" /><%--user's must enter contact hours--%>
                 <td>
                 <asp:Label ID="lbl_emailI" runat="server"  AssociatedControlID="txt_emailI" />
                 <br />
                 <asp:TextBox ID ="txt_emailI" runat="server" /> 
                 </td>
-                <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" ControlToValidate="txt_emailI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter an email--%>
+                <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" SetFocusOnError="true" ControlToValidate="txt_emailI" Text="*Required"  ValidationGroup="insert" /> <%--user's must enter an email--%>
                 <td>
                 <asp:Label ID="lbl_comment" runat="server"   AssociatedControlID="txt_commentI" />
                 <br />
                 <asp:TextBox ID ="txt_commentI"  runat="server" /> 
                  </td>
-                <asp:RequiredFieldValidator ID="rfv_comment" runat="server" ControlToValidate="txt_commentI" Text="*Required"  ValidationGroup="insert"  Display="Dynamic" /> <%--user's must enter a comment--%>
+                <asp:RequiredFieldValidator ID="rfv_comment" runat="server" SetFocusOnError="true" ControlToValidate="txt_commentI" Text="*Required"  ValidationGroup="insert"  Display="Dynamic" /> <%--user's must enter a comment--%>
                 <td>
                 <br />
                 <%--Buttons for insert and cancel--%>
                 <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subAdmin" SkinID="btn_submit"  CommandName="Insert"  ValidationGroup="insert"  />
                 <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subAdmin" SkinID="btn_submit" CommandName="Cancel"  />
+
+                    <asp:ValidationSummary ID="vds_sum" runat="server" ValidationGroup="insert" ShowMessageBox="true"  HeaderText="*Errors" ShowSummary="true" />
                </td>
                 </tr>
                 <asp:Datalist ID="dlt_all" runat="server" OnItemCommand="subUpDel"> <%--Datalist data bound control --%>
