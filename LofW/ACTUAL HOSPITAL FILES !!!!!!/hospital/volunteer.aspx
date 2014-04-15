@@ -88,11 +88,11 @@
         <br />
                     <asp:Button ID="btn_insert" runat="server" Text="Submit" OnCommand="subInsert" CommandName="Insert" ValidationGroup="vol_val" CausesValidation="true" SkinID="btn_submit" />
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" CausesValidation="true" />
-    
+    <br /><br />
     <asp:ValidationSummary ID="vld_sum" runat="server" DisplayMode="BulletList" HeaderText="Errors!" ShowSummary="false" ShowMessageBox="true" ValidationGroup="vol_val" />
          </div>
             <%-- end of insert rows--%>
-   <br />
+   <br />   
    
              <asp:Label ID="lbl_message" runat="server" />
         <br /> </div>

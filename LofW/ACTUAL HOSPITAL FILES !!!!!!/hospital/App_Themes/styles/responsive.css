@@ -386,19 +386,20 @@
     padding-top: 15px;
     padding-left: 50px;
     width: 260px;
-    float:left;
+   
     margin-right:50px;
-  
-     font-family:'Adobe Gurmukhi';    
+  margin-left:70px;
+    font-family:'Adobe Gurmukhi';    
 
 }
 
 #vol2 {
     padding-top: 15px;
     width: 260px;
-    float:left;
+    font-family:'Adobe Gurmukhi';
    
-      font-family:'Adobe Gurmukhi';
+    margin-left:70px;
+      padding-left: 50px;
 }
 
 
@@ -410,11 +411,12 @@
     }
 
 .form_backvol {
+   
     margin-top:20px;
-    margin-left:0px;
-    min-height:500px;
+    margin-left:20px;
+    overflow:auto;
     background-color: #d5bda8;
-     width: 480px;
+     width: 440px;
     font-family:'Adobe Gurmukhi';
 
 
@@ -705,6 +707,276 @@
 }
 /*end of specialists public*/
 }
+/*END OF KINDLE /NOOK*/
+    /*SmartPhones*/
+@media screen and (min-width : 320px) and (max-width : 480px) {
+
+
+        .container {
+            width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: auto;
+        }
+
+        .banner {
+            display:none;
+        }
+
+ 
+        .contentBody { display:none; }
+
+        .sidebar {
+            float:left;
+            width: 320px;
+            min-height:300px;
+        }
+
+    .page_title {
+         font-family:'Adobe Gurmukhi';
+         width: 320px;
+         padding-bottom: 10px;
+         /*background-color: #fbe0a6;*/
+         background-color:red;
+    }
+        .page_title h2 {
+ 
+  padding-top:5px;
+  padding-bottom: 5px;
+  text-align:left;
+  background-color: #f8c966;
+  height: 20px;
+  width: 320px;
+  font-family:'Adobe Gurmukhi';
+  font-size: 20px;
+  color:white;
+}
+             .page_title p {
+         font-family:'Adobe Gurmukhi';
+         width: 320px;
+         
+         
+
+    }
+            #heading h3 {
+        height: 30px;
+        width: 320px;
+        background-color: #a7917e;
+        text-align: center;
+    }
+
+        #heading h3 a {
+            text-decoration: none;
+            color: white;
+        }
+        .infectBox {
+            width: 320px;
+            min-height: 150px;
+            margin-bottom: 10px;
+           
+        }
+
+        .donate {
+            width: 320px;
+            height: 150px;
+           margin-bottom: 10px;
+          
+        }
+              .donate H3 {
+            background-color: #a7917e;
+            height: 30px;
+            width: 320px;
+            text-align: center;
+        }
+
+            .donate H3 a {
+                text-decoration: none;
+                text-align: center;
+                color: white;
+            }
+
+            .bottomBar {
+            min-height: 500px;
+            overflow:auto;
+            width: 320px;
+            float: left;
+            margin-top: 10px;
+           
+        }
+        .calendar {
+           width: 310px;
+            height: 150px;
+           }
+
+    
+        .Maps { 
+            width: 320px;
+        height: 150px;
+        margin-bottom: 20px;
+        float: left;
+        margin-left: 0px;
+             }
+
+            .Maps H3 {
+        text-align: center;
+        background-color: #a7917e;
+        width: 320px;
+        height: 30px;
+    }
+
+        .Maps H3 a {
+            text-decoration: none;
+            color: white;
+        }
+
+    .paybills H3 {
+        background-color: #a7917e;
+        height: 30px;
+        text-align: center;
+        width:320px;
+    }
+        
+     .paybills H3 a {
+            text-decoration: none;
+            color: white;
+        }
+
+    .paybills {
+        width: 320px;
+        height: 150px;
+        margin-bottom: 20px;
+        float: left;
+        margin-left: 0px;
+    }
+
+ .footer {
+           background-color: #a7917e;
+            width: 320px;
+            float: left;
+            margin-top: 5px;
+            min-height: 50px;
+        }
+
+ /*Health Concerns Page (public)*/
+
+#listed_concern {
+
+    overflow:auto;
+    width:320px;
+    float:left;
+    margin-left: 0px;
+}
+
+
+
+#recommend {
+    
+    float:left;
+    width:320px;
+    background-color: #d5bda8;
+    
+    padding-bottom:30px;
+    font-family:'Adobe Gurmukhi';
+    margin-top: 20px;
+}
+#recommend p {
+    width: 325px;
+}
+
+#recommend h3 {
+   background-color: #a7917e;
+}
+.titleText H3 {
+     background-color: #95779a;
+     width: 320px;
+     height: 20%;
+     text-decoration:none;
+    font-family:'Adobe Gurmukhi';
+    font-size: 25px;
+
+}
+
+.titleText {
+    text-decoration:none;
+    color: white;
+   margin:0px;
+
+}
+
+.Kenora {
+
+    font-family:'Adobe Gurmukhi';
+    width: 319px;
+}
+
+.Ontario {
+
+    font-family:'Adobe Gurmukhi';
+    width: 319px;
+}
+.Canada {
+
+    font-family:'Adobe Gurmukhi';
+    width: 319px;
+}
+
+ /*About Page*/
+
+
+#about_text {
+    height: 300px;
+    width: 320px;
+    float:left;
+   margin-top:20px;
+    border:dashed 2px;
+    margin-left: 0px;
+}
+
+#about_img {
+  
+   display:none;
+}
+/*End of About*/
+
+/*News Updates*/
+.form_back_news {
+    margin-top:20px;
+   margin-left:0px;
+    margin-bottom:20px;
+   background-color: #d5bda8;
+   width: 320px;
+   min-height:100px;
+  font-family:'Adobe Gurmukhi';
+  padding-bottom:15px;
+}
+
+    .form_back_news h3 {
+
+        background-color: #a7917e;
+        font-family:'Adobe Gurmukhi';
+
+    }
+    /*End of News Updates*/
+
+    /*Specialists Public*/
+#cal_position {
+    width: 480px;
+    float:left;
+    margin-top:30px;
+   margin-left:0px;
+    margin-right:30px;
+    margin-bottom:30px;
+}
+#cal_output {
+    margin-top:30px;
+    margin-left:130px;
+    float:left;
+    width: 280px;
+}
+/*end of specialists public*/
+
+}
+   
 
 
    
