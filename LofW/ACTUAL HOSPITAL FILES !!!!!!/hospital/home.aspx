@@ -25,11 +25,11 @@
            <td><asp:Button ID="btn_back" runat="server" Text="Backward" OnClick="ImgBackward" /></td> 
             <td><asp:Button ID="btn_forw" runat="server" Text="Forward" OnClick="ImgForward" /></td> 
         <td></td><td></td><td></td><td></td><td></td></tr>
-<<<<<<< HEAD
+
      </table>--%>
-=======
+
      </table>
->>>>>>> parent of eb10f68... Merge branch 'master' of https://github.com/lynaddis/LakeOFtheHumberWoods
+
          </div>
 
                <div class="contentBody">
