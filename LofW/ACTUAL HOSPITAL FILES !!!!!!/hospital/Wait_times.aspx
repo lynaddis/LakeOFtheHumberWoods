@@ -26,7 +26,7 @@
         </ul>
 
         <br /><br />
-        <asp:Button ID="btn_times" runat="server" Text="Get Waiting Time" OnClick="subGetTimes" />
+        <asp:Button ID="btn_times" runat="server" Text="Get Waiting Time" OnClick="subGetTimes" SkinID="btn_submit" />
         <br /><br />
 
         <asp:Panel ID="pnl_times" runat="server">
