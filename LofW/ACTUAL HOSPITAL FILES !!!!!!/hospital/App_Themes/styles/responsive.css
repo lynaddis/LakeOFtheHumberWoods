@@ -716,7 +716,7 @@
             width: 320px;
             margin-left: auto;
             margin-right: auto;
-            overflow: auto;
+            
         }
 
         .banner {
@@ -746,7 +746,7 @@
   text-align:left;
   background-color: #f8c966;
   height: 20px;
-  width: 320px;
+  width: 315px;
   font-family:'Adobe Gurmukhi';
   font-size: 20px;
   color:white;
@@ -861,7 +861,7 @@
 
 #listed_concern {
 
-    overflow:auto;
+    
     width:320px;
     float:left;
     margin-left: 0px;
@@ -873,18 +873,19 @@
     
     float:left;
     width:320px;
-    background-color: #d5bda8;
+    background-color: red;
     
     padding-bottom:30px;
     font-family:'Adobe Gurmukhi';
     margin-top: 20px;
 }
 #recommend p {
-    width: 325px;
+    display:none;
 }
 
 #recommend h3 {
    background-color: #a7917e;
+   width:300px;
 }
 .titleText H3 {
      background-color: #95779a;
