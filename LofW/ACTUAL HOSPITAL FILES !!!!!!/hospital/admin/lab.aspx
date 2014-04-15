@@ -36,13 +36,12 @@
                     <asp:Label ID="lbl_ageI" Text="Age" runat="server" /> <br />
                     <asp:TextBox ID="txt_ageI" runat="server" />
                     <asp:RequiredFieldValidator ID="rfv_ageI" runat="server" ControlToValidate="txt_ageI"                                                    SetFocusOnError="true" ErrorMessage="Enter Age" ValidationGroup="insert" Text="Required!" />
-                     <asp:RegularExpressionValidator ID="rev_age" runat="server" Text="*Enter a digit for age" ErrorMessage="Not a valid                     age" ValidationGroup="insert" ControlToValidate="txt_ageI" ValidationExpression="^\d{1,2}$" />
+                     <asp:RegularExpressionValidator ID="rev_age" runat="server" Text="*Enter a digit for age" ErrorMessage="Not a valid                     age"  ControlToValidate="txt_ageI" ValidationExpression="^\d{1,2}$" />
                     <br />        
                     <asp:Label ID="lbl_sexI" Text="Gender" runat="server" /> <br />
                     <asp:TextBox ID="txt_sexI" runat="server"  />
-                    <asp:RequiredFieldValidator ID="rfv_sexI" runat="server" ControlToValidate="txt_sexI" SetFocusOnError="true"   ErrorMessage="Enter Gender(Male or Female)" ValidationnGroup="insert" Text="*Required!" />
-           <asp:RegularExpressionValidator ID="rev_sexI" runat="server" ControlToValidate="txt_sexI" ValidationExpression="^[a-zA-Z ]*$"  />
-                    <br />
+                    <%--<asp:RequiredFieldValidator ID="rfv_sexI" runat="server" ControlToValidate="txt_sexI" SetFocusOnError="true"   ErrorMessage="Enter Gender(Male or Female)" Text="*Required!" />--%>
+                              <br />
                     <asp:Label ID="lbl_testTypeI" Text="Test Type" runat="server" /> <br />
                     <asp:TextBox ID="txt_testTypeI" runat="server" />
                     <br />
@@ -78,7 +77,7 @@
                     <ItemTemplate>
                     <asp:HiddenField ID="hdf_idE" runat="server" Value ='<%#Eval ("Id") %>' />
                     <asp:Label ID="patientidE" Text="PatientID" runat="server" /> <br />
-                    <asp:TextBox ID="txt_patientidE" runat="server" Text='<%#Bind ("patientID") %>' />
+                    <asp:TextBox ID="txt_patientidE" runat="server" Text='<%#Bind("patientID") %>' />
                     <asp:RequiredFieldValidator ID="rfv_patientidE" runat="server" ControlToValidate="txt_patientidE" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="edit" Text="Required!" />
                     <br />
                     <asp:Label ID="patientcodeE" Text="Patient Code" runat="server" /> <br />
@@ -120,9 +119,9 @@
                     <asp:Label ID="lbl_unitsE" Text="Units" runat="server" /> <br />
                     <asp:TextBox ID="txt_unitsE" runat="server" Text='<%#Bind ("units") %>' /> <br />
                     <br />
-                     <asp:LinkButton ID="update"  runat="server" Text="Update" Font-Underline="false" CommandName="UpdateE" SkinID="link_submit" ValidationGroup="edit" />
-                     <asp:LinkButton ID="delete" runat="server" Text="Delete" Font-Underline="false"  CommandName="DeleteE" SkinID="link_submit" OnClientClick="return confirm                               ('Confirm Delete?')" />
-                    <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" Font-Underline="false" CommandName="CancelE" SkinID="link_submit" CausesValidation="false" />
+                     <asp:LinkButton ID="update"  runat="server" Text="Update" Font-Underline="false" CommandName="Update" SkinID="link_submit" ValidationGroup="edit" />
+                     <asp:LinkButton ID="delete" runat="server" Text="Delete" Font-Underline="false"  CommandName="Delete" SkinID="link_submit" OnClientClick="return confirm                               ('Confirm Delete?')" />
+                    <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" Font-Underline="false" CommandName="Cancel" SkinID="link_submit" CausesValidation="false" />
                     <asp:ValidationSummary ID="vds_sum" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="edit" />
                     <br />
                    </ItemTemplate>
