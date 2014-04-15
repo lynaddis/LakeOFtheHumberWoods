@@ -87,7 +87,7 @@
              <div class="page_links" style="display:none">
                  <p>Page to view, update, or delete all health concerns records.  Will also find submitted recommendations here so ensure they are easy to add to exsiting health concern records; can delete recommendation on this page once it has been added to existing public page information</p>
 
-                 <asp:HyperLink ID="hyp_healthupdate" runat="server" Text="Update Or Delete Health Concerns" NavigateUrl="~/admin/adminupdatehealth.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div></div>
+                 <asp:HyperLink ID="hyp_healthupdate" runat="server" Text="Edit Health Concerns" NavigateUrl="~/admin/adminupdatehealth.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div></div>
      <div id="contentbody_18">
             <a href="javascript:void(0);" class="links toggler"><h3>+    Edit Image Slider</h3></a>
             <div class="page_links">
@@ -109,12 +109,12 @@
             <a href="javascript:void(0);" class="links toggler"><h3>+    Add New Job Posting</h3></a>
             <div class="page_links" style="display:none">
                 <p>Page for adding job postings as needed</p>
-                <asp:HyperLink ID="hyp_jobs" runat="server" Text="jobs" NavigateUrl="~/admin/jobs.aspx"  Font-Underline="false" SkinID="hblink_submit"  /></div>
+                <asp:HyperLink ID="hyp_jobs" runat="server" Text="Job Postings" NavigateUrl="~/admin/jobs.aspx"  Font-Underline="false" SkinID="hblink_submit"  /></div>
 
             <a href="javascript:void(0);" class="links toggler"><h3>+    Edit Lab Results</h3></a>
             <div class="page_links" style="display:none">
                 <p>Page for editing Lab Results information for registered patients.  May also delete lab result information on this page.</p>
-                <asp:HyperLink ID="hyp_lab" runat="server" Text="lab" NavigateUrl="~/admin/lab.aspx"  Font-Underline="false" SkinID="hblink_submit"  /></div>
+                <asp:HyperLink ID="hyp_lab" runat="server" Text="Lab Results" NavigateUrl="~/admin/lab.aspx"  Font-Underline="false" SkinID="hblink_submit"  /></div>
 
           <a href="javascript:void(0);" class="links toggler"><h3>+    Edit News Updates</h3></a>
               <div class="page_links" style="display:none">
@@ -123,7 +123,7 @@
                       Page for editing news updates as they develop or become outdated and need to be removed.
 
                   </p>
-                  <asp:HyperLink ID="hyp_news" runat="server" Text="News" NavigateUrl="~/admin/newsadmin.aspx"  Font-Underline="false" SkinID="hblink_submit"  /></div>
+                  <asp:HyperLink ID="hyp_news" runat="server" Text="News Updates" NavigateUrl="~/admin/newsadmin.aspx"  Font-Underline="false" SkinID="hblink_submit"  /></div>
             <a href="javascript:void(0);" class="links toggler"><h3>+   Edit Suggestions</h3></a>
             <div class="page_links" style="display:none">
                 <p>Page for viewing and editing submitted suggestions from public users</p>
