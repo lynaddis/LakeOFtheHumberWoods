@@ -108,12 +108,10 @@
                             <asp:TextBox ID="txt_commentE" runat="server" Text='<%#Bind ("comment") %>' />
                             </td>
                             <td>
-                                <asp:Button ID="btn_update" runat="server"  SkinID="btn_submit" Text="Update" CommandName ="Update"  ValidationGroup="update"  />
+                                <asp:Button ID="btn_update" runat="server"  SkinID="btn_submit"  Text="Update" CommandName ="Update"  ValidationGroup="update"  />
                                 <asp:Button ID="btn_delete" runat="server" SkinID="btn_submit"  Text="Delete" CommandName="Delete" OnClientClick="return confirm('Confirm Delete?');" />
                                 <asp:Button ID="btn_cancel" runat="server" SkinID="btn_submit"   Text="Cancel" CommandName="Cancel"  CausesValidation="false"/>
-                                <%--<asp:RequiredFieldValidator ID="rfv_" runat="server" Text="*Required" ControlToValidate="txt_nameE" ValidationGroup="update" />
-                                <asp:RequiredFieldValidator ID="rfv_descE" runat="server" Text="*Required" ControlToValidate="txt_descE" ValidationGroup="update" />
-                                <asp:RequiredFieldValidator ID="rfv_priceE" runat="server" Text="*Required" ControlToValidate="txt_priceE" ValidationGroup="update" />
+                               
                                 <%--Buttons for insert and cancel, delete --%>
                             </td>
                         </tr>

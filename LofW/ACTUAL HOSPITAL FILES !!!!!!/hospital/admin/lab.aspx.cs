@@ -82,7 +82,7 @@ public partial class lab : System.Web.UI.Page
 
         switch (e.CommandName)
         {
-            case "Update":
+            case "UpdateE":
                 TextBox txtpID = (TextBox)e.Item.FindControl("txt_patientidE");
                 TextBox txtPC = (TextBox)e.Item.FindControl("txt_patientcodeE");
                 TextBox txtdob = (TextBox)e.Item.FindControl("txt_dobE");
@@ -105,12 +105,12 @@ public partial class lab : System.Web.UI.Page
                 _strMessage(objLab.commitUpdate(labID,pid,txtPC.Text.ToString(),txtAge.Text.ToString(),txtSex.Text.ToString(),txtType.Text.ToString(),txtCode.Text.ToString(),txtResult1.Text.ToString(),txtResult2.Text.ToString(),txtResultD.Text.ToString(),txtAbnormal.Text.ToString(),txtRef.Text.ToString(),txtUnits.Text.ToString(), DateofBirth), "update");
                  _subRebind();
                 break;
-            case "Delete": //delete record from the database by the ID
+            case "DeleteE": //delete record from the database by the ID
                 int _id = int.Parse(((HiddenField)e.Item.FindControl("hdf_idE")).Value);
                 _strMessage(objLab.commmitDelete(_id), "delete");
                 _subRebind();
                 break;
-            case "Cancel":
+            case "CancelE":
                 _subRebind();
                 break;
 

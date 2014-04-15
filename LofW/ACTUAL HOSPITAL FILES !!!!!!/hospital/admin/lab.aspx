@@ -38,8 +38,11 @@
                     <br />        
                     <asp:Label ID="lbl_sexI" Text="Gender" runat="server" /> <br />
                     <asp:TextBox ID="txt_sexI" runat="server"  />
-                    <asp:RequiredFieldValidator ID="rfv_sexI" runat="server" ControlToValidate="txt_sexI" SetFocusOnError="true"   ErrorMessage="Enter Gender(Male or Female)"  Text="*Required!" />
-           <asp:RegularExpressionValidator ID="rev_sexI" runat="server" ControlToValidate="txt_sexI" ValidationExpression="^[a-zA-Z ]*$"  />
+                    <asp:RequiredFieldValidator ID="rfv_sex" runat="server" ControlToValidate="txt_sexI" SetFocusOnError="true"
+                        ErrorMessage="Enter Male or Female" ValidationGroup="insert" Text="*Required!" />
+                    <asp:RegularExpressionValidator ID="rev_sex" runat="server" Text="Enter Male or Female"  
+                        ControlToValidate="txt_sexI"
+                        ValidationExpression="^[A-Za-z] {2,}$" />
                     <br />
                     <asp:Label ID="lbl_testTypeI" Text="Test Type" runat="server" /> <br />
                     <asp:TextBox ID="txt_testTypeI" runat="server" />
@@ -65,9 +68,10 @@
                     <asp:Label ID="lbl_unitsI" Text="Units" runat="server" /> <br />
                     <asp:TextBox ID="txt_unitsI" runat="server"  />
                     <br />
-                
+               
                 <br />
-                <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subAdmin"  SkinID="btn_submit" CommandName="Insert"  />
+                <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subAdmin" ValidationGroup="insert" 
+                    SkinID="btn_submit" CommandName="Insert"  />
                 <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subAdmin" SkinID="btn_submit" CommandName="Cancel"  />
                 <asp:ValidationSummary ID="vds_summary" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="insert" />
                     <br />

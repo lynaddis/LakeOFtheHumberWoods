@@ -17,12 +17,12 @@ public class labClass
 
         var allLabs = objLAB.labs.Select(x => x);
 
-        //var allProducts = from x in objProd.products select x;
+       
         return allLabs;
     }
 
 
-    public int getPatientCodeByUsername(string user)
+    public int getPatientCodeByUsername(string user) //return the patient code by the user name to view lab results
     {
         HospitalDataContext objLab = new HospitalDataContext();
         return objLab.labs.Where(x => x.patientCode == user).Select(x => x.Id).FirstOrDefault();
@@ -30,7 +30,7 @@ public class labClass
     }
 
 
-    public IQueryable<lab> getLabsByID(int _id)
+    public IQueryable<lab> getLabsByID(int _id)  // returns the record by the ID
     {
         HospitalDataContext objLAB = new HospitalDataContext();
 
@@ -38,7 +38,7 @@ public class labClass
 
         return allLabs;
     }
-
+     // inserts into the database by the datatype
     public bool commitInsert(int _patient, string _code,  string _age , string _sex, string _type, string _testcode, 
         string _result1, string _result2, string _desc, string _abnormal , string _refrange, string _unit, string _dob   )
     {
@@ -66,7 +66,7 @@ public class labClass
         }
 
     }
-
+    //updates the database by the daatatype set
     public bool commitUpdate(int _id, int _patient, string _code,string _unit, string _age, string _sex, string _type, string _testcode,
         string _result1, string _result2, string _desc, string _abnormal, string _refrange, string _dob)
     {
@@ -94,6 +94,7 @@ public class labClass
 
     }
 
+    //deletes each record in the database by the ID
 
     public bool commmitDelete(int _id)
     {

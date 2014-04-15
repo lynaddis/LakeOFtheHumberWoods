@@ -15,7 +15,7 @@ public class newsClass
 
         var allNews = objNews.News.Select(x => x);
 
-        //var allProducts = from x in objProd.products select x;
+        
         return allNews;
     }
 
@@ -28,7 +28,7 @@ public class newsClass
 
        return allNews;
         
-       // return allNews; // selecting products from the database by their ID
+       // return allNews; // selecting news from the database by their Department
     }
 
     public IQueryable<New> getNewsByID(int _id)
@@ -47,7 +47,7 @@ public class newsClass
 
         var allNews = objNews.News.Where(x => x.Department == _depart).Select(x => x);
 
-        return allNews; // selecting products from the database by their ID
+        return allNews; 
     }
 
     public bool commitInsert(string _Dep, string _Details, string _Url, string _Date) //allows insert using boolean and string to validate 

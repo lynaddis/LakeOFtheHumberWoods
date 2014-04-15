@@ -15,7 +15,7 @@ public class suggestionClass
 
         var allSuggestions = objSug.suggestions.Select(x => x);
 
-        //var allProducts = from x in objProd.products select x;
+       
         return allSuggestions;
     }
 
@@ -26,7 +26,7 @@ public class suggestionClass
 
         var allSuggestions = objSug.suggestions.Where(x => x.Id == _id).Select(x => x);
 
-        return allSuggestions; // selecting products from the database by their ID
+        return allSuggestions; // selecting suggstions from the database by their ID
     }
 
     public bool commitInsert(string _type, string _first, string _last,string _phone, string _hours, string _email, string _comment ) //allows insert using boolean and string to validate 
