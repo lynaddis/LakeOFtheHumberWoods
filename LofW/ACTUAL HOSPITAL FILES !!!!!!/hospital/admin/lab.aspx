@@ -11,13 +11,11 @@
     <br />
      <div class="page_title"><h2>Edit Lab Results</h2></div>
     <br />
-     <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
-    <br />
      <input type='hidden' id='current_page' />  
      <input type='hidden' id='show_per_page' /> 
      <div id='page_navigation'></div>  
      <div id="pagingControls"></div>
-
+    <a href="homeadmin.aspx">Back To Home</a><br />
                     <asp:Label ID="lbl_message" runat="server" /><br />
                     <asp:Label ID="patientidI" Text="Patient ID" runat="server" /><br />
                     <asp:TextBox ID="txt_patientidI" runat="server" />
@@ -40,8 +38,9 @@
                     <br />        
                     <asp:Label ID="lbl_sexI" Text="Gender" runat="server" /> <br />
                     <asp:TextBox ID="txt_sexI" runat="server"  />
-                    <%--<asp:RequiredFieldValidator ID="rfv_sexI" runat="server" ControlToValidate="txt_sexI" SetFocusOnError="true"   ErrorMessage="Enter Gender(Male or Female)" Text="*Required!" />--%>
-                              <br />
+                    <asp:RequiredFieldValidator ID="rfv_sexI" runat="server" ControlToValidate="txt_sexI" SetFocusOnError="true"   ErrorMessage="Enter Gender(Male or Female)"  Text="*Required!" />
+           <asp:RegularExpressionValidator ID="rev_sexI" runat="server" ControlToValidate="txt_sexI" ValidationExpression="^[a-zA-Z ]*$"  />
+                    <br />
                     <asp:Label ID="lbl_testTypeI" Text="Test Type" runat="server" /> <br />
                     <asp:TextBox ID="txt_testTypeI" runat="server" />
                     <br />
@@ -77,51 +76,51 @@
                     <ItemTemplate>
                     <asp:HiddenField ID="hdf_idE" runat="server" Value ='<%#Eval ("Id") %>' />
                     <asp:Label ID="patientidE" Text="PatientID" runat="server" /> <br />
-                    <asp:TextBox ID="txt_patientidE" runat="server" Text='<%#Bind("patientID") %>' />
+                    <asp:TextBox ID="txt_patientidE" runat="server" Text='<%#Eval("patientID") %>' />
                     <asp:RequiredFieldValidator ID="rfv_patientidE" runat="server" ControlToValidate="txt_patientidE" SetFocusOnError="true"                     ErrorMessage="Enter Patient ID" ValidationGroup="edit" Text="Required!" />
                     <br />
                     <asp:Label ID="patientcodeE" Text="Patient Code" runat="server" /> <br />
-                    <asp:TextBox ID="txt_patientcodeE" runat="server" Text='<%#Bind ("patientCode") %>' />
+                    <asp:TextBox ID="txt_patientcodeE" runat="server" Text='<%#Eval ("patientCode") %>' />
                     <asp:RequiredFieldValidator ID="rfv_patientcodeE" runat="server" ControlToValidate="txt_patientcodeE"                                       SetFocusOnError="true" ErrorMessage="Enter patientCode" ValidationGroup="edit" Text="Required!" />
                     <br />       
                     <asp:Label ID="lbl_dobE" Text="Date of Birth" runat="server" /> <br />
-                    <asp:TextBox ID="txt_dobE" runat="server" Text='<%#Bind ("DateofBirth") %>' />
+                    <asp:TextBox ID="txt_dobE" runat="server" Text='<%#Eval ("DateofBirth") %>' />
                     <asp:RequiredFieldValidator ID="rfv_dobE" runat="server" ControlToValidate="txt_dobE"                                                       SetFocusOnError="true" ErrorMessage="Enter Date of Birth" ValidationGroup="edit" Text="Required!" />
                     <br />      
                     <asp:Label ID="lbl_ageE" Text="Age" runat="server" /> <br />
-                    <asp:TextBox ID="txt_ageE" runat="server" Text='<%#Bind ("age") %>' /> 
+                    <asp:TextBox ID="txt_ageE" runat="server" Text='<%#Eval("age") %>' /> 
                     <asp:RequiredFieldValidator ID="rfv_ageE" runat="server" ControlToValidate="txt_ageE"                                                       SetFocusOnError="true" ErrorMessage="Enter Age" ValidationGroup="edit" Text="Required!" />
                     <br />        
                     <asp:Label ID="lbl_sexE" Text="Gender" runat="server" /> <br />
-                    <asp:TextBox ID="txt_sexE" runat="server" Text='<%#Bind ("sex") %>' />
+                    <asp:TextBox ID="txt_sexE" runat="server" Text='<%#Eval("sex") %>' />
                     <br />
                     <asp:Label ID="lbl_testTypeE" Text="Test Type" runat="server" /> <br />
-                    <asp:TextBox ID="txt_testTypeE" runat="server" Text='<%#Bind ("testType") %>' />
+                    <asp:TextBox ID="txt_testTypeE" runat="server" Text='<%#Eval ("testType") %>' />
                     <br />
                     <asp:Label ID="lbl_testCodeE" Text="Test Code" runat="server" /> <br />
-                    <asp:TextBox ID="txt_testCodeE" runat="server" Text='<%#Bind ("testCode") %>' />
+                    <asp:TextBox ID="txt_testCodeE" runat="server" Text='<%#Eval ("testCode") %>' />
                     <br />
                     <asp:Label ID="lbl_result1E" Text="Result A" runat="server" />   <br />
-                    <asp:TextBox ID="txt_result1E" runat="server" Text='<%#Bind ("resultType1") %>' />
+                    <asp:TextBox ID="txt_result1E" runat="server" Text='<%#Eval ("resultType1") %>' />
                     <br />
                     <asp:Label ID="lbl_result2E" Text="Result B" runat="server" />    <br />   
-                    <asp:TextBox ID="txt_result2E" runat="server" Text='<%#Bind ("resultType2") %>' />
+                    <asp:TextBox ID="txt_result2E" runat="server" Text='<%#Eval("resultType2") %>' />
                     <br />
                     <asp:Label ID="lbl_resultDescE" Text="Result Description" runat="server" /> <br />
-                    <asp:TextBox ID="txt_resultDescE" runat="server" Text='<%#Bind ("resultdescription") %>' />
+                    <asp:TextBox ID="txt_resultDescE" runat="server" Text='<%#Eval ("resultdescription") %>' />
                     <br />
                     <asp:Label ID="lbl_abnomalE" Text="Abnormalities" runat="server" /> <br />
-                    <asp:TextBox ID="txt_abnormalE" runat="server" Text='<%#Bind ("abnormal") %>' />
+                    <asp:TextBox ID="txt_abnormalE" runat="server" Text='<%#Eval ("abnormal") %>' />
                     <br />
                     <asp:Label ID="lbl_refrangeE" Text="Reference Range" runat="server" /> <br />
-                    <asp:TextBox ID="txt_refrangeE" runat="server" Text='<%#Bind ("referenceRange") %>' />
+                    <asp:TextBox ID="txt_refrangeE" runat="server" Text='<%#Eval ("referenceRange") %>' />
                     <br />
                     <asp:Label ID="lbl_unitsE" Text="Units" runat="server" /> <br />
-                    <asp:TextBox ID="txt_unitsE" runat="server" Text='<%#Bind ("units") %>' /> <br />
+                    <asp:TextBox ID="txt_unitsE" runat="server" Text='<%#Eval ("units") %>' /> <br />
                     <br />
-                     <asp:LinkButton ID="update"  runat="server" Text="Update" Font-Underline="false" CommandName="Update" SkinID="link_submit" ValidationGroup="edit" />
-                     <asp:LinkButton ID="delete" runat="server" Text="Delete" Font-Underline="false"  CommandName="Delete" SkinID="link_submit" OnClientClick="return confirm                               ('Confirm Delete?')" />
-                    <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" Font-Underline="false" CommandName="Cancel" SkinID="link_submit" CausesValidation="false" />
+                     <asp:LinkButton ID="update"  runat="server" Text="Update" Font-Underline="false" CommandName="UpdateE" SkinID="link_submit" ValidationGroup="edit" />
+                     <asp:LinkButton ID="delete" runat="server" Text="Delete" Font-Underline="false"  CommandName="DeleteE" SkinID="link_submit" OnClientClick="return confirm                               ('Confirm Delete?')" />
+                    <asp:LinkButton ID="Cancel" runat="server" Text="Cancel" Font-Underline="false" CommandName="CancelE" SkinID="link_submit" CausesValidation="false" />
                     <asp:ValidationSummary ID="vds_sum" runat="server"  HeaderText="Errors!" ShowMessageBox="true"                                          ValidationGroup="edit" />
                     <br />
                    </ItemTemplate>
