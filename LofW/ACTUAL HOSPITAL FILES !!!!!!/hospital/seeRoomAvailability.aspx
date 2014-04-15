@@ -8,7 +8,7 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
     <div class="page_title"><h2>Room Availability</h2></div>
-   
+   <div class="form_back">
     <asp:GridView ID="GridViewShowRoomAvailability"  runat="server" AutoGenerateColumns="False" DataKeyNames="bedId" DataSourceID="SqlDataSource1" CellPadding="4" ForeColor="#333333" GridLines="None" OnRowDataBound="GridViewSearchAll_RowDataBound">
         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
         <Columns>
@@ -31,7 +31,7 @@
         <SortedDescendingCellStyle BackColor="#FFFDF8" />
         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
     </asp:GridView>
-
+       </div>
     <br />
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DeetaBaseConnectionString %>" SelectCommand="SELECT tblBedRooms.bedId, tblBedRooms.bedCount, tblBedRooms.bedAvailable, tblBedRooms.bedRoomId, tblRoomType.roomType, tblRoomType.roomTotleBed, tblBedRooms.roomNo FROM tblBedRooms INNER JOIN tblRoomType ON tblBedRooms.bedRoomId = tblRoomType.roomId"></asp:SqlDataSource>
         

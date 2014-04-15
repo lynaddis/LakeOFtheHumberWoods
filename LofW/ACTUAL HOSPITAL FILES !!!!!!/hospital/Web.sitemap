@@ -25,7 +25,7 @@
     <siteMapNode url="~/ContactUs.aspx" title="Contact Us"  description="Contact Us">
       <siteMapNode url="~/sug.aspx" title="Suggestion Forms" description="Suggestion Forms"/>
       <siteMapNode url="~/Wait_times.aspx" title="Wait Times" description="Wait Times" />
-      <siteMapNode url="~/beds.aspx" title="Beds Available" description="Beds Available" />
+      <siteMapNode url="~/parkingBooking  .aspx" title="Parking" description="Parking" />
       <siteMapNode url="~/map.aspx" title="Maps" description="Maps" />
     </siteMapNode>
 

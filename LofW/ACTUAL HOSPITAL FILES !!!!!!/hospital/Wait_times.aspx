@@ -7,8 +7,12 @@
 
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
     <div>
+        <div class="page_title"><h2>Waiting Room Times</h2>
+            <p>Wait times are updated every hour, on the hour, unless a significant change in waiting times occurs</p>
 
-        <asp:Label ID="lbl_title" runat="server" Text="Check Wait Times" />
+        </div>
+        <div class="form_back">
+        <asp:Label ID="lbl_title" runat="server" Text="<h2>Check Wait Times</h2>" />
 
         <ul>
             <li>
@@ -52,5 +56,5 @@
                <br /><br />
                <asp:Label ID="lbl_stat_box" runat="server" Width="200" Height="200" />
      </asp:Panel>
-    </div>
+    </div></div>
 </asp:Content>
