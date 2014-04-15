@@ -15,15 +15,15 @@
     </div>
 
      <%-- Allow resume upload--%>
-    <div class="purple_style">
-            <asp:Label ID="lbl_in_image" runat="server" Text="Upload Resume " />
+    
+       
+    <div class="form_back">
+         <h3>Upload Resume</h3>
         <br />
              <asp:FileUpload ID="FileUpload1" runat="server"   /> 
         <br />
             <asp:Label ID="emptyupload" runat="server"></asp:Label> 
-        </div>   
-    <div class="form_back">
-    
+          <br />
             <asp:Label ID="lbl_ddl" runat="server" Text="Applying For" />
             <asp:DropDownList ID="ddl_title" runat="server" />                
         <br /><br />
@@ -125,7 +125,7 @@
         <br /><br />
         <asp:textbox ID="txt_wexp" runat="server" TextMode="MultiLine" />
         <br /><br />
-            <asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" ValidationGroup="employeeInsert" />
+            <asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" SkinID="btn_submit" ValidationGroup="employeeInsert" />
             
             
            

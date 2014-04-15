@@ -22,7 +22,7 @@
                  
  
  <div id="half_form_jobs">
-
+     <br />
          <asp:DataList ID="dtl_main" runat="server" >
              <ItemTemplate>
                  <span style='font-weight: bold;'><asp:Label ID="lbl_htitle" runat="server" Text="Title: " /></span>
@@ -46,7 +46,7 @@
                                         <%--<asp:Label ID="lbl_happly" runat="server" Text="Apply now" />--%>
                          <asp:Label ID="lbl_status" runat="server" Text='<%#Bind("status") %>' />
                  <br />
-                        <asp:button ID="btn_apply" runat="server" Text="Apply" OnClientClick="window.open('employment.aspx', 'OtherPage');" CommandArgument='<%#Eval("Id") %>' /> <br /> <br /> <br />
+                        <asp:button ID="btn_apply" runat="server" Text="Apply" OnClientClick="window.open('employment.aspx', 'OtherPage');" CommandArgument='<%#Eval("Id") %>' SkinID="btn_submit" /> <hr />
                      
                 
              </ItemTemplate>

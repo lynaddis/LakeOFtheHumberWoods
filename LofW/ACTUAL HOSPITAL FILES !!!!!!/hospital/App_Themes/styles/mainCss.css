@@ -297,18 +297,6 @@ text-decoration:none;
 }
 /*End of About Page*/
 
-/*Contact Us Public*/
-
-
-/*End Contact Us Public*/
-
-/*Directions Public*/
-
-
-/*End Directions Public*/
-
-/*Donations Public*/
-/*End Donations Public*/
 /*Health Concerns Page (public)*/
 
 #listed_concern {
@@ -401,6 +389,7 @@ text-decoration:none;
     margin-left:50px;
    background-color: #d5bda8;
    width: 700px;
+   min-height:100px;
   font-family:'Adobe Gurmukhi';
   padding-bottom:15px;
 }

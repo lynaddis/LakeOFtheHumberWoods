@@ -53,6 +53,23 @@
     .banner { /* width: 768px; height: 110px; border: 1px solid;*/
     }
 
+    .form_back {
+    margin-left:40px;
+    margin-top:20px;
+   background-color: #d5bda8;
+   width: 400px;
+  font-family:'Adobe Gurmukhi';
+
+}
+
+    .form_back h3 {
+
+        background-color: #a7917e;
+        font-family:'Adobe Gurmukhi';
+
+    }
+
+
     .contentBody {
         width: 420px;
         color: black;
@@ -244,6 +261,328 @@
         float: left;
         margin-left: 10px;
     }
+     /*About Page*/
+
+
+#about_text {
+    height: 300px;
+    width: 450px;
+    float:left;
+   margin-top:20px;
+    border:dashed 2px;
+    margin-left: 30px;
+}
+
+#about_img {
+  
+   display:none;
+}
+
+/*health Concerns*/
+#listed_concern {
+
+    min-height:500px;
+    width:400px;
+    float:left;
+    margin-right: 30px;
+    margin-left: 90px;
+    }
+
+
+
+#recommend {
+    
+    float:left;
+    width:350px;
+    background-color: #d5bda8;
+    padding-left: 30px;
+    padding-bottom:30px;
+    font-family:'Adobe Gurmukhi';
+    margin-top: 15px;
+    margin-left: 40px;
+}
+#recommend p {
+    width: 300px;
+}
+
+#recommend h3 {
+   background-color: #a7917e;
+  
+}
+.titleText H3 {
+     background-color: #95779a;
+     width: 170px;
+     height: 20%;
+     text-decoration:none;
+    font-family:'Adobe Gurmukhi';
+    font-size: 40px;
+ 
+}
+
+.titleText {
+    text-decoration:none;
+    color: white;
+    margin-left: 30px;
+     width: 300px;
+}
+
+.Kenora {
+
+    font-family:'Adobe Gurmukhi';
+    font-size: 20px;
+}
+
+.Ontario {
+
+    font-family:'Adobe Gurmukhi';
+    width: 300px;
+}
+.Canada {
+
+    font-family:'Adobe Gurmukhi';
+     width: 300px;
+}
+}
+
+@media screen and (min-width:481px) and (max-width:640px){
+    /* iPads (portrait and landscape) ----------- */
+
+    /*Menu!*/
+    .level1 {
+        color: White;
+        background-color: #3d506b;
+        font-variant: small-caps;
+        font-size: medium;
+        font-weight: bold;
+        padding: 15px;
+        width: 65.7px;
+        text-align: center;
+    }
+
+    .level2 {
+        color: White;
+        background-color: #3d506b;
+        font-variant: small-caps;
+        font-size: medium;
+        font-weight: bold;
+        padding: 15px;
+        width: 65.7px;
+        text-align: center;
+    }
+
+        .level3 {
+        color: white;
+        font-family: Gill Sans MT !important;
+        font-size: small;
+        background-color: #336ec2;
+        padding: 10px;
+        width: 10%;
+    }
+
+    /*Global styles*/
+    .container {
+        width: 481px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: 'Adobe Gurmukhi';
+       background-color: #fbecda;
+    }
+
+    .banner { /* width: 768px; height: 110px; border: 1px solid;*/
+    }
+
+    .contentBody {
+        width: 200px;
+        color: black;
+        float: left;
+        margin-top: 20px;
+        
+        background-color:aqua;
+    }
+
+    .sidebar {
+        width: 200px;
+        margin-top: 10px;
+        float: left;
+        margin-left: 20px;
+    }
+
+
+    .footer {
+        background-color: #a7917e;
+        width: 480px;
+        float: left;
+        margin-top: 20px;
+        min-height: 100px;
+    }
+
+    .page_title h2 {
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        text-align: left;
+        background-color: #f8c966;
+        height: 40px;
+        width: 480px;
+        font-family: 'Adobe Gurmukhi';
+        font-size: 20px;
+        color: white;
+    }
+
+    .page_title {
+        font-family: 'Adobe Gurmukhi';
+        width: 480px;
+        padding-bottom: 20px;
+        background-color: #fbe0a6;
+    }
+
+        .page_title p {
+            font-family: 'Adobe Gurmukhi';
+            width: 400px;
+            margin-left: 50px;
+        }
+
+    .form_back {
+        margin-left: 50px;
+        background-color: #d5bda8;
+        width: 400px;
+        font-family: 'Adobe Gurmukhi';
+    }
+
+        .form_back h3 {
+            background-color: #a7917e;
+            font-family: 'Adobe Gurmukhi';
+        }
+
+    .purple_style {
+        background-color: #95779a;
+        width: 300px;
+        padding-left: 50px;
+        margin-top: 30px;
+    }
+    /*Home Page*/
+    #pictures {
+        display: none;
+    }
+
+    #udp {
+        display: none;
+    }
+
+    #heading h3 {
+        height: 30px;
+        width: 200px;
+        background-color: #a7917e;
+        text-align: center;
+    }
+
+        #heading h3 a {
+            text-decoration: none;
+            color: white;
+        }
+
+    .infectBox {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+        float: left;
+    }
+
+    .donate {
+        width: 200px;
+        height: 150px;
+    }
+
+        .donate H3 {
+            background-color: #a7917e;
+            height: 30px;
+            width: 200px;
+            text-align: center;
+        }
+
+            .donate H3 a {
+                text-decoration: none;
+                text-align: center;
+                color: white;
+            }
+
+    .bottomBar {
+        height: 100px;
+        width: 480px;
+        float: left;
+        margin-top: 20px;
+    }
+
+
+        .calendar H3 a {
+            display:none;
+        }
+
+    .calendar {
+       display:none;
+    }
+        .calendar H3 {
+        display:none;
+    }
+
+     
+    .Maps H3 {
+        text-align: center;
+        background-color: #95779a;
+        width: 220px;
+        height: 30px;
+    }
+
+        .Maps H3 a {
+            text-decoration: none;
+            color: white;
+        }
+
+    .Maps {
+        height: 100px;
+        width: 220px;
+        margin-bottom: 20px;
+        float: left;
+        
+        margin-right: 5px;
+    }
+
+    .paybills H3 {
+        background-color: #95779a;
+        height: 30px;
+        text-align: center;
+        width: 220px;
+    }
+
+        .paybills H3 a {
+            text-decoration: none;
+            color: white;
+        }
+
+    .paybills {
+        width: 220px;
+        height: 100px;
+        margin-bottom: 20px;
+        float: left;
+        margin-left: 5px;
+    }
+         /*About Page*/
+
+
+#about_text {
+    height: 300px;
+    width: 420px;
+    float:left;
+   margin-top:20px;
+    border:dashed 2px;
+    margin-left: 30px;
+}
+
+#about_img {
+  
+   display:none;
+}
+
 }
 
 
