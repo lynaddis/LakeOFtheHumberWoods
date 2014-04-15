@@ -8,7 +8,7 @@
 <asp:Content ID="content_home" ContentPlaceHolderID="cph_main" runat="server">
 
      <div class="banner">
-<%--                       <asp:ScriptManager ID="scr" runat="server" />
+                  <asp:ScriptManager ID="scr" runat="server" />
     <asp:UpdatePanel ID="udp" runat="server">
         <ContentTemplate>
            
@@ -21,7 +21,7 @@
       </Triggers>
     </asp:UpdatePanel>
         <asp:Timer ID="tmr" runat="server" Interval="5000" OnTick="subTick" />
-    <table>
+    <%--<table>
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
            <td><asp:Button ID="btn_back" runat="server" Text="Backward" OnClick="ImgBackward" /></td> 
             <td><asp:Button ID="btn_forw" runat="server" Text="Forward" OnClick="ImgForward" /></td> 

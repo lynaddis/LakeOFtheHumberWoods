@@ -43,14 +43,12 @@
         width: 768px;
         margin-left: auto;
         margin-right: auto;
-       
         overflow: auto;
-        background-color: aqua;
-        font-family: 'Adobe Gurmukhi';
+         font-family: 'Adobe Gurmukhi';
         background-color: #fbecda;
     }
 
-    .banner { /* width: 768px; height: 110px; border: 1px solid;*/
+    .banner { display:none;
     }
 
     .form_back {
@@ -474,7 +472,7 @@
        background-color: #fbecda;
     }
 
-    .banner { /* width: 768px; height: 110px; border: 1px solid;*/
+    .banner { display:none;
     }
 
     .contentBody {
@@ -751,7 +749,8 @@
 }
              .page_title p { display:none; }
 
-             
+       .banner { display:none;
+    }       
     .form_back {
         
         margin-left: 5px;
