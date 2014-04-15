@@ -57,7 +57,7 @@
                       <asp:RequiredFieldValidator ID="rfv_VolExpI" runat="server" ControlToValidate="txt_VolExpI" SetFocusOnError="true" ErrorMessage="Please Fill out if you have volunteered here before" ValidationGroup="vol_val" Text="Required!"  ForeColor="Red" />
                   <br />
                    </div>
-    <div id="vol2" >
+    <div id="vol2">
           <asp:Label ID="lbl_yes" runat="server" Text="If yes, what did you do?" />
                <br />     <asp:TextBox ID="txt_ifYesI" runat="server" />
    
@@ -92,8 +92,7 @@
     <asp:ValidationSummary ID="vld_sum" runat="server" DisplayMode="BulletList" HeaderText="Errors!" ShowSummary="false" ShowMessageBox="true" ValidationGroup="vol_val" />
          </div>
             <%-- end of insert rows--%>
-        <br />
-        <br />
+   <br />
    
              <asp:Label ID="lbl_message" runat="server" />
         <br /> </div>

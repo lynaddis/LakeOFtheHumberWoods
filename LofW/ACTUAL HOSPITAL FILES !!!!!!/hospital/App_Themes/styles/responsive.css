@@ -380,6 +380,52 @@
     width: 200px;
 }
 /*end of specialists public*/
+/*Beginning of Volunteers (public)*/
+
+#vol1 {
+    padding-top: 15px;
+    padding-left: 50px;
+    width: 260px;
+    float:left;
+    margin-right:50px;
+  
+     font-family:'Adobe Gurmukhi';    
+
+}
+
+#vol2 {
+    padding-top: 15px;
+    width: 260px;
+    float:left;
+   
+      font-family:'Adobe Gurmukhi';
+}
+
+
+#vol_title p {
+         font-family:'Adobe Gurmukhi';
+         width: 480px;
+         padding-bottom: 15px;
+         background-color: #00b0a2;
+    }
+
+.form_backvol {
+    margin-top:20px;
+    margin-left:0px;
+    
+    background-color: #d5bda8;
+     width: 480px;
+    font-family:'Adobe Gurmukhi';
+
+
+}
+
+    .form_backvol h3 {
+
+        background-color: #a7917e;
+        font-family:'Adobe Gurmukhi';
+
+    }
 }
 
 @media screen and (min-width:481px) and (max-width:640px){
