@@ -52,9 +52,7 @@
                 <br />
                 <%--Buttons for insert and cancel--%>
 
-                <asp:Button ID="btn_insert" runat="server" Text="Send" OnClick="btn" OnCommand="subAdmin" CommandName="Insert" ValidationGroup="insert" SkinID="btn_submit" />
-                <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subAdmin" CommandName="Cancel" SkinID="btn_submit" />
-                <asp:ValidationSummary ID="vds_main" runat="server" HeaderText="Errors:" ShowMessageBox="true" DisplayMode="List" validationGroup="insert" ShowSummary="false" />
+               
 
                 <asp:Button ID="btn_insert" runat="server" Text="Send" OnClick="btn" OnCommand="subAdmin" CommandName="Insert" ValidationGroup="insert"  />
                 <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subAdmin" CommandName="Cancel"  />
