@@ -15,11 +15,7 @@
         <br />
     
                       <a href="homeadmin.aspx">Back To Home</a>
-    <br />
-    <br />
- <div class="form_back">
-
-     <h3>Insert New Health Concern</h3>
+ 
                     <%--Creating Insert textboxes --%>
     <asp:HiddenField ID="hdf_Id" runat="server" Value='<%#Eval("Id") %>' />
 
@@ -71,12 +67,8 @@
                 <ItemTemplate>
                     </ItemTemplate>
              </asp:DataList>
-     </div>
 
-    <br />
-    <br />
         <a href="adminupdatehealth.aspx">Update and Delete Health Concerns</a>
-    <br />
                 <a href="adminvolunteer.aspx">View, Update, Delete Volunteer Forms</a>
 
 

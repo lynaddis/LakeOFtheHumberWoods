@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LabResults.aspx.cs" Inherits="LabResults" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LabResults.aspx.cs" Inherits="patient_LabResults" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
 </head>
 <body>

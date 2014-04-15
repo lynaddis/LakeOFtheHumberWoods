@@ -46,7 +46,7 @@
                                         <asp:Label ID="lbl_happly" runat="server" Text="Apply now" />
                          <asp:Label ID="lbl_status" runat="server" Text='<%#Bind("status") %>' />
                  <br />
-                        <asp:button ID="btn_apply" runat="server" Text="Apply" OnClientClick="window.open('employment.aspx', 'OtherPage');" CommandArgument='<%#Eval("Id") %>' SkinID="btn_submit"/> <br /> <br /> <br />
+                        <asp:button ID="btn_apply" runat="server" Text="Apply" OnClientClick="window.open('employment.aspx', 'OtherPage');" CommandArgument='<%#Eval("Id") %>' /> <br /> <br /> <br />
                      
                 
              </ItemTemplate>

@@ -22,7 +22,7 @@ Generated parking No Number:
             
             <strong><asp:Label ID="lblRandomNumber" runat="server"></asp:Label></strong>
            <br /><br />
-                <asp:Button ID="btnGenerateNo" runat="server" Text="Click to Generate Random Number" onclick="btnGenerateNo_Click" SkinID="btn_submit" />
+                <asp:Button ID="btnGenerateNo" runat="server" Text="Click to Generate Random Number" onclick="btnGenerateNo_Click" />
                 <br /><br />
             </div>
         

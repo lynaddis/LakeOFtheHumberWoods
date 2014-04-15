@@ -77,7 +77,7 @@
             </tr>
            
             <tr><td></td>
-                <td><asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" SkinID="btn_submit" /></td>
+                <td><asp:Button ID="btn_submit" runat="server" Text="Submit" CommandName="Insert" OnCommand="subInsert" /></td>
             </tr>
         </table>
     <asp:ValidationSummary ID="vds_all" runat="server" HeaderText="Please fill in the required fields !" DisplayMode="BulletList" ShowSummary="false" ShowMessageBox="true" />
