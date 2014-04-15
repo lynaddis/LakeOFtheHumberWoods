@@ -36,6 +36,7 @@ public partial class _Default : System.Web.UI.Page
                 int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_Id")).Value);//use Id numbers to delete rows.
                 _strMessage(objApp.commitDelete(_Id), "delete");
                 subRebind();
+                grd_main.Visible = false;
                 break;
             case "Cancel":
                 subRebind();

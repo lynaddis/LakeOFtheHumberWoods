@@ -37,6 +37,7 @@
            </ItemTemplate>     
       </asp:datalist>
    </table>
+
     <asp:GridView ID="grd_main" runat="server">
          <Columns>
            <asp:TemplateField>

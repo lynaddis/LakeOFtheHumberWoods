@@ -55,7 +55,7 @@
                     </tr>
                     <tr>
                         <td><asp:Label ID="lbl_closing_dateA" runat="server" Text="Closing Date" /></td>
-                        <td><asp:TextBox ID="txt_closing_dateA" runat="server" Text='<%#Eval("closing_date") %>' /></td>
+                        <td><asp:TextBox ID="txt_closing_dateA" runat="server" Text='<%#Eval("closing_date") %>' placeholder="DD/MM/YYYY" /></td>
                     </tr>
                     <tr>
                         <td><asp:Label ID="lbl_deptA" runat="server" Text="Department" /></td>

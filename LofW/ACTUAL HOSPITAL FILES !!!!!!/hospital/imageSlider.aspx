@@ -18,7 +18,7 @@
             <asp:AsyncPostBackTrigger ControlID="tmr" EventName="Tick" />
       </Triggers>
     </asp:UpdatePanel>
-        <asp:Timer ID="tmr" runat="server" Interval="5000" OnTick="subTick" />
+        <asp:Timer ID="tmr" runat="server" Interval="2000" OnTick="subTick" />
     <table>
         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
            <td><asp:Button ID="btn_back" runat="server" Text="Backward" OnClick="ImgBackward" /></td> 
