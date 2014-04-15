@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="home.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <title>Home</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cph_header" Runat="Server">
 </asp:Content>
@@ -35,7 +36,7 @@
          this is a student project. THis is in no way affiliated with the real hosptial.
             
         </div>
-         <div class="mobile_contain">
+         
         <div class="sidebar">
         <div class="infectBox">
             
@@ -73,7 +74,7 @@
             </div>
                 <div class="bottomBar">
         <div class="calendar">
- <h3><a href="CalA.aspx">Visiting Specialists</a></h3>
+ <h3><a href="visitingspecialists.aspx">Visiting Specialists</a></h3>
             <asp:GridView ID="home_cal" runat="server" AutoGenerateColumns="false" GridLines="None">
                           <Columns>
                               <asp:TemplateField>
@@ -98,5 +99,5 @@
         <h3><a href="#">PayBills</a></h3>
 
         </div>
-                    </div></div>
+                    </div>
                     </asp:Content>

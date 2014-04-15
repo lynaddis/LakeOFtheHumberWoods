@@ -85,7 +85,7 @@ public partial class visitingspecialists : System.Web.UI.Page
                 if (e.Day.Date == nDate)// && (!e.Day.IsOtherMonth))
                 {
                     e.Cell.ApplyStyle(style);
-                    e.Cell.BackColor = Color.Aquamarine;
+                    e.Cell.BackColor = Color.LightCoral;
                     
                     e.Cell.Text = dr["SpecialistName"].ToString();
                     e.Cell.Attributes.Add("onclick", e.SelectUrl);
@@ -155,7 +155,7 @@ public partial class visitingspecialists : System.Web.UI.Page
             {
                 lbl_output.Text = "sadfdsa. ";
             }
-            else { lbl_output.Text = "<br />" + specName + "<ul><li>" + specField + "</li>" + "<li>" + appInfo + "</li>" + "<li>" + appAvail + "</li>" + "<li>" + times + "</li></ul>"; }
+            else { lbl_output.Text = "<br /><strong> Specialist Name:</strong> " + specName + "<br /><br /><strong>Specialist Field:</strong> " + specField + "<br /><br /><strong>Appointment Information:</strong> " + appInfo + "<br /><br /><strong>Available Appointments:</strong> " + appAvail + "<br /><br /><strong>Appointments Available: </strong>" + times; }
 
         }
     }

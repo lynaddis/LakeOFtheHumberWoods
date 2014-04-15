@@ -4,7 +4,8 @@
         margin-left: auto;
         margin-right: auto;
         /*border: 1px solid;  Keep this here to check if container is cooperating*/
-        min-height: 1000px;
+        min-height: 400px;
+        overflow: auto;
          font-family:'Adobe Gurmukhi';
          background-color: #fbecda;
     }
@@ -103,10 +104,10 @@
 
     .contentBody {
         width: 620px;
-        color: blue;
+       color:black;
         float: left;
         margin-top: 20px;
-        border: 1px solid;
+         font-family:'Adobe Gurmukhi';
     }
 
     .sidebar {
@@ -412,6 +413,21 @@ text-decoration:none;
 
 
 /*End of News Updates Public*/
+/*Specialists Public*/
+#cal_position {
+    width: 500px;
+    float:left;
+    margin-top:30px;
+    margin-left: 50px;
+    margin-right:30px;
+    margin-bottom:30px;
+}
+#cal_output {
+    margin-top:30px;
+    float:left;
+    width: 280px;
+}
+/*end of specialists public*/
 /*Specialists Admin*/
 #insert_special {
     float:left;
@@ -425,23 +441,22 @@ text-decoration:none;
 /*End of Specialists Admin*/
 /*Beginning of Volunteers (public)*/
 
-#vol_form1 {
+#vol1 {
     padding-top: 15px;
-    padding-left: 40px;
+    padding-left: 50px;
     width: 260px;
     float:left;
-     background-color: #dcf4f2;
-     height: 450px;
+    margin-right:50px;
+  
      font-family:'Adobe Gurmukhi';    
 
 }
 
-#vol_form2 {
+#vol2 {
     padding-top: 15px;
-    width: 300px;
+    width: 260px;
     float:left;
-     background-color: #dcf4f2;
-      height: 450px;
+   
       font-family:'Adobe Gurmukhi';
 }
 
@@ -451,6 +466,24 @@ text-decoration:none;
          width: 600px;
          padding-bottom: 15px;
          background-color: #00b0a2;
+    }
+
+.form_backvol {
+    margin-top:20px;
+    margin-left:90px;
+    min-height:500px;
+    background-color: #d5bda8;
+     width: 760px;
+    font-family:'Adobe Gurmukhi';
+
+
+}
+
+    .form_backvol h3 {
+
+        background-color: #a7917e;
+        font-family:'Adobe Gurmukhi';
+
     }
 
 
@@ -468,7 +501,7 @@ text-decoration:none;
 
 
 /* iPads (portrait and landscape) ----------- */
-@media screen and (min-width : 481px) and (max-width : 1024px) {
+/*@media screen and (min-width : 481px) and (max-width : 1024px) {
  .container {  width: 768px; margin-left: auto; margin-right: auto; min-height:768px; }
 
  .banner { width: 768px; height: 110px; border: 1px solid; }
@@ -493,7 +526,7 @@ text-decoration:none;
 
 .footer { background-color: aqua;width: 768px; float: left; margin-top: 20px; min-height:100px;}
 
-}
+}*/
 
 /* iPhone 4 -----------
 @media screen and (-webkit-min-device-pixel-ratio : 1.5) and (min-device-pixel-ratio : 1.5) {
@@ -501,23 +534,23 @@ text-decoration:none;
 }*/
 
 /*SmartPhones*/
-@media screen and (min-width : 320px) and (max-width : 480px) { 
+/*@media screen and (min-width : 320px) and (max-width : 480px) { 
 
-.container { width: 320px; margin-left: auto; margin-right: auto; /*border: 1px solid;  Keep this here to check if container is cooperating*/  min-height:480px; }
+.container { width: 320px; margin-left: auto; margin-right: auto; /*border: 1px solid;  Keep this here to check if container is cooperating*/  min-/*height:480px; }
 
-.banner {width: 320px; height: 50px; border: 1px solid red; }
+.banner {width: 320px; height: 50px;  }
 
-#textDesc { float:left; width: 160px; height:50px; background-color: firebrick;}
+#textDesc { float:left; width: 160px; height:50px; }
 
 #IMGslide { width: 160px; height:50px; background-color:firebrick; }
 
-.contentBody { width: 320px; color: firebrick;float: left; margin-top: 5px; border: 1px solid red; }
+.contentBody { width: 320px; color: firebrick;float: left; margin-top: 5px;  }
 
 .sidebar { width:320px; }
-.infectBox { width: 315px; height: 150px; background-color:firebrick; margin-bottom: 10px; float: left; }
-.donate { width: 315px; height: 150px; background-color:firebrick; margin-bottom: 10px; float: left; }
+.infectBox { width: 315px; height: 150px;  margin-bottom: 10px; float: left; }
+.donate { width: 315px; height: 150px; margin-bottom: 10px; float: left; }
 
-.calendar {width: 315px; height: 150px; background-color: firebrick; margin-bottom: 10px; float: left;  }
+.calendar {width: 315px; height: 150px;  margin-bottom: 10px; float: left;  }
 
 .bottomBar { height: 500px; width: 320px; float:left; margin-top: 10px; border: 1px solid; }
 
@@ -525,6 +558,6 @@ text-decoration:none;
 
 .Other {width: 315px; height: 150px; background-color: firebrick; margin-bottom: 10px; float: left; }
 
-.footer { background-color:firebrick; width: 320px; float: left; margin-top: 5px; min-height:50px;}
+.footer { background-color:firebrick; width: 320px; float: left; margin-top: 5px; min-height:50px;}*/
 
-}
+
