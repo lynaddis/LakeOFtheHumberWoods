@@ -25,25 +25,25 @@
 
          <asp:DataList ID="dtl_main" runat="server" >
              <ItemTemplate>
-                   <asp:Label ID="lbl_htitle" runat="server" Text="Title: " />
+                 <span style='font-weight: bold;'><asp:Label ID="lbl_htitle" runat="server" Text="Title: " /></span>
             
                      <asp:Label ID="lbl_title" runat="server" Text='<%#Bind("title")%>' />
                <br />
-                   <asp:Label ID="lbl_hdesc" runat="server" Text="Description: " />
+                  <span style='font-weight: bold;'><asp:Label ID="lbl_hdesc" runat="server" Text="Description: " /></span>
                  
                  <asp:Label ID="lbl_desc" runat="server" Text='<%#Bind("description")%>' />
                 <br />
-                 <asp:Label ID="lbl_hdate" runat="server" Text="Closing Date: " />
+                 <span style='font-weight: bold;'><asp:Label ID="lbl_hdate" runat="server" Text="Closing Date: " /></span>
                  
                          <asp:Label ID="lbl_date" runat="server" Text='<%#Bind("closing_date") %>' />
                  <br />
-                  <asp:Label ID="lbl_hdept" runat="server" Text="Department: " />
+                <span style='font-weight: bold;'><asp:Label ID="lbl_hdept" runat="server" Text="Department: " /></span>
                 
                          <asp:Label ID="lbl_dept" runat="server" Text='<%#Bind("department") %>' />
-               
-                 <asp:Label ID="lbl_hstatus" runat="server" Text="Status: " />
+               <br />
+                <span style='font-weight: bold;'> <asp:Label ID="lbl_hstatus" runat="server" Text="Status: "  /></span>
                  
-                                        <asp:Label ID="lbl_happly" runat="server" Text="Apply now" />
+                                        <%--<asp:Label ID="lbl_happly" runat="server" Text="Apply now" />--%>
                          <asp:Label ID="lbl_status" runat="server" Text='<%#Bind("status") %>' />
                  <br />
                         <asp:button ID="btn_apply" runat="server" Text="Apply" OnClientClick="window.open('employment.aspx', 'OtherPage');" CommandArgument='<%#Eval("Id") %>' /> <br /> <br /> <br />
