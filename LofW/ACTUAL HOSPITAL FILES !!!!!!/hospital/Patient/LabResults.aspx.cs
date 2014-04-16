@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class patient_LabResults : System.Web.UI.Page
 {
+
     patientClass objPatient = new patientClass();
     labClass objLinq = new labClass();  //new instance of the class
     string user = HttpContext.Current.User.Identity.Name.ToString();
@@ -14,6 +15,7 @@ public partial class patient_LabResults : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)// loads page 
     {
+        Master.pp_masterTitle = "lab Results";
         if (!Page.IsPostBack) // Shows if the page is visited for the first time
         {
             subBindlist(user);
