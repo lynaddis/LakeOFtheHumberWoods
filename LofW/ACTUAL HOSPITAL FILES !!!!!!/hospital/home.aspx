@@ -34,7 +34,7 @@
 
                <div class="contentBody">
                    <h2>Our Hospital Project</h2>
-        <p>Our team consists of 5 developers who attend Humber College in the poast-graduate website development program.
+        <p>Our team consists of 5 developers who attend Humber College in the post-graduate website development program.
 We have enjoyed the whole process of this project, form initially receiving the previous team’s blueprints and plants for the hospital redesign to the final product that has evolved from document to functional website.
 We made lots of changes from the original documents provided to us, however all changes were based on exercises and testing that were performed to determine the best changes for the site.
 Our team consists of: </p>
@@ -78,7 +78,7 @@ Our team consists of: </p>
         </div>
 
             <div class="donate">
-                <h3><a href="#">Donations Informations</a></h3>
+                <h3><a href="Donation.aspx">Donations Informations</a></h3>
            
               Check out our donations
 
@@ -87,25 +87,14 @@ Our team consists of: </p>
                 <div class="bottomBar">
         <div class="calendar">
  <h3><a href="visitingspecialists.aspx">Visiting Specialists</a></h3>
-            <asp:GridView ID="home_cal" runat="server" AutoGenerateColumns="false" GridLines="None">
-                          <Columns>
-                              <asp:TemplateField>
-                                  <HeaderTemplate></HeaderTemplate>
-                                  
-                                  <ItemTemplate>
-                                      
-                                      <asp:Label ID="region_home" runat="server" Text='<%#Eval ("") %>' /> 
-                           
-                                      </ItemTemplate>
-                                  </asp:TemplateField>
-                          </Columns>
-
-                      </asp:GridView> 
+           <div class="imghome"> <asp:Image id="img_cal" runat="server" ImageUrl="~/imgs/CALENDAR.jpg" Width="300px" Height="200px" /></div>
+               <br /><br />
         </div>
 
             <div class="Maps">
                 <h3><a href="map.aspx">Maps</a></h3>
-
+               <div class="imghome"><asp:Image id="img_map" runat="server" ImageUrl="~/imgs/map.png" Width="300px" Height="200px" /></div>
+               <br /><br />
         </div>
               <div class="paybills">
         <h3><a href="paybills.aspx">PayBills</a></h3>

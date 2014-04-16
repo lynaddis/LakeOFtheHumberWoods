@@ -189,7 +189,7 @@
     /*Bottom Bar HOME*/
 
       .bottomBar {
-        height: 200px;
+        height: 270px;
         width: 960px;
         float: left;
         margin-top: 40px;
@@ -209,7 +209,7 @@
     }
     .calendar {
         width: 300px;
-        height: 200px;
+        height: 250px;
         margin-bottom: 20px;
         float: left;
         margin-left: 5px;
@@ -226,10 +226,11 @@ text-decoration:none;
 
       .Maps {
         width: 300px;
-        height: 200px;
+        height: 250px;
         margin-bottom: 20px;
         float: left;
         margin-left: 25px;
+       
     }
 .paybills H3 {
     background-color: #95779a;
