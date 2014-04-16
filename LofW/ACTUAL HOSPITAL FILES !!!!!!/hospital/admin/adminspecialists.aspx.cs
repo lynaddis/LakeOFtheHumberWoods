@@ -69,13 +69,7 @@ public partial class adminspecialists : System.Web.UI.Page
                 TextBox txtappInfoE = (TextBox)e.Item.FindControl("txt_appInfoE");
                 TextBox txttimesAvailE = (TextBox)e.Item.FindControl("txt_timesAvailE");
                
-                //DateTime.Parse(txtEdate
-                //string txtEdate = (string)e.Item.FindControl("txt_entryDateE");
-                //DateTime EntryDate = DateTime.Parse(txtEdate.ToString()); 
-                //DateTime txtEdate = (DateTime.Parse(txt_entryDateE.Text.ToString()));
-                //string entryDate = (Convert.ToDateTime(txt_entryDateE)).ToShortDateString();
-               // DateTime txtEdate = (DateTime.Parse(txt_entryDateE.Text.ToString()));
-
+               
                 HiddenField hdfIDU = (HiddenField)e.Item.FindControl("hdf_idE");
                 int Id = int.Parse(hdfIDU.Value.ToString());
 

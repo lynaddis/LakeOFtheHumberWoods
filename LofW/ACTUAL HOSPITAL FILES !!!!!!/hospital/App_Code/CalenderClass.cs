@@ -50,7 +50,7 @@ public class CalenderClass
             objUpEnt.SpecialistField = _SpecialistName;
             objUpEnt.SpecialistField = _SpecialistField;
             objUpEnt.AppAvail = _AppAvail;
-            objUpEnt.AppAvail = _AppInfo;
+            objUpEnt.AppInfo = _AppInfo;
             objUpEnt.TimesAvail = _TimesAvail;
             objschd.SubmitChanges();
             return true;
