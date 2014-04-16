@@ -14,7 +14,6 @@ public partial class patient_LabResults : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)// loads page 
     {
-        Master.pp_masterTitle = "lab Results";
         if (!Page.IsPostBack) // Shows if the page is visited for the first time
         {
             subBindlist(user);
