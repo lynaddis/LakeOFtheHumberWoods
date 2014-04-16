@@ -154,7 +154,7 @@ public partial class visitingspecialists : System.Web.UI.Page
             //String appAvail;
             if ((appAvail == null) || (appAvail == ""))
             {
-                lbl_output.Text = "sadfdsa. ";
+                lbl_output.Text = "No Appointments Available Today ";
             }
             else { lbl_output.Text = "<br /><strong> Specialist Name:</strong> " + specName + "<br /><br /><strong>Specialist Field:</strong> " + specField + "<br /><br /><strong>Appointment Information:</strong> " + appInfo + "<br /><br /><strong>Available Appointments:</strong> " + appAvail + "<br /><br /><strong>Appointments Available: </strong>" + times; }
 

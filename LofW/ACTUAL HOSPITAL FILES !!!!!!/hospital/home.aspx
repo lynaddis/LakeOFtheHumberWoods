@@ -55,7 +55,7 @@ Our team consists of: </p>
                     <div id="heading">
                         <h3><a href="healthconcerns.aspx">Health Concerns</a></h3>
 
-                    </div>
+                    </div><%-- put in gridview to display current health concerns, so if it gets updated on admin page, it will update on homepage! --%>
                    
                       <asp:GridView ID="grd_health" runat="server" AutoGenerateColumns="false" GridLines="None">
                           <Columns>

@@ -9,21 +9,24 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
 
 
-     <div class="page_title"><h2>Add Health Concern</h2></div>
+     <div class="page_title"><h2>Add Health Concern</h2>
+
+         <p>Add any health concerns that have come up around the country.  All entries will automatically appear on the public page</p>
+
+     </div>
     <br />
-       <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
+       <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  /><%-- hyperlink for redirecting to home page --%>
     <br />
     <br />
        <asp:HyperLink ID="hpl_upH" runat="server" Text="Edit Health Concerns" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/adminupdatehealth.aspx"  />
     <br />
-     <asp:Label ID="lbl_message" runat="server" />
+     <asp:Label ID="lbl_message" runat="server" /><%-- will output message when insert is successfull--%>
         <br />
         <br />
     
                     
  
                     <%--Creating Insert textboxes --%>
-    <asp:HiddenField ID="hdf_Id" runat="server" Value='<%#Eval("Id") %>' />
 
                      <asp:Label ID="lbl_illname" runat="server" Text="Illness Name: " />
                     <asp:TextBox ID="txt_infnameI" runat="server" /> 
@@ -38,7 +41,7 @@
 
                     <asp:TextBox ID="txt_entryDateI" runat="server" />
                     <asp:RequiredFieldValidator ID="rfv_txt_rentryDate" runat="server" ControlToValidate="txt_entryDateI" SetFocusOnError="true" ErrorMessage="Please enter date" Text="*Required" Display="Dynamic" ValidationGroup="illess_val" />
-    <asp:CompareValidator ID="com_date" runat="server" ControlToValidate="txt_entryDateI" Operator="DataTypeCheck" Type="Date" Text="Invalid Date!" ErrorMessage="Please Enter Correct Date Format (YYYY/MM/DD)" ValidationGroup="illess_val" />
+    <asp:CompareValidator ID="com_date" runat="server" ControlToValidate="txt_entryDateI" Operator="DataTypeCheck" Type="Date" Text="Invalid Date!" ErrorMessage="Please Enter Correct Date Format" ValidationGroup="illess_val" />
                 <br />
                     
                      <asp:Label ID="lbl_desc" runat="server" Text="Description:" />
@@ -64,9 +67,9 @@
                     <asp:TextBox ID="txt_recommendI" runat="server" />
                        
     <br />
-                    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" SkinID="btn_submit" /><%-- onCommand for subroutine on code behind called subAdmin --%>
-                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" SkinID="btn_submit" />
-                    <asp:ValidationSummary ID="vs_illnesVal" runat="server" ValidationGroup="illness_val" ShowMessageBox="true" HeaderText="Errors!" />
+                    <asp:Button ID="btn_insert" runat="server" Text="Insert" OnCommand="subInsert" CommandName="Insert" SkinID="btn_submit" ValidationGroup="illess_val" /><%-- onCommand for subroutine on code behind called subAdmin --%>
+                    <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" SkinID="btn_submit" CausesValidation="false" ValidationGroup="illess_val" />
+                    <asp:ValidationSummary ID="vs_illnesVal" runat="server" ValidationGroup="illess_val" ShowSummary="true" ShowMessageBox="true" HeaderText="Errors!" />
             <%-- end of insert rows--%>
 
          <asp:DataList ID="dtl_all" runat="server" >
