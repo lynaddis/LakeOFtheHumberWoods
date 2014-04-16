@@ -1,5 +1,6 @@
 ﻿var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
+var map;
 
 function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
@@ -7,7 +8,7 @@ function initialize() {
         zoom: 7,
         center: new google.maps.LatLng(49.7671099, -94.4994107)
     };
-    var map = new google.maps.Map(document.getElementById('map-canvas'),
+     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
     directionsDisplay.setMap(map);
     directionsDisplay.setPanel(document.getElementById('directions-panel'));
@@ -78,13 +79,6 @@ function revDirections() {
 }
 
 
-//function getDir(sLoc,eLoc) {
-//    var start = document.getElementById('sLoc');
-//    var end = document.getElementById('eLoc');
-//    alert(start.value);
-//    alert(end.value);
-//}
-
 function checkDirection()
 {
     if (Page_ClientValidate("Directions")) {
@@ -105,58 +99,10 @@ function checkReverse() {
     }
 }
 
-//function insertD() {
 
-//    var start = document.getElementById('Start').value;
-//    var end = document.getElementById('End').value;
-
-//    PageMethods.subRequest(start, end,OnGetMessageSuccess,OnGetMessageFailure);
-//}
-
-//function insertRD() {
-
-//    var start = document.getElementById('Start').value;
-//    var end = document.getElementById('End').value;
-
-//    PageMethods.subRequest(end, start, OnGetMessageSuccess, OnGetMessageFailure);
-//}
-
-
+function resizeMap() {
+    google.maps.event.trigger(map, "resize");
+}
 
 google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-//google.maps.event.addDomListener(window, 'load', initialize);
-//function loadMap()
-//{
-//    var script = document.createElement('script');
-//    script.type = 'text/javascript';
-//    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=initialize';
-//    //script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&key={AIzaSyCcY4pz1xLd98V4TnPdAbgpTnB8GvhwQFY}&sensor=false&callback=initialize';
-//    document.body.appendChild(script);
-//}
-
-
-//function codeAddress()
-//{
-//    var address = "21 Sylvan Street West, Kenora, ON P9N 3W7";
-//    alert(address);
-//    geocoder.geocode({ 'address': address }, function (results, status) {
-//        if (status == google.maps.GeocoderStatus.OK) {
-//          alert( (results[0].geometry.location));
-//        } else {
-//            alert("Geocode was not successful for the following reason: " + status);
-//        }
-//    });
-//}
-
-
-//window.onload = loadMap;
-
-
-//function getDirections()
-//{
-//    alert("test");
-
-//}
+google.maps.event.addDomListener(window, 'resize', resizeMap);

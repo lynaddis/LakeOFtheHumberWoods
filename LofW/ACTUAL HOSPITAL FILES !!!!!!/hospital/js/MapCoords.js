@@ -8,6 +8,7 @@ function initialize() {
         center: latlng
     }
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
 }
 
 function getCoords()
@@ -29,3 +30,11 @@ function getCoords()
     });
 
 }
+
+function resizeMap() {
+    google.maps.event.trigger(map, "resize");
+}
+
+google.maps.event.addDomListener(window, 'resize', resizeMap);
+
+

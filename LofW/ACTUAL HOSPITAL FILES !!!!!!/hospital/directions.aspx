@@ -10,37 +10,25 @@
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script type="text/javascript" src="js/MapDirections.js"></script>
       <style>
-      #map-canvas {
+         #wrapper_dir {
+              margin: 0 auto;
+              width:auto;
+              clear:both;
+          }
+          
+          #map-canvas {
         height: 100%;
         margin: 0 auto;
         float: left;
+        width:auto;
         padding: 0px
       }
 
-          #wrapper_dir {
-              margin: 0 auto;
-              width:1024px;
-              clear:both;
-              border: 1px dotted green;
-          }
-
       #directions-panel {
         height: 100%;
-        float: right;
-        overflow: auto;
-      }
+        width:auto;
+        float: left;
 
-      @media print {
-        #map-canvas {
-          height: 500px;
-          margin: 0;
-          width: auto;
-        }
-
-        #directions-panel {
-          float: none;
-          width: auto;
-        }
       }
     </style>
 
@@ -52,7 +40,7 @@
         <asp:HyperLink ID="hyp_maps" runat="server" Text="Click here for map locations" NavigateUrl="~/map.aspx" Font-Underline="false" SkinID="hblink_submit" />
         <br /><br />
     </div>
-    <div>
+
       <asp:Label ID="lbl_startloc" runat="server" Text="Starting location" AssociatedControlID="txtStart" />
                 <asp:TextBox ID="txtStart" runat="server"  AutoPostBack="true"/>
  
@@ -82,10 +70,9 @@
      <input type="hidden" id="Highway" value="<%= cb_highway.Checked %>" />  
             
 <div id="wrapper_dir">
-   
-<div id="directions-panel" style=" width:500px; height:600px; border:1px dashed blue;" ></div>
-<div id="map-canvas" style=" width:500px; height:600px; border:1px dashed red;"></div>
+<div id="map-canvas" style=" width:450px; height:500px; border:1px dashed red;"></div>   
+<div id="directions-panel" style=" width:450px; height:500px; border:1px dashed blue;" ></div>
+
 </div>
     <p id="error"> </p>
-    </div>
 </asp:Content>

@@ -9,27 +9,25 @@
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script type="text/javascript" src="js/MapLocations.js"></script>
       <style>
-      #map-canvas {
-        height: 100%;
-        margin: 0 auto;
-        float: left;
-        padding: 0px
-      }
-
-          #wrapper_dir {
+           #list-wrapper {
               margin: 0 auto;
-              width:1024px;
+              width:auto;
               clear:both;
-              border: 1px dotted green;
           }
+              #map-canvas {
+                  height: 100%;
+                  margin: 0 auto;
+                  float: left;
+                  width:auto;
+                  padding: 0px;
+              }
 
-      @media print {
-        #map-canvas {
-          height: 500px;
-          margin: 0;
-          width: auto;
-        }
-      }
+              #list {
+                  margin: 0 auto;
+                  width:auto;
+                  clear: both;
+              }
+
     </style>
     <div class="page_title">
         <h2>Maps</h2>
@@ -42,12 +40,12 @@
     <br />
     <div>
        
-    <div id="map-canvas" style=" width:500px; height:400px; border:1px dashed red;"></div>
+    <div id="map-canvas" style=" width:400px; height:400px;"></div>
     </div>
 
      
-        <div id="list">
-            
+      
+       <div id="list-wrapper">   
      <asp:DataList ID="dl_locations" runat="server">
          <HeaderTemplate>
              <br /><br />
@@ -57,10 +55,12 @@
          <ItemTemplate>
              <asp:Label ID="lbl_title" runat="server" Text='<%#Eval("hospital_name") %>' /> <br />
              <asp:Label  ID="lbl_desc" runat="server"  Text='<%#Eval("desc") %>' /><br /><br />
+               <div id="list">
              <asp:Image ID="img_map" runat="server" ImageUrl='<%# "http://maps.googleapis.com/maps/api/staticmap?&zoom=14&size=300x300&scale=2&markers="+Eval("hospital_address")+"&sensor=false" %>' Width="400" Height="400" />
-             <br /><br />
+               </div>
+              <br /><br />
   
          </ItemTemplate>
      </asp:DataList>   
-        </div>
+     </div>  
     </asp:Content>
