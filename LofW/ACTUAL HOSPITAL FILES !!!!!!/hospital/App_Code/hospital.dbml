@@ -33,14 +33,6 @@
       <Association Name="Patient_Credit_transaction" Member="Patient" ThisKey="user_id" OtherKey="Id" Type="Patient" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Direction_request" Member="Direction_requests">
-    <Type Name="Direction_request">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="startloc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="endloc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="request_date" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.donorInformation" Member="donorInformations">
     <Type Name="donorInformation" Id="ID1">
       <Column Name="donorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -111,14 +103,6 @@
       <Column Name="closing_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="department" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="status" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Map_request" Member="Map_requests">
-    <Type Name="Map_request">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="startloc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="endloc" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="request_date" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.News" Member="News">
