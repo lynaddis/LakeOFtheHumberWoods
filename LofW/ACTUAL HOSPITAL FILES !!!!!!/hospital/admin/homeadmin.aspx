@@ -97,7 +97,7 @@
            <a href="javascript:void(0);" class="links toggler"><h3>+    Administrative</h3></a>
              <div class="page_links" style="display:none">
                  <p>Find aministrative stuff here</p>
-                 <asp:HyperLink ID="hyp_administrative" runat="server" Text="Administrative?" NavigateUrl="~/admin/administrative.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div>
+                 <asp:HyperLink ID="hyp_administrative" runat="server" Text="Administrative?" NavigateUrl="~/admin/adminDonatiopn.aspx" Font-Underline="false" SkinID="hblink_submit"  /></div>
 
            
 
