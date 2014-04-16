@@ -64,6 +64,7 @@ public partial class Patient_payBills : System.Web.UI.Page
     protected void subBindlist(string user)
     {
         ID = objPatient.getPatientIdByUsername(user); // stores id of user to global variable for id 
+        hdf_pid.Value = ID.ToString();
         gv_bills_list.DataSource = objInvoice.getInvoiceByPatientId(ID); // takes global id and uses it to get associated record
         gv_bills_list.DataBind();
     }
@@ -132,6 +133,9 @@ public partial class Patient_payBills : System.Web.UI.Page
     // and updates Patient invoice to paided 
     protected void subPay(object sender, EventArgs e)
     {
+        invoiceID = Convert.ToInt32(hdf_id.Value.ToString());
+        ID = Convert.ToInt32(hdf_pid.Value.ToString());
+        lbl_msg.Text = hdf_pid.Value;
         objInvoice.commitUpdatePaid(invoiceID, "Paid", "Creditcard");
         CommandResult(objCredit.commitInsert(invoiceID, ID, txt_cardNum.ToString(), txt_cardName.ToString(), txt_expireDate.ToString(), DateTime.Now.ToShortDateString()));
         clearForm();
