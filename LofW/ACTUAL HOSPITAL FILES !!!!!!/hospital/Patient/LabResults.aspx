@@ -18,7 +18,7 @@
              <Columns>
         <asp:TemplateField HeaderText="Patient Code">
         <ItemTemplate>
-        <%#Eval("patientCode")%> />
+        <%#Eval("patientCode")%> 
        </ItemTemplate>
      
         </asp:TemplateField>
