@@ -17,6 +17,7 @@
         <asp:ContentPlaceHolder id="cph_header" runat="server">
         
         </asp:ContentPlaceHolder>
+        
  <div class="logo">
      <asp:Image ID="LOGO" runat="server" Height="150px" ImageUrl="~/imgs/Logo.png" />
  </div>
@@ -30,7 +31,7 @@
  
 <asp:Login ID="log_form" runat="server" DestinationPageUrl="~/Admin/homeadmin.aspx" />
         </div>
-      
+  
 
                   
         <asp:SiteMapDataSource ID="sds_main" runat="server" />
