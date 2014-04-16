@@ -14,7 +14,17 @@
         <asp:ContentPlaceHolder id="cph_header" runat="server">
         
         </asp:ContentPlaceHolder>
-     <div class="login">
+
+         <div class="logo">
+     <asp:Image ID="LOGO" runat="server" Height="150px" ImageUrl="~/imgs/Logo.png" />
+ </div>
+
+        <div class="titleM">
+           <h1> Lake of the Humber Woods District Hosptial</h1> 
+            123 Fake Street
+            <br />705-555-1212
+        </div>
+     <div class="loginM">
  
  <asp:LoginStatus ID="log_status" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/home.aspx" />
         </div>
