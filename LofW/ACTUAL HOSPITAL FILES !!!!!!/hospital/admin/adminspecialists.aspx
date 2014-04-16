@@ -76,7 +76,7 @@
             <asp:HiddenField ID="hdf_idE" runat="server" Value='<%#Eval("Id") %>' />
             <asp:Label ID="lbl_entryDateE" runat="server" Text="EntryDate" />
          <br />
-            <asp:TextBox ID="txt_entrydateE"  runat="server" Text='<%#Bind("EntryDate") %>' />
+            <asp:TextBox ID="txt_entrydateE"  runat="server" Text='<%#Bind("EntryDate","{0:d}") %>' />
             <asp:RequiredFieldValidator ID="rfv_entryDate" runat="server" ControlToValidate="txt_entrydateE" SetFocusOnError="true" ErrorMessage="Please enter date" Text="*Required" Display="Dynamic" ValidationGroup="illess_val" />
     <asp:CompareValidator ID="com_date" runat="server" ControlToValidate="txt_entrydateE" Operator="DataTypeCheck" Type="Date" Text="Invalid Date!" ErrorMessage="Please Enter Correct Date Format (YYYY/MM/DD)" ValidationGroup="cal_valE" />  
             <br />
