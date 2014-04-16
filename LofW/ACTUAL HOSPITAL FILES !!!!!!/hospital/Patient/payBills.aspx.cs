@@ -23,7 +23,6 @@ public partial class Patient_payBills : System.Web.UI.Page
         Master.pp_masterTitle = "Pay Bills";
         if (!Page.IsPostBack)
         {
-            //test.Text = objPatient.getPatientIdByUsername(user).ToString();
 
             subBindlist(user);
 
@@ -98,7 +97,7 @@ public partial class Patient_payBills : System.Web.UI.Page
                     invoiceID = Convert.ToInt32(id.Text.ToString());
                     hdf_amount.Value = amount.Text.ToString();
                     hdf_proc.Value = proc.Text.ToString();
-
+                    hdf_id.Value = id.Text.ToString();
                     pnl_form.Visible = true;
                 }
 
@@ -135,10 +134,12 @@ public partial class Patient_payBills : System.Web.UI.Page
     {
         invoiceID = Convert.ToInt32(hdf_id.Value.ToString());
         ID = Convert.ToInt32(hdf_pid.Value.ToString());
-        lbl_msg.Text = hdf_pid.Value;
+       
         objInvoice.commitUpdatePaid(invoiceID, "Paid", "Creditcard");
         CommandResult(objCredit.commitInsert(invoiceID, ID, txt_cardNum.ToString(), txt_cardName.ToString(), txt_expireDate.ToString(), DateTime.Now.ToShortDateString()));
         clearForm();
+        pnl_list.Visible = true;
+        pnl_info.Visible = false;
     }
 
 

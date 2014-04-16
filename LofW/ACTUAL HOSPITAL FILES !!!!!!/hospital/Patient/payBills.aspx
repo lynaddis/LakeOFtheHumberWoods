@@ -11,7 +11,7 @@
     <asp:LoginName ID="log_name" runat="server" FormatString="Welcome, {0} " />
 
       <%-- Allows user to logout if logged in --%>  
-    <asp:LoginStatus ID="log_status" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/index.aspx" />
+    <asp:LoginStatus ID="log_status" runat="server" LogoutAction="Redirect" LogoutPageUrl="~/home.aspx" />
         <br />
 
         <!-- Will display to the user what type of account is currently logged in. 
