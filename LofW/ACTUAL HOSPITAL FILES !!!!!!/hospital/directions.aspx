@@ -53,14 +53,13 @@
         <br /><br />
     </div>
     <div>
-     <asp:Label ID="lbl_startloc" runat="server" Text="Starting location" AssociatedControlID="txtStart" />
+      <asp:Label ID="lbl_startloc" runat="server" Text="Starting location" AssociatedControlID="txtStart" />
                 <asp:TextBox ID="txtStart" runat="server"  AutoPostBack="true"/>
  
                <asp:RequiredFieldValidator ID="rfv_startloc" runat="server" ControlToValidate="txtStart" Text="*Required" Display="Static" ErrorMessage="A starting address is required" ValidationGroup="Directions" EnableClientScript="true" />
 
                 <asp:Label ID="lbl_endloc" runat="server" Text=" Ending location" AssociatedControlID="ddl_list" />
                 <asp:DropDownList ID="ddl_list" runat="server" AutoPostBack="true" ValidationGroup="Directions" />
-<<<<<<< HEAD
 
                 <asp:RequiredFieldValidator ID="rfv_endloc" runat="server" ControlToValidate="ddl_list" Text="*Required" Display="None" ErrorMessage="An ending address is required" ValidationGroup="Directions" EnableClientScript="true" />
                 <asp:CompareValidator ID="cmv_endloc" runat="server" ControlToValidate="ddl_list" Operator="GreaterThan" ValueToCompare="0" Display="static" Text="*Required" ErrorMessage="Please select a destination" ValidationGroup="Directions" EnableClientScript="true" />
@@ -70,25 +69,6 @@
                 <asp:Button ID="btn_reverse" runat="server" Text="Reverse"  OnClientClick="return checkReverse()"  UseSubmitBehavior="false" />
                 <br />
                 <asp:Label ID="lbl_toll" runat="server" Text="Avoid Toll Roads" AssociatedControlID="cb_toll" />
-=======
-            </td>
-            <td>
-                <asp:RequiredFieldValidator ID="rfv_endloc" runat="server" ControlToValidate="ddl_list" Text="*Required" Display="Static" ErrorMessage="An ending address is required" ValidationGroup="Directions" EnableClientScript="true" />
-                <asp:CompareValidator ID="cmv_endloc" runat="server" ControlToValidate="ddl_list" Operator="GreaterThan" ValueToCompare="0" Display="None" ErrorMessage="Please select a destination" ValidationGroup="Directions" EnableClientScript="true" />
-            </td>
-            <td>
-                <asp:Button ID="btnGenerate_D" runat="server" Text="Directions" OnClientClick="return checkDirection()" UseSubmitBehavior="false" /> 
-            </td>
-            <td>
-                <asp:Button ID="btn_reverse" runat="server" Text="Reverse"  OnClientClick="return checkReverse()"  UseSubmitBehavior="false" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <asp:Label ID="lbl_toll" runat="server" Text="Avoid Toll Roads" />
-            </td>
-            <td>
->>>>>>> parent of eb10f68... Merge branch 'master' of https://github.com/lynaddis/LakeOFtheHumberWoods
                 <asp:CheckBox ID="cb_toll" runat="server" AutoPostBack="true" />
 
                 <asp:Label ID="lbl_highway" runat="server" Text="Avoid Highways" AssociatedControlID="cb_highway" />

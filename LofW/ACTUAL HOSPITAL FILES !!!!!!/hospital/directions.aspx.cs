@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
     public partial class directions : System.Web.UI.Page
     {
-        directionRequestClass objDirections = new directionRequestClass();
+
         hospitalLocationClass objLocations = new hospitalLocationClass();
 
 
