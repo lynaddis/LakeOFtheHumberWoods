@@ -31,7 +31,7 @@ public partial class _Default : System.Web.UI.Page
     {
         if (flag)
         {
-            lbl_message.Text = "Record has been successfully" + str + "d!";
+            lbl_message.Text = "Record has been successfully " + str + "d!";
         }
         else
         {
@@ -95,12 +95,23 @@ public partial class _Default : System.Web.UI.Page
         {
             case "Deletex":
                 int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_IdD")).Value);//use Id numbers to delete rows.
-                _strMessage(objHealth.commitDelete(_Id), "delete");
+                _strdMessage(objRec.commitDelete(_Id), "delete");
                 _subRebinded();
                 break;
             case "Cancelx":
                 _subRebinded();
                 break;
+        }
+    }
+    private void _strdMessage(bool flag, string str)
+    {
+        if (flag)
+        {
+            lbl_output.Text = "Record has been successfully " + str + "d!";
+        }
+        else
+        {
+            lbl_output.Text = "Sorry, unable to " + str + "form";
         }
     }
 }

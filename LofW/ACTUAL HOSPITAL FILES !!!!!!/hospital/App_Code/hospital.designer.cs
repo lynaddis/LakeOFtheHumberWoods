@@ -71,9 +71,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
   partial void InsertProduct(Product instance);
   partial void UpdateProduct(Product instance);
   partial void DeleteProduct(Product instance);
-  partial void Insertrecommendation(recommendation instance);
-  partial void Updaterecommendation(recommendation instance);
-  partial void Deleterecommendation(recommendation instance);
   partial void InsertScheduleDB(ScheduleDB instance);
   partial void UpdateScheduleDB(ScheduleDB instance);
   partial void DeleteScheduleDB(ScheduleDB instance);
@@ -92,9 +89,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
   partial void InsertWait_time(Wait_time instance);
   partial void UpdateWait_time(Wait_time instance);
   partial void DeleteWait_time(Wait_time instance);
-  partial void InsertappRequest(appRequest instance);
-  partial void UpdateappRequest(appRequest instance);
-  partial void DeleteappRequest(appRequest instance);
   partial void Insertemployee(employee instance);
   partial void Updateemployee(employee instance);
   partial void Deleteemployee(employee instance);
@@ -104,6 +98,9 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
   partial void Insertlab(lab instance);
   partial void Updatelab(lab instance);
   partial void Deletelab(lab instance);
+  partial void Insertrecommendation(recommendation instance);
+  partial void Updaterecommendation(recommendation instance);
+  partial void Deleterecommendation(recommendation instance);
   #endregion
 	
 	public HospitalDataContext() : 
@@ -256,14 +253,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<recommendation> recommendations
-	{
-		get
-		{
-			return this.GetTable<recommendation>();
-		}
-	}
-	
 	public System.Data.Linq.Table<ScheduleDB> ScheduleDBs
 	{
 		get
@@ -360,14 +349,6 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<appRequest> appRequests
-	{
-		get
-		{
-			return this.GetTable<appRequest>();
-		}
-	}
-	
 	public System.Data.Linq.Table<employee> employees
 	{
 		get
@@ -389,6 +370,14 @@ public partial class HospitalDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<lab>();
+		}
+	}
+	
+	public System.Data.Linq.Table<recommendation> recommendations
+	{
+		get
+		{
+			return this.GetTable<recommendation>();
 		}
 	}
 	
@@ -2108,23 +2097,7 @@ public partial class Invoice : INotifyPropertyChanging, INotifyPropertyChanged
     partial void Onpatient_idChanging(int value);
     partial void Onpatient_idChanged();
     #endregion
-
-
-    partial void OnCreated()
-    {
-        if (this.status == null)
-        {
-            this.status = "Unpaid";
-        }
-
-        if (this.payment_method == null)
-        {
-            this.payment_method = "None";
-        }
-
-    }
-
-
+	
 	public Invoice()
 	{
 		this._Credit_transactions = new EntitySet<Credit_transaction>(new Action<Credit_transaction>(this.attach_Credit_transactions), new Action<Credit_transaction>(this.detach_Credit_transactions));
@@ -3648,164 +3621,6 @@ public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.recommendations")]
-public partial class recommendation : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _Id;
-	
-	private string _name;
-	
-	private string _ill_name;
-	
-	private string _region;
-	
-	private string _recomend;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void Onill_nameChanging(string value);
-    partial void Onill_nameChanged();
-    partial void OnregionChanging(string value);
-    partial void OnregionChanged();
-    partial void OnrecomendChanging(string value);
-    partial void OnrecomendChanged();
-    #endregion
-	
-	public recommendation()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int Id
-	{
-		get
-		{
-			return this._Id;
-		}
-		set
-		{
-			if ((this._Id != value))
-			{
-				this.OnIdChanging(value);
-				this.SendPropertyChanging();
-				this._Id = value;
-				this.SendPropertyChanged("Id");
-				this.OnIdChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-	public string name
-	{
-		get
-		{
-			return this._name;
-		}
-		set
-		{
-			if ((this._name != value))
-			{
-				this.OnnameChanging(value);
-				this.SendPropertyChanging();
-				this._name = value;
-				this.SendPropertyChanged("name");
-				this.OnnameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ill_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string ill_name
-	{
-		get
-		{
-			return this._ill_name;
-		}
-		set
-		{
-			if ((this._ill_name != value))
-			{
-				this.Onill_nameChanging(value);
-				this.SendPropertyChanging();
-				this._ill_name = value;
-				this.SendPropertyChanged("ill_name");
-				this.Onill_nameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_region", DbType="VarChar(50)")]
-	public string region
-	{
-		get
-		{
-			return this._region;
-		}
-		set
-		{
-			if ((this._region != value))
-			{
-				this.OnregionChanging(value);
-				this.SendPropertyChanging();
-				this._region = value;
-				this.SendPropertyChanged("region");
-				this.OnregionChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_recomend", DbType="VarChar(MAX)")]
-	public string recomend
-	{
-		get
-		{
-			return this._recomend;
-		}
-		set
-		{
-			if ((this._recomend != value))
-			{
-				this.OnrecomendChanging(value);
-				this.SendPropertyChanging();
-				this._recomend = value;
-				this.SendPropertyChanged("recomend");
-				this.OnrecomendChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ScheduleDB")]
 public partial class ScheduleDB : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -4626,7 +4441,7 @@ public partial class sysdiagram
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_definition", DbType="VarBinary(MAX)", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_definition", DbType="VarBinary(MAX)", UpdateCheck=UpdateCheck.Never)]
 	public System.Data.Linq.Binary definition
 	{
 		get
@@ -5257,164 +5072,6 @@ public partial class Wait_time : INotifyPropertyChanging, INotifyPropertyChanged
 				this._number_beds = value;
 				this.SendPropertyChanged("number_beds");
 				this.Onnumber_bedsChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.appRequests")]
-public partial class appRequest : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _Id;
-	
-	private string _name;
-	
-	private string _appTime;
-	
-	private string _phone;
-	
-	private string _specName;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void OnappTimeChanging(string value);
-    partial void OnappTimeChanged();
-    partial void OnphoneChanging(string value);
-    partial void OnphoneChanged();
-    partial void OnspecNameChanging(string value);
-    partial void OnspecNameChanged();
-    #endregion
-	
-	public appRequest()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int Id
-	{
-		get
-		{
-			return this._Id;
-		}
-		set
-		{
-			if ((this._Id != value))
-			{
-				this.OnIdChanging(value);
-				this.SendPropertyChanging();
-				this._Id = value;
-				this.SendPropertyChanged("Id");
-				this.OnIdChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
-	public string name
-	{
-		get
-		{
-			return this._name;
-		}
-		set
-		{
-			if ((this._name != value))
-			{
-				this.OnnameChanging(value);
-				this.SendPropertyChanging();
-				this._name = value;
-				this.SendPropertyChanged("name");
-				this.OnnameChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_appTime", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
-	public string appTime
-	{
-		get
-		{
-			return this._appTime;
-		}
-		set
-		{
-			if ((this._appTime != value))
-			{
-				this.OnappTimeChanging(value);
-				this.SendPropertyChanging();
-				this._appTime = value;
-				this.SendPropertyChanged("appTime");
-				this.OnappTimeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="VarChar(13) NOT NULL", CanBeNull=false)]
-	public string phone
-	{
-		get
-		{
-			return this._phone;
-		}
-		set
-		{
-			if ((this._phone != value))
-			{
-				this.OnphoneChanging(value);
-				this.SendPropertyChanging();
-				this._phone = value;
-				this.SendPropertyChanged("phone");
-				this.OnphoneChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_specName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-	public string specName
-	{
-		get
-		{
-			return this._specName;
-		}
-		set
-		{
-			if ((this._specName != value))
-			{
-				this.OnspecNameChanging(value);
-				this.SendPropertyChanging();
-				this._specName = value;
-				this.SendPropertyChanged("specName");
-				this.OnspecNameChanged();
 			}
 		}
 	}
@@ -6458,6 +6115,164 @@ public partial class lab : INotifyPropertyChanging, INotifyPropertyChanged
 					this._patientID = default(Nullable<int>);
 				}
 				this.SendPropertyChanged("Patient");
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.recommendations")]
+public partial class recommendation : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _Id;
+	
+	private string _name;
+	
+	private string _ill_name;
+	
+	private string _region;
+	
+	private string _recomend;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void Onill_nameChanging(string value);
+    partial void Onill_nameChanged();
+    partial void OnregionChanging(string value);
+    partial void OnregionChanged();
+    partial void OnrecomendChanging(string value);
+    partial void OnrecomendChanged();
+    #endregion
+	
+	public recommendation()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int Id
+	{
+		get
+		{
+			return this._Id;
+		}
+		set
+		{
+			if ((this._Id != value))
+			{
+				this.OnIdChanging(value);
+				this.SendPropertyChanging();
+				this._Id = value;
+				this.SendPropertyChanged("Id");
+				this.OnIdChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+	public string name
+	{
+		get
+		{
+			return this._name;
+		}
+		set
+		{
+			if ((this._name != value))
+			{
+				this.OnnameChanging(value);
+				this.SendPropertyChanging();
+				this._name = value;
+				this.SendPropertyChanged("name");
+				this.OnnameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ill_name", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+	public string ill_name
+	{
+		get
+		{
+			return this._ill_name;
+		}
+		set
+		{
+			if ((this._ill_name != value))
+			{
+				this.Onill_nameChanging(value);
+				this.SendPropertyChanging();
+				this._ill_name = value;
+				this.SendPropertyChanged("ill_name");
+				this.Onill_nameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_region", DbType="VarChar(50)")]
+	public string region
+	{
+		get
+		{
+			return this._region;
+		}
+		set
+		{
+			if ((this._region != value))
+			{
+				this.OnregionChanging(value);
+				this.SendPropertyChanging();
+				this._region = value;
+				this.SendPropertyChanged("region");
+				this.OnregionChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_recomend", DbType="VarChar(MAX)")]
+	public string recomend
+	{
+		get
+		{
+			return this._recomend;
+		}
+		set
+		{
+			if ((this._recomend != value))
+			{
+				this.OnrecomendChanging(value);
+				this.SendPropertyChanging();
+				this._recomend = value;
+				this.SendPropertyChanged("recomend");
+				this.OnrecomendChanged();
 			}
 		}
 	}

@@ -19,7 +19,7 @@
     <br />
   <asp:HyperLink ID="hp_health" runat="server" Text="Add Health Concern" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/adminhealthconcerns.aspx"  />
 
-    <br />
+    <br /><br />
              <asp:Label ID="lbl_message" runat="server" />
 
   <br /><br />
@@ -76,7 +76,7 @@
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="CancelX" SkinID="btn_submit" />
             </ItemTemplate>
     </asp:ListView>
-           <br /><br />
+           <br /><br /> 
              <asp:DataPager ID="datapager_listAll" runat="server" PagedControlID="ltv_update" PageSize="1" >
                 <Fields>
                    
@@ -84,14 +84,16 @@
                     <asp:NumericPagerField ButtonType="Link" />
                     <asp:NextPreviousPagerField ShowNextPageButton="true" ShowLastPageButton="true" ShowPreviousPageButton="false" />
                 </Fields>
-</asp:DataPager>
-        </div>
+</asp:DataPager><br /> <br />
+        </div><br /> <br />
+
 
     <%--Add in recommendation w/ deletes.  --%>
 
 
 <div id="adU_sidebar">
-
+    <asp:Label ID="lbl_output" runat="server" />
+    <br /><br />
     <asp:Repeater ID="rep_rec" runat="server" OnItemCommand="recDelete">
 <ItemTemplate>
                <br />
