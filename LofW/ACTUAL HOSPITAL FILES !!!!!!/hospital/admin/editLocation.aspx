@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="editLocation.aspx.cs" Inherits="Admin_editLocation" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/admin/adminMaster.master" AutoEventWireup="true" CodeFile="editLocation.aspx.cs" Inherits="Admin_editLocation" %>
 <%@ MasterType VirtualPath="~/admin/adminMaster.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -37,7 +37,7 @@
             </RoleGroups>
         </asp:LoginView>
         <asp:HyperLink ID="hyp_home" runat="server" Text="Back to Home" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/homeadmin.aspx"  />
-        <asp:HyperLink ID="hyp_admin_menu" runat="server" Text="Main Menu"  NavigateUrl="~/Admin/manage.aspx" />
+   
         <br /> <br /> <br />
             </div>
     <%-- displays list of hospital locations  --%>
@@ -57,7 +57,7 @@
                 <asp:TextBox ID="txt_hDes" runat="server" Text='<%#Eval("desc") %>' TextMode="MultiLine" ReadOnly="true"  />
                 <br /><br />
                 <asp:LinkButton ID="btn_select" runat="server" Text="Edit" CommandName="Selectx" CommandArgument='<%#Eval("Id") %>' />
-                <asp:LinkButton ID="btn_delete" runat="server" Text="Delete" CommandName="Deletex" CommandArgument='<%#Eval("Id") %>' />
+                <asp:LinkButton ID="btn_delete" runat="server" Text="Delete" CommandName="Deletex" OnClientClick ="return confirm('Confirm Delete?');" CommandArgument='<%#Eval("Id") %>' />
                 <br /><br />
             </ItemTemplate>
         </asp:DataList>

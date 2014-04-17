@@ -29,7 +29,7 @@ public partial class Admin_editWait_times : System.Web.UI.Page
         ddl_docs.Items.Insert(0, new ListItem("-- Select doctor count --"));
         ddl_docs.SelectedIndex = 0;
 
-        ddl_status.Items.Insert(0, new ListItem("-- Select Hospital status --"));
+        ddl_status.Items.Insert(0, new ListItem("-- Select status --"));
         ddl_status.SelectedIndex = 0;
 
         pnl_update.Visible = false;

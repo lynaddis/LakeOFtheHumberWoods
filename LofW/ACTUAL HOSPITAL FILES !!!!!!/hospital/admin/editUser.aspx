@@ -118,7 +118,7 @@
                         <asp:Label ID="lbl_dobI" runat="server" Text='<%#Eval("dob") %>' /> 
                         <br /><br />
                         <asp:LinkButton ID="lk_btn_update" runat="server" Text="Edit" CommandName="Editx" CommandArgument='<%#Eval("Id") %>' CausesValidation="false" /> 
-
+                        <br /><br />
             </ItemTemplate>
             <%-- selected user edit panel --%>
             <EditItemTemplate>

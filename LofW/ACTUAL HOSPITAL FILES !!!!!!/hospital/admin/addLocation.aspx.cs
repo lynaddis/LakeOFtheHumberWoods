@@ -20,6 +20,7 @@ public partial class Admin_addLocation : System.Web.UI.Page
         CommandResult(objLocation.commitInsert(txt_name.Text, txt_address.Text,txt_des.Text));
         txt_address.Text = string.Empty;
         txt_name.Text = string.Empty;
+        txt_des.Text = string.Empty;
     }
 
     // displays status message to user 

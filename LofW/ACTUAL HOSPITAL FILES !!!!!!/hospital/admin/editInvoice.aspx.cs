@@ -127,7 +127,7 @@ public partial class Admin_editInvoice : System.Web.UI.Page
                 bool update = objInvoice.commitUpdate(ID, Amount, Status, Proc, Method, Pid);
                 if (update)
                 {
-                    lbl_status.Text = "Status: Patient Updated";
+                    lbl_status.Text = "Status: Invoice Updated";
                     subRebind();
 
                 }

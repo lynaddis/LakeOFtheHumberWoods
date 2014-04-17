@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Master.master" AutoEventWireup="true" CodeFile="editWait_times.aspx.cs" Inherits="Admin_editWait_times" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/admin/adminMaster.master" AutoEventWireup="true" CodeFile="editWait_times.aspx.cs" Inherits="Admin_editWait_times" %>
 <%@ MasterType VirtualPath="~/admin/adminMaster.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

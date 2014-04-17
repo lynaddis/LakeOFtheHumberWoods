@@ -65,7 +65,7 @@
                     <asp:RegularExpressionValidator ID="reg_address" runat="server" ControlToValidate="txt_address" ErrorMessage="Invalid Hospital address, characters and spaces only" Display="None" ValidationExpression="\d+\s\w+\s\w+(\s\w+|\s\d+)*" ValidationGroup="addLocation" />
                     <br /><br />
                 <%-- Hospital Description --%>
-                    <asp:Label ID="lbl_desc" runat="server" Text="Hospital Description" AssociatedControlID="txt_des" />
+                    <asp:Label ID="lbl_desc" runat="server" Text="Hospital Description" AssociatedControlID="txt_des" /><br />
                     <asp:TextBox ID="txt_des" runat="server" TextMode="MultiLine" />
 
                     <asp:RequiredFieldValidator ID="rfv_des" runat="server" ControlToValidate="txt_des" Text="*Required" ErrorMessage="Hospital Description is required" Display="Static" ValidationGroup="addLocation" />
