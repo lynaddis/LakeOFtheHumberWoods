@@ -102,8 +102,7 @@
 
             <%--side bar div so that recommendations will come up beside update fields... for convenience! --%>
 <div id="adU_sidebar">
-    <asp:Label ID="lbl_output" runat="server" />
-    <br /><br />
+    
     <asp:Repeater ID="rep_rec" runat="server" OnItemCommand="recDelete">
 <ItemTemplate>
                <br />
@@ -126,6 +125,6 @@
     <br />  
     </ItemTemplate>
     </asp:Repeater>
-
+    <asp:Label ID="lbl_output" runat="server" />
 </div>
     </asp:Content>
