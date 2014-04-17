@@ -8,13 +8,13 @@
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
      <div class="page_title" >
-
+         <%-- volunteer form (insert)!--%>
            <h2>Sign Up To Volunteer!</h2>
         <p>If you want to help out in any way, please fill out all applicable fields of this form and we will be sure to contact you!   </p>
     </div>
   <div class="form_backvol">
       <h3>Please Fill Out All Applicable Fields</h3>
-               <div id="vol1">
+               <div id="vol1"> <%--Required Fields! --%>
         <asp:Label ID="lbl_fname" runat="server" Text="Full Name: " />
         <br />
                     <asp:TextBox ID="txt_nameI" runat="server" /> 
@@ -26,7 +26,7 @@
                         <asp:TextBox ID="txt_ageI" runat="server" />
                         <asp:RequiredFieldValidator ID="rfv_ageI" runat="server" ControlToValidate="txt_ageI" SetFocusOnError="true" ErrorMessage="Enter Your Age! (must be 10-100)" ValidationGroup="vol_val" Text="Required!"  ForeColor="Red" /> 
     <asp:RangeValidator ID="rng_age" runat="server" ControlToValidate="txt_ageI" SetFocusOnError="true" Type="Integer" MaximumValue="90" MinimumValue="10" Text="Invalid Age" ErrorMessage="Please enter valid age!" ValidationGroup="vol_val"  ForeColor="Blue" />
-                       <br />
+                       <br /> <%-- Range for age, so it is a number between 10 and 90!--%>
           <asp:Label ID="lbl_gender" runat="server" Text="Gender: " />
                  <br />
                <asp:TextBox ID="txt_genderI" runat="server" />
@@ -36,13 +36,14 @@
        <br />
          <asp:TextBox ID="txt_emailI" runat="server" />
                         <asp:RequiredFieldValidator ID="rfv_emailI" runat="server" ControlToValidate="txt_emailI" SetFocusOnError="true" ErrorMessage="Please enter email!" ValidationGroup="vol_val" Text="Required!"  ForeColor="Red"/>
+                    <%--reg expression for email! --%>
     <asp:RegularExpressionValidator ID="rg_email" runat="server" ControlToValidate="txt_emailI" SetFocusOnError="true" ErrorMessage="Invalid Email!" ValidationGroup="vol_val" Text="invalid email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
                       <br />
 
           <asp:Label ID="lbl_phone" runat="server" Text="Phone: " />
                   <br />  <asp:TextBox ID="txt_phoneI" runat="server" />
                      <asp:RequiredFieldValidator ID="rfv_phoneI" runat="server" ControlToValidate="txt_phoneI" SetFocusOnError="true" ErrorMessage="Enter Phone Number!" ValidationGroup="vol_val" Text="Required!"  ForeColor="Red" />
-
+ <%--Reg expression for phoen number.. gives options for using dashes or not ! --%>
     <asp:RegularExpressionValidator ID="rge_phone" runat="server" Text="Invalid Phone Number!" ErrorMessage="Phone Number is not valid" ValidationGroup="vol_val" ControlToValidate="txt_phoneI"  ForeColor="Blue" ValidationExpression="(^[01]?[- .]?(\([2-9]\d{2}\)|[2-9]\d{2})[- .]?\d{3}[- .]?\d{4}$)" />
                    
                <br />
@@ -68,8 +69,8 @@
     
     
     <asp:RangeValidator ID="rng_hours" runat="server" ControlToValidate="txt_noHoursI" SetFocusOnError="true" Type="Integer" MaximumValue="50" MinimumValue="1" Text="Invalid Amount of Hours" ErrorMessage="Please enter valid number of hours!" ValidationGroup="vol_val"  ForeColor="Blue" />
-                   
-                <br />
+                    <%-- End of required fields--%>
+                <br /> <%-- Optional fields--%>
           <asp:Label ID="lbl_PR" runat="server" Text="Is there someone you would like to volunteer with?" />
                 <br />    <asp:TextBox ID="txt_personRequestI" runat="server" />
                 <br />
@@ -85,8 +86,8 @@
           <asp:Label ID="lbl_request" runat="server" Text="Departments you want to work in: " />
                  <br />   <asp:TextBox ID="txt_deptRequestI" runat="server" />
             <br />
-        <br />
-                    <asp:Button ID="btn_insert" runat="server" Text="Submit" OnCommand="subInsert" CommandName="Insert" ValidationGroup="vol_val" CausesValidation="true" SkinID="btn_submit" />
+        <br /> <%--buttons! --%>
+                    <asp:Button ID="btn_insert" runat="server" Text="Submit" OnCommand="subInsert" CommandName="Insert" ValidationGroup="vol_val" CausesValidation="true" SkinID="btn_submit" /> <%-- uses onCommane subInsert subroutine to perform insert --%>
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" OnCommand="subInsert" CommandName="Cancel" CausesValidation="true" SkinID="btn_submit" />
     <br /><br />
     <asp:ValidationSummary ID="vld_sum" runat="server" DisplayMode="BulletList" HeaderText="Errors!" ShowSummary="false" ShowMessageBox="true" ValidationGroup="vol_val" />
@@ -94,7 +95,7 @@
             <%-- end of insert rows--%>
    <br />   
    
-             <asp:Label ID="lbl_message" runat="server" />
+             <asp:Label ID="lbl_message" runat="server" /> <%-- produces success or failure message for fields!--%>
         <br /> </div>
       
          <asp:DataList ID="dtl_all" runat="server" >
