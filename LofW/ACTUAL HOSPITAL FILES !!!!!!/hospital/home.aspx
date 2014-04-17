@@ -78,9 +78,9 @@ Our team consists of: </p>
         </div>
 
             <div class="donate">
-                <h3><a href="Donation.aspx">Donations Informations</a></h3>
+                <h3><a href="Donation.aspx">Donations Information</a></h3>
            
-              Our donations page contains all methods for people to donate to the hosptial with ease.  
+              Our donations pages contains payment methods to make your kind donations easy to process.  We use paypal to ensure secure transfers. Thank you to everyone who as and who will donate; a little donation goes a long way!  
 
         </div>
             </div>
@@ -100,8 +100,8 @@ Our team consists of: </p>
                <br /><br />
         </div>
               <div class="paybills">
-        <h3><a href="paybills.aspx">PayBills</a></h3>
-
+        <h3><a href="userlogin.aspx">PayBills</a></h3>
+        <div class="imghome"><asp:Image ID="bills" runat="server" ImageUrl="~/imgs/bills.png" /></div>
         </div>
                     </div>
                     </asp:Content>

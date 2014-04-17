@@ -992,6 +992,10 @@
     margin-left: 0px;
 }
 
+    .imghome {
+        margin-left: 5px;
+    }
+
 #about_img {
   
    display:none;
