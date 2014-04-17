@@ -54,6 +54,8 @@
 .header {
     width: 768px;
 }
+
+   
 .title {
     height:150px;
     width:350px;
@@ -100,6 +102,7 @@
 
     }
 
+ 
      .imghome {
         display: none;
     }
@@ -227,47 +230,27 @@
 
 
         .calendar H3 a {
-            text-decoration: none;
-            color: white;
+            display:none;
         }
 
     .calendar {
-        width: 300px;
-        height: 250px;
-        margin-bottom: 20px;
-        float: left;
-        margin-left: 30px;
+       display:none;
     }
         .calendar H3 {
-        text-align: center;
-        background-color: #a7917e;
-        height: 30px;
-        width: 300px;
+        display:none;
     }
 
-        .calendar H3 a {
-            text-decoration: none;
-            color: white;
-        }
+     
     .Maps H3 {
-        text-align: center;
-        background-color: #95779a;
-        width: 240px;
-        height: 30px;
+         display:none;
     }
 
         .Maps H3 a {
-            text-decoration: none;
-            color: white;
+             display:none;
         }
 
     .Maps {
-        height: 250px;
-        width: 300px;
-        margin-bottom: 20px;
-        float: left;
-        margin-left: 30px;
-        margin-right: 5px;
+    display:none;
     }
 
     .paybills H3 {
@@ -496,7 +479,9 @@
 
     .banner { display:none;
     }
-    
+
+
+
 
 .title {
     display:none;

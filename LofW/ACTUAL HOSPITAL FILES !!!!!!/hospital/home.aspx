@@ -80,20 +80,23 @@ Our team consists of: </p>
             <div class="donate">
                 <h3><a href="Donation.aspx">Donations Informations</a></h3>
            
-              Check out our donations
+              Our donations page contains all methods for people to donate to the hosptial with ease.  
 
         </div>
             </div>
                 <div class="bottomBar">
         <div class="calendar">
  <h3><a href="visitingspecialists.aspx">Visiting Specialists</a></h3>
+    
            <div class="imghome"> <asp:Image id="img_cal" runat="server" ImageUrl="~/imgs/CALENDAR.jpg" Width="300px" Height="200px" /></div>
+            
                <br /><br />
         </div>
 
             <div class="Maps">
                 <h3><a href="map.aspx">Maps</a></h3>
                <div class="imghome"><asp:Image id="img_map" runat="server" ImageUrl="~/imgs/map.png" Width="300px" Height="200px" /></div>
+        
                <br /><br />
         </div>
               <div class="paybills">
