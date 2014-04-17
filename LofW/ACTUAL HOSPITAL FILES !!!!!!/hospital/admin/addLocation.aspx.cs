@@ -11,9 +11,10 @@ public partial class Admin_addLocation : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        Master.pp_masterTitle = "Admin - Add Location";
+        Master.pp_masterTitle = "Admin - Add Location"; // over wirtes master page titile
     }
 
+    // inserts new location into database 
     protected void subAddLoc(object sender, EventArgs e)
     {
         CommandResult(objLocation.commitInsert(txt_name.Text, txt_address.Text,txt_des.Text));
@@ -21,6 +22,7 @@ public partial class Admin_addLocation : System.Web.UI.Page
         txt_name.Text = string.Empty;
     }
 
+    // displays status message to user 
     private void CommandResult(bool commandFlag)
     {
         if (commandFlag)

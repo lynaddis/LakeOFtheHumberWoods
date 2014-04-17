@@ -37,11 +37,12 @@
         <h2>Maps and Directions</h2>
         <p>If you need to find our hosptial simply add in your address you are travelling from then select the building you wish to arrive at.  For your convenience, all travelling information you need will be calculated and appear to the right of the map</p>
         <br />
+        <%-- Link back to the static map page --%>
         <asp:HyperLink ID="hyp_maps" runat="server" Text="Click here for map locations" NavigateUrl="~/map.aspx" Font-Underline="false" SkinID="hblink_submit" />
         <br /><br />
     </div>
-
-      <asp:Label ID="lbl_startloc" runat="server" Text="Starting location" AssociatedControlID="txtStart" />
+                 <%-- user input fields --%>
+                <asp:Label ID="lbl_startloc" runat="server" Text="Starting location" AssociatedControlID="txtStart" />
                 <asp:TextBox ID="txtStart" runat="server"  AutoPostBack="true"/>
  
                <asp:RequiredFieldValidator ID="rfv_startloc" runat="server" ControlToValidate="txtStart" Text="*Required" Display="Static" ErrorMessage="A starting address is required" ValidationGroup="Directions" EnableClientScript="true" />
@@ -51,10 +52,11 @@
 
                 <asp:RequiredFieldValidator ID="rfv_endloc" runat="server" ControlToValidate="ddl_list" Text="*Required" Display="None" ErrorMessage="An ending address is required" ValidationGroup="Directions" EnableClientScript="true" />
                 <asp:CompareValidator ID="cmv_endloc" runat="server" ControlToValidate="ddl_list" Operator="GreaterThan" ValueToCompare="0" Display="static" Text="*Required" ErrorMessage="Please select a destination" ValidationGroup="Directions" EnableClientScript="true" />
-
-                <asp:Button ID="btnGenerate_D" runat="server" Text="Directions" OnClientClick="return checkDirection()" UseSubmitBehavior="false" /> 
-
-                <asp:Button ID="btn_reverse" runat="server" Text="Reverse"  OnClientClick="return checkReverse()"  UseSubmitBehavior="false" />
+                
+                <%-- on click calls javascript function to get the direction; also validation on this page is fired from javascript  --%>
+                <asp:Button ID="btnGenerate_D" runat="server" Text="Directions" OnClientClick="return checkDirection()" UseSubmitBehavior="false" SkinID="btn_submit" /> 
+                <%--  on click calls javascript function to get the reverse direction; also validation on this page is fired from javascript  --%>
+                <asp:Button ID="btn_reverse" runat="server" Text="Reverse"  OnClientClick="return checkReverse()"  UseSubmitBehavior="false" SkinID="btn_submit" />
                 <br />
                 <asp:Label ID="lbl_toll" runat="server" Text="Avoid Toll Roads" AssociatedControlID="cb_toll" />
                 <asp:CheckBox ID="cb_toll" runat="server" AutoPostBack="true" />
@@ -63,12 +65,13 @@
                 <asp:CheckBox ID="cb_highway" runat="server" AutoPostBack="true" />
 
         <asp:ValidationSummary ID="vs_directions" runat="server" HeaderText="Directions Form" DisplayMode="BulletList" ShowMessageBox="true" ShowSummary="false" ValidationGroup="Directions" EnableClientScript="true" />
-     
+     <%-- hidden fields used to pass values from asp code behind to javascript --%>
      <input type="hidden" id="Start" value="<%=txtStart.Text %>" />
      <input type="hidden" id="End" value="<%=ddl_list.SelectedItem.Value.ToString() %>" /> 
      <input type="hidden" id="Toll" value="<%=cb_toll.Checked %>" /> 
      <input type="hidden" id="Highway" value="<%= cb_highway.Checked %>" />  
-            
+       
+    <%-- mad and directions divs --%>     
 <div id="wrapper_dir">
 <div id="map-canvas" style=" width:450px; height:500px; border:1px dashed red;"></div>   
 <div id="directions-panel" style=" width:450px; height:500px; border:1px dashed blue;" ></div>

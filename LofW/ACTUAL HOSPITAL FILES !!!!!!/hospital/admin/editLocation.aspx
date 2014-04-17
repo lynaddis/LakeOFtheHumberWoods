@@ -40,7 +40,7 @@
         <asp:HyperLink ID="hyp_admin_menu" runat="server" Text="Main Menu"  NavigateUrl="~/Admin/manage.aspx" />
         <br /> <br /> <br />
             </div>
-
+    <%-- displays list of hospital locations  --%>
 
         <asp:Label ID="lbl_Status" runat="server" />
         <br /> <br />
@@ -63,6 +63,7 @@
         </asp:DataList>
         </asp:Panel>
 
+    <%-- selected hospital location is displayed here for editing or deletion --%>
         <asp:Panel ID="pnl_edit" runat="server">
         <asp:DataList ID="dl_editLoc" runat="server" OnItemCommand="subAdmin">
             <ItemTemplate>

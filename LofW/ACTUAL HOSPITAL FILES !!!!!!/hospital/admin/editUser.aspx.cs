@@ -29,7 +29,7 @@ public partial class Admin_editUser : System.Web.UI.Page
         }
     }
 
-
+    // binds list of patients users
     protected void subRebind()
     {
         lv_editUser.Items.Clear();
@@ -40,7 +40,7 @@ public partial class Admin_editUser : System.Web.UI.Page
         pnl_search.Visible = true;
     }
 
-
+    // display check for user search
     protected void Checked(object sender, EventArgs e)
     {
         if (rbl_username.Checked)
@@ -69,7 +69,7 @@ public partial class Admin_editUser : System.Web.UI.Page
         }
     }
 
-
+    // search for user by user name 
     protected void subByUsername(object sender, EventArgs e)
     {
         if (rbl_username.Checked == true && txt_byUsername.Text != "")
@@ -93,6 +93,7 @@ public partial class Admin_editUser : System.Web.UI.Page
         
     }
 
+    // checks if date of birth entered is valid 
     protected void testDate(Object sender, ServerValidateEventArgs e)
     {
         DateTime dob;
@@ -100,6 +101,7 @@ public partial class Admin_editUser : System.Web.UI.Page
         e.IsValid = (DateTime.TryParse(e.Value.ToString(), out dob));
     }
 
+    // search by user info
     protected void subByInfo(object sender, EventArgs e)
     {
         if (rbl_info.Checked == true && txt_byFName.Text != "" && txt_byLname.Text != "" && txt_bydob.Text != "")
@@ -126,7 +128,7 @@ public partial class Admin_editUser : System.Web.UI.Page
     {
         switch (e.CommandName)
         {
-            case "Editx":
+            case "Editx": // sends selected user to the edit template and changes mode 
 
                 int Pid = Convert.ToInt32(e.CommandArgument.ToString());
                 lv_editUser.DataSource = objPatient.getPatientById(Pid);
@@ -136,11 +138,11 @@ public partial class Admin_editUser : System.Web.UI.Page
                 break;
 
             case"Updatex":
-                updateUser(e);
+                updateUser(e); // sends user to be update 
                 break;
 
             case "Cancelx":
-                lbl_accountStatus.Text = "";
+                lbl_accountStatus.Text = ""; // cancel
                 subRebind();
                 break;
         }     
@@ -164,7 +166,7 @@ public partial class Admin_editUser : System.Web.UI.Page
 
         int Id = Convert.ToInt32(e.CommandArgument.ToString());
         bool update;
-        update = objPatient.commitUpdate(Id, Fname, Lname, Address, Phone, Postal, City, Country, dob,usr);
+        update = objPatient.commitUpdate(Id, Fname, Lname, Address, Phone, Postal, City, Country, dob,usr); // updates user and dispays success message to user
         if (update)
         {
             lbl_accountStatus.Text = "Status: Patient Updated  :" +  " " + Id;

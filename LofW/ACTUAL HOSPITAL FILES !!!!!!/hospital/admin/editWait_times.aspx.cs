@@ -18,6 +18,7 @@ public partial class Admin_editWait_times : System.Web.UI.Page
         }
     }
 
+    // binds time to datasource 
     protected void subRebind()
     {
         lv_times.DataSource = objTimes.getTimes();
@@ -34,7 +35,7 @@ public partial class Admin_editWait_times : System.Web.UI.Page
         pnl_update.Visible = false;
     }
 
-
+    // stores value of time to be updated 
     protected void subChange(object sender, ListViewCommandEventArgs e)
     {
         switch (e.CommandName)
@@ -63,13 +64,14 @@ public partial class Admin_editWait_times : System.Web.UI.Page
         time = calcTime(bed, doc, status);
        
         lbl_update_status.Text = hdf_id.Value.ToString();
+        // updates wait time to database 
         CommandResult(objTimes.commitUpdate(id, Math.Abs(time), doc_count, curr_stat, bed_count), "Update");
         pnl_update.Visible = false;
         subRebind();
 
     }
 
-
+    // dispays success message to user 
     private void CommandResult(bool commandFlag, string action)
     {
         if (commandFlag)
@@ -84,7 +86,7 @@ public partial class Admin_editWait_times : System.Web.UI.Page
 
     }
 
-
+    // calculates the waiting time 
     protected int calcTime(int beds, int docs, int status)
     {
         int final_time;

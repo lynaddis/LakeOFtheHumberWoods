@@ -42,6 +42,8 @@
         <br /> <br /> <br />
             </div>
     <div>
+        <%-- add new patient user form --%>
+
            <%-- output status label --%>
         <asp:Label ID="lbl_accountStatus" runat="server" />
         <br /><br />

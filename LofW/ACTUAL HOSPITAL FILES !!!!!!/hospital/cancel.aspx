@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
 </head>
+    <%-- Cancel page for users who cancel their paypal transaction; redirects to homepage --%>
 <script type="text/javascript">
     alert("You have chosen to cancel the Paypal Payment process;The Transaction has been stopped and you will be redirected tothe hospital home page!'");
     window.location ="http://daniellestirling.com/hospital/home.aspx";

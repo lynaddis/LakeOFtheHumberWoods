@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-
+        <%-- dispalys single invoice on page for user to print  --%>
      <asp:DetailsView ID="dv_print" runat="server" AutoGenerateRows="false" >
             <Fields>
                 <asp:TemplateField>

@@ -36,15 +36,17 @@
         <br /><br />
          <asp:Literal ID="lit_msg" runat="server" Text="Hospital Network" />  
     <br />
+    <%-- link to directs page --%>
     <asp:HyperLink ID="hyp_directions" runat="server" Text="Click here for directions to Hospital /Branch locations" Font-Underline="false" NavigateUrl="~/directions.aspx" SkinID="hlink_submit" />
     <br />
     <div>
        
+        <%-- Dispays map with all current hospital locations from database on one map --%>
     <div id="map-canvas" style=" width:400px; height:400px;"></div>
     </div>
 
      
-      
+      <%-- Displays each hospital location from database on a seperate map for better viewing --%>
        <div id="list-wrapper">   
      <asp:DataList ID="dl_locations" runat="server">
          <HeaderTemplate>

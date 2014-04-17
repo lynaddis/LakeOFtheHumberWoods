@@ -9,6 +9,7 @@ public partial class Wait_times : System.Web.UI.Page
 {
     waitTimeClass objTimes = new waitTimeClass();
 
+    // binds list on load
     protected void Page_Load(object sender, EventArgs e)
     {
         Master.pp_masterTitle = "Wait Times";
@@ -17,13 +18,14 @@ public partial class Wait_times : System.Web.UI.Page
         pnl_times.Visible = false;
     }
 
+    // sets list panel visible 
     protected void subGetTimes(object sender, EventArgs e)
     {
         pnl_times.Visible = true;
     }
 
 
-
+    // sets the colour to display to the user based on the time 
     protected void subSetBox(object sender, ListViewItemEventArgs e)
     {
 

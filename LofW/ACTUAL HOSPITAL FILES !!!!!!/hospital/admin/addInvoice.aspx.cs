@@ -11,15 +11,16 @@ public partial class Admin_addInvoice : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        Master.pp_masterTitle = "Admin - Add Invoice";
+        Master.pp_masterTitle = "Admin - Add Invoice"; // over wirtes master page title 
     }
 
-
+    // inserts invoice into database 
     protected void subInsert(object sender, EventArgs e)
     {
        CommandResult (objInvoice.commintInsert(Convert.ToDecimal(txt_amount.Text), txt_procedure.Text, Convert.ToInt32(txt_pid.Text)));
     }
 
+    // displays success message to user
     private void CommandResult(bool commandFlag)
     {
         if (commandFlag)

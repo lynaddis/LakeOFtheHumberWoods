@@ -48,7 +48,7 @@
 
         <asp:Label ID="lbl_status" runat="server" />
         <br /> <br />
-
+        <%-- invoice search fields; search by invoice id or patient id --%>
       
                     <asp:RadioButton ID="rbl_invoiceid" runat="server" Text="Search By Invoice ID"  GroupName="search"  OnCheckedChanged="Checked"  AutoPostBack="true" />
                     <asp:TextBox ID="txt_byInvoice" runat="server" />
@@ -74,6 +74,7 @@
         <asp:Label ID="lbl_invoicelist" runat="server" />
         <br /><br />
 
+        <%-- Displays list of invoices; if a search option was selected then the list will cahnge accordinglty  --%>
         <asp:Panel ID="pnl_display" runat="server" >
             <asp:Repeater ID="rp_editInvoice" runat="server" OnItemCommand="subAdmin" >
                 <ItemTemplate>
@@ -99,6 +100,7 @@
             </asp:Repeater>
          </asp:Panel>
 
+        <%-- upon selection and invoice from the list; sends the selected invoice to be updated --%>
         <asp:Panel ID="pnl_edit" runat="server" >
             <asp:Repeater ID="rp_updateInvoice" runat="server" OnItemCommand="subAdmin" >
                 <ItemTemplate>

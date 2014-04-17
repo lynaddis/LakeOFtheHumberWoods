@@ -1,9 +1,10 @@
-﻿var mapDisplay;
+﻿var mapDisplay; 
 var geocoder;
-var map;
-var Lat_array = new Array();
-var Ling_array = new Array();
+var map; // map 
+var Lat_array = new Array(); // lat array
+var Ling_array = new Array(); // long array
 
+// initializez google map 
 function initialize() {
 
     var mapOptions = {
@@ -13,6 +14,7 @@ function initialize() {
      map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
 
+// parses the location data sent from the asp code behind page from json into an array
 function calc(h_loc)
 {
     
@@ -26,6 +28,7 @@ function calc(h_loc)
     }
 }
 
+// gets the lat and log values of an address and uses it to set as a marker on the  map
 function codeAddress(address)
 {
    var geocoder = new google.maps.Geocoder();
@@ -43,35 +46,15 @@ function codeAddress(address)
 
 }
 
-function setMarker(Lat,Ling)
-{
-    var myLat = new google.maps.LatLng(parseFloat(Lat[0].toString()),parseFloat(Ling_array[0].toString()))
 
-        var marker = new google.maps.Marker({
-            position: myLat,
-            map: map,
-            title:"Hospital"
-        });
-}
-
-
-function getAddresses(h_loc)
-{
-    
-    var j_string = JSON.stringify(h_loc);
-    var j_parse = JSON.parse(j_string);
-    locations_array = eval('(' + j_parse + ')');
-
-    codeAddress(locations_array);
-}
-
-
+// resize map on window resize 
 function resizeMap() 
 {
     google.maps.event.trigger(map, "resize");
 }
-
+// adds listener to window on load to initialize maps 
 google.maps.event.addDomListener(window, 'load', initialize);
 
+// adds listener to window on resize to resize map
 google.maps.event.addDomListener(window, 'resize', resizeMap);
 

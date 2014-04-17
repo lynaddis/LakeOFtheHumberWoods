@@ -6,15 +6,23 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-    <div>
+    <style>
+           #list {
+              list-style:none;
+              text-decoration:none;
+          }
+
+    </style>
+    
+     <div>
         <div class="page_title"><h2>Waiting Room Times</h2>
             <p>Wait times are updated every hour, on the hour, unless a significant change in waiting times occurs</p>
 
         </div>
         <div class="form_back">
         <asp:Label ID="lbl_title" runat="server" Text="<h2>Check Wait Times</h2>" />
-
-        <ul>
+            <%-- Colour ledgen for user --%>
+        <ul id="list">
             <li>
                 <asp:Label ID="lbl_green" runat="server" Text="Green ( 60 mins and under)" AssociatedControlID="lbl_good" /> <br />
                 <asp:Label ID="lbl_good" runat="server" Width="100" Height="100" BackColor="Green" />
@@ -32,7 +40,7 @@
         <br /><br />
         <asp:Button ID="btn_times" runat="server" Text="Get Waiting Time" OnClick="subGetTimes" SkinID="btn_submit" />
         <br /><br />
-
+            <%-- List view that display colour encoded time to user and hospital status --%>
         <asp:Panel ID="pnl_times" runat="server">
       <asp:ListView ID="lv_times" runat="server" OnItemDataBound="subSetBox">
            <ItemTemplate>

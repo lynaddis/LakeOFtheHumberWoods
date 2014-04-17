@@ -7,7 +7,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cph_banner" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cph_main" Runat="Server">
-     
+     <%--  user login--%>
              <asp:Login ID="log_form" runat="server" DestinationPageUrl="~/patient/account.aspx" />
 
 

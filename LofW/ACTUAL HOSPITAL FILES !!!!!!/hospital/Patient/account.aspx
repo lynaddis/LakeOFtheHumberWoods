@@ -38,7 +38,7 @@
     </asp:LoginView>
 
 
-        
+        <%-- landing page for logged in patients where they can either select paybills or lab results --%>
         <asp:HyperLink ID="hyp_user_bills" runat="server" Text="Pay Bills"  NavigateUrl="~/Patient/payBills.aspx" />
         <asp:HyperLink ID="hyp_user_lab" runat="server" Text="Lab Results"  NavigateUrl="~/Patient/LabResults.aspx" />
         

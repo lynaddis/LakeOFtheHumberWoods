@@ -15,6 +15,12 @@ public class hospitalLocationClass
         return allLocations.ToList();
     }
 
+    public List<Hospital_location> getLocationById(int id)
+    {
+        HospitalDataContext objLocation = new HospitalDataContext();
+        var allInvoice = objLocation.Hospital_locations.Where(x => x.Id == id).Select(x => x);
+        return allInvoice.ToList();
+    }
 
     public List<string> getLocs()
     {

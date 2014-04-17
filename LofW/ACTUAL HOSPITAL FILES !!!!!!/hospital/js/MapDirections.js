@@ -1,7 +1,8 @@
-﻿var directionsDisplay;
+﻿var directionsDisplay; // directions 
 var directionsService = new google.maps.DirectionsService();
-var map;
+var map; // map 
 
+// initialize map
 function initialize() {
     directionsDisplay = new google.maps.DirectionsRenderer();
     var mapOptions = {
@@ -16,6 +17,7 @@ function initialize() {
 
 }
 
+// gets the starting and ending location and options from the asp page and returns a set of directions 
 function getDirections() {
     var start = document.getElementById('Start').value;
     var end = document.getElementById('End').value;
@@ -79,6 +81,7 @@ function revDirections() {
 }
 
 
+// calls the get directs if the page is valid  
 function checkDirection()
 {
     if (Page_ClientValidate("Directions")) {
@@ -89,6 +92,7 @@ function checkDirection()
     }
 }
 
+// call reverse directions if the page is valid 
 function checkReverse() {
     if (Page_ClientValidate("Directions")) {
         revDirections();
@@ -99,10 +103,13 @@ function checkReverse() {
     }
 }
 
-
+// resize map 
 function resizeMap() {
     google.maps.event.trigger(map, "resize");
 }
 
+// adds listener to window on load to initialize maps 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+// adds listener to window on resize to resize map
 google.maps.event.addDomListener(window, 'resize', resizeMap);

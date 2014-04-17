@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
         hospitalLocationClass objLocations = new hospitalLocationClass();
 
-
+        // binds drop down list on load with location
         protected void Page_Load(object sender, EventArgs e)
         {
             Master.pp_masterTitle = "Directions";

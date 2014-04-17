@@ -25,7 +25,7 @@ public partial class Admin_editInvoice : System.Web.UI.Page
 
     }
 
-
+    // logic for selection a search option button 
     protected void Checked(object sender, EventArgs e)
     {
         if (rbl_invoiceid.Checked)
@@ -49,7 +49,7 @@ public partial class Admin_editInvoice : System.Web.UI.Page
         }
     }
 
-
+    // binds selected invoice to edit 
     protected void subRebind()
     {
        
@@ -60,6 +60,7 @@ public partial class Admin_editInvoice : System.Web.UI.Page
         pnl_display.Visible = true;
     }
 
+    // search by invoice 
     protected void subByInvoice(object sender, EventArgs e)
     {
         if (rbl_invoiceid.Checked == true && txt_byInvoice.Text != "")
@@ -78,7 +79,7 @@ public partial class Admin_editInvoice : System.Web.UI.Page
         }
     }
 
-
+    // search by patient
     protected void subByPatient(object sender, EventArgs e)
     {
         if (rbl_patientid.Checked == true && txt_byPatient.Text != "")
@@ -97,12 +98,12 @@ public partial class Admin_editInvoice : System.Web.UI.Page
         }
     }
 
-
+    // repeater item selection 
     protected void subAdmin(object sender, RepeaterCommandEventArgs e)
     {
         switch (e.CommandName)
         {
-            case "Editx":
+            case "Editx": // sends selected invoce to the edite repeater
 
                 int Id = Convert.ToInt32(e.CommandArgument.ToString());
                 rp_updateInvoice.DataSource = objInvoice.getInvoiceById(Id);
@@ -112,7 +113,7 @@ public partial class Admin_editInvoice : System.Web.UI.Page
                 pnl_edit.Visible = true;
                 break;
 
-            case "Updatex":
+            case "Updatex": //updates selected invoice 
                 
                 decimal Amount = (Convert.ToDecimal(((TextBox)e.Item.FindControl("txt_amount")).Text));
                 string Status = ((TextBox)e.Item.FindControl("txt_status")).Text;
@@ -122,6 +123,7 @@ public partial class Admin_editInvoice : System.Web.UI.Page
 
                 int ID = Convert.ToInt32(e.CommandArgument.ToString());
 
+                // updates invoice in database  and displays success message to user
                 bool update = objInvoice.commitUpdate(ID, Amount, Status, Proc, Method, Pid);
                 if (update)
                 {
@@ -135,7 +137,7 @@ public partial class Admin_editInvoice : System.Web.UI.Page
                 }
                 break;
 
-            case "Cancelx":
+            case "Cancelx": // cancels 
                 subRebind();
                 break;
     

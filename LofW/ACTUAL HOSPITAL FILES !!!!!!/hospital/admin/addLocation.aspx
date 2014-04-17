@@ -43,7 +43,7 @@
         <br /> <br /> <br />
             </div>
         <div>
-
+            <%-- Add hospital location form --%>
         <asp:Label ID="lbl_Status" runat="server" />
         <br /> <br />
 

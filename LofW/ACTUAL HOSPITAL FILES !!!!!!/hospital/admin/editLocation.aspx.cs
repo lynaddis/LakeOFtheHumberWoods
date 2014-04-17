@@ -21,11 +21,11 @@ public partial class Admin_editLocation : System.Web.UI.Page
     {
         switch (e.CommandName)
         {
-            case "Selectx":
+            case "Selectx": // sends selected location to edit 
                 string selected = e.CommandArgument.ToString();
                 showEdit(selected);
                 break;
-            case "Deletex":
+            case "Deletex": // delets selected location 
                 int id = Convert.ToInt32(e.CommandArgument.ToString());
                 hospitalLocationClass deleteLoc = new hospitalLocationClass();
                CommandResult(deleteLoc.deleteLocation(id),"Delete");
@@ -40,7 +40,7 @@ public partial class Admin_editLocation : System.Web.UI.Page
     {
         switch (e.CommandName)
         {
-            case "Updatex":
+            case "Updatex": // updates selected location 
                 string Name = ((TextBox)e.Item.FindControl("txt_hName")).Text;
                 string Address = ((TextBox)e.Item.FindControl("txt_hAddress")).Text;
                 string Description = ((TextBox)e.Item.FindControl("txt_hDes")).Text;
@@ -48,6 +48,7 @@ public partial class Admin_editLocation : System.Web.UI.Page
                 int id = Convert.ToInt32(e.CommandArgument.ToString());
 
                 hospitalLocationClass updatLoc = new hospitalLocationClass();
+                // updates location in database 
                CommandResult( updatLoc.commitUpdate(id, Name, Address, Description),"Update");
                showList();
                 break;
@@ -60,7 +61,7 @@ public partial class Admin_editLocation : System.Web.UI.Page
     }
 
 
-
+    // rebinds hospital location list 
     protected void subRebind()
     {
         hospitalLocationClass locations = new hospitalLocationClass();
@@ -68,6 +69,7 @@ public partial class Admin_editLocation : System.Web.UI.Page
         dl_locations.DataBind();
     }
 
+    // shows edit panel with selected hospital locatin 
     protected void showEdit(string id)
     {
         pnl_list.Visible = false;
@@ -78,6 +80,7 @@ public partial class Admin_editLocation : System.Web.UI.Page
         dl_editLoc.DataBind();
     }
 
+    // shows list of hospital locations 
     protected void showList()
     {
         pnl_edit.Visible = false;
@@ -85,6 +88,7 @@ public partial class Admin_editLocation : System.Web.UI.Page
         subRebind();
     }
 
+    // dispays success message to user 
     private void CommandResult(bool commandFlag, string action)
     {
         if (commandFlag)

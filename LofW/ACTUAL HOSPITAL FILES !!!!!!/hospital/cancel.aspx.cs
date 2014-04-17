@@ -9,14 +9,7 @@ public partial class cancel : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Master.pp_masterTitle = "Cancel";
-        //string redirectTo = "http://daniellestirling.com/hospital/home.aspx";
-        //string script = "<script>";
-        //script += "alert('You have chosen to cancel the Paypal Payment process;The Transaction has been stopped and you will be redirected tothe hospital home page!');";
-        //script += "window.location='" + redirectTo + "'</script>";
-
-
-        //ScriptManager.RegisterStartupScript(this, typeof(Page), "test", script, true);
+        Master.pp_masterTitle = "Cancel"; // over writes master page title
 
     }
 }

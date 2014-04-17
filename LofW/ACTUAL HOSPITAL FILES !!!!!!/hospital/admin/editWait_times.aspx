@@ -49,7 +49,7 @@
     <asp:Label ID="lbl_title" runat="server" Text="Update Hospital Wait Times" />
 
 
-
+        <%-- displays current hospital status  --%>
        <asp:ListView ID="lv_times" runat="server" OnItemCommand="subChange">
            <ItemTemplate>
                <br /><br />
@@ -71,8 +71,9 @@
        </asp:ListView>
 
         <asp:Panel ID="pnl_update" runat="server">
-        <asp:HiddenField ID="hdf_id" runat="server" />
+        <asp:HiddenField ID="hdf_id" runat="server" /> <%-- hidden field for passing data --%>
 
+            <%-- update wait times form --%>
          <asp:Label ID="lbl_beds_u" runat="server" Text="Number of Beds" AssociatedControlID="ddl_beds" />
                <asp:DropDownList ID="ddl_beds" runat="server" AutoPostBack="true" >
                    <asp:ListItem Text="0" Value="20"/>

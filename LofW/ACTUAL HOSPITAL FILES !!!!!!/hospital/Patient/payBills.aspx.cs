@@ -36,7 +36,7 @@ public partial class Patient_payBills : System.Web.UI.Page
         }
     }
 
-
+    // changes panel depending on what payment option is checked 
     protected void Checked(object sender, EventArgs e)
     {
         if (rbl_credit.Checked == true)
@@ -68,6 +68,7 @@ public partial class Patient_payBills : System.Web.UI.Page
         gv_bills_list.DataBind();
     }
 
+    // sends selected invoice id to details view to display the details to the user
     protected void subSelect(object sender, GridViewCommandEventArgs e)
     {
         switch (e.CommandName)
@@ -83,6 +84,7 @@ public partial class Patient_payBills : System.Web.UI.Page
         }
     }
 
+    //
     protected void subPayform(object sender, DetailsViewCommandEventArgs e)
     {
         switch (e.CommandName)
@@ -105,16 +107,17 @@ public partial class Patient_payBills : System.Web.UI.Page
 
             case "Printx": // new window code here
 
-                string url = "printInvoice.aspx?param=" + e.CommandArgument.ToString();
+                string url = "printInvoice.aspx?param=" + e.CommandArgument.ToString(); // post to print page the current invoce id that is to be printed
 
+                // opens the print page in a new window
                 string s = "window.open('" + url + "', 'popup_window', 'width=300,height=400,left=400,top=100,resizable=yes,menubar=yes');";
 
 
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "script", s, true);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "script", s, true); // runs new window code
 
                 break;
 
-
+                // cancels detials view and goes bcak to invoice selection screen
             case "Cancelx":
                 pnl_list.Visible = true;
                 pnl_info.Visible = false;
@@ -135,14 +138,16 @@ public partial class Patient_payBills : System.Web.UI.Page
         invoiceID = Convert.ToInt32(hdf_id.Value.ToString());
         ID = Convert.ToInt32(hdf_pid.Value.ToString());
        
-        objInvoice.commitUpdatePaid(invoiceID, "Paid", "Creditcard");
+        objInvoice.commitUpdatePaid(invoiceID, "Paid", "Creditcard"); // updates invoice in database 
+        
+        // records credit card transaction to database  
         CommandResult(objCredit.commitInsert(invoiceID, ID, txt_cardNum.ToString(), txt_cardName.ToString(), txt_expireDate.ToString(), DateTime.Now.ToShortDateString()));
         clearForm();
         pnl_list.Visible = true;
         pnl_info.Visible = false;
     }
 
-
+    // clears creadit card form
     protected void clearForm()
     {
         txt_cardName.Text = string.Empty;
@@ -152,6 +157,7 @@ public partial class Patient_payBills : System.Web.UI.Page
         pnl_form.Visible = false;
     }
 
+    // displays success message to user
     private void CommandResult(bool commandFlag)
     {
         if (commandFlag)
@@ -166,25 +172,17 @@ public partial class Patient_payBills : System.Web.UI.Page
 
     }
 
+    // sends paypal the invoice data to process it as an order
     protected void subPaypal(object sender, EventArgs e)
     {
-        string url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
+        string url = "https://www.sandbox.paypal.com/cgi-bin/webscr"; // paypal url 
+        // payment data query
         string query = "?cmd=_xclick&business=dev-facilitator@j-lacroix.net&lc=CA&item_name=" + hdf_proc.Value.ToString() +
             "&item_number=" + hdf_id.Value.ToString() + "&amount=" + hdf_amount.Value.ToString() + "&currency_code=CAD"+
             "&button_subtype=services&return=http://daniellestirling.com/hospital/processing.aspx" +"&cancel_return="+
             "http://daniellestirling.com/hospital/cancel.aspx" + "&bn=PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted";
 
-        Response.Redirect(url + query);
-
-        //HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-
-        //req.Method = "POST";
-        //req.ContentType = "application/x-www-form-urlencoded";
-        //req.ContentLength = query.Length;
-
-        //StreamWriter sysOut = new StreamWriter(req.GetRequestStream(), System.Text.Encoding.ASCII);
-        //sysOut.Write(query);
-        //sysOut.Close();
+        Response.Redirect(url + query); // redirects page to paypal page
     }
 
 

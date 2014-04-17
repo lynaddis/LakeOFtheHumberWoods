@@ -48,8 +48,8 @@
         <br />
         <asp:Label ID="lbl_accountStatus" runat="server" />
         <br /><br />
-
-       <asp:Panel ID="pnl_search" runat="server" >
+                    <%--  search for user by user name or by first,last and date of birth--%>
+                     <asp:Panel ID="pnl_search" runat="server" >
 
                     <asp:RadioButton ID="rbl_username" runat="server" Text="Search by Username" OnCheckedChanged="Checked"  GroupName="search" AutoPostBack="true" />
 
@@ -89,7 +89,7 @@
 
         <asp:Label ID="lbl_editlist" runat="server" />
         <br /><br />
-
+            <%-- displays list of users   --%>
     
         <asp:ListView ID="lv_editUser" runat="server" OnItemCommand="subAdmin" >
             <ItemTemplate>
@@ -120,7 +120,7 @@
                         <asp:LinkButton ID="lk_btn_update" runat="server" Text="Edit" CommandName="Editx" CommandArgument='<%#Eval("Id") %>' CausesValidation="false" /> 
 
             </ItemTemplate>
-
+            <%-- selected user edit panel --%>
             <EditItemTemplate>
 
                          <%-- First Name --%>
