@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq/*importing necessary namespace.*/;
+using System.Linq/*importing necessary namespace.! */;
 using System.Web;
 
 
@@ -10,27 +10,23 @@ public class illnessClass
     {
         HospitalDataContext objIll = new HospitalDataContext();
 
-        var allIllnesses = objIll.illnessAdmins.Select(x => x); /*x just represents your columns*/
-        /*var allSubmissions = from x in objSub.submissions select x; */
+        var allIllnesses = objIll.illnessAdmins.Select(x => x); /*x just represents your columns ! */
+        /*var allSubmissions = from x in objSub.submissions select x; ! */
 
         return allIllnesses;
     }
-    public IQueryable<illnessAdmin> getIllnessesK(string _Location)
+    public IQueryable<illnessAdmin> getIllnessesK(string _Location) //creating specific queries to call different illnesses based on region!
     {
         HospitalDataContext objIll = new HospitalDataContext();
        
-        var Illnesses = objIll.illnessAdmins.Where(x => x.Location == "Kenora").Select(x=> x); /*x just represents your columns*/
-    /*var allSubmissions = from x in objSub.submissions select x; */
-
+        var Illnesses = objIll.illnessAdmins.Where(x => x.Location == "Kenora").Select(x=> x); //location has to equal Kenora!
     return Illnesses;
 }
     public IQueryable<illnessAdmin> getIllnessesO(string _Location)
     {
         HospitalDataContext objIll = new HospitalDataContext();
 
-        var Illnesses = objIll.illnessAdmins.Where(x => x.Location == "Ontario").Select(x => x); /*x just represents your columns*/
-        /*var allSubmissions = from x in objSub.submissions select x; */
-
+        var Illnesses = objIll.illnessAdmins.Where(x => x.Location == "Ontario").Select(x => x); //location has to equal ontario!
         return Illnesses;
     }
 
@@ -38,8 +34,7 @@ public class illnessClass
     {
         HospitalDataContext objIll = new HospitalDataContext();
 
-        var Illnesses = objIll.illnessAdmins.Where(x => x.Location == "Canada").Select(x => x); /*x just represents your columns*/
-        /*var allSubmissions = from x in objSub.submissions select x; */
+        var Illnesses = objIll.illnessAdmins.Where(x => x.Location == "Canada").Select(x => x); //location has to equal Canada!
 
         return Illnesses;
     }
@@ -71,6 +66,8 @@ public class illnessClass
             return true;
         }
     }
+
+    //updates! COMMIT!
     public bool commitUpdate(int _Id, string _InfectionName, string _Location, string _entryDate, string _Description, string __symptoms, string _preventatives, string _treatments, string _recomend)
     {
         HospitalDataContext objIll = new HospitalDataContext();

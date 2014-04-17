@@ -20,7 +20,7 @@
     <br />
        <asp:HyperLink ID="hpl_upH" runat="server" Text="Edit Health Concerns" Font-Underline="false" SkinID="hblink_submit" NavigateUrl="~/Admin/adminupdatehealth.aspx"  />
     <br />
-     <asp:Label ID="lbl_message" runat="server" /><%-- will output message when insert is successfull--%>
+     <asp:Label ID="lbl_message" runat="server" /><%-- will output message when insert is successful--%>
         <br />
         <br />
     
@@ -32,38 +32,38 @@
                     <asp:TextBox ID="txt_infnameI" runat="server" /> 
                      <asp:RequiredFieldValidator ID="rfv_infnameI" runat="server" ControlToValidate="txt_infnameI" SetFocusOnError="true" ErrorMessage="Please Enter Illness Name!" Text="*Required!" Display="Dynamic" ValidationGroup="illess_val" />
                   <br />
-         <asp:Label ID="lbl_region" runat="server" Text=" Region Infected: " />
+         <asp:Label ID="lbl_region" runat="server" Text=" Region Infected: " />      <%-- Region Text Field --%>
               
                         <asp:TextBox ID="txt_locationI" runat="server" />
                         <asp:RequiredFieldValidator ID="rfv_locationI" runat="server" ControlToValidate="txt_locationI" SetFocusOnError="true" ErrorMessage="Please Enter Region!" Text="*Required" Display="Dynamic" ValidationGroup="illess_val" />
                          <br />
-                    <asp:Label ID="lbl_entryDateI" runat="server" Text="Date" />
+                    <asp:Label ID="lbl_entryDateI" runat="server" Text="Date" />   <%-- Date Text Field --%>
 
                     <asp:TextBox ID="txt_entryDateI" runat="server" />
                     <asp:RequiredFieldValidator ID="rfv_txt_rentryDate" runat="server" ControlToValidate="txt_entryDateI" SetFocusOnError="true" ErrorMessage="Please enter date" Text="*Required" Display="Dynamic" ValidationGroup="illess_val" />
     <asp:CompareValidator ID="com_date" runat="server" ControlToValidate="txt_entryDateI" Operator="DataTypeCheck" Type="Date" Text="Invalid Date!" ErrorMessage="Please Enter Correct Date Format" ValidationGroup="illess_val" />
                 <br />
                     
-                     <asp:Label ID="lbl_desc" runat="server" Text="Description:" />
+                     <asp:Label ID="lbl_desc" runat="server" Text="Description:" />   <%-- Description Text Field --%>
                         <asp:TextBox ID="txt_descI" runat="server" />
                         <asp:RequiredFieldValidator ID="rfv_descI" runat="server" ControlToValidate="txt_descI" SetFocusOnError="true" ErrorMessage="Please Enter Description!" Text="*Required" Display="Dynamic" ValidationGroup="illess_val" />
                        <br />
-                     <asp:Label ID="lbl_symptoms" runat="server" Text=" Symptoms:" />
+                     <asp:Label ID="lbl_symptoms" runat="server" Text=" Symptoms:" />   <%-- Symptoms Text Field --%>
                         <asp:TextBox ID="txt_symptomsI" runat="server" />
                         <asp:RequiredFieldValidator ID="rfv_symptomsI" runat="server" ControlToValidate="txt_symptomsI" SetFocusOnError="true" ErrorMessage="Please Enter Symptoms" Text="*Required" Display="Dynamic" ValidationGroup="illess_val" />
                             <br />
-                     <asp:Label ID="lbl_prev" runat="server" Text="Preventatives:" />
+                     <asp:Label ID="lbl_prev" runat="server" Text="Preventatives:" />  <%-- Prevent Text Field --%>
                     <asp:TextBox ID="txt_preventI" runat="server" />
                         <asp:RequiredFieldValidator ID="rfv_preventI" runat="server" ControlToValidate="txt_preventI" SetFocusOnError="true" ErrorMessage="Please Enter Preventatives" Text="*Required" Display="Dynamic" ValidationGroup="illess_val" />
     
           <br />
-                      <asp:Label ID="lbl_treat" runat="server" Text="Treatments:" />
+                      <asp:Label ID="lbl_treat" runat="server" Text="Treatments:" />   <%-- Treatments Text Field --%>
                     <asp:TextBox ID="txt_treatmentsI" runat="server" />
                         <asp:RequiredFieldValidator ID="rfv_treatmentsI" runat="server" ControlToValidate="txt_treatmentsI" SetFocusOnError="true" ErrorMessage="Please Enter Treatments" Text="*Required" Display="Dynamic" ValidationGroup="illess_val" />
     
               <br />
-                     <asp:Label ID="lbl_rec" runat="server" Text=" Recommenations: " />
-       
+                     <asp:Label ID="lbl_rec" runat="server" Text=" Recommendations: " />   <%-- Recommendations Text Field.  Can be Empty --%>
+        
                     <asp:TextBox ID="txt_recommendI" runat="server" />
                        
     <br />

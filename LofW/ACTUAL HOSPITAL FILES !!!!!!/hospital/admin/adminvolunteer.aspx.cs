@@ -7,19 +7,19 @@ using System.Web.UI.WebControls;
 
 public partial class adminvolunteer : System.Web.UI.Page
 {
-    SubmissionsClass objVol = new SubmissionsClass();
+    SubmissionsClass objVol = new SubmissionsClass(); //calling submissions linq class!
 
     protected void dtl_Change(object sender, PagePropertiesChangingEventArgs e)
     {
-        datapager_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
-        _subRebind();
+        datapager_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false); //datapager!
+        _subRebind(); //need _subRebind because datapager will only dispaly 1 record (reguardless of page number you pick) without resetting the fields!
 
     }
 
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        Master.pp_masterTitle = "Admin - Volunteer";
+        Master.pp_masterTitle = "Admin - Volunteer"; //title of page!
         if (!IsPostBack)
         {
 
@@ -33,7 +33,7 @@ public partial class adminvolunteer : System.Web.UI.Page
     {
         if (flag)
         {
-            lbl_message.Text = "Volunteer form has been successfully " + str + "d!";
+            lbl_message.Text = "Volunteer form has been successfully " + str + "d!"; //success message!
         }
         else
         {
@@ -41,19 +41,19 @@ public partial class adminvolunteer : System.Web.UI.Page
         }
     }
 
-    private void _subRebind() //sub routine used to reset fields 
+    private void _subRebind() //sub routine used to reset fields !
     {
 
         ltv_all.DataSource = objVol.getSubmissions();
-        ltv_all.DataBind(); //binds data
+        ltv_all.DataBind(); //binds data!
     }
 
-    protected void subEdit(object sender, ListViewCommandEventArgs e) //specify it is a datalist Command event args.
+    protected void subEdit(object sender, ListViewCommandEventArgs e) //specify it is a datalist Command event args.!
     {
         switch (e.CommandName)
         {
             case "UpdateE":
-
+                //update information txtname is output string name, "txt_nameE" is actual textbox control on presentation page!
                 TextBox txtname = (TextBox)e.Item.FindControl("txt_nameE");
                 TextBox txtage = (TextBox)e.Item.FindControl("txt_ageE");
                 TextBox txtgender = (TextBox)e.Item.FindControl("txt_genderE");
@@ -71,21 +71,21 @@ public partial class adminvolunteer : System.Web.UI.Page
 
                 HiddenField hdfId = (HiddenField)e.Item.FindControl("hdf_IdE");
                 int subId = int.Parse(hdfId.Value.ToString());
-
+                //parsing hidden field of ID into int!
                 int AgeU = Convert.ToInt32(txtage.Text.ToString());
-
+                //Parsed age outside of string to see if it works -- it does!
                 _strMessage(objVol.commitUpdate(subId, txtname.Text, AgeU, txtgender.Text, txtemail.Text, txtphone.Text, txtreason.Text, txtVolExp.Text, txtifYes.Text, decimal.Parse(txtnoHours.Text), txtpersonRequest.Text, txtinterest.Text, txtallergies.Text, txtdeptRefuse.Text, txtdeptRequest.Text.ToString()), "update");
                 _subRebind();
 
                 break;
 
             case "DeleteE":
-                int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_IdE")).Value);//use Id numbers to delete rows.
+                int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_IdE")).Value);//use Id numbers to delete rows.!
                 _strMessage(objVol.commitDelete(_Id), "delete");
                 _subRebind();
                 break;
             case "CancelE":
-                _subRebind();
+                _subRebind(); //resets page!
                 break;
         }
     }

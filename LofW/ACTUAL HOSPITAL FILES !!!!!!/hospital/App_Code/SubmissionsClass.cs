@@ -76,13 +76,14 @@ public class SubmissionsClass
             return true;
         }
     }
+    //delete ... !
     public bool commitDelete(int _Id)
     {
         HospitalDataContext objSub = new HospitalDataContext();
         using (objSub)
         {
             var objDelSub = objSub.submissions.Single(x => x.Id == _Id);
-            objSub.submissions.DeleteOnSubmit(objDelSub);
+            objSub.submissions.DeleteOnSubmit(objDelSub); //calling submissions from dbml file
             objSub.SubmitChanges();
             return true;
         }

@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
-    illnessClass objHealth = new illnessClass();
+    illnessClass objHealth = new illnessClass(); //illness Linq class!
 
     protected void dtl_change(object sender, PagePropertiesChangingEventArgs e)
     {
-        datapager_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        datapager_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false); //datapager subroutine!
         _subRebind();
 
     }
@@ -22,12 +22,12 @@ public partial class _Default : System.Web.UI.Page
         if (!IsPostBack)
         {
 
-            _subRebind();
-            _subRebinded();
+            _subRebind();//subroutine for insert!
+            _subRebinded(); //second rebind to work with recommendations information / class!
         }
 
     }
-    private void _strMessage(bool flag, string str)
+    private void _strMessage(bool flag, string str) //message for updates/deletes!
     {
         if (flag)
         {
@@ -39,16 +39,16 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    private void _subRebind() //sub routine used to reset fields 
+    private void _subRebind() //sub routine used to reset fields !
     {
 
         ltv_update.DataSource = objHealth.getIllnesses();
-        ltv_update.DataBind(); //binds data
+        ltv_update.DataBind(); //binds data!
     }
 
-    protected void subUpDel(object sender, ListViewCommandEventArgs e) //specify it is a datalist Command event args.
+    protected void subUpDel(object sender, ListViewCommandEventArgs e) //specify it is a datalist Command event args.!
     {
-        switch (e.CommandName)
+        switch (e.CommandName) //updateX = update button command name!
         {
             case "UpdateX":
 
@@ -65,13 +65,13 @@ public partial class _Default : System.Web.UI.Page
                 int subId = int.Parse(hdfId.Value.ToString());
 
 
-                _strMessage(objHealth.commitUpdate(subId, txtname.Text, txtloc.Text, txtentry.Text, txtdesc.Text, txtsympt.Text, txtprev.Text, txttreat.Text, txtrec.Text.ToString()), "update");
+                _strMessage(objHealth.commitUpdate(subId, txtname.Text, txtloc.Text, txtentry.Text, txtdesc.Text, txtsympt.Text, txtprev.Text, txttreat.Text, txtrec.Text.ToString()), "update"); 
                 _subRebind();
 
                 break;
 
             case "DeleteX":
-                int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_Id")).Value);//use Id numbers to delete rows.
+                int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_Id")).Value);//use Id numbers to delete rows.!
                 _strMessage(objHealth.commitDelete(_Id), "delete");
                 _subRebind();
                 break;
@@ -81,20 +81,20 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    recomendClass objRec = new recomendClass();
+    recomendClass objRec = new recomendClass(); //recommend class for recommendations on presentation page!
 
-    private void _subRebinded() //sub routine used to reset fields 
+    private void _subRebinded() //sub routine used to reset fields !
     {
 
-        rep_rec.DataSource = objRec.getRecommendations();
-        rep_rec.DataBind(); //binds data
+        rep_rec.DataSource = objRec.getRecommendations(); //calling query from recommend class!
+        rep_rec.DataBind(); //binds data!
     }
-    protected void recDelete(object sender, RepeaterCommandEventArgs e)
+    protected void recDelete(object sender, RepeaterCommandEventArgs e) //repeaterCommand to work!
     {
         switch (e.CommandName)
         {
             case "Deletex":
-                int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_IdD")).Value);//use Id numbers to delete rows.
+                int _Id = int.Parse(((HiddenField)e.Item.FindControl("hdf_IdD")).Value);//use Id numbers to delete rows.!
                 _strdMessage(objRec.commitDelete(_Id), "delete");
                 _subRebinded();
                 break;
@@ -103,7 +103,7 @@ public partial class _Default : System.Web.UI.Page
                 break;
         }
     }
-    private void _strdMessage(bool flag, string str)
+    private void _strdMessage(bool flag, string str) //message output for recommendations (when deleted)!
     {
         if (flag)
         {

@@ -14,14 +14,14 @@ public partial class adminspecialists : System.Web.UI.Page
         Master.pp_masterTitle = "Admin - Specialists";
     }
 
-    protected void ltv_allChange(object sender, PagePropertiesChangingEventArgs e)
+    protected void ltv_allChange(object sender, PagePropertiesChangingEventArgs e) //ltv_allChange from list view, have to call Page PropertiesChangingEventAgs to enable event!
     {
-        dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
+        dp_listAll.SetPageProperties(e.StartRowIndex, e.MaximumRows, false); //dp_listAll.binds datapager to subroutine!
         _subRebind();
       
     }
 
-    private void _subRebind() //sub routine used to reset fields 
+    private void _subRebind() //sub routine used to reset fields !
     {
         txt_entryDateI.Text = string.Empty;
         txt_appAvailI.Text = string.Empty;
@@ -36,28 +36,26 @@ public partial class adminspecialists : System.Web.UI.Page
 
     protected void subInsert(object sender, CommandEventArgs e)
     {
-        switch (e.CommandName) //calls command names from presentation page for Insert.
+        switch (e.CommandName) //calls command names from presentation page for Insert.!
         {
             case "Insert":
 
-                DateTime Date = (DateTime.Parse(txt_entryDateI.Text.ToString()));
-               // string nextDate = (Convert.(specCal.ToString["EntryDate"])); //identified by EntryDate
-             //   DateTime nDate = DateTime.Parse(nextDate);//parsing it to date time
-              //  DateTime entryDate = Convert.ToDateTime(specCal.["EntryDate"]).ToString("MM/DD/YYYY"); 
+                DateTime Date = (DateTime.Parse(txt_entryDateI.Text.ToString())); //parsing date!
+       
 
               _strMessage(specCal.commitInsert(Date, txt_appAvailI.Text, txt_snameI.Text, txt_fieldI.Text, txt_appInfoI.Text, txt_timeI.Text), "insert");
                 _subRebind();
                 break;
-            case "Cancel": //only needs subrebind because you aren't changing anything, so fields justneed to be reset
+            case "Cancel": //only needs subrebind because you aren't changing anything, so fields justneed to be reset!
                 _subRebind();
                 break;
 
         }
 
     }
-    protected void subEdit(object sender, ListViewCommandEventArgs e)
+    protected void subEdit(object sender, ListViewCommandEventArgs e) //using subEdit routine to bind listview to commands
     {
-        switch (e.CommandName)
+        switch (e.CommandName) //switching command names from buttons
         {
             case "UpdateE":
 
@@ -69,11 +67,11 @@ public partial class adminspecialists : System.Web.UI.Page
                 TextBox txtappInfoE = (TextBox)e.Item.FindControl("txt_appInfoE");
                 TextBox txttimesAvailE = (TextBox)e.Item.FindControl("txt_timesAvailE");
                
-               
+               //parsing Id to int!
                 HiddenField hdfIDU = (HiddenField)e.Item.FindControl("hdf_idE");
                 int Id = int.Parse(hdfIDU.Value.ToString());
 
-                _strMessage(specCal.commitUpdate(Id, DateTime.Parse(txtEdateE.Text.ToString()), txtsnameE.Text, txtfieldE.Text, txtappAvailE.Text, txtappInfoE.Text, txttimesAvailE.Text.ToString()), "update");
+                _strMessage(specCal.commitUpdate(Id, DateTime.Parse(txtEdateE.Text.ToString()), txtsnameE.Text, txtfieldE.Text, txtappAvailE.Text, txtappInfoE.Text, txttimesAvailE.Text.ToString()), "update"); 
 
                 _subRebind();
 
@@ -93,7 +91,7 @@ public partial class adminspecialists : System.Web.UI.Page
     }
 
 
-    private void _strMessage(bool flag, string str)
+    private void _strMessage(bool flag, string str) //creating message output for insert/update/delete
     {
         if (flag)
         {
@@ -104,8 +102,5 @@ public partial class adminspecialists : System.Web.UI.Page
             lbl_output.Text = "Sorry, unable to " + str + "submissions";//if insert fails then this message is produced.
         }
     }
-    protected void ltv_all_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
-    {
-
-    }
+   
 }

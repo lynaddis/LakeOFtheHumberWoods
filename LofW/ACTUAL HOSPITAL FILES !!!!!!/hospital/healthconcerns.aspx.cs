@@ -21,19 +21,19 @@ public partial class healthconcerns : System.Web.UI.Page
         {
             if (!string.IsNullOrEmpty(Request.QueryString["Location"]))
             {
-                rpt_k.DataSource = illness.Where(x => x.Location == "Kenora").Select(x => x);
+                rpt_k.DataSource = illness.Where(x => x.Location == "Kenora").Select(x => x); 
                 dtl_Ont.DataSource = illness.Where(x => x.Location == "Ontario").Select(x => x);
                 ltv_Can.DataSource = illness.Where(x => x.Location == "Canada").Select(x => x);
             }
-            string Location = Request.QueryString["Location"];
+            string Location = Request.QueryString["Location"];//need to specify string location to name location in methods ()
 
-            rpt_k.DataSource = objLinq.getIllnessesK(Location);
+            rpt_k.DataSource = objLinq.getIllnessesK(Location); //repeater (kenora)!
             rpt_k.DataBind();
 
-            dtl_Ont.DataSource = objLinq.getIllnessesO(Location);
+            dtl_Ont.DataSource = objLinq.getIllnessesO(Location); //binding datalist (ontario)!
             dtl_Ont.DataBind();
 
-            ltv_Can.DataSource = objLinq.getIllnessesC(Location);
+            ltv_Can.DataSource = objLinq.getIllnessesC(Location); //binding listview (canada)!
             ltv_Can.DataBind();
         }
         

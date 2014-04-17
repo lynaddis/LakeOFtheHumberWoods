@@ -27,10 +27,14 @@
         <h3>
             Edit Health Concerns
         </h3>
-    <asp:ListView ID="ltv_update" runat="server" OnItemCommand="subUpDel" OnPagePropertiesChanging="dtl_change">
+            <%-- update health concerns fields!. --%>
+
+            <%--On Item command subUpDel for subroutine made on codebehind!. --%>
+    <asp:ListView ID="ltv_update" runat="server" OnItemCommand="subUpDel" OnPagePropertiesChanging="dtl_change"> 
         <ItemTemplate>
           
              <asp:HiddenField ID="hdf_Id" runat="server" Value='<%#Eval("Id") %>' />
+            <%--Manditory (required fields)! --%>
 
                      <asp:Label ID="lbl_illnameU" runat="server" Text="Illness Name: " />
                     <asp:TextBox ID="txt_infnameU" runat="server" Text='<%#Bind ("InfectionName") %>' /> 
@@ -67,16 +71,21 @@
 
               <br />
                      <asp:Label ID="lbl_recU" runat="server" Text=" Recommenations: " />
+            <%--recommend field-- not required in case there are no recommendations! --%>
        
                     <asp:TextBox ID="txt_recommendU" runat="server" Text='<%#Bind ("recomend") %>' />
                        
             <br />
-                    <asp:Button ID="btn_update" runat="server" Text="Update" CommandName="UpdateX" SkinID="btn_submit" /><%-- onCommand for subroutine on code behind called subAdmin --%>
+                    <asp:Button ID="btn_update" runat="server" Text="Update" CommandName="UpdateX" SkinID="btn_submit" />
+            <%--CommandNames will be switched on codebehind! --%>
+
                     <asp:Button ID="btn_delete" runat="server" Text="Delete" CommandName="DeleteX" OnClientClick="return confirm('Are you sure?')" SkinID="btn_submit" />
                     <asp:Button ID="btn_cancel" runat="server" Text="Cancel" CommandName="CancelX" SkinID="btn_submit" />
             </ItemTemplate>
     </asp:ListView>
            <br /><br /> 
+            <%--Datapager! Again! Paging is beautiful! --%>
+
              <asp:DataPager ID="datapager_listAll" runat="server" PagedControlID="ltv_update" PageSize="1" >
                 <Fields>
                    
@@ -88,15 +97,17 @@
         </div><br /> <br />
 
 
-    <%--Add in recommendation w/ deletes.  --%>
+    <%--Add in recommendation w/ deletes.!  --%>
 
 
+            <%--side bar div so that recommendations will come up beside update fields... for convenience! --%>
 <div id="adU_sidebar">
     <asp:Label ID="lbl_output" runat="server" />
     <br /><br />
     <asp:Repeater ID="rep_rec" runat="server" OnItemCommand="recDelete">
 <ItemTemplate>
                <br />
+            <%--need hidden field for deletes! --%>
 
             <asp:HiddenField ID="hdf_IdD" runat="server" Value='<%#Eval ("Id") %>' />
             
@@ -108,6 +119,8 @@
             <br />
             <asp:label ID="lt_rec" runat="server" Text='<%#Eval ("recomend") %>' />
     <br />
+            <%--Only need delete because once rec is added to public health concern it is not longer needed to be stored in database! --%>
+
     <asp:Button ID="btn_delete" runat="server" CommandName="Deletex" Text="Delete" OnClientClick="return confirm('Are you sure?')" SkinID="btn_submit" /><br />
     <asp:Button ID="btn_cancel" runat="server" CommandName="Cancelx" Text="Cancel" SkinID="btn_submit" />
     <br />  

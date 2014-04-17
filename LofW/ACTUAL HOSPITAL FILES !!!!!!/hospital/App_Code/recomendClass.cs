@@ -38,7 +38,7 @@ public class recomendClass
             return true;
         }
     }
-    public bool commitDelete(int _Id)
+    public bool commitDelete(int _Id) //DELETE! commenting feels so redundant sometimes!
     {
         HospitalDataContext objRec = new HospitalDataContext();
         using (objRec)
